@@ -198,3 +198,37 @@ pg사 구분코드
 }
 ```
 {% endcode %}
+
+**#결제(브릿지) 페이지 화면 예시**
+
+{% tabs %}
+{% tab title="결제(브릿지) 페이지" %}
+**결제 URL API 요청이 성공한경우 응답 URL 렌더링 화면 예시입니다.**
+
+![결제 URL 페이지 화면](<../.gitbook/assets/image (6).png>)
+{% endtab %}
+
+{% tab title=" 만료(브릿지) 화면" %}
+**결제 URL 페이지 만료시각(expire\_at)이 지난 경우 표시되는 화면입니다.**
+
+![결제 URL만료 화면](<../.gitbook/assets/image (4).png>)
+{% endtab %}
+{% endtabs %}
+
+### 5.결제 URL 비활성화 방법
+
+&#x20;**응답**(**shortenedUrl**) **URL 마지막  String 을 결제 URI API 주소 뒤에 삽입하여 호출**
+
+{% hint style="success" %}
+**API 응답이 아래와 같은경우**
+
+{
+
+&#x20;"**shortenedUrl**": "[https://dev.impay.link/<mark style="color:red;">**4bdf239e**</mark>](https://dev.impay.link/\*\*4bdf239e\*\*)"&#x20;
+
+}
+
+[https://api.iamport.co/api/supplements/v1/link/payment/](https://api.iamport.co/api/supplements/v1/link/payment/%7BGUID%7D)<mark style="color:red;">**4bdf239e**</mark>
+
+위와 같이 호출시 결제 URL 즉시 비활성화 처리됩니다.
+{% endhint %}
