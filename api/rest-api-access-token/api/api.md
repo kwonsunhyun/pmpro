@@ -382,6 +382,38 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 * issue **: 빌링키 발급**
 * payment : 결제
 * payment.scheduled : 예약결제
+
+
+
+#### cancel\_history  array \[]&#x20;
+
+> **pg\_tid **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+>
+> **PG사 승인취소번호**
+>
+>
+>
+> **amount **<mark style="color:red;">**\***</mark>** integer**
+>
+> **취소 금액**
+>
+>
+>
+> **cancelled\_at **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+>
+> 결제취소된 시각 UNIX timestamp
+>
+>
+>
+> **reason  **<mark style="color:green;">**string**</mark>
+>
+> **결제취소 사유**
+>
+>
+>
+> **receipt\_url  **<mark style="color:green;">**string**</mark>
+>
+> **취소에 대한 매출전표 확인 URL. PG사에 따라 제공되지 않는 경우도 있음**
 {% endtab %}
 
 {% tab title="Model Schema" %}
