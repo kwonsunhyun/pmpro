@@ -121,7 +121,7 @@ IMP.request_pay({
 
 ### 주요 파라미터 설명
 
-**`pg`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**String**</mark>
+**`pg`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 
 **PG사 구분코드**
 
@@ -129,7 +129,7 @@ IMP.request_pay({
 
 
 
-**`customer_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**String**</mark>
+**`customer_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
 **카드 빌링키**
 
@@ -146,8 +146,111 @@ IMP.request_pay({
 
 
 ### 빌링키(customer\_uid)로 결제 요청하기
+
+빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **차이포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 <mark style="color:red;">**비 인증 결제요청 REST API**</mark>를 호출하시면 결제를 발생시킬 수 있습니다.
+
+{% code title="sever-side" %}
+```
+curl -H "Content-Type: application/json" \   
+     -X POST -d '{"customer_uid":"your-customer-unique-id", "merchant_uid":"order_id_8237352", "amount":3000}' \
+     https://api.iamport.kr/subscribe/payments/again
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
+
+### 3. 부가기능
+
+{% tabs %}
+{% tab title="할부개월수 제어방법" %}
+{% code title="javascript" %}
+```javascript
+display: {
+    card_quota: "[6]"  // 할부개월 6개월까지만 활성화
+}
+```
+{% endcode %}
+
+**파라미터 설명**
+
+*   **card\_quota :**&#x20;
+
+    * `[]`: 일시불만 결제 가능
+    * `2,3,4,5,6`: 일시불을 포함한 2, 3, 4, 5, 6개월까지 할부개월 선택 가능
+
+
+
+{% hint style="info" %}
+할부결제는 **5만원 이상 결제 요청시**에만 이용 가능합니다.
+{% endhint %}
+
+****
+
+**할부개월수 **<mark style="color:red;">**3개월**</mark>**까지 활성화 예제**
+
+{% embed url="https://codepen.io/chaiport/pen/yLpMvYJ" %}
+{% endtab %}
+
+{% tab title="카드사 모듈 직접 호출 방법" %}
+{% code title="javascript" %}
+```javascript
+card: {
+     direct: {
+        code: "367",
+        quota: 3
+    }
+}
+```
+{% endcode %}
+
+
+
+**파라미터 설명**
+
+* **code** : 카드사 금융결제원 표준 코드. [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) <mark style="color:red;">****</mark> 참조  (**string**)
+* **quota** : 할부 개월 수. 일시불일 시 0 으로 지정. (**integer**)
+
+
+
+{% hint style="danger" %}
+#### **주의사항**
+
+* 반드시 차이  포트를 통해 현재 사용중인 상점아이디가 카드사 결제창 direct 호출이 가능하도록 설정이 되어있는지 PG사에 확인이 필요합니다.
+{% endhint %}
+
+
+
+<mark style="color:red;">**현대카드**</mark>** 결제모듈 바로 호출 예제**
+
+{% embed url="https://codepen.io/chaiport/pen/oNpZEvq" %}
+{% endtab %}
+
+{% tab title="특정 카드사 노출방법" %}
+{% code title="javascript" %}
+```javascript
+card : {
+    detail : [
+        {card_code:"*", enabled:false},     //모든 카드사 비활성화
+        {card_code:'366', enabled:true}     //특정 카드만 활성화
+    ]
+}
+```
+{% endcode %}
+
+**파라미터 설명**
+
+* **card\_code    :**  금결원 카드사코드  [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) <mark style="color:red;">****</mark> 참조 (<mark style="color:green;">**string)**</mark>
+* **enabled  :**  해당카드 활성화 여부  (<mark style="color:orange;">**boolean)**</mark>
+
+<mark style="color:orange;">****</mark>
+
+<mark style="color:red;">**신한카드**</mark>**만 결제창 노출 처리 예제**
+
+{% embed url="https://codepen.io/chaiport/pen/RwxpQNq" %}
+{% endtab %}
+{% endtabs %}
+
+
 
 
 

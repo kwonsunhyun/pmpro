@@ -59,7 +59,8 @@
 
 * [🖇 REST API Access Token](api/rest-api-access-token/README.md)
   * [🪂 비 인증 결제관련 API](api/rest-api-access-token/api/README.md)
-    * [⌨ 빌링키 발급 API](api/rest-api-access-token/api/api.md)
+    * [⌨ 비 인증 결제(빌링키) API](api/rest-api-access-token/api/api.md)
+    * [⌨ 빌링키 발급 API](api/rest-api-access-token/api/api-1.md)
 
 ## SDK
 
@@ -72,7 +73,7 @@
 
 * [⁉ 자주 묻는 질문](faq/undefined.md)
 
-## 🔑 PG사별 결제연동창 가이드
+## 🔑 PG사별 결제창 연동 가이드
 
 * [⌨ NHH KCP](pg/nhh-kcp.md)
 * [⌨ NICE](pg/nice.md)

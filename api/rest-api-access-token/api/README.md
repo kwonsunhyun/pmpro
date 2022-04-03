@@ -1,5 +1,5 @@
 # 🪂 비 인증 결제관련 API
 
-{% content-ref url="api.md" %}
-[api.md](api.md)
+{% content-ref url="api-1.md" %}
+[api-1.md](api-1.md)
 {% endcontent-ref %}
