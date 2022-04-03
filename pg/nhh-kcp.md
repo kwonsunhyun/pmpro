@@ -14,35 +14,8 @@ description: NHN KCP 인증결제 연동 가이드입니다.
 
 **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 실행되고, 모바일의 경우 **m\_redirect\_url**로 리디렉션됩니다.
 
-> * **`pg`** : PG사 구분코드
->
-> 관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러   개인 경우에는 `kcp`로 지정하셔야 합니다.
->
->
->
-> * **`pay_method`** : 결제수단 구분코드
->
-> &#x20; \- card(신용카드)&#x20;
->
-> &#x20; \- samsung(삼성페이),&#x20;
->
-> &#x20; \- trans(실시간 계좌이체),&#x20;
->
-> &#x20; \- vbank(가상계좌),&#x20;
->
-> &#x20; \- phone(휴대폰소액결제)
->
-> &#x20; \- payco(페이코 허브형)&#x20;
->
-> &#x20; \- naverpay(네이버페이)
-
-{% hint style="info" %}
-payco 허브형인 경우 KCP 관리자페이지 신청 및 설정이 필요합니다.
-
-신청안내 링크 : [https://sir.kr/main/service/p\_payco\_hub.php](https://sir.kr/main/service/p\_payco\_hub.php)
-{% endhint %}
-
-{% code title="KCP 결제창 호출 sample" %}
+{% tabs %}
+{% tab title="인증결제 호출하기" %}
 ```javascript
 IMP.request_pay({
     pg : 'kcp',
@@ -60,6 +33,55 @@ IMP.request_pay({
 	//* ...중략... *//
 });
 ```
-{% endcode %}
+
+###
+
+### 주요 파라미터 설명
+
+**`pg`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**String**</mark>
+
+**PG사 구분코드**
+
+관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 `kcp`로 지정하셔야 합니다.
+
+
+
+**`pay_method`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**String**</mark>
+
+**결제수단 구분코드**
+
+* &#x20;card(신용카드)&#x20;
+* samsung(삼성페이)
+* trans(실시간 계좌이체)
+* vbank(가상계좌)
+* phone(휴대폰소액결제)
+* payco(페이코 허브형)&#x20;
+* naverpay(네이버페이)
+
+
+
+**`merchant_uid`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**String**</mark>
+
+**주문번호**
+
+매번 고유하게 채번되어야 합니다.
+
+
+
+**`amount` **<mark style="color:green;">****</mark>** **<mark style="color:red;">**\***</mark>** **<mark style="color:orange;">**integer**</mark>
+
+**결제금액**
+
+String **** 이 아닌점에 유의하세요
+
+
+
+{% hint style="info" %}
+**payco 허브형**인 경우 KCP 관리자페이지 신청 및 설정이 필요합니다.
+
+신청안내 링크 : [https://sir.kr/main/service/p\_payco\_hub.php](https://sir.kr/main/service/p\_payco\_hub.php)
+{% endhint %}
 
 {% embed url="https://codepen.io/chaiport/pen/NWXrGvQ" %}
+{% endtab %}
+{% endtabs %}
