@@ -16,6 +16,7 @@ description: NHN KCP 인증결제 연동 가이드입니다.
 
 {% tabs %}
 {% tab title="인증결제 호출하기" %}
+{% code title="Javascript SDK" %}
 ```javascript
 IMP.request_pay({
     pg : 'kcp',
@@ -33,6 +34,7 @@ IMP.request_pay({
 	//* ...중략... *//
 });
 ```
+{% endcode %}
 
 ###
 
@@ -83,5 +85,9 @@ String **** 이 아닌점에 유의하세요
 {% endhint %}
 
 {% embed url="https://codepen.io/chaiport/pen/NWXrGvQ" %}
+{% endtab %}
+
+{% tab title="비 인증결제 호출하기" %}
+
 {% endtab %}
 {% endtabs %}
