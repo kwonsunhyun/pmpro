@@ -12,7 +12,7 @@ description: 결제 URL 생성 API 명세를 기술합니다.
 
 해당 API는 REST 방식으로 구현되어 인터넷 웹 서비스의 형태로 제공됩니다.
 
-> **HTTP Method : POST**&#x20;
+> **HTTP Method : POST**
 >
 > **Content-Type : Application.json;charset=UTF-8**
 
@@ -42,139 +42,107 @@ https://api.iamport.co/api/supplements/v1/link/payment
 
 {% swagger method="post" path="/payment" baseUrl="https://api.iamport.co/api/supplements/v1/link" summary="결제URL을 생성합니다." %}
 {% swagger-description %}
-HTTP Method : POST&#x20;
+HTTP Method : POST
 
 Content-Type : Application.<mark style="color:red;">json</mark>;charset=UTF-8
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="title" type="String" required="true" %}
-<mark style="color:red;">
 
-**브릿지 페이지 노출문구**
-
-</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="user_code" type="String" required="true" %}
-<mark style="color:red;">
 
-**가맹점 식별코드**
-
-</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="amount" type="integer" required="true" %}
-<mark style="color:red;">
 
-**결제금액**
-
-</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
-<mark style="color:red;">
 
-**주문번호**
-
-</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="name" type="String" required="true" %}
-<mark style="color:red;">
 
-**제품명**
-
-</mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="tax_free" type="integer" %}
-면세금액  
+{% swagger-parameter in="body" name="tax_free" type="integer" required="false" %}
+면세금액
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="currency" type="String" required="true" %}
-<mark style="color:red;">
 
-**통화**
-
-</mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="language" type="String" %}
+{% swagger-parameter in="body" name="language" type="String" required="false" %}
 실 결제창 표기언어
 
-&#x20;\-KRW
+\-KRW
 
-&#x20;\-USD
+\-USD
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_name" type="String" %}
+{% swagger-parameter in="body" name="buyer_name" type="String" required="false" %}
 주문자
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_tel" type="String" required="true" %}
-<mark style="color:red;">
 
-**주문자 연락처**
-
-</mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_addr" type="String" %}
-주문자 
+{% swagger-parameter in="body" name="buyer_addr" type="String" required="false" %}
+주문자
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_email" type="String" %}
-주문자 이메일주 
+{% swagger-parameter in="body" name="buyer_email" type="String" required="false" %}
+주문자 이메일주
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_postcode" type="String" %}
+{% swagger-parameter in="body" name="buyer_postcode" type="String" required="false" %}
 주문자 우편번호
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="custom_data" type="Object" %}
+{% swagger-parameter in="body" name="custom_data" type="Object" required="false" %}
 에코항목
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="notice_url" type="String" %}
+{% swagger-parameter in="body" name="notice_url" type="String" required="false" %}
 결제결과를 수신받을 URL
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="expire_at" type="String" required="true" %}
-<mark style="color:red;">
 
-**브릿지 페이지 만료시각(Unix Timestamp)**
-
-</mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="display_language" type="String" %}
+{% swagger-parameter in="body" name="display_language" type="String" required="false" %}
 브릿지 페이지 표기언어
 
-\-ko  : 한국어
+\-ko : 한국어
 
-\-en : 영어&#x20;
+\-en : 영어
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="pay_methods" type="Object" required="true" %}
-**pg **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>&#x20;
+**pg  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
 pg사 구분코드
 
-<mark style="color:blue;">****</mark>[#undefined](../sdk/javascript-sdk/undefined.md#undefined "mention")<mark style="color:blue;">****</mark>
+[#undefined](../sdk/javascript-sdk/undefined.md#undefined "mention")
 
-****
+***
 
 **pay\_method **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 
 결제수단 구분코드
 
-[#undefined](../sdk/javascript-sdk/undefined.md#undefined "mention")<mark style="color:blue;">****</mark>
+[#undefined](../sdk/javascript-sdk/undefined.md#undefined "mention")
 
-****
+***
 
-**label **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+**label  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-브릿지페이지  결제수단 표현값
+브릿지페이지 결제수단 표현값
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
@@ -217,14 +185,14 @@ pg사 구분코드
 
 ### 5.결제 URL 비활성화 방법
 
-&#x20;**응답**(**shortenedUrl**) **URL 마지막  String 을 결제 URI API 주소 뒤에 삽입하여 호출**
+**응답**(**shortenedUrl**) **URL 마지막 String 을 결제 URI API 주소 뒤에 삽입하여 호출**
 
 {% hint style="success" %}
 **API 응답이 아래와 같은경우**
 
 {
 
-&#x20;"**shortenedUrl**": "[https://dev.impay.link/<mark style="color:red;">**4bdf239e**</mark>](https://dev.impay.link/\*\*4bdf239e\*\*)"&#x20;
+"**shortenedUrl**": "[https://dev.impay.link/<mark style="color:red;">**4bdf239e**</mark>](https://dev.impay.link/\*\*4bdf239e\*\*)"
 
 }
 

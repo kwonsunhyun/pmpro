@@ -4,7 +4,7 @@ description: 웹훅 연동을 통해 결제 결과를 안전하게 처리하실 
 
 # ⚒ 웹훅(Webhook) 연동하기
 
-아임포트 **웹훅**(**webhook)**을 사용하여 아임포트 서버에 저장된 결제 정보를 가맹점 서버에 동기화하고 네트워크 불안정성을 보완하는 방법을 설명합니다.
+아임포트 **웹훅**(webhook)을 사용하여 아임포트 서버에 저장된 결제 정보를 가맹점 서버에 동기화하고 네트워크 불안정성을 보완하는 방법을 설명합니다.
 
 {% hint style="info" %}
 **웹훅(Webhook)이란?**
@@ -73,7 +73,7 @@ function requestPay() {
 
 ### 웹훅(Webhook) 요청 검증하기 <a href="#webhook" id="webhook"></a>
 
-웹훅 수신주소는 공개된 URL이기 때문에 **요청자 클라이언트(client IP)가 아임포트(Iamport IP)인지 반드시 확인**해야 합니다. 아임포트 웹훅은 다음의 두 가지 **고정된 IP** 로 부터 요청이 생성됩니다.&#x20;
+웹훅 수신주소는 공개된 URL이기 때문에 **요청자 클라이언트(client IP)가 아임포트(Iamport IP)인지 반드시 확인**해야 합니다. 아임포트 웹훅은 다음의 두 가지 **고정된 IP** 로 부터 요청이 생성됩니다.
 
 > * <mark style="color:red;">**52.78.100.19**</mark>
 > * <mark style="color:red;">**52.78.48.223**</mark>
@@ -93,8 +93,6 @@ curl -H "Content-Type: application/json" -X POST -d '{ "imp_uid": "imp_123456789
 > * <mark style="color:red;">**`imp_uid`**</mark><mark style="color:red;">**: 결제번호**</mark>
 > * <mark style="color:red;">**`merchant_uid`**</mark><mark style="color:red;">**: 주문번호**</mark>
 > * <mark style="color:red;">**`status`**</mark><mark style="color:red;">**: 결제 결과**</mark>
-
-
 
 웹훅 EndPoint URL 수신부 POST 요청에 대한 코드 예시
 
@@ -161,7 +159,7 @@ app.use(bodyParser.json());
 {% endhint %}
 
 {% hint style="info" %}
-#### 웹훅 재 전송이 가능한가요?
+**웹훅 재 전송이 가능한가요?**
 
 웹훅은 1회 전송이 기본설정입니다. 단 가맹점 요청시 최대 5회까지 재 전송이 가능합니다. 이 경우 1분 간격으로 가맹점 성공응답을 수신할때까지 웹훅이 발송됩니다.(**최대 5회**)
 {% endhint %}

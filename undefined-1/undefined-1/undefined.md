@@ -50,14 +50,14 @@ description: 카드정보를 이용하여 비 인증 결제를 요청하는 방�
 * **장점**: 가맹점이 원하는 형태의 화면으로 **카드정보 입력란을 커스터마이징**할 수 있다.
 * **단점**: **개인정보 이용약관**을 명시해야 하며 PG사 및 카드사 심사가 까다롭고 개인정보 유출에 유의해야 합니다.
 
-#### <mark style="color:blue;">**STEP 01.**</mark>** 카드 정보 입력받기**
+#### <mark style="color:blue;">**STEP 01.**</mark> 카드 정보 입력받기
 
-카드 정보를 입력하는 필드들을 다음과 같이 작성합니다. 요청 시 **customer\_uid**를 저장 할 히든필드를 작성합니다. 법인카드(개인명의로 발급된 _기명카드_ 제외)의 경우 `birth` 파라미터에 _사업자번호 10자리_를 입력하시면 됩니다. 결제하기 버튼 클릭 시 입력 값들과 customer\_uid로 `/subscription/issue-billing`에 대해`POST`요청이 호출되는 예제입니다. ****&#x20;
+카드 정보를 입력하는 필드들을 다음과 같이 작성합니다. 요청 시 **customer\_uid**를 저장 할 히든필드를 작성합니다. 법인카드(개인명의로 발급된 _기명카드_ 제외)의 경우 `birth` 파라미터에 \_사업자번호 10자리\_를 입력하시면 됩니다. 결제하기 버튼 클릭 시 입력 값들과 customer\_uid로 `/subscription/issue-billing`에 대해`POST`요청이 호출되는 예제입니다.&#x20;
 
 {% hint style="info" %}
 **customer\_uid 란?**
 
-PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고유값입니다. customer\_uid 는 카드번호 단위로구분되서 저장되어야 합니다.&#x20;
+PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고유값입니다. customer\_uid 는 카드번호 단위로구분되서 저장되어야 합니다.
 
 예) **홍길동** 고객이 **A카드** 빌링키를 요청하는 경우 customer\_uid는 **회원별 카드번호 단위**로 고유하게 발급되어야 합니다.
 {% endhint %}
@@ -69,7 +69,7 @@ PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고�
 {% hint style="info" %}
 **빌링키 발급을 위한 카드정보**
 
-* #### 카드번호
+* **카드번호**
 * **유효기간**
 * **생년월일**
 * **비밀번호 앞 두자리**
@@ -178,7 +178,7 @@ PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고�
 
 {% embed url="https://codepen.io/chaiport/pen/mdpWYqg" %}
 
-#### <mark style="color:blue;">**STEP 02.**</mark>** 카드 정보 추출하기**
+#### <mark style="color:blue;">**STEP 02.**</mark> 카드 정보 추출하기
 
 카드 정보를 전달받을 API endpoint를 작성하고 요청에 담긴 카드 정보를 추출합니다.`/subscription/issue-billing`에 대한 `POST`요청을 처리하는 **API endpoint**의 예제입니다.
 
@@ -206,7 +206,7 @@ PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고�
 {% endtab %}
 {% endtabs %}
 
-#### <mark style="color:blue;">**STEP 03.**</mark>** 빌링키 **<mark style="color:blue;">****</mark> 발급 요청 및 응답 처리하기
+#### <mark style="color:blue;">**STEP 03.**</mark>  빌링키 발급 요청 및 응답 처리하기
 
 당사가 제공하는 [**빌링키 발급 REST API** ](../../api/rest-api-access-token/api/)를 통해 빌링키 발급을 요청하고 결과값에 따라 응답을 반환하는 예제입니다.
 
