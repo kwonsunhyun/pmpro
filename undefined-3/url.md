@@ -48,23 +48,23 @@ Content-Type : Application.<mark style="color:red;">json</mark>;charset=UTF-8
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="title" type="String" required="true" %}
-
+브릿지 페이지 노출문구 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="user_code" type="String" required="true" %}
-
+가맹점식별코드
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="amount" type="integer" required="true" %}
-
+결제금액
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
-
+주문번호
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="name" type="String" required="true" %}
-
+제품명
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="tax_free" type="integer" required="false" %}
@@ -72,27 +72,27 @@ Content-Type : Application.<mark style="color:red;">json</mark>;charset=UTF-8
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="currency" type="String" required="true" %}
-
+통화구분코드
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="language" type="String" required="false" %}
 실 결제창 표기언어
 
-\-KRW
+\-ko
 
-\-USD
+\-en
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_name" type="String" required="false" %}
-주문자
+주문자명
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_tel" type="String" required="true" %}
-
+주문자연락처
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_addr" type="String" required="false" %}
-주문자
+주문자주소
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_email" type="String" required="false" %}
@@ -112,7 +112,7 @@ Content-Type : Application.<mark style="color:red;">json</mark>;charset=UTF-8
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="expire_at" type="String" required="true" %}
-
+페이지 만료시각
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="display_language" type="String" required="false" %}
@@ -192,7 +192,7 @@ pg사 구분코드
 
 {
 
-"**shortenedUrl**": "[https://dev.impay.link/<mark style="color:red;">**4bdf239e**</mark>](https://dev.impay.link/\*\*4bdf239e\*\*)"
+&#x20;       "**shortenedUrl**": "[https://dev.impay.link/<mark style="color:red;">**4bdf239e**</mark>](https://dev.impay.link/\*\*4bdf239e\*\*)"
 
 }
 
