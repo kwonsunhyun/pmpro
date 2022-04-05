@@ -3,7 +3,7 @@
 * [🧩 차이포트 결제 연동 Docs](README.md)
   * [🚗 GET STARTED](docs/get-started.md)
 * [🛫 결제 연동 준비하기](undefined/README.md)
-  * [👩💻 1. 아임포트 회원가입 하기](undefined/1..md)
+  * [🖥 1. 아임포트 회원가입 하기](undefined/1..md)
   * [🧷 2. PG정보 설정하기](undefined/2.-pg/README.md)
     * [🕹 PG사별 설정](undefined/2.-pg/pg.md)
     * [⌨ NHN KCP 설정하기](undefined/2.-pg/nhn-kcp.md)
@@ -52,10 +52,10 @@
 ## 관리자 콘솔 사용하기
 
 * [💱 테스트 결제 모드 설정하기](undefined-4/undefined.md)
-* [👨💻 복수 PG설정 및 사용하기](undefined-4/pg.md)
+* [💻 복수 PG설정 및 사용하기](undefined-4/pg.md)
 * [🖱 PG사별 설정 가이드](undefined-4/pg-1.md)
 
-## API&#x20;
+## API
 
 * [🖇 REST API Access Token](api/rest-api-access-token/README.md)
   * [🪂 비 인증 결제관련 API](api/rest-api-access-token/api/README.md)
@@ -67,7 +67,7 @@
 * [📚 Javascript SDK](sdk/javascript-sdk/README.md)
   * [⌨ 결제요청 파라미터](sdk/javascript-sdk/undefined.md)
   * [⌨ 결제응답 파라미터](sdk/javascript-sdk/undefined-1.md)
-  * [✏ SDK  Release Note](sdk/javascript-sdk/sdk-release-note.md)
+  * [✏ SDK Release Note](sdk/javascript-sdk/sdk-release-note.md)
 
 ## FAQ
 
