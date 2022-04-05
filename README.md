@@ -80,8 +80,8 @@ description: 차이포트 결제 연동 매뉴얼에 오신것을 환영합니�
 [pg.md](undefined-4/pg.md)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-4/pg-1.md" %}
-[pg-1.md](undefined-4/pg-1.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 ### API
