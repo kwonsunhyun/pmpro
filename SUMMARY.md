@@ -13,7 +13,7 @@
     * [⌨ 페이먼트월 설정하기](undefined/2.-pg/undefined-1.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
-## 인증 결제창 연동하기
+## 결제창 연동하기
 
 * [🖥 인증결제 연동하기](undefined-1/undefined/README.md)
   * [📒 인증결제 정의](undefined-1/undefined/undefined.md)
@@ -31,7 +31,7 @@
 * [💸 결제취소(환불) 연동하기](undefined-1/undefined-2/README.md)
   * [Page 2](undefined-1/undefined-2/page-2.md)
 
-## 부가기능 연동하기
+## 결제결과  연동하기
 
 * [⚒ 웹훅(Webhook) 연동하기](undefined-2/webhook.md)
 

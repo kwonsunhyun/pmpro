@@ -92,6 +92,8 @@ description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청�
 
 0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
 
+
+
 **message **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
 **응답메세지**
@@ -209,19 +211,19 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-vbank\_code ** **<mark style="color:green;">**string**</mark>
+**vbank\_code** ** **<mark style="color:green;">**string**</mark>
 
 **가상계좌 은행 표준코드(하단이미지 참고)**
 
 ***
 
-vbank\_name ** **<mark style="color:green;">**string**</mark>
+**vbank\_name** ** **<mark style="color:green;">**string**</mark>** **&#x20;
 
 **입금받을 가상계좌 은행명**
 
 ****
 
-vbank\_holder  <mark style="color:green;">**string**</mark>
+**vbank\_holder**  <mark style="color:green;">**string**</mark>
 
 **입금받을 가상계좌 예금주**
 
@@ -233,7 +235,7 @@ vbank\_date ** **<mark style="color:green;">**string**</mark>
 
 ****
 
-vbank\_issued\_at ** **<mark style="color:green;">**string**</mark>
+**vbank\_issued\_at** ** **<mark style="color:green;">**string**</mark>
 
 **가상계좌 생성 시각 (UNIX timestamp)**
 
@@ -251,7 +253,7 @@ vbank\_issued\_at ** **<mark style="color:green;">**string**</mark>
 
 ****
 
-cancel\_amount ** **<mark style="color:purple;">**integer**</mark>
+**cancel\_amount** ** **<mark style="color:purple;">**integer**</mark>
 
 **결제취소금액**
 
