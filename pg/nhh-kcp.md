@@ -99,18 +99,18 @@ IMP.request_pay({
     pay_method : 'card', // 'card'만 지원됩니다.
     merchant_uid: "order_monthly_0001", // 상점에서 관리하는 주문 번호
     name : '최초인증결제',
-    amount : 0, // 결제창에 표시될 금액. 실제 승인이 이뤄지지는 않습니다. (PC에서는 가격이 표시되지 않음)
+    amount : 0, // 결제창에 표시될 금액. 실제 승인이 이뤄지지는 않습니다.
     customer_uid : 'your-customer-unique-id', // 필수 입력.
     buyer_email : 'iamport@siot.do',
     buyer_name : '아임포트',
     buyer_tel : '02-1234-1234',
     m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}' 
 }, function(rsp) {
-	if ( rsp.success ) {
-		alert('빌링키 발급 성공');
-	} else {
-		alert('빌링키 발급 실패');
-	}
+    if ( rsp.success ) {
+        alert('빌링키 발급 성공');
+    } else {
+        alert('빌링키 발급 실패');
+    }
 });
 ```
 {% endcode %}
@@ -118,7 +118,7 @@ IMP.request_pay({
 
 
 {% hint style="success" %}
-비인증 결제를 위해서는 KCP와 협의가 완료된 사이트코드를 관리자콘솔에 설정하셔야 비인증 결제창을 활성화 시킬수 있습니다.
+비인증 결제를 위해서는 **KCP와 협의가 완료된 사이트코드**를 관리자콘솔에 설정하셔야 비인증 결제창을 활성화 시킬수 있습니다.
 {% endhint %}
 
 
@@ -294,7 +294,3 @@ MP.request_pay({
 ```
 {% endtab %}
 {% endtabs %}
-
-
-
-shop\_user\_id &#x20;
