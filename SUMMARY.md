@@ -29,7 +29,8 @@
   * [🏍 빌링키 기반 결제 요청하기](undefined-1/undefined-1/undefined.md)
     * [🖱 REST API 이용하기](undefined-1/undefined-1/undefined/rest-api.md)
     * [🛡 PG결제창 이용하기](undefined-1/undefined-1/undefined/pg.md)
-  * [Page 1](undefined-1/undefined-1/page-1.md)
+  * [💳 카드정보를 이용한 키인결제](undefined-1/undefined-1/page-1.md)
+  * [Page 3](undefined-1/undefined-1/page-3.md)
 * [💸 결제취소(환불) 연동하기](undefined-1/undefined-2/README.md)
   * [Page 2](undefined-1/undefined-2/page-2.md)
 
