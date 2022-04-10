@@ -26,7 +26,7 @@
   * [🔦 5. 결제정보 검증하기](undefined-1/undefined/5..md)
   * [🛬 6. 결제완료 처리하기](undefined-1/undefined/6..md)
 * [⏰ 비 인증결제 연동하기](undefined-1/undefined-1/README.md)
-  * [🏍 비 인증 결제 요청하기](undefined-1/undefined-1/undefined/README.md)
+  * [🏍 비 인증 결제 요청하기](undefined-1/undefined-1/undefined.md)
     * [🖱 REST API 이용하기](undefined-1/undefined-1/undefined/rest-api.md)
     * [🛡 PG결제창 이용하기](undefined-1/undefined-1/undefined/pg.md)
   * [Page 1](undefined-1/undefined-1/page-1.md)
