@@ -257,7 +257,7 @@ card : {
 
 {% tabs %}
 {% tab title="상품권 결제수단" %}
-상품권 결제수단을 사용하기 위해서는 가맹점에서 관리하는 회원ID를 아래와 같은 방법으로 파라미터를 설정해야 합니다.
+**상품권 결제수단**을 사용하기 위해서는 가맹점에서 관리하는 회원ID를 아래와 같은 방법으로 파라미터를 설정해야 합니다.
 
 {% code title="javascript SDK " %}
 ```javascript
@@ -270,7 +270,31 @@ bypass : {
 {% hint style="success" %}
 **상품권 기관 RM 조치를 위해 필수적으로 실어주셔야 합니다.**&#x20;
 {% endhint %}
+
+
+
+**컬처랜드 문화 상품권을 호출하는 경우**
+
+```javascript
+MP.request_pay({
+    pg : 'kcp.{문화상품권 대상 사이트코드}',
+    pay_method : 'cultureland',    //문화상품권
+    merchant_uid: "A00021-TEST",
+    name : '당근 10kg',
+    amount : 1004,
+    buyer_email : 'iamport@chai.finance',
+    buyer_name : '아임포트 기술지원팀',
+    buyer_tel : '010-1234-5678',
+    buyer_addr : '서울특별시 강남구 삼성동',
+    buyer_postcode : '123-456',
+    bypass : {
+        shop_user_id : 'abaddd'  // 가맹점 회원 id기재
+    }
+}
+```
 {% endtab %}
 {% endtabs %}
+
+
 
 shop\_user\_id &#x20;
