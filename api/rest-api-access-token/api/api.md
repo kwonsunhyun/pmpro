@@ -8,11 +8,11 @@ description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청�
 
 {% swagger method="post" path="/subscribe/payments/again" baseUrl="https://api.iamport.kr" summary="customer_uid 로 결제를 요청합니다." %}
 {% swagger-description %}
-빌링키 발급 API 또는 PG사 빌링키 발급 결제창에서 설정한
+빌링키 발급 API 또는 PG사 빌링키 발급 결제창에서 설정한 
 
-**customer\_uid**
+**customer_uid**
 
-로 비 인증 결제를 요청할 수 있습니다.
+ 로 비 인증 결제를 요청할 수 있습니다.
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="customer_uid" type="String" required="true" %}
@@ -44,7 +44,7 @@ description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청�
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_email" type="String" required="false" %}
-주문자 E-mail주소
+주문자 E-mail 주소
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_tel" type="String" required="false" %}
@@ -80,7 +80,7 @@ description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청�
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="browser_ip" type="String" required="false" %}
-구매자 브라우져(PC)의 IP
+구매자 브라우저(PC)의 IP
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="결제성공" %}
@@ -154,7 +154,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**escrow** boolean
+**escrow** <mark style="color:orange;">**boolean**</mark>
 
 **에스크로 결제여부**
 
@@ -202,7 +202,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ***
 
-**card\_type** \*<mark style="color:green;">**string**</mark>
+**card\_type**  <mark style="color:green;">**string**</mark>
 
 **카드 구분코드**
 
@@ -362,7 +362,7 @@ vbank\_date ** **<mark style="color:green;">**string**</mark>
 
 ****
 
-**cash\_receipt\_issued **<mark style="color:orange;">**boolean**</mark>
+**cash\_receipt\_issued  **<mark style="color:orange;">**boolean**</mark>
 
 **현금영수증 자동발급 여부**
 

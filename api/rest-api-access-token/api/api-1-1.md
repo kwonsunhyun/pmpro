@@ -11,7 +11,7 @@
 **구매자 고유번호**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" required="true" name="pg" type="String(80) " %}
+{% swagger-parameter in="body" required="true" name="pg" type="String" %}
 **PG 구분코드**
 {% endswagger-parameter %}
 
@@ -70,35 +70,51 @@
 >
 > 0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
 
+
+
 > **message **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **응답메세지**
 >
 > code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
 
+
+
 > **customer\_uid **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **고객 고유번호**
+
+****
 
 > **pg\_provider **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **빌링키가 등록된 PG사 코드**
 
+****
+
 > **pg\_id **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **빌링키가 등록된 PG사 상점아이디(MID)**
+
+****
 
 > **card\_name **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **카드사명**
 
+****
+
 > **card\_code **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **카드사 코드**
 
+****
+
 > **card\_number **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **마스킹 카드번호**
+
+****
 
 > **card\_type **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
@@ -106,29 +122,43 @@
 >
 > **(주의)해당 정보를 제공하지 않는 일부 PG사의 경우 null 로 응답됨**
 
+****
+
 > **customer\_name **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **고객성함**
+
+****
 
 > **customer\_tel **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **고객 전화번호**
 
+****
+
 > **customer\_email **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **고객 Email**
+
+****
 
 > **customer\_addr **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > 고객 주소
 
+
+
 > **customer\_postcode **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
-> 고객 <mark style="color:green;">\*\*\*\*</mark> 우편번호
+> 고객 우편번호
+
+
 
 > **inserted **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 >
 > 빌키가 등록된 시각 UNIX timestamp
+
+
 
 > **updated **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 >

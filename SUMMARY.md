@@ -62,7 +62,8 @@
 * [🖇 REST API Access Token](api/rest-api-access-token/README.md)
   * [🪂 비 인증 결제관련 API](api/rest-api-access-token/api/README.md)
     * [⌨ 비 인증 결제(빌링키) API](api/rest-api-access-token/api/api.md)
-    * [⌨ 빌링키 발급 API](<api/rest-api-access-token/api/api (1).md>)
+    * [⌨ 비 인증 결제(일회성) API](api/rest-api-access-token/api/api-1.md)
+    * [⌨ 빌링키 발급 API](api/rest-api-access-token/api/api-1-1.md)
 
 ## SDK
 
