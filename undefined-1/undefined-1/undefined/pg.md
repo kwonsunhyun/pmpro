@@ -94,3 +94,64 @@ PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고�
 {% endtab %}
 {% endtabs %}
 
+### <mark style="color:blue;">**STEP 03.**</mark> 결제 요청하기
+
+위에서 저장된 **customer\_uid** 를 이용하여 차이포트 [**비 인증 결제(빌링키)API**](../../../api/rest-api-access-token/api/api.md)를 호출하여 결제를 요청합니다.
+
+{% hint style="success" %}
+**REST API 를 이용하기 위해서는** [**Access Token**](../../../api/rest-api-access-token/) **획득이 선행되어야 하는점 잊지 마세요**
+{% endhint %}
+
+{% tabs %}
+{% tab title="Node.js" %}
+{% code title="server-side" %}
+```javascript
+app.post("/billings", async (req, res) => {
+    try {
+      const { customer_uid } = req.body; // req의 body에서 customer_uid 추출
+      // 인증 토큰 발급 받기
+      const getToken = await axios({
+        url: "https://api.iamport.kr/users/getToken",
+        method: "post", // POST method
+        headers: { "Content-Type": "application/json" }, 
+        data: {
+          imp_key: "imp_apikey", // REST API 키
+          imp_secret: "ekKoeW8RyKuT0zgaZsUtXXTLQ4AhPFW3ZGseDA6bkA5lamv9OqDMnxyeB9wqOsuO9W3Mx9YSJ4dTqJ3f" // REST API Secret
+        }
+      });
+      const { access_token } = getToken.data.response; // 인증 토큰
+      ...
+      // 결제(재결제) 요청
+      const paymentResult = await axios({
+        url: \`https://api.iamport.kr/subscribe/payments/again\`,
+        method: "post",
+        // 인증 토큰을 Authorization header에 추가
+        headers: { "Authorization": access_token }, 
+        data: {
+          customer_uid,
+          merchant_uid: "order_monthly_0001", // 새로 생성한 결제(재결제)용 주문 번호
+          amount: 8900,
+          name: "월간 이용권 정기결제"
+        }
+      });
+      ...
+      const { code, message } = paymentResult;
+      if (code === 0) { // 카드사 통신에 성공(실제 승인 성공 여부는 추가 판단이 필요함)
+        if ( paymentResult.status === "paid" ) { //카드 정상 승인
+          res.send({ ... });
+        } else { //카드 승인 실패 (예: 고객 카드 한도초과, 거래정지카드, 잔액부족 등)
+          //paymentResult.status : failed 로 수신됨
+          res.send({ ... });
+        }
+        res.send({ ... });
+      } else { // 카드사 요청에 실패 (paymentResult is null)
+        res.send({ ... });
+      }
+    } catch (e) {
+      res.status(400).send(e);
+    }
+  });
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
