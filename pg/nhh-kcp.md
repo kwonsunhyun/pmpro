@@ -252,3 +252,25 @@ card : {
 {% embed url="https://codepen.io/chaiport/pen/RwxpQNq" %}
 {% endtab %}
 {% endtabs %}
+
+### 4. 기타 파라미터
+
+{% tabs %}
+{% tab title="상품권 결제수단" %}
+상품권 결제수단을 사용하기 위해서는 가맹점에서 관리하는 회원ID를 아래와 같은 방법으로 파라미터를 설정해야 합니다.
+
+{% code title="javascript SDK " %}
+```javascript
+bypass : {
+    shop_user_id : ‘ABCD123’   //가맹점 회원ID (20byte)
+}
+```
+{% endcode %}
+
+{% hint style="success" %}
+**상품권 기관 RM 조치를 위해 필수적으로 실어주셔야 합니다.**&#x20;
+{% endhint %}
+{% endtab %}
+{% endtabs %}
+
+shop\_user\_id &#x20;
