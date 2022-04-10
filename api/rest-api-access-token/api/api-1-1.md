@@ -205,7 +205,7 @@
 
 ### **주요 요청 파라미터 상세 설명**
 
-> **pg **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`pg`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **PG 구분코드**
 >
@@ -215,7 +215,7 @@
 >
 > **kcp.IPXC**
 
-> **birth** <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>
+> **`birth`** <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>
 >
 > **생년월일**
 >
