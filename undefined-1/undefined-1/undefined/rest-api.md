@@ -11,7 +11,7 @@ description: 차이포트 REST API 를 이용하여 손쉽게 빌링키를 획�
 
 #### 가맹점 UI/UX 친화적인 결제 환경을 계획하고 계시다면 API 연동 개발을 선택하시면 됩니다.
 
-#### <mark style="color:blue;">**STEP 01.**</mark> 카드 정보 입력받기
+### <mark style="color:blue;">**STEP 01.**</mark> 카드 정보 입력받기
 
 카드 정보를 입력하는 필드들을 다음과 같이 작성합니다. 요청 시 **customer\_uid**를 저장 할 히든필드를 작성합니다. 법인카드(개인명의로 발급된 _기명카드_ 제외)의 경우 `birth` 파라미터에 \_사업자번호 10자리\_를 입력하시면 됩니다. 결제하기 버튼 클릭 시 입력 값들과 customer\_uid로 `/subscription/issue-billing`에 대해`POST`요청이 호출되는 예제입니다.&#x20;
 
@@ -139,7 +139,7 @@ PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고�
 
 {% embed url="https://codepen.io/chaiport/pen/mdpWYqg" %}
 
-#### <mark style="color:blue;">**STEP 02.**</mark> 카드 정보 추출하기
+### <mark style="color:blue;">**STEP 02.**</mark> 카드 정보 추출하기
 
 카드 정보를 전달받을 API endpoint를 작성하고 요청에 담긴 카드 정보를 추출합니다.`/subscription/issue-billing`에 대한 `POST`요청을 처리하는 **API endpoint**의 예제입니다.
 
@@ -167,7 +167,7 @@ PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고�
 {% endtab %}
 {% endtabs %}
 
-#### <mark style="color:blue;">**STEP 03.**</mark>  빌링키 발급 요청 및 응답 처리하기
+### <mark style="color:blue;">**STEP 03.**</mark>  빌링키 발급 요청 및 응답 처리하기
 
 당사가 제공하는 [**빌링키 발급 REST API** ](../../../api/rest-api-access-token/api/)를 통해 빌링키 발급을 요청하고 결과값에 따라 응답을 반환하는 예제입니다.
 

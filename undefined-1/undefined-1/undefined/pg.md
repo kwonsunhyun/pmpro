@@ -4,9 +4,93 @@ description: PG사에서 제공하는 결제창을 이용하여 빌링키를 획
 
 # 🛡 PG결제창 이용하기
 
-PG사가 제공하는 일반 결제창에 고객이 카드정보를 입력하여 빌링키를 발급 받을수 있습니다.
+#### PG사가 제공하는 일반 결제창에 고객이 카드정보를 입력하여 빌링키를 발급 받을수 있습니다.
 
 * **장점**: 카드정보가 서버 또는 아임포트의 서버를 거치지 않고 직접 PG사로 전달되기 때문에 데이터 및 통신구간 암호화 등의 **추가 보안 프로세스가 없다**.
 * **단점**: PG사의 일반결제창을 통해 카드정보를 입력받기 때문에 웹브라우저를 통해서만 빌링키 발급이 이루어지며, **카드정보 입력란을 커스터마이징 할 수 없다.**(가맹점 사이트 친화적인 UI/UX 구성불가)
 
 ![PG사 카드정보 획득 결제창 예제](<../../../.gitbook/assets/image (17).png>)
+
+### <mark style="color:blue;">**STEP 01.**</mark> 발급 요청하기
+
+인증결제와 동일하게 **JavaScript SDK** 를 이용하여 PG사 결제창을 호출합니다. 빌링키를 획득하기 위해 아래 파라미터를 추가적으로 설정하면 모든 준비가 완료됩니다.
+
+> #### customer\_uid : 빌링키와 1:1로 매칭될 고유키
+
+{% tabs %}
+{% tab title="JavaScript" %}
+{% code title="client-side" %}
+```javascript
+  IMP.request_pay({ 
+    customer_uid: "gildong_0001_1234", // 카드(빌링키)와 1:1로 대응하는 값
+    /* ...생략... */
+  }, function (rsp) { // callback
+    if (rsp.success) {
+      // 빌링키 발급 성공
+    } else {
+      // 빌링키 발급 실패
+    }
+  });
+```
+{% endcode %}
+
+
+
+{% hint style="info" %}
+**customer\_uid 란?**
+
+PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고유값입니다. customer\_uid 는 카드번호 단위로 구분되서 저장되어야 합니다.
+
+예) **홍길동** 고객이 **A카드** 빌링키를 요청하는 경우 customer\_uid는 **회원 별 카드번호 단위**로 고유하게 발급되어야 합니다.
+{% endhint %}
+{% endtab %}
+{% endtabs %}
+
+### <mark style="color:blue;">**STEP 02.**</mark> 발급 응답 처리하기
+
+{% tabs %}
+{% tab title="JavaScript" %}
+{% code title="client-side" %}
+```javascript
+  IMP.request_pay({ 
+    /* ...중략... */
+  }, function (rsp) { // callback
+    if (rsp.success) {
+      // 빌링키 발급 성공
+      // jQuery로 HTTP 요청
+      jQuery.ajax({
+        url: "{customer_uid를 받을 서비스 URL}", 
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        data: {
+          customer_uid: "gildong_0001_1234", // 카드(빌링키)와 1:1로 대응하는 값
+        }
+      });
+    } else {
+      // 빌링키 발급 실패
+    }
+  });
+```
+{% endcode %}
+
+
+
+빌링키가 성공적으로 발급되면 가맹점 서버로 **customer\_uid** 를 전달합니다. 서버에서는 클라이언트로부터 **customer\_uid**를 전달받는 API endpoint를 생성합니다. 서버에서 해당 **customer\_uid** 를 사용하여 차후에 결제를 요청할 수 있습니다.
+
+{% code title="server-side" %}
+```javascript
+  app.post("/billings", async (req, res) => {
+    try {
+      const { customer_uid } = req.body; // req body에서 customer_uid 추출
+        ...
+    } catch (e) {
+      res.status(400).send(e);
+    }
+  });
+```
+{% endcode %}
+
+전달받은 customer\_uid 를 가맹점 내부서버 DB에 저장 후 추후 해당 정보를 이용하여 결제를 요청 합니다.
+{% endtab %}
+{% endtabs %}
+
