@@ -591,10 +591,16 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 > * 나이스페이먼츠, JTNet 2가지 PG설정이 되어있다면, pg 파라메터로 **nice** 또는 **jtnet**로 구분 가능
 > * 나이스페이먼츠로부터 2개 이상의 상점아이디를 발급받았다면, **nice.MID1** 또는 **nice.MID2**로 구분 가능
 
-> **buyer\_name  **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
+> **`buyer_name`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
 >
 > **주문자명 **<mark style="color:green;">****</mark>&#x20;
 >
 > 페이먼트월 PG를 이용하는 경우 구매자명은 first name 과 last name이 <mark style="color:red;">**한칸 띄어쓰기**</mark> 형태로 구분되서 유입되어야 합니다.
 >
 > #### &#x20;  <mark style="color:green;">**예시)**</mark>**   Michael Jackson**&#x20;
+
+> **`customer_uid`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
+>
+> **고객 빌링키**
+>
+> 해당 값이 설정되는 경우 빌링키가 해당 값에 맵핑되며 <mark style="color:green;">****</mark> 추후 customer\_uid 값으로만 결제를 발생시킬 수 있습니다.
