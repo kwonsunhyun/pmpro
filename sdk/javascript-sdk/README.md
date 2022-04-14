@@ -25,6 +25,8 @@ description: 결제창 연동시 호출 및 응답 파라미터를 확인 할 �
 **jQuery 1.0 이상이 설치**되어 있어야 합니다.
 {% endhint %}
 
+> #### **CDN** 사용에 대한 불편함이 있으신 경우 아래 URL 로 설정해 주셔도 무방합니다. [https://service.iamport.kr/js/iamport.payment-](https://service.iamport.kr/js/iamport.payment-1.2.0.js){SDK-최신버전}[.js](https://service.iamport.kr/js/iamport.payment-1.2.0.js)
+
 {% content-ref url="undefined.md" %}
 [undefined.md](undefined.md)
 {% endcontent-ref %}
