@@ -48,23 +48,45 @@ Content-Type : Application.<mark style="color:red;">json</mark>;charset=UTF-8
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="title" type="String" required="true" %}
-브릿지 페이지 노출문구 
+<mark style="color:red;">
+
+브릿지 페이지 노출문구
+
+</mark>
+
+ 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="user_code" type="String" required="true" %}
+<mark style="color:red;">
+
 가맹점식별코드
+
+</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="amount" type="integer" required="true" %}
+<mark style="color:red;">
+
 결제금액
+
+</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
+<mark style="color:red;">
+
 주문번호
+
+</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="name" type="String" required="true" %}
+<mark style="color:red;">
+
 제품명
+
+</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="tax_free" type="integer" required="false" %}
@@ -72,7 +94,11 @@ Content-Type : Application.<mark style="color:red;">json</mark>;charset=UTF-8
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="currency" type="String" required="true" %}
+<mark style="color:red;">
+
 통화구분코드
+
+</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="language" type="String" required="false" %}
@@ -88,7 +114,11 @@ Content-Type : Application.<mark style="color:red;">json</mark>;charset=UTF-8
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_tel" type="String" required="true" %}
+<mark style="color:red;">
+
 주문자연락처
+
+</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_addr" type="String" required="false" %}
@@ -112,7 +142,11 @@ Content-Type : Application.<mark style="color:red;">json</mark>;charset=UTF-8
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="expire_at" type="String" required="true" %}
+<mark style="color:red;">
+
 페이지 만료시각
+
+</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="display_language" type="String" required="false" %}
