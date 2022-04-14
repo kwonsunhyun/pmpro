@@ -10,7 +10,7 @@ description: callback 으로 내려가는 응답파라미터 항목을 확인할
 PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다.
 {% endhint %}
 
-> **success **<mark style="color:red;">**\***</mark>**  **<mark style="color:orange;">**boolean**</mark>
+> **`success`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:orange;">**boolean**</mark>
 >
 > **결제 성공여부**
 >
@@ -18,29 +18,29 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 >
 > _<mark style="color:red;">(PG사/결제수단에 따라</mark>  <mark style="color:red;">`imp_success`</mark><mark style="color:red;">로 반환됨)</mark>_
 
-> **error\_code **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`error_code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **결제 실패코드**
 >
 > 결제가 실패하는 경우 PG사 원천코드가 내려갑니다.
 
-> **error\_msg **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`error_msg`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **결제 실패메세지**
 >
 > 결제가 실패하는 경우 PG사 원천메세지가 내려갑니다.
 
-> **imp\_uid **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`imp_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **아임포트 고유 결제번호**
 >
 > success가 false이고 사전 validation에 실패한 경우, imp\_uid는 null일 수 있음
 
-> **merchant\_uid **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`merchant_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **주문번호**
 
-> **pay\_method **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`pay_method`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **결제수단 구분코드**
 
@@ -71,11 +71,11 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 
 </details>
 
-> **paid\_amount **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**number**</mark>
+> **`paid_amount`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**number**</mark>
 >
 > **결제금액**
 
-> **status **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`status`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **결제상태**
 >
@@ -83,11 +83,11 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 > * `paid`(결제완료)
 > * `failed`(신용카드 한도 초과, 체크카드 잔액 부족, 브라우저 창 종료 또는 취소 버튼 클릭 등 결제실패 상태)
 
-> **name **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`name`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **주문자명**
 
-> **pg\_provider **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`pg_provider`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **PG사 구분코드**
 
@@ -126,7 +126,7 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 
 </details>
 
-> **emb\_pg\_provider **<mark style="color:green;">**string**</mark>
+> **`emb_pg_provider`  **<mark style="color:green;">**string**</mark>
 >
 > **간편결제 구분코드**
 >
@@ -148,37 +148,37 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 
 </details>
 
-> **pg\_tid **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`pg_tid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **PG사 거래번호**
 >
 > PG사에서 거래당 고유하게 부여하는 거래번호입니다.
 
-> **buyer\_name **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`buyer_name`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **주문자명**
 
-> **buyer\_email **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`buyer_email`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **주문자 Email**
 
-> **buyer\_tel **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`buyer_tel`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **주문자 연락처**
 
-> **buyer\_addr **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`buyer_addr`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **주문자 주소**
 
-> **buyer\_postcode **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`buyer_postcode`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **주문자 우편번호**
 
-> **custom\_data **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`custom_data`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **가맹점 임의 지정 데이터**
 
-> **paid\_at **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`paid_at`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **결제승인시각** **(UNIX timestamp)**
 
@@ -188,19 +188,19 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 **유닉스 시간**(영어: Unix time)은 시각을 나타내는 방식이다. **POSIX 시간**이나 **Epoch 시간**이라고 부르기도 한다. 1970년 1월 1일 00:00:00 협정 세계시(UTC) 부터의 경과 시간을 초로 환산하여 정수로 나타낸 것이다. 유닉스 시간에서 윤초는 무시된다. 유닉스 계열 운영 체제나 여러 다른 운영 체제, 그리고 파일 형식들에서 사용된다. 윤초 처리 방식 때문에 시간을 선형으로 표현하지 못하며 협정 세계시의 윤초를 표현할 수 없다..
 {% endhint %}
 
-> **receipt\_url   **<mark style="color:green;">**string**</mark>
+> **`receipt_url`      **<mark style="color:green;">**string**</mark>
 >
 > <mark style="color:green;">****</mark>**거래 매출전표 URL**
 
 ## 추가속성
 
-> **apply\_num  **<mark style="color:green;">**string**</mark>
+> **`apply_num`    **<mark style="color:green;">**string**</mark>
 >
 > **신용카드 승인번호**
 >
 > * 신용카드 결제수단에 한하여 제공
 
-> **vbank\_num  **<mark style="color:green;">**string**</mark>
+> **`vbank_num`    **<mark style="color:green;">**string**</mark>
 >
 > **가상계좌 입금 계좌번호**
 
@@ -208,11 +208,11 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 PG사로부터 전달된 정보 그대로 제공<mark style="color:green;"></mark>에 따라 숫자 외 dash(-) 또는 기타 기호가 포함되어 있을 수 있음
 {% endhint %}
 
-> **vbank\_name  **<mark style="color:green;">**string**</mark>
+> **`vbank_name`    **<mark style="color:green;">**string**</mark>
 >
 > **가상계좌 입금은행 명**
 
-> **vbank\_holder  **<mark style="color:green;">**string**</mark>
+> **`vbank_holder`    **<mark style="color:green;">**string**</mark>
 >
 > **가상계좌 예금주**
 
@@ -220,7 +220,7 @@ PG사로부터 전달된 정보 그대로 제공<mark style="color:green;"></ma
 계약된 사업자명으로 표시됨, 단, 일부 PG사의 경우 null 을 반환하므로 자체 처리 필요
 {% endhint %}
 
-> **vbank\_date  **<mark style="color:green;">**string**</mark>
+> **`vbank_date`    **<mark style="color:green;">**string**</mark>
 >
 > **가상계좌 입금기한** **(UNIX timestamp)**
 
