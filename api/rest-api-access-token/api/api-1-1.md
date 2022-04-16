@@ -68,7 +68,7 @@
 {% swagger-response status="200: OK" description="빌링키 발급성공" %}
 {% tabs %}
 {% tab title="Model" %}
-> **code **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
+> **`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
 >
 > **응답코드**
 >
@@ -76,7 +76,7 @@
 
 
 
-> **message **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **응답메세지**
 >
@@ -84,43 +84,43 @@
 
 
 
-> **customer\_uid **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **고객 고유번호**
 
 ****
 
-> **pg\_provider **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **빌링키가 등록된 PG사 코드**
 
 ****
 
-> **pg\_id **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`pg_id`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **빌링키가 등록된 PG사 상점아이디(MID)**
 
 ****
 
-> **card\_name **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`card_name`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **카드사명**
 
 ****
 
-> **card\_code **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`card_code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **카드사 코드**
 
 ****
 
-> **card\_number **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`card_number`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **마스킹 카드번호**
 
 ****
 
-> **card\_type **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`card_type`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > 카드유형
 >
@@ -128,43 +128,43 @@
 
 ****
 
-> **customer\_name **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`customer_name`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **고객성함**
 
 ****
 
-> **customer\_tel **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+> **`customer_tel`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
 > **고객 전화번호**
 
 ****
 
-> **customer\_email **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`customer_email`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **고객 Email**
 
 ****
 
-> **customer\_addr **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`customer_addr`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > 고객 주소
 
 
 
-> **customer\_postcode **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+> **`customer_postcode`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > 고객 우편번호
 
 
 
-> **inserted **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+> **`inserted`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 >
 > 빌키가 등록된 시각 UNIX timestamp
 
 
 
-> **updated **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+> **`updated`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 >
 > 빌키가 업데이트된 시각 UNIX timestamp
 {% endtab %}

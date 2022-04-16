@@ -64,6 +64,80 @@ pg 구분코드
 
 </mark>
 {% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="결제예약 성공" %}
+
+
+{% tabs %}
+{% tab title="Model" %}
+
+
+> **`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
+>
+> **응답코드**
+>
+> 0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+> **`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+>
+> **응답메세지**
+>
+> code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+> **`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+>
+> **빌링키**
+
+**`merchant_uid`  \*  **<mark style="color:green;">**string**</mark>
+
+주문번호
+{% endtab %}
+
+{% tab title="Model Schema" %}
+```json
+{
+  "code": 0,
+  "message": "string",
+  "response": [
+    {
+      "customer_uid": "string",
+      "merchant_uid": "string",
+      "imp_uid": "string",
+      "schedule_at": "0",
+      "executed_at": "0",
+      "revoked_at": "0",
+      "amount": 0,
+      "name": "string",
+      "buyer_name": "string",
+      "buyer_email": "string",
+      "buyer_tel": "string",
+      "buyer_addr": "string",
+      "buyer_postcode": "string",
+      "custom_data": "string",
+      "schedule_status": "scheduled",
+      "payment_status": "paid",
+      "fail_reason": "string"
+    }
+  ]
+}
+```
+{% endtab %}
+{% endtabs %}
+
+
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
 {% endswagger %}
 
 ### **주요 요청 파라미터 상세 설명**
@@ -71,6 +145,8 @@ pg 구분코드
 > **`schedules`    **<mark style="color:red;">**\***</mark>** **<mark style="color:blue;">**array**</mark>
 >
 > **결제예약 스케쥴**
+>
+> ****
 >
 > <mark style="color:red;">**\[ 필수항목 ]**</mark>
 >
