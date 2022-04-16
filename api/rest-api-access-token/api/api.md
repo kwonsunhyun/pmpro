@@ -16,7 +16,7 @@ description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청�
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="customer_uid" type="String" required="true" %}
-빌링키
+실 빌링키와 1:1로 매칭될 고유번호
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
@@ -500,7 +500,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 > **`customer_uid`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
 >
-> **빌링키**
+> **고객 빌링키**
 >
 > PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고유값입니다. customer\_uid 는 카드번호 단위로 구분되서 저장되어야 합니다
 

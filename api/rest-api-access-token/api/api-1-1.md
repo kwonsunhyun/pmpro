@@ -8,7 +8,11 @@
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="customer_uid" type="String(80)" required="true" %}
-**구매자 고유번호**
+<mark style="color:red;">
+
+**빌링키**
+
+</mark>
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" required="true" name="pg" type="String" %}
