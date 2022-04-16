@@ -64,6 +64,8 @@
     * [⌨ 비 인증 결제(빌링키) API](api/rest-api-access-token/api/api.md)
     * [⌨ 비 인증 결제(일회성) API](api/rest-api-access-token/api/api-1.md)
     * [⌨ 빌링키 발급 API](api/rest-api-access-token/api/api-1-1.md)
+  * [🧭 정기결제 관련 API](api/rest-api-access-token/api-1/README.md)
+    * [⌨ 결제 예약(Schedule) API](api/rest-api-access-token/api-1/schedule-api.md)
 
 ## SDK
 
