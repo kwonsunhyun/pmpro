@@ -317,3 +317,11 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 >
 > * 나이스페이먼츠, JTNet 2가지 PG설정이 되어있다면, pg 파라메터로 **nice** 또는 **jtnet**로 구분 가능
 > * 나이스페이먼츠로부터 2개 이상의 상점아이디를 발급받았다면, **nice.MID1** 또는 **nice.MID2**로 구분 가능
+
+{% hint style="info" %}
+schedules의 상세정보
+
+**buyer\_name, buyer\_email, buyer\_tel, buyer\_addr, buyer\_postcode** 누락시&#x20;
+
+<mark style="color:red;">**customer\_uid**</mark> 에 해당되는 **customer\_name, customer\_email, customer\_tel, customer\_addr, customer\_postcode** 정보로 대체됩니다.
+{% endhint %}
