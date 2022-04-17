@@ -225,7 +225,7 @@ class RequestPay extends React.Component {
 iframe 요소를 이용하면 해당 웹 페이지 안에 어떠한 제한 없이 **다른 페이지를 불러와서 삽입** 할 수 있습니다.
 {% endhint %}
 
-![iframe 예시](<../../.gitbook/assets/image (18) (1).png>)
+![iframe 예시](<../../.gitbook/assets/image (18) (1) (1).png>)
 
 #### **PC 환경**에서 일어나는 대부분의 결제는 **request\_pay**() 함수 두번째 인자인 **callback** 함수를 통해 결제 결과 수신이 가능합니다.
 
