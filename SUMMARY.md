@@ -31,8 +31,7 @@
     * [🛡 PG결제창 이용하기](undefined-1/undefined-1/undefined/pg.md)
   * [💳 카드정보를 이용한 키인결제](undefined-1/undefined-1/page-1.md)
   * [🪧 빌링키를 이용한 정기결제](undefined-1/undefined-1/undefined-1.md)
-* [💸 결제취소(환불) 연동하기](undefined-1/undefined-2/README.md)
-  * [Page 2](undefined-1/undefined-2/page-2.md)
+* [💸 결제취소(환불) 연동하기](undefined-1/undefined-2.md)
 
 ## 결제결과  연동하기
 
@@ -66,6 +65,7 @@
     * [⌨ 빌링키 발급 API](api/rest-api-access-token/api/api-1-1.md)
   * [🧭 정기결제 관련 API](api/rest-api-access-token/api-1/README.md)
     * [⌨ 결제 예약(Schedule) API](api/rest-api-access-token/api-1/schedule-api.md)
+  * [❌ 결제취소 API](api/rest-api-access-token/api-2.md)
 
 ## SDK
 
