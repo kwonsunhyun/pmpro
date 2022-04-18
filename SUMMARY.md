@@ -69,7 +69,7 @@
 
 ## SDK
 
-* [📚 Javascript SDK](sdk/javascript-sdk/README.md)
+* [📚 Javascript SDK](sdk/javascript-sdk/README.md)
   * [⌨ 결제요청 파라미터](sdk/javascript-sdk/undefined.md)
   * [⌨ 결제응답 파라미터](sdk/javascript-sdk/undefined-1.md)
   * [✏ SDK Release Note](sdk/javascript-sdk/sdk-release-note.md)
