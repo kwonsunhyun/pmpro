@@ -170,7 +170,7 @@ curl -H "Content-Type: application/json" \
 {% code title="javascript" %}
 ```javascript
 display: {
-    card_quota: "[6]"  // 할부개월 6개월까지만 활성화
+    card_quota: [6]  // 할부개월 6개월까지만 활성화
 }
 ```
 {% endcode %}
