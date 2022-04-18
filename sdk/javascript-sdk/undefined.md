@@ -242,7 +242,7 @@ description: 결제요청 파라미터를 확인 할 수 있습니다.
 {% code title="javascript" %}
 ```javascript
 display: {
-    card_quota: "[6]"  // 할부개월 6개월까지만 활성화
+    card_quota: [6]  // 할부개월 6개월까지만 활성화
 }
 ```
 {% endcode %}
