@@ -51,6 +51,7 @@
 * [✅ 오픈 전 체크사항](tip/undefined-1.md)
 * [📞 Confirm Process](tip/confirm-process.md)
 * [🎼 아임포트 결제 FLOW](tip/flow.md)
+* [🏦 PG사별 은행코드표](tip/pg.md)
 
 ## 관리자 콘솔 사용하기
 
