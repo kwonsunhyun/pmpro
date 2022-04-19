@@ -215,3 +215,94 @@ class CancelPay extends React.Component {
   })
 ```
 {% endcode %}
+
+### <mark style="color:blue;">**STEP 04.**</mark> 환불 결과 저장하기
+
+#### 결제 취소가 완료되면 그 결과를 데이터베이스에 다음과 같이 저장합니다.
+
+{% code title="Node.js" %}
+```javascript
+/* ... 중략 ... */
+  app.post('/payments/cancel', async (req, res, next) => {
+    try {
+      /* 액세스 토큰(access token) 발급 */
+      /* ... 중략 ... */
+      /* 결제정보 조회 */
+      Payments.find({ merchant_uid }, async function(err, payment) { 
+        /* ... 중략 ... */
+        /* 아임포트 REST API로 결제환불 요청 */
+        /* ... 중략 ... */
+        const { response } = getCancelData.data; // 환불 결과
+        /* 환불 결과 동기화 */
+        const { merchant_uid } = response; // 환불 결과에서 주문정보 추출
+        Payments.findOneAndUpdate({ merchant_uid }, response, { new: true }, function(err, payment) { // 주문정보가 일치하는 결제정보를 추출해 동기화
+          if (err) {
+            return res.json(err);
+          }
+          res.json(payment); // 가맹점 클라이언트로 환불 결과 반환
+        });
+      });
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  });
+
+```
+{% endcode %}
+
+{% hint style="warning" %}
+**취소 시 유의할 점**
+
+REST API[**(POST https://api.iamport.kr/payments/cancel)**](../api/rest-api-access-token/api-2.md) 요청에 대한 **응답 코드가 200**이라도 응답 body의 code가 0이 아니면 **환불에 실패했다는 의미**입니다. 실패 사유는 body의 message를 통해 확인하셔야 합니다.
+{% endhint %}
+
+### <mark style="color:blue;">**STEP 04.**</mark> 환불 응답 처리하기
+
+취소요청에 대한 응답을 클라이언트에게 처리하는 로직을 아래와 같이 작성합니다.
+
+{% tabs %}
+{% tab title="HTML" %}
+{% code title="client-side" %}
+```html
+<button onclick="cancelPay()">환불하기</button>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script><!-- jQuery CDN --->
+<script>
+  function cancelPay() {
+    jQuery.ajax({
+      /* ... 중략 ... */
+    }).done(function(result) { // 환불 성공시 로직 
+      alert("환불 성공");
+    }).fail(function(error) { // 환불 실패시 로직
+      alert("환불 실패");
+    });
+  }
+</script>
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="React.js" %}
+{% code title="client-side" %}
+```jsx
+class CancelPay extends React.Component {
+  cancelPay = () => {
+    axios({
+      /* ... 중략 ... */
+    }).then(response => { // 환불 성공시 로직 
+      alert("환불 성공");
+    }).catch(error => { // 환불 실패시 로직 
+      alert("환불 실패");
+    });
+  }
+  ...
+  render() {
+    return <button onClick={this.cancelPay}>환불하기</button>;
+  }
+}
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
