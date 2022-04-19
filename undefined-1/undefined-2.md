@@ -135,3 +135,83 @@ class CancelPay extends React.Component {
 ### <mark style="color:blue;">**STEP 03.**</mark> **차이포트 서버에 취소 요청하기**
 
 취소 요청을 하기 위해서 먼저 [<mark style="color:blue;">**REST API access token**</mark>](../api/rest-api-access-token/) **** 을 발급받습니다. 발급받은 액세스 토큰(**`access token`**)을 이용하여 [<mark style="color:blue;">**차이포트 취소 API**</mark>](../api/rest-api-access-token/api-2.md) <mark style="color:blue;">****</mark> 를 호출하여 결제 취소를 요청합니다.
+
+{% hint style="info" %}
+**휴대폰 소액결제 환불 시 유의사항**
+
+* **결제가 이루어진 월과 환불을 요청하는 월이 다를 경우, 전액환불도 불가능**합니다. 예를 들어, 1월 31일 결제건은 2월 1일에 환불할 수 없습니다.
+{% endhint %}
+
+#### 아래는 환불요청 시 유의해야 하는 파라미터들입니다.
+
+> **환불 `unique key`**
+>
+> 환불 대상 거래를 특정하기 위해서 `imp_uid` 또는 `merchant_uid`를 환불 `unique key`로 설정합니다. `imp_uid`의 값이 우선순위를 갖게되며 유효하지 않는 `imp_uid`값을 입력하면 `merchant_uid`값과 무관하게 환불요청이 실패합니다.
+
+> **환불 금액**(`amount`)
+>
+> **미입력시 전액이 환불**됩니다.
+
+> **환불 가능 금액**(`checksum`)
+>
+> 환불이 가능한 금액을 입력합니다. 예를 들어, 10**,**000원짜리 제품의 `checksum`은 10,000입니다. 만약 10,000원짜리 제품이 과거 1,000원 부분환불 되었다면, 이후 환불시 `checksum`은 9,000입니다.입력된 `checksum`을 사용해서 서버와 아임포트 서버간에 환불 가능 금액이 일치하는지 확인합니다. 만약 일치하지 않으면 환불 요청은 실패하며 미 입력시 검증은 실행되지 않습니다.
+
+{% hint style="warning" %}
+**checksum을 입력해야 하는 이유**
+
+`checksum`은 필수입력은 아니지만 **서버와 아임포트 서버간에 환불 가능 금액을 검증하기** 위해서 입력을 권장합니다.&#x20;
+
+예를 들어, 10**,**000원짜리 제품에 대한 1,000원 부분환불 요청이 아임포트 서버에서 완료하였으나 가맹점이 서버 혹은 DB오류로 이를 반영하지 못했다면? 아임포트 서버의 checksum은 9,000이 되고, 가맹점 서버의 checksum은 그대로 10,000이 됩니다.&#x20;
+
+이후 남은 금액을 환불하려고 할때 `checksum(10,000)`을 입력하면, 해당 값이 아임포트 서버의 `checksum(9,000)`과 일치하지 않으므로 요청은 실패합니다.
+{% endhint %}
+
+#### 아래는 환불 요청을 하는 예제입니다.
+
+{% code title="Node.js" %}
+```javascript
+/* ... 중략 ... */
+  app.post('/payments/cancel', async (req, res, next) => {
+    try {
+      /* 액세스 토큰(access token) 발급 */
+      /* ... 중략 ... */
+      /* 결제정보 조회 */
+      const { body } = req;
+      // 클라이언트로부터 전달받은 주문번호, 환불사유, 환불금액
+      const { merchant_uid, reason, cancel_request_amount } = body; 
+      Payments.find({ merchant_uid }, async function(err, payment) { 
+        /* ... 중략 ... */
+        const paymentData = payment[0]; // 조회된 결제정보
+        // 조회한 결제정보로부터 imp_uid, amount(결제금액), cancel_amount(환불된 총 금액) 추출
+        const { imp_uid, amount, cancel_amount } = paymentData;
+        // 환불 가능 금액(= 결제금액 - 환불 된 총 금액) 계산 
+        const cancelableAmount = amount - cancel_amount; 
+        if (cancelableAmount <= 0) { // 이미 전액 환불된 경우
+          return res.status(400).json({ message: "이미 전액환불된 주문입니다." });
+        }
+        ...
+        /* 아임포트 REST API로 결제환불 요청 */
+        const getCancelData = await axios({
+          url: "https://api.iamport.kr/payments/cancel",
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": access_token // 아임포트 서버로부터 발급받은 엑세스 토큰
+          },
+          data: {
+            reason, // 가맹점 클라이언트로부터 받은 환불사유
+            imp_uid, // imp_uid를 환불 `unique key`로 입력
+            amount: cancel_request_amount, // 가맹점 클라이언트로부터 받은 환불금액
+            checksum: cancelableAmount // [권장] 환불 가능 금액 입력
+          }
+        });
+        const { response } = getCancelData.data; // 환불 결과
+        /* 환불 결과 동기화 */
+        ...
+      });
+    } catch (error) {
+      res.status(400).send(error);
+    }
+  })
+```
+{% endcode %}
