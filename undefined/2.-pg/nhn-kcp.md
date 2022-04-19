@@ -8,13 +8,13 @@ description: NHN KCP 설정방법을 안내합니다.
 
 1. KCP 테스트 모드의 경우 결제시 실제 출금이 이루어지지 않습니다.
 
-&#x20; 2\. KCP의 허브형인 카카오페이, 네이버페이는 테스트 모드를 지원하지 않습니다. (KCP와 계약 후 서비스 이용가능)
+2\. KCP의 허브형인 카카오페이, 네이버페이는 테스트 모드를 지원하지 않습니다. (KCP와 계약 후 서비스 이용가능)
 
 ### 설정 방법
 
 #### 1. 아임포트 관리자콘솔에서 회원가입
 
-&#x20; [https://admin.iamport.kr](https://admin.iamport.kr) 이메일 계정으로 회원가입 진행
+[https://admin.iamport.kr](https://admin.iamport.kr) 이메일 계정으로 회원가입 진행
 
 #### 2. 테스트 모드 설정
 
@@ -30,4 +30,4 @@ description: NHN KCP 설정방법을 안내합니다.
 
 KCP 계약이후 발급받은 사이트코드와 사이트키를 테스트모드 OFF버튼으로 입력창을 활성화 한후 올바르게 기입후 저장합니다.
 
-![](<../../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (9) (1).png>)

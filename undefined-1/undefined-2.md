@@ -134,7 +134,7 @@ class CancelPay extends React.Component {
 
 ### <mark style="color:blue;">**STEP 03.**</mark> **차이포트 서버에 취소 요청하기**
 
-취소 요청을 하기 위해서 먼저 [<mark style="color:blue;">**REST API access token**</mark>](../../api/rest-api-access-token/) **** 을 발급받습니다. 발급받은 액세스 토큰(**`access token`**)을 이용하여 [<mark style="color:blue;">**차이포트 취소 API**</mark>](../../api/rest-api-access-token/api-2.md) <mark style="color:blue;">****</mark> 를 호출하여 결제 취소를 요청합니다.
+취소 요청을 하기 위해서 먼저 [<mark style="color:blue;">**REST API access token**</mark>](../api/rest-api-access-token/) **** 을 발급받습니다. 발급받은 액세스 토큰(**`access token`**)을 이용하여 [<mark style="color:blue;">**차이포트 취소 API**</mark>](../api/rest-api-access-token/api-2.md) <mark style="color:blue;">****</mark> 를 호출하여 결제 취소를 요청합니다.
 
 {% hint style="info" %}
 **휴대폰 소액결제 환불 시 유의사항**
