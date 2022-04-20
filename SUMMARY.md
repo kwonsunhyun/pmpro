@@ -52,6 +52,7 @@
 * [📞 Confirm Process](tip/confirm-process.md)
 * [🎼 아임포트 결제 FLOW](tip/flow.md)
 * [🏦 PG사별 은행코드표](tip/pg.md)
+* [🧾 PG사 코드표](tip/pg-1.md)
 
 ## 관리자 콘솔 사용하기
 
