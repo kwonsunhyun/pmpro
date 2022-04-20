@@ -221,7 +221,7 @@ pg사 구분코드
 
 **응답**(**shortenedUrl**) **URL 마지막 String 을 결제 URI API 주소 뒤에 삽입하여 호출**
 
-> **HTTP Method : PUT**
+> **HTTP Method : **<mark style="color:red;">**PUT**</mark>
 
 {% hint style="success" %}
 **API 응답이 아래와 같은경우**
