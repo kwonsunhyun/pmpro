@@ -39,11 +39,10 @@ description: 결제요청 파라미터를 확인 할 수 있습니다.
 * `smilepay`(스마일페이)
 * `alipay`(알리페이)
 * `paymentwall`(페이먼트월)
-* `payple`(페이플)
 * `eximbay`(엑심베이)
 * `tosspay`(토스간편결제)
 * `smartro`(스마트로)
-* `settle`(세틀뱅크
+* `settle`(세틀뱅크)
 
 </details>
 
