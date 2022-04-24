@@ -41,9 +41,11 @@
 ## 기타 서비스 연동하기
 
 * [💻 결제 URL 생성하기](undefined-3/url.md)
-* [📱 휴대폰 본인인증 연동하기](undefined-3/undefined/README.md)
+* [📱 휴대폰 본인인증 연동하기](undefined-3/undefined.md)
   * [📔 1. 본인인증 준비하기](undefined-3/undefined/1..md)
   * [🥏 2. 본인인증창 호출하기](undefined-3/undefined/2..md)
+  * [🚚 3. 인증 완료정보 전달하기](undefined-3/undefined/3..md)
+  * [🤹 4. 인증정보 조회 및 활용하기](undefined-3/undefined/4..md)
 * [🚚 통합인증 연동하기](undefined-3/undefined-1.md)
 * [💳 신용카드 본인인증 연동하기](undefined-3/undefined-2.md)
 

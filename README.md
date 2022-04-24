@@ -38,8 +38,8 @@ description: 차이포트 결제 연동 매뉴얼에 오신것을 환영합니�
 
 해당 가이드를 통해 부가적인 서비스연동을 손쉽게 처리할 수 있습니다.
 
-{% content-ref url="undefined-3/undefined/" %}
-[undefined](undefined-3/undefined/)
+{% content-ref url="undefined-3/undefined.md" %}
+[undefined.md](undefined-3/undefined.md)
 {% endcontent-ref %}
 
 {% content-ref url="undefined-3/undefined-1.md" %}
