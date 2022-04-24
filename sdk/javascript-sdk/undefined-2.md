@@ -2,7 +2,7 @@
 description: 본인인증 요청에 필요한 파라미터 정보를 확인합니다.
 ---
 
-# ⌨ 본인인증 요청 파라미터
+# 💿 본인인증 요청 파라미터
 
 ### certification(param, callback) <a href="#certification" id="certification"></a>
 

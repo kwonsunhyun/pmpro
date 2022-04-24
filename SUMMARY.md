@@ -77,9 +77,10 @@
 ## SDK
 
 * [📚 Javascript SDK](sdk/javascript-sdk/README.md)
-  * [⌨ 결제요청 파라미터](sdk/javascript-sdk/undefined.md)
-  * [⌨ 결제응답 파라미터](sdk/javascript-sdk/undefined-1.md)
-  * [⌨ 본인인증 요청 파라미터](sdk/javascript-sdk/undefined-2.md)
+  * [💿 결제요청 파라미터](sdk/javascript-sdk/undefined.md)
+  * [📀 결제응답 파라미터](sdk/javascript-sdk/undefined-1.md)
+  * [💿 본인인증 요청 파라미터](sdk/javascript-sdk/undefined-2.md)
+  * [📀 본인인증 결과 파라미터](sdk/javascript-sdk/undefined-3.md)
   * [✏ SDK Release Note](sdk/javascript-sdk/sdk-release-note.md)
 
 ## FAQ
