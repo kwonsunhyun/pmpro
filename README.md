@@ -86,8 +86,8 @@ description: 차이포트 결제 연동 매뉴얼에 오신것을 환영합니�
 
 ### API
 
-{% content-ref url="api/rest-api-access-token/" %}
-[rest-api-access-token](api/rest-api-access-token/)
+{% content-ref url="api/rest-api-access-token.md" %}
+[rest-api-access-token.md](api/rest-api-access-token.md)
 {% endcontent-ref %}
 
 ### SDK

@@ -65,14 +65,16 @@
 
 ## API
 
-* [🖇 REST API Access Token](api/rest-api-access-token/README.md)
-  * [🪂 비 인증 결제관련 API](api/rest-api-access-token/api/README.md)
-    * [⌨ 비 인증 결제(빌링키) API](api/rest-api-access-token/api/api.md)
-    * [⌨ 비 인증 결제(일회성) API](api/rest-api-access-token/api/api-1.md)
-    * [⌨ 빌링키 발급 API](api/rest-api-access-token/api/api-1-1.md)
-  * [🧭 정기결제 관련 API](api/rest-api-access-token/api-1/README.md)
-    * [⌨ 결제 예약(Schedule) API](api/rest-api-access-token/api-1/schedule-api.md)
-  * [❌ 결제취소 API](api/rest-api-access-token/api-2.md)
+* [🖇 REST API Access Token](api/rest-api-access-token.md)
+* [🧭 정기결제 관련 API](api/api/README.md)
+  * [⌨ 결제 예약(Schedule) API](api/api/schedule-api.md)
+* [🪂 비 인증 결제관련 API](api/api-1/README.md)
+  * [⌨ 비 인증 결제(빌링키) API](api/api-1/api.md)
+  * [⌨ 비 인증 결제(일회성) API](api/api-1/api-1.md)
+  * [⌨ 빌링키 발급 API](api/api-1/api-1-1.md)
+* [❌ 결제취소 API](api/api-2.md)
+* [👮♂ 본인인증 관련 API](api/api-3/README.md)
+  * [⌨ 본인인증 결과조회 API](api/api-3/api.md)
 
 ## SDK
 
