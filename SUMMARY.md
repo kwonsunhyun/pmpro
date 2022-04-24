@@ -41,7 +41,9 @@
 ## 기타 서비스 연동하기
 
 * [💻 결제 URL 생성하기](undefined-3/url.md)
-* [📳 휴대폰 본인인증 연동하기](undefined-3/undefined.md)
+* [📱 휴대폰 본인인증 연동하기](undefined-3/undefined/README.md)
+  * [📔 1. 본인인증 준비하기](undefined-3/undefined/1..md)
+  * [🥏 2. 본인인증창 호출하기](undefined-3/undefined/2..md)
 * [🚚 통합인증 연동하기](undefined-3/undefined-1.md)
 * [💳 신용카드 본인인증 연동하기](undefined-3/undefined-2.md)
 
@@ -49,7 +51,7 @@
 
 * [🌽 결제금액 면세 적용방법](tip/undefined.md)
 * [✅ 오픈 전 체크사항](tip/undefined-1.md)
-* [📞 Confirm Process](tip/confirm-process.md)
+* [🔏 Confirm Process](tip/confirm-process.md)
 * [🎼 아임포트 결제 FLOW](tip/flow.md)
 * [🏦 PG사별 은행코드표](tip/pg.md)
 * [🧾 PG사 코드표](tip/pg-1.md)
