@@ -40,11 +40,107 @@ description: 본인인증 결과를 조회합니다.
 
 ****
 
-**`pg_provider`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">****</mark>  <mark style="color:green;"></mark><mark style="color:green;">string</mark>&#x20;
+**`pg_provider`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>&#x20;
 
 **`본인인증 제공 PG사 명칭`**
 
+
+
+**`name`      **<mark style="color:green;">**string**</mark>** **&#x20;
+
+**`실명` **&#x20;
+
 &#x20;
+
+**`gender`**  <mark style="color:green;">**string**</mark>
+
+**`성별` **<mark style="color:green;">****</mark>&#x20;
+
+* male:남성
+* female:여성
+
+
+
+**`birthday`   **<mark style="color:green;">**string**</mark>
+
+**`생년월일` **<mark style="color:green;">****</mark>&#x20;
+
+ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리 문자열
+
+
+
+**`foreigner`  **<mark style="color:green;">****</mark>**  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">****</mark>**  **<mark style="color:orange;">**boolean**</mark>
+
+**`외국인여부`**
+
+<mark style="color:red;">다날 본인인증서비스 계약시</mark> 외국인 구분기능 추가 요청을 해주셔야 사용이 가능합니다
+
+* true <mark style="color:orange;">****</mark> : 외국인
+* false : 내국인
+
+<mark style="color:green;">****</mark>
+
+&#x20;**`phone`    **<mark style="color:green;">**string**</mark>
+
+**`휴대폰번호` **<mark style="color:green;">****</mark>&#x20;
+
+특수기호없이 숫자로만 구성된 휴대폰번호가 전달. 통신사 사전승인이 이뤄지지 않으면 phone 속성은 존재하지 않습니다. 통신사 사전승인이 필요하므로 **cs@iamport.kr **<mark style="color:green;">****</mark> 로 다날 CPID 와 함께 사용승인 요청이 필요합니다.&#x20;
+
+
+
+**`carrier`**  <mark style="color:green;">**string**</mark>
+
+**`휴대폰번호의 통신사` **<mark style="color:green;">****</mark>&#x20;
+
+통신사 사전승인이 필요하므로 **cs@iamport.kr **<mark style="color:green;">****</mark> 로 다날 CPID 와 함께 사용승인 요청이 필요합니다.&#x20;
+
+* SKT
+* KT
+* LGT
+* SKT\_MVNO
+* KT\_MVNO
+* LGT\_MVNO
+
+
+
+**`certified`   **<mark style="color:green;">****</mark>**   **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">****</mark>**  **<mark style="color:orange;">**boolean**</mark>
+
+**`인증성공여부`**
+
+**``**
+
+**`certified_at`**  <mark style="color:red;">****</mark>**  **<mark style="color:green;">**string**</mark>
+
+**`인증처리시각` ** (UNIX timestamp) <mark style="color:green;">****</mark>&#x20;
+
+<mark style="color:green;">****</mark>
+
+**`unique_key`  **<mark style="color:green;">**string**</mark>
+
+**개인 고유구분 식별키 **<mark style="color:green;">****</mark>** (`CI`)**
+
+****
+
+**`unique_in_site` **<mark style="color:green;">****</mark>**     **<mark style="color:green;">**string**</mark>
+
+**가맹점 내 개인 고유구분 식별키 (`DI`)**
+
+****
+
+**`origin`    **<mark style="color:green;">**string**</mark>
+
+**본인인증 프로세스가 진행된 웹 페이지의 `URL` **&#x20;
+
+****
+
+**`foreigner_v2`      **<mark style="color:orange;">**boolean**</mark>
+
+**`외국인 여부(nullable)`**
+
+* true **** : 외국인
+* false : 내국인
+
+다날 본인인증서비스 계약시 외국인 구분기능 추가 요청필요
 {% endtab %}
 
 {% tab title="Model Schema" %}
