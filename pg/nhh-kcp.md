@@ -6,7 +6,7 @@ description: NHN KCP 결제창 연동 가이드입니다.
 
 ### 1. PG 설정하기
 
-[NHN KCP 일반결제 테스트 모드 설정](../undefined/2.-pg/nhn-kcp.md) 페이지의 내용을 참고하여 PG 설정을 합니다.
+[NHN KCP 일반결제 테스트 모드 설정](../undefined/2.-pg/pg/nhn-kcp.md) 페이지의 내용을 참고하여 PG 설정을 합니다.
 
 ### 2.결제창 요청하기
 
