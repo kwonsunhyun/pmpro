@@ -46,8 +46,8 @@ description: 차이포트 결제 연동 매뉴얼에 오신것을 환영합니�
 [undefined-1.md](undefined-3/undefined-1.md)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-3/undefined-2.md" %}
-[undefined-2.md](undefined-3/undefined-2.md)
+{% content-ref url="undefined-3/undefined-2/" %}
+[undefined-2](undefined-3/undefined-2/)
 {% endcontent-ref %}
 
 ### TIP
