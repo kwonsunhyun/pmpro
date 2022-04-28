@@ -57,6 +57,16 @@ description: 예약된 결제내역을 조회할 수 있는 API 입니다.
 최대 1000건 기본값 20건
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="sorting" type="String" %}
+**정렬방식**
+
+Default : 예약일자 최신
+
+scheduled : 예약일자 과거순
+
+
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
 {% tab title="Model" %}
