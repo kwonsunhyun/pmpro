@@ -15,8 +15,40 @@ description: 예약된 결제내역을 조회할 수 있는 API 입니다.
  파라메터를 지정하시면 됩니다.
 {% endswagger-description %}
 
-{% swagger-parameter in="body" %}
+{% swagger-parameter in="query" name="schedule_from" type="integer" required="true" %}
+<mark style="color:red;">
 
+**조회 시작시각**
+
+</mark>
+
+ (unix timestamp)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" required="true" name="schedule_to" type="integer" %}
+<mark style="color:red;">
+
+**조회 종료시각**
+
+</mark>
+
+ (unix timestamp)
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="schedule_status" type="String" %}
+예약상태
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="page" type="integer" %}
+조회목록 페이징
+
+1부터 시작하며 기본값은 1입니다.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="limit" type="integer" %}
+페이지당 조회건수
+
+최대 1000건 기본값 20건
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
