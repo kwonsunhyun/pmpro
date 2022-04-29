@@ -76,6 +76,7 @@
   * [⌨ 결제 예약취소 API](api/api/api-1.md)
   * [⌨ 결제예약 복수조회 API](api/api/api-2.md)
   * [⌨ 결제예약 단건조회 API](api/api/api-3.md)
+  * [⌨ 결제예약 복수조회(빌키) API](api/api/api-4.md)
 * [🪂 비 인증 결제관련 API](api/api-1/README.md)
   * [⌨ 비 인증 결제(빌링키) API](api/api-1/api.md)
   * [⌨ 비 인증 결제(일회성) API](api/api-1/api-1.md)
