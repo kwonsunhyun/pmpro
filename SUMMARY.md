@@ -84,6 +84,8 @@
 * [❌ 결제취소 API](api/api-2.md)
 * [👮♂ 본인인증 관련 API](api/api-3/README.md)
   * [⌨ 본인인증 결과조회 API](api/api-3/api.md)
+* [📝 빌링키 관리 API](api/api-4/README.md)
+  * [⌨ 빌링정보 복수조회 API](api/api-4/api.md)
 
 ## SDK
 
