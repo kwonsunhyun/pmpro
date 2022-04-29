@@ -2,9 +2,11 @@
 description: 원하는 시점에 결제를 예약하고 결제 결과를 Webhook으로 받을 수 있는 API입니다.
 ---
 
-# ⌨ 결제 예약(Schedule) API
+# ⌨ 결제 예약 API
 
-#### customer\_uid 를 이용하여 비 인증 결제 요청을 예약할수 있는 API 입니다. 결제 요청에 대한 결과는 **notice\_url** 에 설정한 EndPoint URL 로 웹훅을 통해 결제 결과를 수신(POST request)받을 수 있습니다.
+### customer\_uid 를 이용하여 비 인증 결제 요청을 예약할수 있는 API 입니다.&#x20;
+
+#### 결제 요청에 대한 결과는 **notice\_url** 에 설정한 EndPoint URL 로 웹훅을 통해 결제 결과를 수신(POST request)받을 수 있습니다.
 
 {% swagger method="post" path="/subscribe/payments/schedule" baseUrl="https://api.iamport.kr" summary="결제 예약(Schedule) API" %}
 {% swagger-description %}
@@ -66,8 +68,6 @@ pg 구분코드
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="결제예약 성공" %}
-
-
 {% tabs %}
 {% tab title="Model" %}
 **`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
@@ -190,7 +190,7 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**fail\_reason  **<mark style="color:green;">**string**</mark>
+**`fail_reason`    **<mark style="color:green;">**string**</mark>
 
 **실패사유 **<mark style="color:green;">****</mark>&#x20;
 {% endtab %}

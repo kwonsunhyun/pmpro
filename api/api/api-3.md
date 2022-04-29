@@ -144,7 +144,7 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**fail\_reason  **<mark style="color:green;">**string**</mark>
+**`fail_reason`    **<mark style="color:green;">**string**</mark>
 
 **실패사유 **<mark style="color:green;">****</mark>&#x20;
 {% endtab %}
