@@ -96,7 +96,7 @@ PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고�
 
 ### <mark style="color:blue;">**STEP 03.**</mark> 결제 요청하기
 
-위에서 저장된 **customer\_uid** 를 이용하여 차이포트 [**비 인증 결제(빌링키)API**](../../../api/api-1/api.md)를 호출하여 결제를 요청합니다.
+위에서 저장된 **customer\_uid** 를 이용하여 차이포트 [**비 인증 결제(빌링키)API**](../../../api/api-2/api.md)를 호출하여 결제를 요청합니다.
 
 {% hint style="success" %}
 **REST API 를 이용하기 위해서는** [**Access Token**](../../../api/rest-api-access-token.md) **획득이 선행되어야 하는점 잊지 마세요**
