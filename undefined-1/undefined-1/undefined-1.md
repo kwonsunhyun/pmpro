@@ -4,7 +4,7 @@ description: customer_uid 로 정기(예약)결제 구현방법을 안내합니�
 
 # 🪧 빌링키를 이용한 정기결제
 
-#### [빌링키 발급](../../api/api/api-1.md) 또는 [비 인증 결제(일회성)](../../api/api-1/api-1.md) API를 이용하여 customer\_uid 를 획득했다면 원하는 형태의 정기 또는 예약결제를 이용할 수 있습니다.
+#### [빌링키 발급](../../api/api-1/api-1-1.md) 또는 [비 인증 결제(일회성)](../../api/api-1/api-1.md) API를 이용하여 customer\_uid 를 획득했다면 원하는 형태의 정기 또는 예약결제를 이용할 수 있습니다.
 
 ### <mark style="color:blue;">**STEP 01.**</mark> 결제 예약하기
 

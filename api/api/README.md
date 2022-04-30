@@ -8,8 +8,8 @@ description: 정기결제를 구현하기 위한 API 목록을 확인할 수 있
 [schedule-api.md](schedule-api.md)
 {% endcontent-ref %}
 
-{% content-ref url="api-1 (1).md" %}
-[api-1 (1).md](<api-1 (1).md>)
+{% content-ref url="api-1.md" %}
+[api-1.md](api-1.md)
 {% endcontent-ref %}
 
 {% content-ref url="api-2 (1).md" %}
