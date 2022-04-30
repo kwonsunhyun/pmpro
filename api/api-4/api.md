@@ -1,503 +1,159 @@
 ---
-description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청할 수 있는 API 명세를 기술합니다.
+description: 복수개의 빌링키를 이용하여 빌링키 정보를 조회할수 있습니다.
 ---
 
-# ⌨ 비 인증 결제(빌링키) API
+# ⌨ 빌링키 정보 복수조회 API
 
-### 저장된 빌링키(customer\_uid)로 결제를 요청 할수 있습니다.
+### 복수개의 빌링키 정보를 입력하여 각각의 빌링키 정보를 조회할 수 있습니다.
 
-{% swagger method="post" path="/subscribe/payments/again" baseUrl="https://api.iamport.kr" summary="customer_uid 로 결제를 요청합니다." %}
+{% swagger method="get" path="/subscribe/customers" baseUrl="https://api.iamport.kr" summary="빌링정보 복수조회 API" %}
 {% swagger-description %}
-빌링키 발급 API 또는 PG사 빌링키 발급 결제창에서 설정한 
+등록된 카드마다 1개의 
 
 **customer_uid**
 
- 로 비 인증 결제를 요청할 수 있습니다.
+가 매핑되므로 가맹점 시스템 내에 1명의 고객이 여러 장의 카드를 등록할 수 있는 경우 여러 개의 customer_uid를 가지게 됩니다. 해당 고객이 등록한 카드정보 목록을 한 번에 조회하는데 사용하면 편리합니다.
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="customer_uid" type="String" required="true" %}
+{% swagger-parameter in="query" name="customer_uid[]" type="Array" required="true" %}
 <mark style="color:red;">
 
-**빌링키**
+**빌키**
 
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
-<mark style="color:red;">
-
-**주문번호**
-
-</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="currency" type="String" required="false" %}
-**결제 통화코드**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="amount" type="integer" required="true" %}
-<mark style="color:red;">
-
-**결제금액**
-
-</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="tax_free" type="integer" required="false" %}
-**면세금액**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="name" type="String" required="true" %}
-<mark style="color:red;">
-
-**제품명**
-
-</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_name" type="String" required="false" %}
-**주문자명**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_email" type="String" required="false" %}
-**주문자 E-mail 주소**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_tel" type="String" required="false" %}
-**주문자 전화번호**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_addr" type="String" required="false" %}
-**주문자 주소**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_postcode" type="String" required="false" %}
-**주문자 우편번호**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="card_quota" type="integer" required="false" %}
-**카드 할부개월수**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="interest_free_by_merchant" type="boolean" required="false" %}
-**가맹점부담 무이자 할부여부**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="use_card_point" type="boolean" required="false" %}
-**카드포인트 사용여부**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="custom_data" type="String" required="false" %}
-**에코항목**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="notice_url" type="String" required="false" %}
-**결제성공 시 통지될 웹훅 URL**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="browser_ip" type="String" required="false" %}
-**구매자 브라우저(PC)의 IP**
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="결제성공" %}
+{% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
 {% tab title="Model" %}
-**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+**`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**`integer`**</mark><mark style="color:purple;">** **</mark><mark style="color:purple;">****</mark>&#x20;
 
-**응답코드**
+**`응답코드`**
 
 0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
 
 
 
-**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>** **&#x20;
 
-**응답메세지**
+**`응답메세지`**
 
-code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
 
 
 
-**`imp_uid`** <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>
+**`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**`string`**</mark>
 
-**아임포트 결제 고유 UID**
-
-****
-
-**`merchant_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**주문번호**
+**`빌링키`**
 
 ****
 
-**`pay_method`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**`string`**</mark>
 
-**결제수단 구분코드**
+**`PG사 구분코드` **<mark style="color:purple;">****</mark>&#x20;
 
-****
+<mark style="color:purple;">****</mark>
 
-**`channel`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`pg_id`` `**<mark style="color:red;">**`*`**</mark>**` `**<mark style="color:green;">**`string`**</mark><mark style="color:green;">** **</mark><mark style="color:green;">****</mark>&#x20;
 
-**결제환경 구분코드**
+**`PG사 MID`**
 
-* pc **:** (인증방식)PC결제
-* mobile:(인증방식)모바일결제
-* api:정기결제 또는 비인증 결제
+**``**
 
+**`card_name`**<mark style="color:green;">**`string`**</mark>** **&#x20;
 
-
-**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**PG사 구분코드**
-
-***
-
-**`emb_pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**허브형결제 PG사 구분코드**
-
-
-
-**`pg_tid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
-
-**pg사 거래번호**
+**`카드사명`**&#x20;
 
 ****
 
-**`pg_id`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`card_code`**<mark style="color:green;">**`string`**</mark>
 
-**PG사 MID**
+**`카드사 코드번호`**
 
-****
+(금융결제원 표준코드번호 **:** [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) )
 
-**`escrow`  ** <mark style="color:orange;">**boolean**</mark>
 
-**에스크로 결제여부**
 
-****
+**`card_number`**<mark style="color:green;">**`string`**</mark>
 
-**`apply_num`**  ** **<mark style="color:green;">**string**</mark>
-
-**신용카드 승인번호**
+**`마스킹 카드번호`**
 
 ****
 
-**`bank_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
+**`card_type`**  <mark style="color:green;">**`string`**</mark>** **&#x20;
 
-**은행 표준코드(링크보기)**
-
-****
-
-**`bank_name`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
-
-**은행 명칭**
-
-***
-
-**`card_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
-
-**카드사 코드번호(금융결제원 표준코드번호 :** [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) )
-
-
-
-**`card_name`**  <mark style="color:green;">**string**</mark>
-
-**카드사명**
-
-****
-
-**`card_quota`** ** **<mark style="color:purple;">**integer**</mark>
-
-**할부개월 수(0이면 일시불)**
-
-****
-
-**`card_number`** <mark style="color:green;">**string**</mark>
-
-**마스킹 카드번호**
-
-***
-
-**`card_type`**  <mark style="color:green;">**string**</mark>
-
-**카드 구분코드**
+**`카드 구분코드`**
 
 * 0 : 신용카드
 * 1 : 체크카드
 
 
 
-**`vbank_code`** ** **<mark style="color:green;">**string**</mark>
+**`customer_name`    **<mark style="color:green;">**`string`**</mark><mark style="color:green;">**  **</mark><mark style="color:green;">****</mark> &#x20;
 
-**가상계좌 은행 표준코드(하단이미지 참고)**
-
-***
-
-**`vbank_name`** ** **<mark style="color:green;">**string**</mark>** **&#x20;
-
-**입금받을 가상계좌 은행명**
+**`고객(카드소지자) 관리용 성함`**
 
 ****
 
-**`vbank_holder`**  <mark style="color:green;">**string**</mark>
+**`customer_tel`    **<mark style="color:green;">**`string`**</mark><mark style="color:green;">**  **</mark><mark style="color:green;">****</mark> &#x20;
 
-**입금받을 가상계좌 예금주**
+**`고객(카드소지자) 전화번호`**
 
-****
+**``**
 
-**`vbank_date`** ** **<mark style="color:green;">**string**</mark>
+**`customer_email`  **<mark style="color:purple;">****</mark>**  **<mark style="color:green;">**`string`**</mark>
 
-**입금받을 가상계좌 마감기한 (UNIX timestamp)**
+**`고객(카드소지자) Email`**
 
-****
+**``**
 
-**`vbank_issued_at`** ** **<mark style="color:green;">**string**</mark>
+**`customer_addr`    **<mark style="color:green;">**`string`**</mark>
 
-**가상계좌 생성 시각 (UNIX timestamp)**
+**`고객(카드소지자) 주소` **<mark style="color:green;">****</mark>&#x20;
 
-****
+<mark style="color:green;">****</mark>
 
-**`name`    **<mark style="color:green;">**string**</mark>
+**customer\_postcode  **<mark style="color:green;">****</mark><mark style="color:green;">**  **</mark><mark style="color:green;">**`string`**</mark>
 
-**제품명**
+**`고객(카드소지자) 우편번호` **<mark style="color:green;">****</mark>&#x20;
 
-****
+<mark style="color:green;">****</mark>
 
-**`amount`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
+**`inserted`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**`integer`**</mark>
 
-**주문(결제)금액**
+**`빌키 등록시각`** UNIX timestamp
 
-****
+<mark style="color:green;">****</mark>
 
-**`cancel_amount`** ** **<mark style="color:purple;">**integer**</mark>
+**`updated`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**`integer`**</mark>
 
-**결제취소금액**
-
-****
-
-**`currency`    **<mark style="color:green;">**string**</mark>
-
-**통화구분코드**
-
-* USD
-* KRW
-* EUR
-
-***
-
-**`buyer_name`    **<mark style="color:green;">**string**</mark>
-
-**주문자명**
-
-****
-
-**`buyer_email`    **<mark style="color:green;">**string**</mark>
-
-**주문자 Email주소**\
-****
-
-**`buyer_tel`    **<mark style="color:green;">**string**</mark>
-
-**주문자 전화번호**
-
-****
-
-**`buyer_addr`    **<mark style="color:green;">**string**</mark>
-
-**주문자 주소**
-
-****
-
-**`buyer_postcode`    **<mark style="color:green;">**string**</mark>
-
-**주문자 우편번호**
-
-****
-
-**`custom_data`    **<mark style="color:green;">**string**</mark>
-
-**echo data JSON string으로 전달**
-
-****
-
-**`user_agent`    **<mark style="color:green;">**string**</mark>
-
-**결제를 시작한 단말기의 UserAgent**
-
-****
-
-**`status`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**결제상태 구분코드**
-
-* ready
-* paid
-* cancelled
-* failed
-
-
-
-**`started_at`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
-
-**결제시작시점 (UNIX timestamp)**
-
-****
-
-**`paid_at`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**결제완료시점 (UNIX timestamp)**\
-****
-
-**`failed_at`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**결제실패시점 (UNIX timestamp)**
-
-****
-
-**`cancelled_at`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**결제취소시점 (UNIX timestamp)**
-
-****
-
-**`fail_reason`** <mark style="color:green;">**string**</mark>
-
-**결제실패 사유**
-
-****
-
-**`cancel_reason`**  <mark style="color:green;">**string**</mark>
-
-**결제취소 사유**
-
-****
-
-**`receipt_url`**  <mark style="color:green;">**string**</mark>
-
-**신용카드 매출전표 확인 URL**
-
-****
-
-**`cash_receipt_issued`  **<mark style="color:orange;">**boolean**</mark>
-
-**현금영수증 자동발급 여부**
-
-****
-
-**`customer_uid`    **<mark style="color:green;">**string**</mark>
-
-**해당 결제처리에 사용된 customer\_uid**
-
-****
-
-**`customer_uid_usage`    **<mark style="color:green;">**string**</mark>
-
-**customer\_uid 사용 구분코드**
-
-* issue **: 빌링키 발급**
-* payment : 결제
-* payment.scheduled : 예약결제
-
-
-
-**cancel\_history array \[]**
-
-> **`pg_tid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
->
-> **PG사 승인취소번호**
->
-> ****
->
-> **`amount`  **<mark style="color:red;">**\***</mark> <mark style="color:purple;">**integer**</mark>
->
-> **취소 금액**
->
-> ****
->
-> **`cancelled_at`  **<mark style="color:red;">**\***</mark> <mark style="color:green;">**string**</mark>
->
-> 결제취소된 시각 UNIX timestamp
->
->
->
-> **`reason`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
->
-> **결제취소 사유**
->
-> ****
->
-> **`receipt_url`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
->
-> **취소에 대한 매출전표 확인 URL. PG사에 따라 제공되지 않는 경우도 있음**
+**`빌키 변경시각`** UNIX timestamp
 {% endtab %}
 
-{% tab title="Model Schema" %}
+{% tab title="Model Schema" %}
 ```
 {
   "code": 0,
   "message": "string",
-  "response": {
-    "imp_uid": "string",
-    "merchant_uid": "string",
-    "pay_method": "string",
-    "channel": "pc",
-    "pg_provider": "string",
-    "emb_pg_provider": "string",
-    "pg_tid": "string",
-    "pg_id": "string",
-    "escrow": true,
-    "apply_num": "string",
-    "bank_code": "string",
-    "bank_name": "string",
-    "card_code": "string",
-    "card_name": "string",
-    "card_quota": 0,
-    "card_number": "string",
-    "card_type": "null",
-    "vbank_code": "string",
-    "vbank_name": "string",
-    "vbank_num": "string",
-    "vbank_holder": "string",
-    "vbank_date": 0,
-    "vbank_issued_at": 0,
-    "name": "string",
-    "amount": 0,
-    "cancel_amount": 0,
-    "currency": "string",
-    "buyer_name": "string",
-    "buyer_email": "string",
-    "buyer_tel": "string",
-    "buyer_addr": "string",
-    "buyer_postcode": "string",
-    "custom_data": "string",
-    "user_agent": "string",
-    "status": "ready",
-    "started_at": 0,
-    "paid_at": 0,
-    "failed_at": 0,
-    "cancelled_at": 0,
-    "fail_reason": "string",
-    "cancel_reason": "string",
-    "receipt_url": "string",
-    "cancel_history": [
-      {
-        "pg_tid": "string",
-        "amount": 0,
-        "cancelled_at": 0,
-        "reason": "string",
-        "receipt_url": "string"
-      }
-    ],
-    "cancel_receipt_urls": [
-      "string"
-    ],
-    "cash_receipt_issued": true,
-    "customer_uid": "string",
-    "customer_uid_usage": "issue"
-  }
+  "response": [
+    {
+      "customer_uid": "string",
+      "pg_provider": "string",
+      "pg_id": "string",
+      "card_name": "string",
+      "card_code": "string",
+      "card_number": "string",
+      "card_type": "null",
+      "customer_name": "string",
+      "customer_tel": "string",
+      "customer_email": "string",
+      "customer_addr": "string",
+      "customer_postcode": "string",
+      "inserted": 0,
+      "updated": 0
+    }
+  ]
 }
-
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -510,40 +166,12 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 }
 ```
 {% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="유효하지 않은 customer_uid" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
 {% endswagger %}
-
-### **주요 요청 파라미터 상세 설명**
-
-> **`customer_uid`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **빌링키**
->
-> PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고유값입니다. customer\_uid 는 카드번호 단위로 구분되서 저장되어야 합니다
-
-> **`currency`        **<mark style="color:green;">**string**</mark>
->
-> **결제통화 구분코드 **<mark style="color:green;">****</mark>&#x20;
->
-> KRW, USD, VND...
->
-> 페이먼트월 PG사인 경우 필수
-
-> **`browser_ip`    **<mark style="color:green;">**string**</mark>
->
-> **구매자 브라우저 IP **<mark style="color:green;">****</mark>&#x20;
->
-> 페이먼트월 PG사인 경우 필수
-
-> **`buyer_name`  **<mark style="color:green;">**string**</mark>
->
-> **구매자명**
->
-> 페이먼트월 PG사인 경우 **first name, last name** 한칸 띄어쓰기로 구분되어 유입되어야 합니다. ****&#x20;
-
-> **`buyer_email`    **<mark style="color:green;">**string**</mark>
->
-> **구매자 이메일 주소**&#x20;
->
-> 페이먼트월 PG사인 경우 필수파라미터 입니다.
-
-![은행코드표](<../../.gitbook/assets/image (23).png>)
