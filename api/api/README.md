@@ -12,8 +12,8 @@ description: 정기결제를 구현하기 위한 API 목록을 확인할 수 있
 [api-1 (1).md](<api-1 (1).md>)
 {% endcontent-ref %}
 
-{% content-ref url="api-2.md" %}
-[api-2.md](api-2.md)
+{% content-ref url="api-2 (1).md" %}
+[api-2 (1).md](<api-2 (1).md>)
 {% endcontent-ref %}
 
 {% content-ref url="api-3.md" %}

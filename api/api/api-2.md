@@ -1,233 +1,159 @@
 ---
-description: 예약된 결제내역을 조회할 수 있는 API 입니다.
+description: 발급된 빌링키 정보를 확인할 수 있습니다.
 ---
 
-# ⌨ 결제예약 복수조회 API
+# ⌨ 빌링키 정보 단건조회 API
 
-### 기간범위를 지정하여 결제예약목록을 조회할 수 있습니다.
+### 구매자의 빌링키 단건 정보를 조회 합니다.
 
-{% swagger method="get" path="/subscribe/payments/schedule" baseUrl="https://api.iamport.kr" summary="예약된 결재내역 조회 API" %}
+{% swagger method="get" path="/subscribe/customers/{customer_uid}" baseUrl="https://api.iamport.kr" summary="구매자의 빌링키 정보 조회" %}
 {% swagger-description %}
-결제예약정보가 예약된 시각 기준으로 최신순으로 정렬되어 전달됩니다. 과거순으로 정렬하기 위해서는 
-
-**sorting=scheduled**
-
- 파라메터를 지정하시면 됩니다.
+빌링키 정보를 확인할 수 있습니다.
 {% endswagger-description %}
 
-{% swagger-parameter in="query" name="schedule_from" type="integer" required="true" %}
+{% swagger-parameter in="path" name="customer_uid" type="String" required="true" %}
 <mark style="color:red;">
 
-**조회 시작시각**
+**빌링키**
 
 </mark>
-
- (unix timestamp)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" required="true" name="schedule_to" type="integer" %}
-<mark style="color:red;">
-
-**조회 종료시각**
-
-</mark>
-
- (unix timestamp)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="schedule_status" type="String" %}
-**예약상태**
-
-`scheduled`: 예약됨(실행되기 전)
-
-`executed`: 예약된 결제실행완료
-
-`revoked`: 예약철회
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="page" type="integer" %}
-**조회목록 페이징**
-
-1부터 시작하며 기본값은 1입니다.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="limit" type="integer" %}
-**페이지당 조회건수**
-
-최대 1000건 기본값 20건
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="sorting" type="String" %}
-**정렬방식**
-
-Default : 예약일자 최신
-
-scheduled : 예약일자 과거순
-
-
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
-{% tab title="Model" %}
-**`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
+{% tab title="Model" %}
+**`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**`integer`**</mark><mark style="color:purple;">** **</mark><mark style="color:purple;">****</mark>&#x20;
 
-**응답코드**
+**`응답코드`**
 
 0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
 
 
 
-**`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+**`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>** **&#x20;
 
-**응답메세지**
+**`응답메세지`**
 
 code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
 
 
 
-**`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+**`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**`string`**</mark>
 
-**빌링키**
-
-****
-
-**`merchant_uid`  \*  **<mark style="color:green;">**string**</mark>
-
-**주문번호**
-
-
-
-**`imp_uid`** <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>
-
-**아임포트 결제 고유 UID**
+**`빌링키`**
 
 ****
 
-**`schedule_at`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:blue;">**UNIX timestamp**</mark>** **&#x20;
+**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**`string`**</mark>
 
-**예약결제 실행 예정 시각**&#x20;
+**`PG사 구분코드` **<mark style="color:purple;">****</mark>&#x20;
 
-****
+<mark style="color:purple;">****</mark>
 
-**`executed_at`  **<mark style="color:red;">**\***</mark>**    **<mark style="color:blue;">**UNIX timestamp**</mark>
+**`pg_id`` `**<mark style="color:red;">**`*`**</mark>**` `**<mark style="color:green;">**`string`**</mark><mark style="color:green;">** **</mark><mark style="color:green;">****</mark>&#x20;
 
-**예약결제가 실행된 시각 **<mark style="color:blue;">****</mark>&#x20;
+**`PG사 MID`**
 
-<mark style="color:blue;">****</mark>
+**``**
 
-**`revoked_at`  **<mark style="color:red;">**\***</mark>**    **<mark style="color:blue;">**UNIX timestamp**</mark>
+**`card_name`**<mark style="color:green;">**`string`**</mark>** **&#x20;
 
-**예약결제 실행을 철회한 시각 **<mark style="color:blue;">****</mark>&#x20;
-
-<mark style="color:blue;">****</mark>
-
-**`amount`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
-
-**주문(결제)금액**
+**`카드사명`**&#x20;
 
 ****
 
-**`name`    **<mark style="color:green;">**string**</mark>
+**`card_code`**<mark style="color:green;">**`string`**</mark>
 
-**제품명**
+**`카드사 코드번호`**
 
-****
+(금융결제원 표준코드번호 **:** [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) )
 
-**`buyer_name`    **<mark style="color:green;">**string**</mark>
 
-**주문자명**
 
-****
+**`card_number`**<mark style="color:green;">**`string`**</mark>
 
-**`buyer_email`    **<mark style="color:green;">**string**</mark>
-
-**주문자 Email주소**\
-****
-
-**`buyer_tel`    **<mark style="color:green;">**string**</mark>
-
-**주문자 전화번호**
+**`마스킹 카드번호`**
 
 ****
 
-**`buyer_addr`    **<mark style="color:green;">**string**</mark>
+**`card_type`**  <mark style="color:green;">**`string`**</mark>** **&#x20;
 
-**주문자 주소**
+**`카드 구분코드`**
 
-****
+* 0 : 신용카드
+* 1 : 체크카드
 
-**`buyer_postcode`    **<mark style="color:green;">**string**</mark>
 
-**주문자 우편번호**
 
-****
+**`customer_name`    **<mark style="color:green;">**`string`**</mark><mark style="color:green;">**  **</mark><mark style="color:green;">****</mark> &#x20;
 
-**`custom_data`    **<mark style="color:green;">**string**</mark>
-
-**echo data JSON string으로 전달**
+**`고객(카드소지자) 관리용 성함`**
 
 ****
 
-**`schedule_status`  **<mark style="color:blue;">****</mark>**  **<mark style="color:red;">**\***</mark>**  **<mark style="color:blue;">****</mark>** **<mark style="color:green;">**string**</mark>
+**`customer_tel`    **<mark style="color:green;">**`string`**</mark><mark style="color:green;">**  **</mark><mark style="color:green;">****</mark> &#x20;
 
-**예약상태 **<mark style="color:green;">****</mark>&#x20;
+**`고객(카드소지자) 전화번호`**
 
-* `scheduled`: 예약됨(실행되기 전)
-* `executed`: 예약된 결제실행완료
-* `revoked`: 예약철회
+**``**
 
+**`customer_email`  **<mark style="color:purple;">****</mark>**  **<mark style="color:green;">**`string`**</mark>
 
+**`고객(카드소지자) Email`**
 
-**`payment_status` **<mark style="color:green;">****</mark>** **<mark style="color:red;">**\***</mark>**  **<mark style="color:blue;">****</mark>** **<mark style="color:green;">**string**</mark>
+**``**
 
-**실행된 결제의 승인 상태 **<mark style="color:green;">****</mark>&#x20;
+**`customer_addr`    **<mark style="color:green;">**`string`**</mark>
 
-* `null`: 아직 예약결제가 실행되지 않음(null 이라는 값의 문자열이 아닌 실제 null 입니다)
-* `paid`: 예약결제가 결제승인됨
-* `failed`: 예약결제가 승인실패됨
-* `cancelled`: 예약결제가 결제승인 후 환불됨
+**`고객(카드소지자) 주소` **<mark style="color:green;">****</mark>&#x20;
 
+<mark style="color:green;">****</mark>
 
+**customer\_postcode  **<mark style="color:green;">****</mark><mark style="color:green;">**  **</mark><mark style="color:green;">**`string`**</mark>
 
-**`fail_reason`    **<mark style="color:green;">**string**</mark>
+**`고객(카드소지자) 우편번호` **<mark style="color:green;">****</mark>&#x20;
 
-**실패사유 **<mark style="color:green;">****</mark>&#x20;
+<mark style="color:green;">****</mark>
+
+**`inserted`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**`integer`**</mark>
+
+**`빌키등록시각`** UNIX timestamp
+
+<mark style="color:green;">****</mark>
+
+**`updated`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**`integer`**</mark>
+
+**`빌키변경시각`** UNIX timestamp
 {% endtab %}
 
 {% tab title="Model Schema" %}
-```
+```json
 {
   "code": 0,
   "message": "string",
-  "response": [
-    {
-      "customer_uid": "string",
-      "merchant_uid": "string",
-      "imp_uid": "string",
-      "schedule_at": "0",
-      "executed_at": "0",
-      "revoked_at": "0",
-      "amount": 0,
-      "name": "string",
-      "buyer_name": "string",
-      "buyer_email": "string",
-      "buyer_tel": "string",
-      "buyer_addr": "string",
-      "buyer_postcode": "string",
-      "custom_data": "string",
-      "schedule_status": "scheduled",
-      "payment_status": "paid",
-      "fail_reason": "string"
-    }
-  ]
+  "response": {
+    "customer_uid": "string",
+    "pg_provider": "string",
+    "pg_id": "string",
+    "card_name": "string",
+    "card_code": "string",
+    "card_number": "string",
+    "card_type": "null",
+    "customer_name": "string",
+    "customer_tel": "string",
+    "customer_email": "string",
+    "customer_addr": "string",
+    "customer_postcode": "string",
+    "inserted": 0,
+    "updated": 0
+  }
 }
 ```
 {% endtab %}
 {% endtabs %}
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="검색 파라메터가 유효하지 않은 경우" %}
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
 ```javascript
 {
     // Response
@@ -235,7 +161,7 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 {% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+{% swagger-response status="404: Not Found" description="유효하지 않은 customer_uid" %}
 ```javascript
 {
     // Response
