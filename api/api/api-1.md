@@ -1,27 +1,33 @@
 ---
-description: 차이포트 고유번호를 이용하여 결제내역을 조회할 수 있습니다.
+description: 빌링키로 결제된 복수 결제 내역을 확인할 수 있습니다.
 ---
 
-# ⌨ 결제내역 단건조회 API
+# ⌨ 빌링키 결제 복수조회 API
 
-### 차이포트 고유번호로 결제내역을 확인합니다.
+### 구매자의 빌링키로 결제된 결제목록을 조회합니다.
 
-{% swagger method="get" path="/payments/{imp_uid}" baseUrl="https://api.iamport.kr" summary="결제내역을 단건 조회 할수 있습니다." %}
+{% swagger method="get" path="/subscribe/customers/{customer_uid}/payments" baseUrl="https:/api.iamport.kr" summary="빌링키 결제 내역 확인" %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
+{% swagger-parameter in="path" name="customer_uid" type="String" required="true" %}
 <mark style="color:red;">
 
-**거래고유번호**
+**빌링키**
 
 </mark>
 {% endswagger-parameter %}
 
+{% swagger-parameter in="query" name="page" type="integer" %}
+**페이징 페이지**
+
+1부터 시작
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
-{% tab title="Model" %}
+{% tab title="Model" %}
 
 
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
@@ -106,7 +112,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`bank_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
 
-**`은행 표준코드(`**[**`링크보기`**](../../tip/pg.md)**`)`**
+**`은행 표준코드`**[**`(링크보기)`**](../../tip/pg.md)**``**
 
 ****
 
@@ -142,7 +148,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`card_type`**  <mark style="color:green;">**string**</mark>
 
-**카드 구분코드**
+**`카드 구분코드`**
 
 * 0 : 신용카드
 * 1 : 체크카드
@@ -189,7 +195,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`주문(결제)금액`**
 
-****
+&#x20;****&#x20;
 
 **`cancel_amount`** ** **<mark style="color:purple;">**integer**</mark>
 
@@ -238,15 +244,19 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`custom_data`    **<mark style="color:green;">**string**</mark>
 
-**`echo data` JSON string으로 전달**
+**`echo data` **&#x20;
+
+JSON string으로 전달
 
 ****
 
 **`user_agent`    **<mark style="color:green;">**string**</mark>
 
-**`결제를 시작한 단말기의 UserAgent`**
+**UserAgent**
 
-****
+결제를 시작한 단말기 **정**
+
+
 
 **`status`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
@@ -308,7 +318,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`customer_uid`    **<mark style="color:green;">**string**</mark>
 
-**`해당 결제처리에 사용된 customer_uid`**
+**해당 결제처리에 사용된 customer\_uid**
 
 ****
 
@@ -326,100 +336,105 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 > **`pg_tid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
-> **`PG사 승인취소번호`**
+> **PG사 승인취소번호**
 >
 > ****
 >
 > **`amount`  **<mark style="color:red;">**\***</mark> <mark style="color:purple;">**integer**</mark>
 >
-> **`취소 금액`**
+> **취소 금액**
 >
 > ****
 >
 > **`cancelled_at`  **<mark style="color:red;">**\***</mark> <mark style="color:green;">**string**</mark>
 >
-> **`결제취소된 시각`** UNIX timestamp
+> 결제취소된 시각 UNIX timestamp
 >
 >
 >
 > **`reason`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 >
-> **`결제취소 사유`**
+> **결제취소 사유**
 >
 > ****
 >
 > **`receipt_url`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
-> **`취소에 대한 매출전표 확인 URL`. PG사에 따라 제공되지 않는 경우도 있음**
+> **취소에 대한 매출전표 확인 URL. PG사에 따라 제공되지 않는 경우도 있음**
 {% endtab %}
 
 {% tab title="Model Schema" %}
-```jsonp
+```json
 {
   "code": 0,
   "message": "string",
   "response": {
-    "imp_uid": "string",
-    "merchant_uid": "string",
-    "pay_method": "string",
-    "channel": "pc",
-    "pg_provider": "string",
-    "emb_pg_provider": "string",
-    "pg_tid": "string",
-    "pg_id": "string",
-    "escrow": true,
-    "apply_num": "string",
-    "bank_code": "string",
-    "bank_name": "string",
-    "card_code": "string",
-    "card_name": "string",
-    "card_quota": 0,
-    "card_number": "string",
-    "card_type": "null",
-    "vbank_code": "string",
-    "vbank_name": "string",
-    "vbank_num": "string",
-    "vbank_holder": "string",
-    "vbank_date": 0,
-    "vbank_issued_at": 0,
-    "name": "string",
-    "amount": 0,
-    "cancel_amount": 0,
-    "currency": "string",
-    "buyer_name": "string",
-    "buyer_email": "string",
-    "buyer_tel": "string",
-    "buyer_addr": "string",
-    "buyer_postcode": "string",
-    "custom_data": "string",
-    "user_agent": "string",
-    "status": "ready",
-    "started_at": 0,
-    "paid_at": 0,
-    "failed_at": 0,
-    "cancelled_at": 0,
-    "fail_reason": "string",
-    "cancel_reason": "string",
-    "receipt_url": "string",
-    "cancel_history": [
+    "total": 0,
+    "previous": 0,
+    "next": 0,
+    "list": [
       {
+        "imp_uid": "string",
+        "merchant_uid": "string",
+        "pay_method": "string",
+        "channel": "pc",
+        "pg_provider": "string",
+        "emb_pg_provider": "string",
         "pg_tid": "string",
+        "pg_id": "string",
+        "escrow": true,
+        "apply_num": "string",
+        "bank_code": "string",
+        "bank_name": "string",
+        "card_code": "string",
+        "card_name": "string",
+        "card_quota": 0,
+        "card_number": "string",
+        "card_type": "null",
+        "vbank_code": "string",
+        "vbank_name": "string",
+        "vbank_num": "string",
+        "vbank_holder": "string",
+        "vbank_date": 0,
+        "vbank_issued_at": 0,
+        "name": "string",
         "amount": 0,
+        "cancel_amount": 0,
+        "currency": "string",
+        "buyer_name": "string",
+        "buyer_email": "string",
+        "buyer_tel": "string",
+        "buyer_addr": "string",
+        "buyer_postcode": "string",
+        "custom_data": "string",
+        "user_agent": "string",
+        "status": "ready",
+        "started_at": 0,
+        "paid_at": 0,
+        "failed_at": 0,
         "cancelled_at": 0,
-        "reason": "string",
-        "receipt_url": "string"
+        "fail_reason": "string",
+        "cancel_reason": "string",
+        "receipt_url": "string",
+        "cancel_history": [
+          {
+            "pg_tid": "string",
+            "amount": 0,
+            "cancelled_at": 0,
+            "reason": "string",
+            "receipt_url": "string"
+          }
+        ],
+        "cancel_receipt_urls": [
+          "string"
+        ],
+        "cash_receipt_issued": true,
+        "customer_uid": "string",
+        "customer_uid_usage": "issue"
       }
-    ],
-    "cancel_receipt_urls": [
-      "string"
-    ],
-    "cash_receipt_issued": true,
-    "customer_uid": "string",
-    "customer_uid_usage": "issue"
+    ]
   }
 }
-
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -433,7 +448,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 {% endswagger-response %}
 
-{% swagger-response status="404: Not Found" description="유효하지 않은 imp_uid" %}
+{% swagger-response status="404: Not Found" description="유효하지 않은 customer_uid" %}
 ```javascript
 {
     // Response

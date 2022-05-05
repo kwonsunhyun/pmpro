@@ -1,22 +1,27 @@
 ---
-description: 차이포트 고유번호를 이용하여 결제내역을 조회할 수 있습니다.
+description: 거래고유번호 또는 주문번호로 결제내역을 복수조회 할 수 있습니다.
 ---
 
-# ⌨ 결제내역 단건조회 API
+# ⌨ 결제내역 복수조회 API
 
-### 차이포트 고유번호로 결제내역을 확인합니다.
+### 복수의 차이포트 고유번호 또는 가맹점 주문번호로 결제내역을 조회합니다.
 
-{% swagger method="get" path="/payments/{imp_uid}" baseUrl="https://api.iamport.kr" summary="결제내역을 단건 조회 할수 있습니다." %}
+{% swagger method="get" path="/payments" baseUrl="https://api.iamport.kr" summary="여러 개의 거래고유번호 또는 가맹점 주문번호로 결제내역을 한 번에 조회합니다" %}
 {% swagger-description %}
+**호출예시**\
+`/payments?imp_uid[]=imp_448280090638&imp_uid[]=imp_448280090639&merchant_uid[]=merchant_143434085216`
 
+최대 100개
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
-<mark style="color:red;">
+{% swagger-parameter in="query" name="imp_uid[]" type="Array" %}
+ 
 
 **거래고유번호**
+{% endswagger-parameter %}
 
-</mark>
+{% swagger-parameter in="query" name="merchant_uid[]	" type="Array" %}
+**주문번호**
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
@@ -354,72 +359,72 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {% endtab %}
 
 {% tab title="Model Schema" %}
-```jsonp
+```json
 {
   "code": 0,
   "message": "string",
-  "response": {
-    "imp_uid": "string",
-    "merchant_uid": "string",
-    "pay_method": "string",
-    "channel": "pc",
-    "pg_provider": "string",
-    "emb_pg_provider": "string",
-    "pg_tid": "string",
-    "pg_id": "string",
-    "escrow": true,
-    "apply_num": "string",
-    "bank_code": "string",
-    "bank_name": "string",
-    "card_code": "string",
-    "card_name": "string",
-    "card_quota": 0,
-    "card_number": "string",
-    "card_type": "null",
-    "vbank_code": "string",
-    "vbank_name": "string",
-    "vbank_num": "string",
-    "vbank_holder": "string",
-    "vbank_date": 0,
-    "vbank_issued_at": 0,
-    "name": "string",
-    "amount": 0,
-    "cancel_amount": 0,
-    "currency": "string",
-    "buyer_name": "string",
-    "buyer_email": "string",
-    "buyer_tel": "string",
-    "buyer_addr": "string",
-    "buyer_postcode": "string",
-    "custom_data": "string",
-    "user_agent": "string",
-    "status": "ready",
-    "started_at": 0,
-    "paid_at": 0,
-    "failed_at": 0,
-    "cancelled_at": 0,
-    "fail_reason": "string",
-    "cancel_reason": "string",
-    "receipt_url": "string",
-    "cancel_history": [
-      {
-        "pg_tid": "string",
-        "amount": 0,
-        "cancelled_at": 0,
-        "reason": "string",
-        "receipt_url": "string"
-      }
-    ],
-    "cancel_receipt_urls": [
-      "string"
-    ],
-    "cash_receipt_issued": true,
-    "customer_uid": "string",
-    "customer_uid_usage": "issue"
-  }
+  "response": [
+    {
+      "imp_uid": "string",
+      "merchant_uid": "string",
+      "pay_method": "string",
+      "channel": "pc",
+      "pg_provider": "string",
+      "emb_pg_provider": "string",
+      "pg_tid": "string",
+      "pg_id": "string",
+      "escrow": true,
+      "apply_num": "string",
+      "bank_code": "string",
+      "bank_name": "string",
+      "card_code": "string",
+      "card_name": "string",
+      "card_quota": 0,
+      "card_number": "string",
+      "card_type": "null",
+      "vbank_code": "string",
+      "vbank_name": "string",
+      "vbank_num": "string",
+      "vbank_holder": "string",
+      "vbank_date": 0,
+      "vbank_issued_at": 0,
+      "name": "string",
+      "amount": 0,
+      "cancel_amount": 0,
+      "currency": "string",
+      "buyer_name": "string",
+      "buyer_email": "string",
+      "buyer_tel": "string",
+      "buyer_addr": "string",
+      "buyer_postcode": "string",
+      "custom_data": "string",
+      "user_agent": "string",
+      "status": "ready",
+      "started_at": 0,
+      "paid_at": 0,
+      "failed_at": 0,
+      "cancelled_at": 0,
+      "fail_reason": "string",
+      "cancel_reason": "string",
+      "receipt_url": "string",
+      "cancel_history": [
+        {
+          "pg_tid": "string",
+          "amount": 0,
+          "cancelled_at": 0,
+          "reason": "string",
+          "receipt_url": "string"
+        }
+      ],
+      "cancel_receipt_urls": [
+        "string"
+      ],
+      "cash_receipt_issued": true,
+      "customer_uid": "string",
+      "customer_uid_usage": "issue"
+    }
+  ]
 }
-
-
 ```
 {% endtab %}
 {% endtabs %}
@@ -433,7 +438,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 {% endswagger-response %}
 
-{% swagger-response status="404: Not Found" description="유효하지 않은 imp_uid" %}
+{% swagger-response status="404: Not Found" description="해당되는 결제건을 찾지 못하였습니다." %}
 ```javascript
 {
     // Response

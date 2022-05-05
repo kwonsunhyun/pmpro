@@ -72,8 +72,9 @@
 
 * [🖇 REST API Access Token](api/rest-api-access-token.md)
 * [💳 결제관련 API](<api/api/README (1).md>)
-  * [⌨ 빌링키 결제 복수조회 API](api/api/api.md)
-  * [⌨ 결제내역 단건조회 API](api/api/api-1.md)
+  * [⌨ 결제내역 단건조회 API](api/api/api.md)
+  * [⌨ 빌링키 결제 복수조회 API](api/api/api-1.md)
+  * [⌨ 결제내역 복수조회 API](<api/api/api-2 (1).md>)
 * [❌ 결제취소 API](api/api-2.md)
 * [📝 빌링키 관리 API](api/api-4/README.md)
   * [⌨ 빌링키 발급 API](api/api-1/api-1-1.md)
