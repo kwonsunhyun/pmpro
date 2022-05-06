@@ -20,10 +20,32 @@ description: 차이포트 고유번호를 이용하여 결제내역을 조회할
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
+
+
 {% tabs %}
-{% tab title="Model" %}
+{% tab title="MultiplePaymentsResponse" %}
+**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**응답코드**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
 
 
+
+**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**응답메세지**
+
+code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**`response`** <mark style="color:red;">**(Array\[PaymentAnnotation], optional)**</mark>
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="PaymentAnnotation" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **`응답코드`**
@@ -106,7 +128,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`bank_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
 
-**`은행 표준코드(`**[**`링크보기`**](../../tip/pg.md)**`)`**
+**`은행 표준코드`**[**`(링크보기)`**](../../tip/pg.md)**``**
 
 ****
 
@@ -142,7 +164,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`card_type`**  <mark style="color:green;">**string**</mark>
 
-**카드 구분코드**
+**`카드 구분코드`**
 
 * 0 : 신용카드
 * 1 : 체크카드
@@ -189,7 +211,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`주문(결제)금액`**
 
-****
+&#x20;****&#x20;
 
 **`cancel_amount`** ** **<mark style="color:purple;">**integer**</mark>
 
@@ -238,15 +260,19 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`custom_data`    **<mark style="color:green;">**string**</mark>
 
-**`echo data` JSON string으로 전달**
+**`echo data` **&#x20;
+
+JSON string으로 전달
 
 ****
 
 **`user_agent`    **<mark style="color:green;">**string**</mark>
 
-**`결제를 시작한 단말기의 UserAgent`**
+**UserAgent**
 
-****
+결제를 시작한 단말기 **정**
+
+
 
 **`status`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
@@ -308,7 +334,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`customer_uid`    **<mark style="color:green;">**string**</mark>
 
-**`해당 결제처리에 사용된 customer_uid`**
+**해당 결제처리에 사용된 customer\_uid**
 
 ****
 
@@ -320,41 +346,73 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 * payment : 결제
 * payment.scheduled : 예약결제
 
+****
 
+**`cancel_history` ** <mark style="color:red;">**(Array\[PaymentCancelAnnotation], optional):**</mark>
 
+**`취소/부분취소 내역`**
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="PaymentCancelAnnotation" %}
 **cancel\_history array \[]**
 
-> **`pg_tid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
->
-> **`PG사 승인취소번호`**
->
-> ****
->
-> **`amount`  **<mark style="color:red;">**\***</mark> <mark style="color:purple;">**integer**</mark>
->
-> **`취소 금액`**
->
-> ****
->
-> **`cancelled_at`  **<mark style="color:red;">**\***</mark> <mark style="color:green;">**string**</mark>
->
-> **`결제취소된 시각`** UNIX timestamp
->
->
->
-> **`reason`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
->
-> **`결제취소 사유`**
->
-> ****
->
-> **`receipt_url`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
->
-> **`취소에 대한 매출전표 확인 URL`. PG사에 따라 제공되지 않는 경우도 있음**
-{% endtab %}
+**`pg_tid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-{% tab title="Model Schema" %}
-```jsonp
+**PG사 승인취소번호**
+
+****
+
+**`amount`  **<mark style="color:red;">**\***</mark> <mark style="color:purple;">**integer**</mark>
+
+**취소 금액**
+
+****
+
+**`cancelled_at`  **<mark style="color:red;">**\***</mark> <mark style="color:green;">**string**</mark>
+
+결제취소된 시각 UNIX timestamp
+
+
+
+**`reason`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+
+**결제취소 사유**
+
+****
+
+**`receipt_url`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**취소에 대한 매출전표 확인 URL. PG사에 따라 제공되지 않는 경우도 있음**
+{% endtab %}
+{% endtabs %}
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="유효하지 않은 imp_uid" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### Response Model Schema
+
+<details>
+
+<summary>HTTP status 200</summary>
+
+```json
 {
   "code": 0,
   "message": "string",
@@ -418,26 +476,6 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
     "customer_uid_usage": "issue"
   }
 }
-
-
 ```
-{% endtab %}
-{% endtabs %}
-{% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="유효하지 않은 imp_uid" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-{% endswagger %}
+</details>

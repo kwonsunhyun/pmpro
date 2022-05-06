@@ -31,8 +31,30 @@ description: 등록된 빌링키(customer_uid)를 삭제합니다.
 
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
-{% tab title="Model" %}
-**`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**`integer`**</mark><mark style="color:purple;">** **</mark><mark style="color:purple;">****</mark>&#x20;
+{% tab title="CustomerResponse" %}
+**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**응답코드**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**응답메세지**
+
+code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**`response`** <mark style="color:red;">**(CustomerAnnotation, optional)**</mark>
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="CustomerAnnotation" %}
+**`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
 
 **`응답코드`**
 
@@ -40,7 +62,7 @@ description: 등록된 빌링키(customer_uid)를 삭제합니다.
 
 
 
-**`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>** **&#x20;
+**`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 
 **`응답메세지`**
 
@@ -48,95 +70,115 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**`string`**</mark>
+**`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 
-**`빌링키`**
+**`고객 고유번호`**\
+****
+
+**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**빌링키가 등록된 PG사 코드**
 
 ****
 
-**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**`string`**</mark>
+**`pg_id`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`PG사 구분코드` **<mark style="color:purple;">****</mark>&#x20;
-
-<mark style="color:purple;">****</mark>
-
-**`pg_id`` `**<mark style="color:red;">**`*`**</mark>**` `**<mark style="color:green;">**`string`**</mark><mark style="color:green;">** **</mark><mark style="color:green;">****</mark>&#x20;
-
-**`PG사 MID`**
-
-**``**
-
-**`card_name`**<mark style="color:green;">**`string`**</mark>** **&#x20;
-
-**`카드사명`**&#x20;
+**빌링키가 등록된 PG사 상점아이디(MID)**
 
 ****
 
-**`card_code`**<mark style="color:green;">**`string`**</mark>
+**`card_name`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 
-**`카드사 코드번호`**
+**`카드사명`**
 
-(금융결제원 표준코드번호 **:** [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) )
+****
 
+**`card_code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
+**`카드사 코드`**
 
-**`card_number`**<mark style="color:green;">**`string`**</mark>
+&#x20;****&#x20;
+
+**`card_number`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
 **`마스킹 카드번호`**
 
 ****
 
-**`card_type`**  <mark style="color:green;">**`string`**</mark>** **&#x20;
+**`card_type`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`카드 구분코드`**
+**`카드유형`**
 
-* 0 : 신용카드
-* 1 : 체크카드
-
-
-
-**`customer_name`    **<mark style="color:green;">**`string`**</mark><mark style="color:green;">**  **</mark><mark style="color:green;">****</mark> &#x20;
-
-**`고객(카드소지자) 관리용 성함`**
+**(주의)해당 정보를 제공하지 않는 일부 PG사의 경우 null 로 응답됨**
 
 ****
 
-**`customer_tel`    **<mark style="color:green;">**`string`**</mark><mark style="color:green;">**  **</mark><mark style="color:green;">****</mark> &#x20;
+**`customer_name`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`고객(카드소지자) 전화번호`**
+**`고객성함`**
 
-**``**
+****
 
-**`customer_email`  **<mark style="color:purple;">****</mark>**  **<mark style="color:green;">**`string`**</mark>
+**`customer_tel`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 
-**`고객(카드소지자) Email`**
+**`고객 전화번호`**
 
-**``**
+****
 
-**`customer_addr`    **<mark style="color:green;">**`string`**</mark>
+**`customer_email`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`고객(카드소지자) 주소` **<mark style="color:green;">****</mark>&#x20;
+**`고객 Email`**
 
-<mark style="color:green;">****</mark>
+****
 
-**customer\_postcode  **<mark style="color:green;">****</mark><mark style="color:green;">**  **</mark><mark style="color:green;">**`string`**</mark>
+**`customer_addr`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`고객(카드소지자) 우편번호` **<mark style="color:green;">****</mark>&#x20;
+**`고객 주소` **&#x20;
 
-<mark style="color:green;">****</mark>
+&#x20;
 
-**`inserted`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**`integer`**</mark>
+**`customer_postcode`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`빌키등록시각`** UNIX timestamp
+**`고객 우편번호`**
 
-<mark style="color:green;">****</mark>
 
-**`updated`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**`integer`**</mark>
 
-**`빌키변경시각`** UNIX timestamp
+**`inserted`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**`빌키가 등록된 시각`** UNIX timestamp
+
+
+
+**`updated`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**`빌키가 업데이트된 시각`** UNIX timestamp
 {% endtab %}
+{% endtabs %}
+{% endswagger-response %}
 
-{% tab title="Model Schema" %}
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="유효하지 않은 customer_uid" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### Response Model Schema
+
+<details>
+
+<summary>HTTP status 200</summary>
+
 ```json
 {
   "code": 0,
@@ -159,23 +201,5 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
-{% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="유효하지 않은 customer_uid" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-{% endswagger %}
+</details>

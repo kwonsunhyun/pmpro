@@ -69,7 +69,29 @@ pg 구분코드
 
 {% swagger-response status="200: OK" description="결제예약 성공" %}
 {% tabs %}
-{% tab title="Model" %}
+{% tab title="ScheduleResponse" %}
+**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**`응답코드`**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**`응답메세지`**
+
+code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**`response`** <mark style="color:red;">**(Array\[ScheduleResultAnnotation], optional)**</mark>
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="ScheduleResultAnnotation" %}
 **`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -194,36 +216,6 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **실패사유 **<mark style="color:green;">****</mark>&#x20;
 {% endtab %}
-
-{% tab title="Model Schema" %}
-```json
-{
-  "code": 0,
-  "message": "string",
-  "response": [
-    {
-      "customer_uid": "string",
-      "merchant_uid": "string",
-      "imp_uid": "string",
-      "schedule_at": "0",
-      "executed_at": "0",
-      "revoked_at": "0",
-      "amount": 0,
-      "name": "string",
-      "buyer_name": "string",
-      "buyer_email": "string",
-      "buyer_tel": "string",
-      "buyer_addr": "string",
-      "buyer_postcode": "string",
-      "custom_data": "string",
-      "schedule_status": "scheduled",
-      "payment_status": "paid",
-      "fail_reason": "string"
-    }
-  ]
-}
-```
-{% endtab %}
 {% endtabs %}
 {% endswagger-response %}
 
@@ -325,3 +317,39 @@ schedules의 상세정보
 
 <mark style="color:red;">**customer\_uid**</mark> 에 해당되는 **customer\_name, customer\_email, customer\_tel, customer\_addr, customer\_postcode** 정보로 대체됩니다.
 {% endhint %}
+
+### Response Model Schema
+
+<details>
+
+<summary>HTTP status 200</summary>
+
+```json
+{
+  "code": 0,
+  "message": "string",
+  "response": [
+    {
+      "customer_uid": "string",
+      "merchant_uid": "string",
+      "imp_uid": "string",
+      "schedule_at": "0",
+      "executed_at": "0",
+      "revoked_at": "0",
+      "amount": 0,
+      "name": "string",
+      "buyer_name": "string",
+      "buyer_email": "string",
+      "buyer_tel": "string",
+      "buyer_addr": "string",
+      "buyer_postcode": "string",
+      "custom_data": "string",
+      "schedule_status": "scheduled",
+      "payment_status": "paid",
+      "fail_reason": "string"
+    }
+  ]
+}
+```
+
+</details>

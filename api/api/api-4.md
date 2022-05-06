@@ -51,7 +51,29 @@ unix timestamp
 
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
-{% tab title="Model" %}
+{% tab title="ScheduleResponse" %}
+**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**`응답코드`**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**`응답메세지`**
+
+code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**`response`** <mark style="color:red;">**(Array\[ScheduleResultAnnotation], optional**</mark>
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="ScheduleResultAnnotation" %}
 **`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -106,44 +128,44 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`amount`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
 
-**주문(결제)금액**
+**`주문(결제)금액`**
 
 ****
 
 **`name`    **<mark style="color:green;">**string**</mark>
 
-**제품명**
+**`제품명`**
 
 ****
 
 **`buyer_name`    **<mark style="color:green;">**string**</mark>
 
-**주문자명**
+**`주문자명`**
 
 ****
 
 **`buyer_email`    **<mark style="color:green;">**string**</mark>
 
-**주문자 Email주소**\
+**`주문자 Email주소`**\
 ****
 
 **`buyer_tel`    **<mark style="color:green;">**string**</mark>
 
-**주문자 전화번호**
+**`주문자 전화번호`**
 
 ****
 
 **`buyer_addr`    **<mark style="color:green;">**string**</mark>
 
-**주문자 주소**
+**`주문자 주소`**
 
 ****
 
 **`buyer_postcode`    **<mark style="color:green;">**string**</mark>
 
-**주문자 우편번호**
+**`주문자 우편번호`**
 
-****
+&#x20;****&#x20;
 
 **`custom_data`    **<mark style="color:green;">**string**</mark>
 
@@ -153,7 +175,7 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`schedule_status`  **<mark style="color:blue;">****</mark>**  **<mark style="color:red;">**\***</mark>**  **<mark style="color:blue;">****</mark>** **<mark style="color:green;">**string**</mark>
 
-**예약상태 **<mark style="color:green;">****</mark>&#x20;
+**`예약상태` **<mark style="color:green;">****</mark>&#x20;
 
 * `scheduled`: 예약됨(실행되기 전)
 * `executed`: 예약된 결제실행완료
@@ -174,10 +196,34 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`fail_reason`    **<mark style="color:green;">**string**</mark>
 
-**실패사유 **<mark style="color:green;">****</mark>&#x20;
+**`실패사유` **<mark style="color:green;">****</mark>&#x20;
 {% endtab %}
+{% endtabs %}
+{% endswagger-response %}
 
-{% tab title="Model Schema" %}
+{% swagger-response status="400: Bad Request" description="검색 파라메터가 유효하지 않은 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### Response Model Schema
+
+<details>
+
+<summary>HTTP status 200</summary>
+
 ```json
 {
   "code": 0,
@@ -205,23 +251,5 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
   ]
 }
 ```
-{% endtab %}
-{% endtabs %}
-{% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="검색 파라메터가 유효하지 않은 경우" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-{% endswagger %}
+</details>

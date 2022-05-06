@@ -62,11 +62,13 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="reason" type="String" %}
-취소사유
+**취소사유**
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="refund_holder" type="String" %}
-환불계좌 예금주 (
+**환불계좌 예금주**
+
+ (
 
 **가상계좌**
 
@@ -107,7 +109,7 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
 
 {% swagger-response status="200: OK" description="취소 성공" %}
 {% tabs %}
-{% tab title="Model" %}
+{% tab title="PaymentListResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -124,6 +126,42 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
+**`response`** <mark style="color:red;">**(PagedPaymentAnnotation, optional)**</mark>
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="PagedPaymentAnnotation" %}
+**`total`` `**<mark style="color:red;">**`*`**</mark><mark style="color:purple;">**`integer`**</mark>
+
+**`총 건수`**
+
+
+
+**`previous`**<mark style="color:red;">**`*`**</mark><mark style="color:purple;">**`integer`**</mark>
+
+**`이전 page숫자`**
+
+이전 페이지가 없으면 0
+
+
+
+**`next`**<mark style="color:red;">**`*`**</mark><mark style="color:purple;">**`integer`**</mark>
+
+**`다음 page숫자`**
+
+다음 페이지가 없으면 0
+
+
+
+**list **<mark style="color:red;">**(Array\[PaymentAnnotation], optional)**</mark>
+
+결제 상세정보 배열(최대 20개)
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="PaymentAnnotation" %}
 **`imp_uid`** <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>
 
 **아임포트 결제 고유 UID**
@@ -145,10 +183,6 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 **`channel`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
 **결제환경 구분코드**
-
-* pc **:** (인증방식)PC결제
-* mobile:(인증방식)모바일결제
-* api:정기결제 또는 비인증 결제
 
 
 
@@ -228,9 +262,6 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **카드 구분코드**
 
-* 0 : 신용카드
-* 1 : 체크카드
-
 
 
 **`vbank_code`** ** **<mark style="color:green;">**string**</mark>
@@ -285,11 +316,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **통화구분코드**
 
-* USD
-* KRW
-* EUR
-
-
+***
 
 **`buyer_name`    **<mark style="color:green;">**string**</mark>
 
@@ -335,11 +362,6 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 **`status`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
 **결제상태 구분코드**
-
-* ready
-* paid
-* cancelled
-* failed
 
 
 
@@ -400,45 +422,79 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **customer\_uid 사용 구분코드**
 
-* issue **: 빌링키 발급**
-* payment : 결제
-* payment.scheduled : 예약결제
+****
 
+**`cancel_history` ** <mark style="color:red;">**(Array\[PaymentCancelAnnotation], optional):**</mark>
 
+**`취소/부분취소 내역`**
+{% endtab %}
+{% endtabs %}
 
+{% tabs %}
+{% tab title="PaymentCancelAnnotation" %}
 **cancel\_history array \[]**
 
-> **`pg_tid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
->
-> **PG사 승인취소번호**
->
-> ****
->
-> **`amount`  **<mark style="color:red;">**\***</mark> <mark style="color:purple;">**integer**</mark>
->
-> **취소 금액**
->
-> ****
->
-> **`cancelled_at`  **<mark style="color:red;">**\***</mark> <mark style="color:green;">**string**</mark>
->
-> 결제취소된 시각 UNIX timestamp
->
->
->
-> **`reason`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
->
-> **결제취소 사유**
->
-> ****
->
-> **`receipt_url`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
->
-> **취소에 대한 매출전표 확인 URL. PG사에 따라 제공되지 않는 경우도 있음**
-{% endtab %}
+**`pg_tid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-{% tab title="Model Schema" %}
-```markup
+**PG사 승인취소번호**
+
+****
+
+**`amount`  **<mark style="color:red;">**\***</mark> <mark style="color:purple;">**integer**</mark>
+
+**취소 금액**
+
+****
+
+**`cancelled_at`  **<mark style="color:red;">**\***</mark> <mark style="color:green;">**string**</mark>
+
+결제취소된 시각 UNIX timestamp
+
+
+
+**`reason`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+
+**결제취소 사유**
+
+****
+
+**`receipt_url`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**취소에 대한 매출전표 확인 URL. PG사에 따라 제공되지 않는 경우도 있음**
+{% endtab %}
+{% endtabs %}
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+
+{% endswagger-response %}
+{% endswagger %}
+
+### **주요 요청 파라미터 상세 설명**
+
+> **`imp_uid`  & `merchant_uid`**
+>
+> **취소 요청시 두 파라미터중 하나는 필수로 유입되어야 합니다.**
+
+> **`checksum`    **<mark style="color:green;">**string**</mark>
+>
+> **승인 잔액**
+>
+> API요청자가 기록하고 있는 취소가능 잔액과 아임포트가 기록하고 있는 취소가능 잔액이 일치하는지 사전에 검증하고 검증에 실패하면 트랜잭션을 수행하지 않습니다. null인 경우에는 검증 프로세스를 생략합니다.
+
+> **`amount`  **<mark style="color:green;">****</mark>**  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
+>
+> **취소금액**
+>
+> 누락시 전액취소 됩니다.
+
+### Response Model Schema
+
+<details>
+
+<summary>HTTP status 200</summary>
+
+```json
 {
   "code": 0,
   "message": "string",
@@ -503,29 +559,5 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
-{% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
-
-{% endswagger-response %}
-{% endswagger %}
-
-### **주요 요청 파라미터 상세 설명**
-
-> **`imp_uid`  & `merchant_uid`**
->
-> **취소 요청시 두 파라미터중 하나는 필수로 유입되어야 합니다.**
-
-> **`checksum`    **<mark style="color:green;">**string**</mark>
->
-> **승인 잔액**
->
-> API요청자가 기록하고 있는 취소가능 잔액과 아임포트가 기록하고 있는 취소가능 잔액이 일치하는지 사전에 검증하고 검증에 실패하면 트랜잭션을 수행하지 않습니다. null인 경우에는 검증 프로세스를 생략합니다.
-
-> **`amount`  **<mark style="color:green;">****</mark>**  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
->
-> **취소금액**
->
-> 누락시 전액취소 됩니다.
+</details>

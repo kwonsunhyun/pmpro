@@ -293,42 +293,4 @@ MP.request_pay({
 }
 ```
 {% endtab %}
-
-{% tab title="에스크로 결제" %}
-에스크로 결제요청 시 **장바구니 상품을 묶어서 결제하는 경우** 해당 품목에 대한 정보를 전달하기 위해 해당 상품관련 정보를 추가 파라미터(**`kcpProducts`**)로 전달해야 합니다.\
-**`kcpProducts`**는 다음 4개의 필수 속성으로 구성된 객체배열입니다.&#x20;
-
-**`amount`** 값은 결제 금액(`param.amount`) 값과 관계가 없으며 비교검증되지 않습니다.
-
-
-
-* orderNumber : 상품주문번호
-* name : 상품명
-* quantity : 수량
-* amount : 상품 가격
-
-
-
-```javascript
-IMP.request_pay({
-    pg : 'kcp',
-    escrow : true, //에스크로 결제인 경우 필요
-    kcpProducts : [
-    	{
-	    "orderNumber" : "xxxx",
-	    "name" : "상품A",
-	    "quantity" : 3,
-	    "amount" : 1000
-	},{
-	    "orderNumber" : "yyyy",
-	    "name" : "상품B",
-	    "quantity" : 2,
-	    "amount" : 3000
-	}
-    ],
-    //* ...중략 (README 파일에서 상세 샘플코드를 확인하세요)... *//
-})
-```
-{% endtab %}
 {% endtabs %}
-

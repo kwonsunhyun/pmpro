@@ -16,87 +16,71 @@ description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청�
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="customer_uid" type="String" required="true" %}
-<mark style="color:red;">
-
-**빌링키**
-
-</mark>
+빌링키
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
-<mark style="color:red;">
-
-**주문번호**
-
-</mark>
+주문번호
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="currency" type="String" required="false" %}
-**결제 통화코드**
+결제 통화코드
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="amount" type="integer" required="true" %}
-<mark style="color:red;">
-
-**결제금액**
-
-</mark>
+결제금액
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="tax_free" type="integer" required="false" %}
-**면세금액**
+면세금액
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="name" type="String" required="true" %}
-<mark style="color:red;">
-
-**제품명**
-
-</mark>
+제품명
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_name" type="String" required="false" %}
-**주문자명**
+주문자명
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_email" type="String" required="false" %}
-**주문자 E-mail 주소**
+주문자 E-mail 주소
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_tel" type="String" required="false" %}
-**주문자 전화번호**
+주문자 전화번호
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_addr" type="String" required="false" %}
-**주문자 주소**
+주문자 주소
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="buyer_postcode" type="String" required="false" %}
-**주문자 우편번호**
+주문자 우편번호
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="card_quota" type="integer" required="false" %}
-**카드 할부개월수**
+카드 할부개월수
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="interest_free_by_merchant" type="boolean" required="false" %}
-**가맹점부담 무이자 할부여부**
+가맹점부담 무이자 할부여부
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="use_card_point" type="boolean" required="false" %}
-**카드포인트 사용여부**
+카드포인트 사용여부
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="custom_data" type="String" required="false" %}
-**에코항목**
+에코항목
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="notice_url" type="String" required="false" %}
-**결제성공 시 통지될 웹훅 URL**
+결제성공 시 통지될 웹훅 URL
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="browser_ip" type="String" required="false" %}
-**구매자 브라우저(PC)의 IP**
+구매자 브라우저(PC)의 IP
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="결제성공" %}
@@ -546,4 +530,4 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 >
 > 페이먼트월 PG사인 경우 필수파라미터 입니다.
 
-![은행코드표](<../../.gitbook/assets/image (23).png>)
+![은행코드표](<../../../.gitbook/assets/image (23).png>)
