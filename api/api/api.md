@@ -20,8 +20,6 @@ description: 차이포트 고유번호를 이용하여 결제내역을 조회할
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
-
-
 {% tabs %}
 {% tab title="MultiplePaymentsResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>

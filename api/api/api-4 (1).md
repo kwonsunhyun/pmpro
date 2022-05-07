@@ -1,21 +1,17 @@
 ---
-description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청할 수 있는 API 명세를 기술합니다.
+description: 빌링키로 결제된 복수 결제 내역을 확인할 수 있습니다.
 ---
 
-# ⌨ 비 인증 결제(빌링키) API
+# ⌨ 빌링키 결제 복수조회 API
 
-### 저장된 빌링키(customer\_uid)로 결제를 요청 할수 있습니다.
+### 구매자의 빌링키로 결제된 결제목록을 조회합니다.
 
-{% swagger method="post" path="/subscribe/payments/again" baseUrl="https://api.iamport.kr" summary="customer_uid 로 결제를 요청합니다." %}
+{% swagger method="get" path="/subscribe/customers/{customer_uid}/payments" baseUrl="https:/api.iamport.kr" summary="빌링키 결제 내역 확인" %}
 {% swagger-description %}
-빌링키 발급 API 또는 PG사 빌링키 발급 결제창에서 설정한 
 
-**customer_uid**
-
- 로 비 인증 결제를 요청할 수 있습니다.
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="customer_uid" type="String" required="true" %}
+{% swagger-parameter in="path" name="customer_uid" type="String" required="true" %}
 <mark style="color:red;">
 
 **빌링키**
@@ -23,85 +19,15 @@ description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청�
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
-<mark style="color:red;">
+{% swagger-parameter in="query" name="page" type="integer" %}
+**페이징 페이지**
 
-**주문번호**
-
-</mark>
+1부터 시작
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="currency" type="String" required="false" %}
-**결제 통화코드**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="amount" type="integer" required="true" %}
-<mark style="color:red;">
-
-**결제금액**
-
-</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="tax_free" type="integer" required="false" %}
-**면세금액**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="name" type="String" required="true" %}
-<mark style="color:red;">
-
-**제품명**
-
-</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_name" type="String" required="false" %}
-**주문자명**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_email" type="String" required="false" %}
-**주문자 E-mail 주소**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_tel" type="String" required="false" %}
-**주문자 전화번호**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_addr" type="String" required="false" %}
-**주문자 주소**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_postcode" type="String" required="false" %}
-**주문자 우편번호**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="card_quota" type="integer" required="false" %}
-**카드 할부개월수**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="interest_free_by_merchant" type="boolean" required="false" %}
-**가맹점부담 무이자 할부여부**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="use_card_point" type="boolean" required="false" %}
-**카드포인트 사용여부**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="custom_data" type="String" required="false" %}
-**에코항목**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="notice_url" type="String" required="false" %}
-**결제성공 시 통지될 웹훅 URL**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="browser_ip" type="String" required="false" %}
-**구매자 브라우저(PC)의 IP**
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="결제성공" %}
+{% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
-{% tab title="PaymentResponse" %}
+{% tab title="MultiplePaymentsResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -118,7 +44,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**`response`** <mark style="color:red;">**(PaymentAnnotation, optional)**</mark>
+**`response`** <mark style="color:red;">**(Array\[PaymentAnnotation], optional)**</mark>
 {% endtab %}
 {% endtabs %}
 
@@ -474,43 +400,15 @@ JSON string으로 전달
 }
 ```
 {% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="유효하지 않은 customer_uid" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
 {% endswagger %}
-
-### **주요 요청 파라미터 상세 설명**
-
-> **`customer_uid`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **빌링키**
->
-> PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고유값입니다. customer\_uid 는 카드번호 단위로 구분되서 저장되어야 합니다
-
-> **`currency`        **<mark style="color:green;">**string**</mark>
->
-> **결제통화 구분코드 **<mark style="color:green;">****</mark>&#x20;
->
-> KRW, USD, VND...
->
-> 페이먼트월 PG사인 경우 필수
-
-> **`browser_ip`    **<mark style="color:green;">**string**</mark>
->
-> **구매자 브라우저 IP **<mark style="color:green;">****</mark>&#x20;
->
-> 페이먼트월 PG사인 경우 필수
-
-> **`buyer_name`  **<mark style="color:green;">**string**</mark>
->
-> **구매자명**
->
-> 페이먼트월 PG사인 경우 **first name, last name** 한칸 띄어쓰기로 구분되어 유입되어야 합니다. ****&#x20;
-
-> **`buyer_email`    **<mark style="color:green;">**string**</mark>
->
-> **구매자 이메일 주소**&#x20;
->
-> 페이먼트월 PG사인 경우 필수파라미터 입니다.
-
-![은행코드표](<../../.gitbook/assets/image (23).png>)
 
 ### Response Model Schema
 
@@ -523,63 +421,70 @@ JSON string으로 전달
   "code": 0,
   "message": "string",
   "response": {
-    "imp_uid": "string",
-    "merchant_uid": "string",
-    "pay_method": "string",
-    "channel": "pc",
-    "pg_provider": "string",
-    "emb_pg_provider": "string",
-    "pg_tid": "string",
-    "pg_id": "string",
-    "escrow": true,
-    "apply_num": "string",
-    "bank_code": "string",
-    "bank_name": "string",
-    "card_code": "string",
-    "card_name": "string",
-    "card_quota": 0,
-    "card_number": "string",
-    "card_type": "null",
-    "vbank_code": "string",
-    "vbank_name": "string",
-    "vbank_num": "string",
-    "vbank_holder": "string",
-    "vbank_date": 0,
-    "vbank_issued_at": 0,
-    "name": "string",
-    "amount": 0,
-    "cancel_amount": 0,
-    "currency": "string",
-    "buyer_name": "string",
-    "buyer_email": "string",
-    "buyer_tel": "string",
-    "buyer_addr": "string",
-    "buyer_postcode": "string",
-    "custom_data": "string",
-    "user_agent": "string",
-    "status": "ready",
-    "started_at": 0,
-    "paid_at": 0,
-    "failed_at": 0,
-    "cancelled_at": 0,
-    "fail_reason": "string",
-    "cancel_reason": "string",
-    "receipt_url": "string",
-    "cancel_history": [
+    "total": 0,
+    "previous": 0,
+    "next": 0,
+    "list": [
       {
+        "imp_uid": "string",
+        "merchant_uid": "string",
+        "pay_method": "string",
+        "channel": "pc",
+        "pg_provider": "string",
+        "emb_pg_provider": "string",
         "pg_tid": "string",
+        "pg_id": "string",
+        "escrow": true,
+        "apply_num": "string",
+        "bank_code": "string",
+        "bank_name": "string",
+        "card_code": "string",
+        "card_name": "string",
+        "card_quota": 0,
+        "card_number": "string",
+        "card_type": "null",
+        "vbank_code": "string",
+        "vbank_name": "string",
+        "vbank_num": "string",
+        "vbank_holder": "string",
+        "vbank_date": 0,
+        "vbank_issued_at": 0,
+        "name": "string",
         "amount": 0,
+        "cancel_amount": 0,
+        "currency": "string",
+        "buyer_name": "string",
+        "buyer_email": "string",
+        "buyer_tel": "string",
+        "buyer_addr": "string",
+        "buyer_postcode": "string",
+        "custom_data": "string",
+        "user_agent": "string",
+        "status": "ready",
+        "started_at": 0,
+        "paid_at": 0,
+        "failed_at": 0,
         "cancelled_at": 0,
-        "reason": "string",
-        "receipt_url": "string"
+        "fail_reason": "string",
+        "cancel_reason": "string",
+        "receipt_url": "string",
+        "cancel_history": [
+          {
+            "pg_tid": "string",
+            "amount": 0,
+            "cancelled_at": 0,
+            "reason": "string",
+            "receipt_url": "string"
+          }
+        ],
+        "cancel_receipt_urls": [
+          "string"
+        ],
+        "cash_receipt_issued": true,
+        "customer_uid": "string",
+        "customer_uid_usage": "issue"
       }
-    ],
-    "cancel_receipt_urls": [
-      "string"
-    ],
-    "cash_receipt_issued": true,
-    "customer_uid": "string",
-    "customer_uid_usage": "issue"
+    ]
   }
 }
 ```

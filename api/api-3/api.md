@@ -21,7 +21,29 @@ description: 본인인증 결과를 조회합니다.
 
 {% swagger-response status="200: OK" description="조회성공" %}
 {% tabs %}
-{% tab title="Model" %}
+{% tab title="CertificationResponse" %}
+**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**응답코드**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**응답메세지**
+
+code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**response** <mark style="color:red;">**(CertificationAnnotation, optional)**</mark>
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="CertificationAnnotation" %}
 **`imp_uid`**  <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>&#x20;
 
 **`인증고유번호`**
@@ -107,7 +129,7 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 
 **`인증성공여부`**
 
-**``**
+&#x20;****&#x20;
 
 **`certified_at`**  <mark style="color:red;">****</mark>**  **<mark style="color:green;">**string**</mark>
 
@@ -142,9 +164,33 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 
 다날 본인인증서비스 계약시 외국인 구분기능 추가 요청필요
 {% endtab %}
+{% endtabs %}
+{% endswagger-response %}
 
-{% tab title="Model Schema" %}
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+```javascript
+{
+    // Response
+}
 ```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="휴대폰 본인인증결과를 찾을 수 없음" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### Response Model Schema
+
+<details>
+
+<summary>HTTP status 200</summary>
+
+```json
 {
   "code": 0,
   "message": "string",
@@ -169,23 +215,5 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
   }
 }
 ```
-{% endtab %}
-{% endtabs %}
-{% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="휴대폰 본인인증결과를 찾을 수 없음" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-{% endswagger %}
+</details>
