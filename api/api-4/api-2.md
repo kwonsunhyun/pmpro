@@ -72,11 +72,35 @@ HTTP Status 200응답 시 imp\_uid 가 응답데이터로 전달되며 SMS전송
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
-```javascript
-{
-    // Response
-}
-```
+{% tabs %}
+{% tab title="CertificationOTPResponse" %}
+**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**응답코드**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**응답메세지**
+
+code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**response **<mark style="color:red;">**(CertificationOTPAnnotation, optional)**</mark>
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="CertificationOTPAnnotation" %}
+**`imp_uid *`` `**<mark style="color:green;">**`String`**</mark>
+
+**`차이포트 거래고유번호` **<mark style="color:green;">****</mark>&#x20;
+{% endtab %}
+{% endtabs %}
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="대상자 개인정보 중 일부가 누락되었거나 올바르지 않은 경우" %}
