@@ -1,32 +1,26 @@
 ---
-description: 등록된 빌링키(customer_uid)를 삭제합니다.
+description: 복수개의 빌링키를 이용하여 빌링키 정보를 조회할수 있습니다.
 ---
 
-# ⌨ 빌링키 삭제 API
+# ⌨ 빌링키 정보 복수조회 API
 
-### 빌링키를 삭제합니다. 빌링키 삭제시 결제예약된 내역이 존재하는지 반드시 확인하셔야 합니다.
+### 복수개의 빌링키 정보를 입력하여 각각의 빌링키 정보를 조회할 수 있습니다.
 
-{% swagger method="delete" path="/subscribe/customers/{customer_uid}" baseUrl="https://api.iamport.kr" summary=" 구매자의 빌링키 정보 삭제" %}
+{% swagger method="get" path="/subscribe/customers" baseUrl="https://api.iamport.kr" summary="빌링정보 복수조회 API" %}
 {% swagger-description %}
-삭제된 빌링키는 복구할 수 없습니다.
+등록된 카드마다 1개의 
+
+**customer_uid**
+
+가 매핑되므로 가맹점 시스템 내에 1명의 고객이 여러 장의 카드를 등록할 수 있는 경우 여러 개의 customer_uid를 가지게 됩니다. 해당 고객이 등록한 카드정보 목록을 한 번에 조회하는데 사용하면 편리합니다.
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="customer_uid" type="String" required="true" %}
+{% swagger-parameter in="query" name="customer_uid[]" type="Array" required="true" %}
 <mark style="color:red;">
 
-**빌링키**
+**빌키**
 
 </mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="reason" type="String" %}
-**삭제사유**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="extra[requester]" type="String" %}
-**삭제 요청자**&#x20;
-
-네이버페이에서만 사용
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
@@ -183,22 +177,24 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {
   "code": 0,
   "message": "string",
-  "response": {
-    "customer_uid": "string",
-    "pg_provider": "string",
-    "pg_id": "string",
-    "card_name": "string",
-    "card_code": "string",
-    "card_number": "string",
-    "card_type": "null",
-    "customer_name": "string",
-    "customer_tel": "string",
-    "customer_email": "string",
-    "customer_addr": "string",
-    "customer_postcode": "string",
-    "inserted": 0,
-    "updated": 0
-  }
+  "response": [
+    {
+      "customer_uid": "string",
+      "pg_provider": "string",
+      "pg_id": "string",
+      "card_name": "string",
+      "card_code": "string",
+      "card_number": "string",
+      "card_type": "null",
+      "customer_name": "string",
+      "customer_tel": "string",
+      "customer_email": "string",
+      "customer_addr": "string",
+      "customer_postcode": "string",
+      "inserted": 0,
+      "updated": 0
+    }
+  ]
 }
 ```
 

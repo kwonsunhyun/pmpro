@@ -1,14 +1,14 @@
 ---
-description: 등록된 빌링키(customer_uid)를 삭제합니다.
+description: 빌링키로 등록된 결졔예약내역을 조회할 수 있습니다.
 ---
 
-# ⌨ 빌링키 삭제 API
+# ⌨ 빌링키 결제예약 조회 API
 
-### 빌링키를 삭제합니다. 빌링키 삭제시 결제예약된 내역이 존재하는지 반드시 확인하셔야 합니다.
+### 빌링키별 결제예약목록을 조회할 수 있습니다.
 
-{% swagger method="delete" path="/subscribe/customers/{customer_uid}" baseUrl="https://api.iamport.kr" summary=" 구매자의 빌링키 정보 삭제" %}
+{% swagger method="get" path="/subscribe/customers/{customer_uid}/schedules" baseUrl="https://api.iamport.kr" summary="빌링키 결제예약 조회" %}
 {% swagger-description %}
-삭제된 빌링키는 복구할 수 없습니다.
+결제예약정보가 (페이징된)목록으로 전달되며 최대 3개월 단위로 조회가 가능합니다.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="customer_uid" type="String" required="true" %}
@@ -19,14 +19,34 @@ description: 등록된 빌링키(customer_uid)를 삭제합니다.
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="reason" type="String" %}
-**삭제사유**
+{% swagger-parameter in="query" name="page" type="integer" %}
+**조회목록 페이징**
+
+1부터 시작하며 기본값은 1입니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="extra[requester]" type="String" %}
-**삭제 요청자**&#x20;
+{% swagger-parameter in="query" name="from" type="integer" required="true" %}
+<mark style="color:red;">**조회 시작시각**</mark>** **&#x20;
 
-네이버페이에서만 사용
+unix timestamp
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="to" type="integer" required="true" %}
+<mark style="color:red;">**조회 종료시각**</mark>** **&#x20;
+
+unix timestamp
+{% endswagger-parameter %}
+
+{% swagger-parameter in="query" name="schedule-status	" type="String" %}
+**예약상태**&#x20;
+
+누락되면 모든 상태의 예약내역 조회
+
+`scheduled`: 예약됨(실행되기 전)
+
+`executed`: 예약된 결제실행완료
+
+`revoked`: 예약철회
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
@@ -156,7 +176,7 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {% endtabs %}
 {% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+{% swagger-response status="400: Bad Request" description="검색 파라메터가 유효하지 않은 경우" %}
 ```javascript
 {
     // Response
@@ -164,7 +184,7 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 {% endswagger-response %}
 
-{% swagger-response status="404: Not Found" description="유효하지 않은 customer_uid" %}
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
 ```javascript
 {
     // Response
@@ -183,22 +203,27 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {
   "code": 0,
   "message": "string",
-  "response": {
-    "customer_uid": "string",
-    "pg_provider": "string",
-    "pg_id": "string",
-    "card_name": "string",
-    "card_code": "string",
-    "card_number": "string",
-    "card_type": "null",
-    "customer_name": "string",
-    "customer_tel": "string",
-    "customer_email": "string",
-    "customer_addr": "string",
-    "customer_postcode": "string",
-    "inserted": 0,
-    "updated": 0
-  }
+  "response": [
+    {
+      "customer_uid": "string",
+      "merchant_uid": "string",
+      "imp_uid": "string",
+      "schedule_at": "0",
+      "executed_at": "0",
+      "revoked_at": "0",
+      "amount": 0,
+      "name": "string",
+      "buyer_name": "string",
+      "buyer_email": "string",
+      "buyer_tel": "string",
+      "buyer_addr": "string",
+      "buyer_postcode": "string",
+      "custom_data": "string",
+      "schedule_status": "scheduled",
+      "payment_status": "paid",
+      "fail_reason": "string"
+    }
+  ]
 }
 ```
 

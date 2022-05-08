@@ -1,25 +1,25 @@
 ---
-description: 본인인증 결과를 조회합니다.
+description: 본인인증 결과정보를 차이포트에서 완전히 삭제 합니다.
 ---
 
-# ⌨ 본인인증 결과조회 API
+# ⌨ 본인인증 정보삭제 API
 
-### 본인인증된 결과를 조회할 때 사용합니다.
+### 본인인증결과 정보를 차이포트 서버내에서 완전히 삭제 합니다.
 
-{% swagger method="get" path="/certifications/{imp_uid}" baseUrl="https://api.iamport.kr" summary="본인인증 결과를 imp_uid를 이용하여 조회합니다." %}
+{% swagger method="delete" path="/certifications/{imp_uid}" baseUrl="https://api.iamport.kr" summary="본인인증 결과정보를 차이포트에서 완전히 삭제하고 싶을 때 요청합니다." %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
-{% swagger-parameter in="body" required="true" name="imp_uid" type="String" %}
+{% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
 <mark style="color:red;">
 
-**차이포트 인증고유번호**
+**차이포트 거래고유번호**
 
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="조회성공" %}
+{% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
 {% tab title="CertificationResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
@@ -44,7 +44,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 {% tabs %}
 {% tab title="CertificationAnnotation" %}
-**`imp_uid`**  <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>&#x20;
+**`imp_uid`**  <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>
 
 **`인증고유번호`**
 
@@ -62,7 +62,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**`pg_provider`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>&#x20;
+**`pg_provider`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 
 **`본인인증 제공 PG사 명칭`**
 
@@ -176,6 +176,14 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 {% endswagger-response %}
 
 {% swagger-response status="404: Not Found" description="휴대폰 본인인증결과를 찾을 수 없음" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="DB삭제도중 서버 장애 발생" %}
 ```javascript
 {
     // Response
