@@ -1,21 +1,27 @@
 ---
-description: 카드정보를 기입하여 1회성 결제를 요청할 수 있습니다.
+description: 저장된 빌링키(customer_uid)를 이용하여 결제를 요청할 수 있는 API 명세를 기술합니다.
 ---
 
-# ⌨ 비 인증 결제(일회성) API
+# ⌨ 비 인증 결제(빌링키) API
 
-### 카드정보만으로 결제를 요청할 수 있습니다.
+### 저장된 빌링키(customer\_uid)로 결제를 요청 할수 있습니다.
 
-{% swagger method="post" path="/onetime" baseUrl="https://api.iamport.kr/subscribe/payments" summary="구매자로부터 별도의 인증과정을 거치지 않고 카드정보만으로 결제를 진행하는 API 입니다." %}
+{% swagger method="post" path="/subscribe/payments/again" baseUrl="https://api.iamport.kr" summary="customer_uid 로 결제를 요청합니다." %}
 {% swagger-description %}
+빌링키 발급 API 또는 PG사 빌링키 발급 결제창에서 설정한 
+
 **customer_uid**
 
- 를 전달해주시면 결제 후 다음 번 결제를 위해 성공된 결제에 사용된 빌링키를 저장해두게되고 customer_uid가 없는 경우 저장되지 않습니다. 동일한 
-
-**merchant_uid는 재사용이 불가**
-
-능하며 고유한 값을 전달해주셔야 합니다.
+ 로 비 인증 결제를 요청할 수 있습니다.
 {% endswagger-description %}
+
+{% swagger-parameter in="body" name="customer_uid" type="String" required="true" %}
+<mark style="color:red;">
+
+**빌링키**
+
+</mark>
+{% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
 <mark style="color:red;">
@@ -25,13 +31,11 @@ description: 카드정보를 기입하여 1회성 결제를 요청할 수 있습
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="currency" type="currency" %}
-결제통화 구분코드
-
-KRW, USD, VND ...
+{% swagger-parameter in="body" name="currency" type="String" required="false" %}
+**결제 통화코드**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="amount" type="double" required="true" %}
+{% swagger-parameter in="body" name="amount" type="integer" required="true" %}
 <mark style="color:red;">
 
 **결제금액**
@@ -39,105 +43,63 @@ KRW, USD, VND ...
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="tax_free" type="double" %}
-면세금액
+{% swagger-parameter in="body" name="tax_free" type="integer" required="false" %}
+**면세금액**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="card_number" type="String" required="true" %}
-<mark style="color:red;">**카드번호**</mark>
-
-**(dddd-dddd-dddd-dddd)**
-
-<mark style="color:red;">****</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="expiry" type="String" required="true" %}
-<mark style="color:red;">**카드 유효기간**</mark>
-
-**(YYYY-MM)**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="birth" type="String" required="true" %}
-<mark style="color:red;">**생년월일 6자리**</mark>** (yymmdd)**
-
-(법인카드의 경우 사업자등록번호10자리)
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="pwd_2digit" type="String" %}
-카드비밀번호 앞 2자리
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="cvc" type="String" %}
-카드 인증번호&#x20;
-
-(카드 뒷면 3자리, AMEX의 경우 4자리). **Paymentwall 에서만 사용**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="customer_uid" type="String" %}
-결제에 사용된 카드정보를 빌링키 형태로 저장해두고 재 결제에 사용하시려면 customer_uid를 지정해주세요
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="pg" type="String" required="true" %}
+{% swagger-parameter in="body" name="name" type="String" required="true" %}
 <mark style="color:red;">
 
-**pg 구분코드**
+**제품명**
 
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="name" type="String" %}
-제품명
+{% swagger-parameter in="body" name="buyer_name" type="String" required="false" %}
+**주문자명**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_name" type="String" %}
-구매자명
+{% swagger-parameter in="body" name="buyer_email" type="String" required="false" %}
+**주문자 E-mail 주소**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_email" type="String" %}
-주문자 E-mail주소
+{% swagger-parameter in="body" name="buyer_tel" type="String" required="false" %}
+**주문자 전화번호**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_tel" type="String" %}
-주문자 전화번호
+{% swagger-parameter in="body" name="buyer_addr" type="String" required="false" %}
+**주문자 주소**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_addr" type="String" %}
-주문자 주소
+{% swagger-parameter in="body" name="buyer_postcode" type="String" required="false" %}
+**주문자 우편번호**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="buyer_postcode" type="String" %}
-주문자 우편번호
+{% swagger-parameter in="body" name="card_quota" type="integer" required="false" %}
+**카드 할부개월수**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="card_quota" type="integer" %}
-카드할부개월수
+{% swagger-parameter in="body" name="interest_free_by_merchant" type="boolean" required="false" %}
+**가맹점부담 무이자 할부여부**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="interest_free_by_merchant" type="boolen" %}
-가맹점부담 무이자 할부여부
+{% swagger-parameter in="body" name="use_card_point" type="boolean" required="false" %}
+**카드포인트 사용여부**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="custom_data" type="String" %}
-에코항목
+{% swagger-parameter in="body" name="custom_data" type="String" required="false" %}
+**에코항목**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="notice_url" type="String" %}
-결제성공 시 통지될 웹훅 URL
+{% swagger-parameter in="body" name="notice_url" type="String" required="false" %}
+**결제성공 시 통지될 웹훅 URL**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="browser_ip" type="String" %}
-매자 브라우져(PC)의 IP
+{% swagger-parameter in="body" name="browser_ip" type="String" required="false" %}
+**구매자 브라우저(PC)의 IP**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="secure_3d_charge_id" type="String" %}
-(해외PG 전용) 3D secure 인증 후 재결제시 PG사에서 부여한 결제 ID
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="secure_3d_token" type="String" %}
-(해외PG 전용) 3D secure 인증 후 재결제시 PG사에서 부여한 토큰
-{% endswagger-parameter %}
-
-{% swagger-response status="200: OK" description="결제 성공" %}
+{% swagger-response status="200: OK" description="결제성공" %}
 {% tabs %}
 {% tab title="PaymentResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
@@ -516,60 +478,39 @@ JSON string으로 전달
 
 ### **주요 요청 파라미터 상세 설명**
 
-> **`merchant_uid`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **주문번호**
->
-> 매 결제요청 **** 시 고유값으로 요청해야 합니다.
-
-> **`card_numb`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **카드번호**
->
-> 카드번호 기재 양식의 유의하세요 **(DDDD-DDDD-DDDD-DDDD)**
-
-> **`expiry`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **카드 유효기간**
->
-> 유효기간 기입 양식을 유의하세요 **(YYYY-MM)**
-
-> **`birth`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **생년월일**
->
-> 생년월일 기재 양식 유의**(YYMMDD)** 및 법인카드의 경우 **사업자 번호 10자리** 기재
->
-> (생년월이 기재가 필요 없는 해외PG사 결제 요청의 경우 000000 으로 고정 기재해도 무방)
-
-> **`pg`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **pg 구분코드**
->
-> 관리자콘솔 API 방식 비인증 PG설정이 2개 이상인 경우 필수적으로 기재해야 하는 항목입니다.
->
-> 동일 PG사에 <mark style="color:red;">**두개의 MID**</mark> 를 설정한 경우 아래 양식으로 기재 합니다. ****&#x20;
->
-> **{PG사}.{PG상점아이디}**
->
-> 지정하지 않거나 유효하지 않은 값이 전달되면 기본PG설정된 값을 이용해 결제하게 됩니다.
->
-> * 나이스페이먼츠, JTNet 2가지 PG설정이 되어있다면, pg 파라메터로 **nice** 또는 **jtnet**로 구분 가능
-> * 나이스페이먼츠로부터 2개 이상의 상점아이디를 발급받았다면, **nice.MID1** 또는 **nice.MID2**로 구분 가능
-
-> **`buyer_name`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **주문자명 **<mark style="color:green;">****</mark>&#x20;
->
-> 페이먼트월 PG를 이용하는 경우 구매자명은 first name 과 last name이 <mark style="color:red;">**한칸 띄어쓰기**</mark> 형태로 구분되서 유입되어야 합니다.
->
-> #### &#x20;  <mark style="color:green;">**예시)**</mark>**   Michael Jackson**&#x20;
-
 > **`customer_uid`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
 >
-> **고객 빌링키**
+> **빌링키**
 >
-> 해당 값이 설정되는 경우 빌링키가 해당 값에 맵핑되며 <mark style="color:green;">****</mark> 추후 customer\_uid 값으로만 결제를 발생시킬 수 있습니다.
+> PG사가 발급한 빌링키와 1:1로 맵핑되는 가맹점이 지정한 고유값입니다. customer\_uid 는 카드번호 단위로 구분되서 저장되어야 합니다
+
+> **`currency`        **<mark style="color:green;">**string**</mark>
+>
+> **결제통화 구분코드 **<mark style="color:green;">****</mark>&#x20;
+>
+> KRW, USD, VND...
+>
+> 페이먼트월 PG사인 경우 필수
+
+> **`browser_ip`    **<mark style="color:green;">**string**</mark>
+>
+> **구매자 브라우저 IP **<mark style="color:green;">****</mark>&#x20;
+>
+> 페이먼트월 PG사인 경우 필수
+
+> **`buyer_name`  **<mark style="color:green;">**string**</mark>
+>
+> **구매자명**
+>
+> 페이먼트월 PG사인 경우 **first name, last name** 한칸 띄어쓰기로 구분되어 유입되어야 합니다. ****&#x20;
+
+> **`buyer_email`    **<mark style="color:green;">**string**</mark>
+>
+> **구매자 이메일 주소**&#x20;
+>
+> 페이먼트월 PG사인 경우 필수파라미터 입니다.
+
+![은행코드표](<../../.gitbook/assets/image (23).png>)
 
 ### Response Model Schema
 

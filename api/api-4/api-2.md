@@ -1,0 +1,155 @@
+---
+description: API를 이용하여 본인인증 프로세스를 시작합니다.
+---
+
+# ⌨ 본인인증 요청 API
+
+### 사용자 개인정보를 입력하여 SMS OTP번호 발송 API 입니다.
+
+{% swagger method="post" path="/certifications/otp/request" baseUrl="https://api.iamport.kr" summary="본인인증을 위한 SMS OTP 번호를 발송합니다." %}
+{% swagger-description %}
+사용자 개인정보를 API로 전달하여 통신사로부터 확인되는 경우 OTP(6자리 인증번호)를 사용자에게 SMS로 전달합니다. 통신사 승인을 받은 일부 가맹점에 한해 사용하실 수 있으며 현재 **다날**을 통해서만 서비스되고 있습니다.
+
+본인인증 대상자의 성명, 생년월일 + 주민등록 뒷부분 첫 자리, 휴대폰번호, 통신사 정보를 가맹점에서 직접 입력받아 API를 요청하면 됩니다. 전달된 개인정보가 올바른 경우 해당 휴대폰으로 인증번호 SMS가 전송됩니다.
+
+HTTP Status 200응답 시 imp\_uid 가 응답데이터로 전달되며 SMS전송된 인증번호를 /certifications/otp/confirm/{imp\_uid} API 로 요청주시면 최종 본인인증 프로세스가 완료됩니다.
+{% endswagger-description %}
+
+{% swagger-parameter in="body" required="true" name="name" type="String" %}
+<mark style="color:red;">
+
+**본인인증 대상자 성명**
+
+</mark>
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="phone" type="String" required="true" %}
+<mark style="color:red;">**휴대폰번호**</mark>
+
+특수기호가 삽입되어도 무방합니다.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="birth" type="String" required="true" %}
+<mark style="color:red;">**생년월일**</mark>&#x20;
+
+**`YYYYMMDD 6자리`**
+
+특수기호가 삽입되어도 무방합니다.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="gender_digit" type="String" required="true" %}
+<mark style="color:red;">**성별구분코드**</mark>** **&#x20;
+
+주민번호 뒷부분 첫자리
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="carrier" type="String" required="true" %}
+<mark style="color:red;">**통신사구분코드**</mark>
+
+**`SKT`**
+
+**`KT`**
+
+**`LGT`**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="is_mvno" type="Boolean" %}
+**알뜰폰 사용 여부**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="company" type="String" %}
+**가맹점 서비스명칭**
+
+ 
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="merchant_uid" type="String" %}
+**주문번호**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="pg" type="String" %}
+**PG사 구분코드**
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="성공" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="대상자 개인정보 중 일부가 누락되었거나 올바르지 않은 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="500: Internal Server Error" description="처리 중 다날서버 응답오류 등 오류가 발생한 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+{% endswagger %}
+
+### **주요 요청 파라미터 상세 설명**
+
+> **`gender_digit`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`String`**</mark>
+>
+> **`셩별구분코드`**
+>
+> 주민등록번호 13자리 중 7번째 자리
+>
+> 2000년 이전 출생자는 1 또는 2, 2000년 이후 출생자는 3 또는 4
+
+> **`carrier`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`String`**</mark>
+>
+> **`통신사 구분코드` **<mark style="color:green;">****</mark>&#x20;
+>
+> 알뜰폰 사용자의 경우 <mark style="color:red;">**`carrier`**</mark>파라메터 SKT, KT, LGT 중 하나를 지정한 후&#x20;
+>
+> **`is_mvno : true` **<mark style="color:green;">****</mark> 로 설정
+
+> **`company`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`String`**</mark>
+>
+> **`가맹점 서비스명칭` **<mark style="color:green;">****</mark>&#x20;
+>
+> KISA에서 대상자에게 발송하는 SMS에 안내될 서비스 명칭
+
+> **`pg`` `**<mark style="color:green;">**`String`**</mark>
+>
+> **`PG사 구분코드` **<mark style="color:green;">****</mark>&#x20;
+>
+> &#x20;다날 상점아이디를 2개 이상 동시에 사용하시려는 경우 설정하시면 됩니다.&#x20;
+>
+> **danal.{상점아이디}** 형태로 지정
+
+### Response Model Schema
+
+<details>
+
+<summary>HTTP status 200</summary>
+
+```json
+{
+  "code": 0,
+  "message": "string",
+  "response": {
+    "imp_uid": "string"
+  }
+}
+```
+
+</details>

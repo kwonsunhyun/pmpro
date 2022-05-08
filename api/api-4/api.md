@@ -1,27 +1,31 @@
 ---
-description: 본인인증 결과를 조회합니다.
+description: 복수개의 빌링키를 이용하여 빌링키 정보를 조회할수 있습니다.
 ---
 
-# ⌨ 본인인증 결과조회 API
+# ⌨ 빌링키 정보 복수조회 API
 
-### 본인인증된 결과를 조회할 때 사용합니다.
+### 복수개의 빌링키 정보를 입력하여 각각의 빌링키 정보를 조회할 수 있습니다.
 
-{% swagger method="get" path="/certifications/{imp_uid}" baseUrl="https://api.iamport.kr" summary="본인인증 결과를 imp_uid를 이용하여 조회합니다." %}
+{% swagger method="get" path="/subscribe/customers" baseUrl="https://api.iamport.kr" summary="빌링정보 복수조회 API" %}
 {% swagger-description %}
+등록된 카드마다 1개의 
 
+**customer_uid**
+
+가 매핑되므로 가맹점 시스템 내에 1명의 고객이 여러 장의 카드를 등록할 수 있는 경우 여러 개의 customer_uid를 가지게 됩니다. 해당 고객이 등록한 카드정보 목록을 한 번에 조회하는데 사용하면 편리합니다.
 {% endswagger-description %}
 
-{% swagger-parameter in="body" required="true" name="imp_uid" type="String" %}
+{% swagger-parameter in="query" name="customer_uid[]" type="Array" required="true" %}
 <mark style="color:red;">
 
-**차이포트 인증고유번호**
+**빌키**
 
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="조회성공" %}
+{% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
-{% tab title="CertificationResponse" %}
+{% tab title="CustomerResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -38,131 +42,110 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**response** <mark style="color:red;">**(CertificationAnnotation, optional)**</mark>
+**`response`** <mark style="color:red;">**(CustomerAnnotation, optional)**</mark>
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
-{% tab title="CertificationAnnotation" %}
-**`imp_uid`**  <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>&#x20;
+{% tab title="CustomerAnnotation" %}
+**`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
 
-**`인증고유번호`**
+**`응답코드`**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+**`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+
+**`응답메세지`**
+
+code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+
+**`고객 고유번호`**\
+****
+
+**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**빌링키가 등록된 PG사 코드**
 
 ****
 
-**`merchant_uid`    **<mark style="color:green;">**string**</mark>
+**`pg_id`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`주문번호`**
-
-****
-
-**`pg_tid`  **<mark style="color:blue;">****</mark>**  **<mark style="color:green;">**string**</mark>
-
-**`PG사 인증결과 고유번호` **&#x20;
+**빌링키가 등록된 PG사 상점아이디(MID)**
 
 ****
 
-**`pg_provider`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>&#x20;
+**`card_name`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
 
-**`본인인증 제공 PG사 명칭`**
+**`카드사명`**
 
+****
 
+**`card_code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`name`      **<mark style="color:green;">**string**</mark>** **&#x20;
-
-**`실명` **&#x20;
-
-&#x20;
-
-**`gender`**  <mark style="color:green;">**string**</mark>
-
-**`성별` **<mark style="color:green;">****</mark>&#x20;
-
-* male:남성
-* female:여성
-
-
-
-**`birthday`   **<mark style="color:green;">**string**</mark>
-
-**`생년월일` **<mark style="color:green;">****</mark>&#x20;
-
-ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리 문자열
-
-
-
-**`foreigner`  **<mark style="color:green;">****</mark>**  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">****</mark>**  **<mark style="color:orange;">**boolean**</mark>
-
-**`외국인여부`**
-
-<mark style="color:red;">다날 본인인증서비스 계약시</mark> 외국인 구분기능 추가 요청을 해주셔야 사용이 가능합니다
-
-* true <mark style="color:orange;">****</mark> : 외국인
-* false : 내국인
-
-<mark style="color:green;">****</mark>
-
-&#x20;**`phone`    **<mark style="color:green;">**string**</mark>
-
-**`휴대폰번호` **<mark style="color:green;">****</mark>&#x20;
-
-특수기호없이 숫자로만 구성된 휴대폰번호가 전달. 통신사 사전승인이 이뤄지지 않으면 phone 속성은 존재하지 않습니다. 통신사 사전승인이 필요하므로 **cs@iamport.kr **<mark style="color:green;">****</mark> 로 다날 CPID 와 함께 사용승인 요청이 필요합니다.&#x20;
-
-
-
-**`carrier`**  <mark style="color:green;">**string**</mark>
-
-**`휴대폰번호의 통신사` **<mark style="color:green;">****</mark>&#x20;
-
-통신사 사전승인이 필요하므로 **cs@iamport.kr **<mark style="color:green;">****</mark> 로 다날 CPID 와 함께 사용승인 요청이 필요합니다.&#x20;
-
-* SKT
-* KT
-* LGT
-* SKT\_MVNO
-* KT\_MVNO
-* LGT\_MVNO
-
-
-
-**`certified`   **<mark style="color:green;">****</mark>**   **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">****</mark>**  **<mark style="color:orange;">**boolean**</mark>
-
-**`인증성공여부`**
+**`카드사 코드`**
 
 &#x20;****&#x20;
 
-**`certified_at`**  <mark style="color:red;">****</mark>**  **<mark style="color:green;">**string**</mark>
+**`card_number`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`인증처리시각` ** (UNIX timestamp) <mark style="color:green;">****</mark>&#x20;
-
-<mark style="color:green;">****</mark>
-
-**`unique_key`  **<mark style="color:green;">**string**</mark>
-
-**개인 고유구분 식별키 **<mark style="color:green;">****</mark>** (`CI`)**
+**`마스킹 카드번호`**
 
 ****
 
-**`unique_in_site` **<mark style="color:green;">****</mark>**     **<mark style="color:green;">**string**</mark>
+**`card_type`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**가맹점 내 개인 고유구분 식별키 (`DI`)**
+**`카드유형`**
 
-****
-
-**`origin`    **<mark style="color:green;">**string**</mark>
-
-**본인인증 프로세스가 진행된 웹 페이지의 `URL` **&#x20;
+**(주의)해당 정보를 제공하지 않는 일부 PG사의 경우 null 로 응답됨**
 
 ****
 
-**`foreigner_v2`      **<mark style="color:orange;">**boolean**</mark>
+**`customer_name`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
-**`외국인 여부(nullable)`**
+**`고객성함`**
 
-* true **** : 외국인
-* false : 내국인
+****
 
-다날 본인인증서비스 계약시 외국인 구분기능 추가 요청필요
+**`customer_tel`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+
+**`고객 전화번호`**
+
+****
+
+**`customer_email`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**`고객 Email`**
+
+****
+
+**`customer_addr`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**`고객 주소` **&#x20;
+
+&#x20;
+
+**`customer_postcode`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**`고객 우편번호`**
+
+
+
+**`inserted`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**`빌키가 등록된 시각`** UNIX timestamp
+
+
+
+**`updated`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**`빌키가 업데이트된 시각`** UNIX timestamp
 {% endtab %}
 {% endtabs %}
 {% endswagger-response %}
@@ -175,7 +158,7 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 ```
 {% endswagger-response %}
 
-{% swagger-response status="404: Not Found" description="휴대폰 본인인증결과를 찾을 수 없음" %}
+{% swagger-response status="404: Not Found" description="유효하지 않은 customer_uid" %}
 ```javascript
 {
     // Response
@@ -194,25 +177,24 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 {
   "code": 0,
   "message": "string",
-  "response": {
-    "imp_uid": "string",
-    "merchant_uid": "string",
-    "pg_tid": "string",
-    "pg_provider": "string",
-    "name": "string",
-    "gender": "string",
-    "birth": 0,
-    "birthday": "string",
-    "foreigner": true,
-    "phone": "string",
-    "carrier": "SKT",
-    "certified": true,
-    "certified_at": 0,
-    "unique_key": "string",
-    "unique_in_site": "string",
-    "origin": "string",
-    "foreigner_v2": true
-  }
+  "response": [
+    {
+      "customer_uid": "string",
+      "pg_provider": "string",
+      "pg_id": "string",
+      "card_name": "string",
+      "card_code": "string",
+      "card_number": "string",
+      "card_type": "null",
+      "customer_name": "string",
+      "customer_tel": "string",
+      "customer_email": "string",
+      "customer_addr": "string",
+      "customer_postcode": "string",
+      "inserted": 0,
+      "updated": 0
+    }
+  ]
 }
 ```
 
