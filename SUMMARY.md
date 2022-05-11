@@ -12,6 +12,7 @@
       * [⌨ 페이먼트월 설정하기](undefined/2.-pg/pg/undefined-1.md)
       * [⌨ NHN KCP 설정하기](undefined/2.-pg/pg/nhn-kcp.md)
       * [⌨ 토스간편결제 설정하기](undefined/2.-pg/pg/undefined-2.md)
+      * [⌨ 나이스페이먼츠 설정하기](undefined/2.-pg/pg/undefined-3.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
 ## 결제창 연동하기
@@ -73,7 +74,7 @@
 
 * [🖇 REST API Access Token](api/rest-api-access-token.md)
 * [💳 결제관련 API](<api/api/README (1).md>)
-  * [❌ 결제취소 API](api/api-2.md)
+  * [⌨ 결제취소 API](api/api-2.md)
   * [⌨ 결제내역 단건조회 API](api/api/api-1.md)
   * [⌨ 결제내역 복수조회 API](<api/api/api-2 (1).md>)
   * [⌨ 결제상태기준 복수조회 API](api/api/api-3.md)
@@ -103,7 +104,8 @@
   * [⌨ 본인인증 완료 API](api/api-4/api-3.md)
 * [🎫 간편결제 서비스 API](api/api-5.md)
 * [💵 현금영수증 API](api/api-6.md)
-* [🏛 가상계좌 관련 API](api/api-7.md)
+* [🏛 가상계좌 관련 API](api/api-7/README.md)
+  * [⌨ 가상계좌 발급 API](api/api-7/api.md)
 * [🍶 부가서비스 API](api/api-8.md)
 
 ## SDK
