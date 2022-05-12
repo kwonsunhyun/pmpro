@@ -1,57 +1,27 @@
 ---
-description: 빌링키로 등록된 결졔예약내역을 조회할 수 있습니다.
+description: 복합결제거래 상세정보를 조회합니다.
 ---
 
-# ⌨ 빌링키 결제예약 조회 API
+# ⌨ 결제 상세내역 조회 API
 
-### 빌링키별 결제예약목록을 조회할 수 있습니다.
+### 복합결제거래 상세정보를 조회합니다.
 
-{% swagger method="get" path="/subscribe/customers/{customer_uid}/schedules" baseUrl="https://api.iamport.kr" summary="빌링키 결제예약 조회" %}
+{% swagger method="get" path="/payments/{imp_uid}/balance" baseUrl="https://api.iamport.kr" summary="복수의 결제수단으로 거래가 발생된 거래의 상세 금액정보를 확인합니다." %}
 {% swagger-description %}
-결제예약정보가 (페이징된)목록으로 전달되며 최대 3개월 단위로 조회가 가능합니다.
+현재 PAYCO 결제수단에 한해 제공되고 있습니다
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="customer_uid" type="String" required="true" %}
+{% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
 <mark style="color:red;">
 
-**빌링키**
+**차이포트 거래번호**
 
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="page" type="integer" %}
-**조회목록 페이징**
-
-1부터 시작하며 기본값은 1입니다.
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="from" type="integer" required="true" %}
-<mark style="color:red;">**조회 시작시각**</mark>** **&#x20;
-
-unix timestamp
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="to" type="integer" required="true" %}
-<mark style="color:red;">**조회 종료시각**</mark>** **&#x20;
-
-unix timestamp
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="schedule-status	" type="String" %}
-**예약상태**&#x20;
-
-누락되면 모든 상태의 예약내역 조회
-
-`scheduled`: 예약됨(실행되기 전)
-
-`executed`: 예약된 결제실행완료
-
-`revoked`: 예약철회
-{% endswagger-parameter %}
-
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
-{% tab title="CustomerResponse" %}
+{% tab title="PaymentBalanceResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -68,115 +38,108 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**`response`** <mark style="color:red;">**(CustomerAnnotation, optional)**</mark>
+&#x20;**`response`` `**<mark style="color:red;">**`(PaymentBalanceResponseAnnotation, optional)`**</mark>
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
-{% tab title="CustomerAnnotation" %}
-**`code`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:purple;">**integer**</mark>
+{% tab title="PaymentBalanceResponseAnnotation" %}
+**`amount`` `**<mark style="color:purple;">**`Integer`**</mark>
 
-**`응답코드`**
-
-0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
-
-
-
-**`message`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
-
-**`응답메세지`**
-
-code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
-
-
-
-**`customer_uid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
-
-**`고객 고유번호`**\
-****
-
-**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**빌링키가 등록된 PG사 코드**
-
-****
-
-**`pg_id`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**빌링키가 등록된 PG사 상점아이디(MID)**
-
-****
-
-**`card_name`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
-
-**`카드사명`**
-
-****
-
-**`card_code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**`카드사 코드`**
+**`총 결제금액`**
 
 &#x20;****&#x20;
 
-**`card_number`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`cash_receipt`` `**<mark style="color:red;">**`(PaymentBalanceAnnotation):`**</mark>&#x20;
 
-**`마스킹 카드번호`**
-
-****
-
-**`card_type`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**`카드유형`**
-
-**(주의)해당 정보를 제공하지 않는 일부 PG사의 경우 null 로 응답됨**
-
-****
-
-**`customer_name`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**`고객성함`**
-
-****
-
-**`customer_tel`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
-
-**`고객 전화번호`**
-
-****
-
-**`customer_email`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**`고객 Email`**
-
-****
-
-**`customer_addr`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**`고객 주소` **&#x20;
-
-&#x20;
-
-**`customer_postcode`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
-
-**`고객 우편번호`**
+**`현금영수증 발급된 금액 상세`**
 
 
 
-**`inserted`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+**`primary`` `**<mark style="color:red;">**`(PaymentBalanceAnnotation):`**</mark>&#x20;
 
-**`빌키가 등록된 시각`** UNIX timestamp
+**`1차 결제수단`**(신용카드, 계좌이체, 가상계좌, 휴대폰소액결제) 금액 상세
 
 
 
-**`updated`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+**`secondary`` `**<mark style="color:red;">**`(PaymentBalanceAnnotation):`**</mark>&#x20;
 
-**`빌키가 업데이트된 시각`** UNIX timestamp
+**`2차 결제수단`**(PG사포인트, 카드사포인트) 금액 상세
+
+
+
+**`discount`` `**<mark style="color:red;">**`(PaymentBalanceAnnotation):`**</mark>&#x20;
+
+**`PG사/카드사 자체 할인 금액 상세`**
+
+
+
+**`histories`` `**<mark style="color:red;">**`(Array[PaymentBalanceBaseAnnotation], optional)`**</mark>&#x20;
+
+**`PaymentBalance 이력` **<mark style="color:red;">****</mark>&#x20;
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="PaymentBalanceAnnotation" %}
+**`tax_free`` `**<mark style="color:purple;">**`Integer`**</mark>
+
+**`면세 공급가액`** (환불시 마이너스 차감된 최종 금액 반환)
+
+
+
+**`supply`` `**<mark style="color:purple;">**`Integer`**</mark>
+
+**`과세 공급가액`** (환불시 마이너스 차감된 최종 금액 반환)
+
+
+
+**`vat`** <mark style="color:purple;">**`Integer`**</mark>
+
+**`부가세액`** (환불시 마이너스 차감된 최종 금액 반환)
+
+
+
+**`service`` `**<mark style="color:purple;">**`Integer`**</mark>
+
+**`봉사료`** (환불시 마이너스 차감된 최종 금액 반환)
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="PaymentBalanceBaseAnnotation" %}
+**`cash_receipt` **<mark style="color:red;">**(PaymentBalanceAnnotation):**</mark>&#x20;
+
+**`현금영수증 발급된 금액 상세`**
+
+&#x20;****&#x20;
+
+**`primary`` `**<mark style="color:red;">**`(PaymentBalanceAnnotation)`**</mark>&#x20;
+
+**`1차 결제수단`**(신용카드, 계좌이체, 가상계좌, 휴대폰소액결제) 금액 상세
+
+
+
+**`secondary`` `**<mark style="color:red;">**`(PaymentBalanceAnnotation):`**</mark>
+
+**`2차 결제수단`**(PG사포인트, 카드사포인트) 금액 상세
+
+
+
+**`discount`` `**<mark style="color:red;">**`(PaymentBalanceAnnotation)`**</mark>
+
+**`PG사/카드사 자체 할인 금액 상세`**
+
+
+
+**`created  *`` `**<mark style="color:purple;">**`integer`**</mark> <mark style="color:purple;"></mark><mark style="color:purple;"></mark>&#x20;
+
+**`Balance정보가 등록된 시각 UNIX timestamp`**
 {% endtab %}
 {% endtabs %}
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="검색 파라메터가 유효하지 않은 경우" %}
+{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
 ```javascript
 {
     // Response
@@ -184,7 +147,7 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 {% endswagger-response %}
 
-{% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+{% swagger-response status="404: Not Found" description="유효하지 않은 imp_uid" %}
 ```javascript
 {
     // Response
@@ -203,27 +166,62 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {
   "code": 0,
   "message": "string",
-  "response": [
-    {
-      "customer_uid": "string",
-      "merchant_uid": "string",
-      "imp_uid": "string",
-      "schedule_at": "0",
-      "executed_at": "0",
-      "revoked_at": "0",
-      "amount": 0,
-      "name": "string",
-      "buyer_name": "string",
-      "buyer_email": "string",
-      "buyer_tel": "string",
-      "buyer_addr": "string",
-      "buyer_postcode": "string",
-      "custom_data": "string",
-      "schedule_status": "scheduled",
-      "payment_status": "paid",
-      "fail_reason": "string"
-    }
-  ]
+  "response": {
+    "amount": 0,
+    "cash_receipt": {
+      "tax_free": 0,
+      "supply": 0,
+      "vat": 0,
+      "service": 0
+    },
+    "primary": {
+      "tax_free": 0,
+      "supply": 0,
+      "vat": 0,
+      "service": 0
+    },
+    "secondary": {
+      "tax_free": 0,
+      "supply": 0,
+      "vat": 0,
+      "service": 0
+    },
+    "discount": {
+      "tax_free": 0,
+      "supply": 0,
+      "vat": 0,
+      "service": 0
+    },
+    "histories": [
+      {
+        "cash_receipt": {
+          "tax_free": 0,
+          "supply": 0,
+          "vat": 0,
+          "service": 0
+        },
+        "primary": {
+          "tax_free": 0,
+          "supply": 0,
+          "vat": 0,
+          "service": 0
+        },
+        "secondary": {
+          "tax_free": 0,
+          "supply": 0,
+          "vat": 0,
+          "service": 0
+        },
+        "discount": {
+          "tax_free": 0,
+          "supply": 0,
+          "vat": 0,
+          "service": 0
+        },
+        "created": 0
+      }
+    ]
+  }
 }
 ```
 
