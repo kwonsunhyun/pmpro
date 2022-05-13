@@ -1,102 +1,50 @@
 ---
-description: 가상계좌번호를 발급하여 고객이 입금할수 있도록 합니다.
+description: 발급된 가상계좌 번호를 취소합니다.
 ---
 
-# ⌨ 가상계좌 발급 API
+# ⌨ 가상계좌 발급취소 API
 
-### 가상계좌번호를 발급할수 있습니다.
+### 발급된 가상계좌(입금이 되기 전)를 말소합니다
 
 해당 API 는 아래 PG사를 이용하는 경우에만 사용 가능합니다.
 
-* 세틀뱅크
-* 나이스페이먼츠
-* KG이니시스
+**지원되는 PG사**
 
-{% swagger method="post" path="/vbanks" baseUrl="https://api.iamport.kr" summary="가상계좌 번호를 발급합니다." %}
+<details>
+
+<summary>확인하기</summary>
+
+* **KG이니시스**
+* **NHN KCP**
+* **TOSS Payments**
+* **Nice Payments**
+* **KICC**
+* **Settle Bank**
+* **Smartro**
+
+</details>
+
+{% swagger method="delete" path="" baseUrl="" summary="발급된 가상계좌 번호를 취소" %}
 {% swagger-description %}
-희망하시는 은행, 예금주명으로 입금이 가능한 가상계좌를 생성할 수 있습니다.(별도로 PG계약 필요)
+아직 입금이 되지 않은 가상계좌를 말소시킴으로써 구매자가 실수로 입금하는 경우를 방지하도록 합니다. 
 
+**imp_uid**
 
+가 지정되어야 합니다.(아임포트 기획 의도상 동일한 merchant_uid의 입금대기 중인 가상계좌가 N개 존재할 수 있으므로 imp_uid로만 가상계좌 말소가 가능합니다)
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="merchant_uid" type="String(40)" required="true" %}
+{% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
 <mark style="color:red;">
 
-**주문번호**
+**차이포트 거래고유번호**
 
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="amount" type="Double" required="true" %}
-<mark style="color:red;">
-
-**발급금액**
-
-</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="vbank_code" type="String" required="true" %}
-<mark style="color:red;">
-
-**은행구분코드**
-
-</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="vbank_due" type="Integer" required="true" %}
-<mark style="color:red;">**가상계좌 입금기한**</mark>
-
-**UNIX TIMESTAMP **<mark style="color:red;">****</mark>&#x20;
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="vbank_holder" type="String(16)" required="true" %}
-<mark style="color:red;">
-
-**가상계좌 예금주명**
-
-</mark>
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="name" type="String(40)" %}
-**주문명**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_name" type="String(16)" %}
-**주문자명**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_email" type="String(64)" %}
-**주문자 E-mail 주소**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_tel" type="String(16)" %}
-**주문자 전화번호**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_addr" type="String(128)" %}
-**주문자 주소**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="buyer_postcode" type="String(8)" %}
-**주문자 우편번호**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="pg" type="String" %}
-**PG사 구분코드**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="notice_url" type="String" %}
-**입금통보 URL**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="custom_data" type="Array" %}
-**에코항목**
-{% endswagger-parameter %}
-
-{% swagger-parameter in="query" name="pg_api_key" type="String" %}
+{% swagger-parameter in="query" name="pg_api_key" %}
 **API Key**
 
-**(이니시스 전용)**
+KG이니시스 PG사 이용 시 필수
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
@@ -467,7 +415,23 @@ JSON string으로 전달
 {% endtabs %}
 {% endswagger-response %}
 
+{% swagger-response status="400: Bad Request" description="imp_uid가 누락된 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
 {% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
+```javascript
+{
+    // Response
+}
+```
+{% endswagger-response %}
+
+{% swagger-response status="404: Not Found" description="유효하지 않은 imp_uid" %}
 ```javascript
 {
     // Response
@@ -477,39 +441,6 @@ JSON string으로 전달
 {% endswagger %}
 
 ### **주요 요청 파라미터 상세 설명**
-
-> **`vbank_code`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`String`**</mark>
->
-> **은행구분코드 **<mark style="color:green;">****</mark>&#x20;
->
-> [**은행코드표**](../../tip/pg.md) 참조
-
-> **`pg`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
->
-> **pg 구분코드**
->
-> 관리자콘솔 API 방식 비인증 PG설정이 2개 이상인 경우 필수적으로 기재해야 하는 항목입니다.
->
-> 동일 PG사에 <mark style="color:red;">**두개의 MID**</mark> 를 설정한 경우 아래 양식으로 기재 합니다. ****&#x20;
->
-> **{PG사}.{PG상점아이디}**
->
-> 지정하지 않거나 유효하지 않은 값이 전달되면 기본PG설정된 값을 이용해 결제하게 됩니다.
->
-> * 나이스페이먼츠, JTNet 2가지 PG설정이 되어있다면, pg 파라메터로 **nice** 또는 **jtnet**로 구분 가능
-> * 나이스페이먼츠로부터 2개 이상의 상점아이디를 발급받았다면, **nice.MID1** 또는 **nice.MID2**로 구분 가능
-
-> **`notice_url`**<mark style="color:green;">**`String`**</mark>
->
-> **입금통보 URL **<mark style="color:green;">****</mark>&#x20;
->
-> 가상계좌 입금시 입금통지받을 URL 선언되지 않으면 아임포트 관리자 페이지에 정의된 Notification URL값을 사용
-
-> **`custom_data`` `**<mark style="color:blue;">**`json`**</mark>
->
-> **에코항목** <mark style="color:blue;"></mark>&#x20;
->
-> 결제정보와 함께 저장할 custom\_data. 객체로 전달되는 경우 JSON 문자열로 저장
 
 > **`pg_api_key`` `**<mark style="color:green;">**`String`**</mark>
 >
@@ -592,4 +523,3 @@ JSON string으로 전달
 ```
 
 </details>
-
