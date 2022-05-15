@@ -24,7 +24,7 @@ description: 발급된 가상계좌 번호를 취소합니다.
 
 </details>
 
-{% swagger method="delete" path="/vbanks/{imp_uid}" baseUrl="https://api.iamport.kr" summary="발급된 가상계좌 번호를 취소" %}
+{% swagger method="delete" path="" baseUrl="" summary="발급된 가상계좌 번호를 취소" %}
 {% swagger-description %}
 아직 입금이 되지 않은 가상계좌를 말소시킴으로써 구매자가 실수로 입금하는 경우를 방지하도록 합니다. 
 
