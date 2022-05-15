@@ -1,50 +1,32 @@
 ---
-description: 발급된 가상계좌 번호를 취소합니다.
+description: 발급된 가상계좌 정보를 수정합니다.
 ---
 
-# ⌨ 가상계좌 발급취소 API
+# ⌨ 가상계좌 발급정보 수정 API
 
-### 발급된 가상계좌(입금이 되기 전)를 말소합니다
+### API 요청으로 발급된 가상계좌 정보를 수정합니다.
 
-해당 API 는 아래 PG사를 이용하는 경우에만 사용 가능합니다.
-
-**지원되는 PG사**
-
-<details>
-
-<summary>확인하기</summary>
-
-* **KG이니시스**
-* **NHN KCP**
-* **TOSS Payments**
-* **Nice Payments**
-* **KICC**
-* **Settle Bank**
-* **Smartro**
-
-</details>
-
-{% swagger method="delete" path="/vbanks/{imp_uid}" baseUrl="https://api.iamport.kr" summary="발급된 가상계좌 번호를 취소" %}
+{% swagger method="put" path="/vbanks/{imp_uid}" baseUrl="https://api.iamport.kr" summary="아직 입금이 되지 않은 가상계좌의 입금기한 또는 입금금액을 수정할 수 있습니다." %}
 {% swagger-description %}
-아직 입금이 되지 않은 가상계좌를 말소시킴으로써 구매자가 실수로 입금하는 경우를 방지하도록 합니다. 
-
-**imp_uid**
-
-가 지정되어야 합니다.(아임포트 기획 의도상 동일한 merchant_uid의 입금대기 중인 가상계좌가 N개 존재할 수 있으므로 imp_uid로만 가상계좌 말소가 가능합니다)
+imp_uid가 지정되어야 합니다.(아임포트 기획 의도상 동일한 merchant_uid의 입금대기 중인 가상계좌가 N개 존재할 수 있으므로 imp_uid로만 가상계좌 수정이 가능합니다)
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
 <mark style="color:red;">
 
-**차이포트 거래고유번호**
+**차이포트 고유번호**
 
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="pg_api_key" %}
-**API Key**
+{% swagger-parameter in="body" name="amount" type="integer" %}
+**발급금액**
+{% endswagger-parameter %}
 
-KG이니시스 PG사 이용 시 필수
+{% swagger-parameter in="body" name="vbank_due" type="integer" %}
+**입금기한**
+
+`UNIX TIMESTAMP`
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
@@ -439,16 +421,6 @@ JSON string으로 전달
 ```
 {% endswagger-response %}
 {% endswagger %}
-
-### **주요 요청 파라미터 상세 설명**
-
-> **`pg_api_key`` `**<mark style="color:green;">**`String`**</mark>
->
-> **API Key**
->
-> 이니시스의 가맹점 콘솔에서 확인하셔야 하는 API Key 값으로 가상계좌 발급 및 말소 신청에 사용됩니다. 누락하거나 잘못된 키 입력 시 hashData 불일치 오류가 발생합니다.&#x20;
->
-> (**이니시스 전용이며, 이니시스의 경우 필수값 Query parameter임**)
 
 ### Respose Model Schema
 

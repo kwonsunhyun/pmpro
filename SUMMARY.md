@@ -108,6 +108,7 @@
 * [🏛 가상계좌 관련 API](api/api-8/README.md)
   * [⌨ 가상계좌 발급 API](api/api-8/api.md)
   * [⌨ 가상계좌 발급취소 API](api/api-8/api-1.md)
+  * [⌨ 가상계좌 발급정보 수정 API](api/api-8/api-2.md)
 * [🍶 부가서비스 API](api/api-9.md)
 
 ## SDK
