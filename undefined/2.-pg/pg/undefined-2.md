@@ -2,11 +2,11 @@
 
 ### <mark style="color:blue;">**STEP 01.**</mark>** 서비스 신청**&#x20;
 
-**아임포트 로그인 >** [**https://www.iamport.kr/**](https://www.iamport.kr) **메인 "지금 시작하기" 클릭  > PG사 선택 "토스간편결제" 선택 후 정보기재 > 신청서 제출하기**
+**아임포트 로그인 >** [**https://www.iamport.kr/**](https://www.iamport.kr/) **메인 "지금 시작하기" 클릭  > PG사 선택 "토스간편결제" 선택 후 정보기재 > 신청서 제출하기**
 
 ### <mark style="color:blue;">**STEP 0**</mark><mark style="color:blue;">**2**</mark><mark style="color:blue;">**.**</mark>** PG설정방법**
 
-아임포트 관리자콘솔([https://admin.iamport.kr/](https://admin.iamport.kr)) 로그인 > 시스템설정 > PG설정(일반결제 및 정기결제) 에서 PG사 "\[간편결제]토스" 선택 후 테스트 모드 \[ON]상태에서 하단 \[전체저장] 클릭
+아임포트 관리자콘솔([https://admin.iamport.kr/](https://admin.iamport.kr/)) 로그인 > 시스템설정 > PG설정(일반결제 및 정기결제) 에서 PG사 "\[간편결제]토스" 선택 후 테스트 모드 \[ON]상태에서 하단 \[전체저장] 클릭
 
 * 테스트 상점아이디 : tosstest
 * 테스트 apiKey : sk\_test\_w5lNQylNqa5lNQe013Nq
