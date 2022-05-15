@@ -62,9 +62,9 @@
 * [✅ 오픈 전 체크사항](tip/undefined-1.md)
 * [🔏 Confirm Process](tip/confirm-process.md)
 * [🎼 아임포트 결제 FLOW](tip/flow.md)
+* [🎈 Agency & Tier 란?](tip/agency-and-tier.md)
 * [🏦 PG사별 은행코드표](tip/pg.md)
 * [🧾 PG사 코드표](tip/pg-1.md)
-* [🎈 Agency & Tier 란?](tip/agency-and-tier.md)
 
 ## 관리자 콘솔 사용하기
 
@@ -105,7 +105,8 @@
   * [⌨ 본인인증 완료 API](api/api-5/api-2.md)
   * [⌨ 본인인증 요청 API](api/api-5/api-3.md)
 * [🎫 간편결제 서비스 API](api/api-6.md)
-* [💵 현금영수증 API](api/api-7.md)
+* [💵 현금영수증 API](api/api-7/README.md)
+  * [⌨ 차이포트 발급분 취소 API](api/api-7/api.md)
 * [🏛 가상계좌 관련 API](api/api-8/README.md)
   * [⌨ 가상계좌 발급 API](api/api-8/api.md)
   * [⌨ 가상계좌 발급취소 API](api/api-8/api-1.md)
