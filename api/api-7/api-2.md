@@ -8,6 +8,32 @@ description: 현금영수증을 발급할 수 있습니다.
 
 차이포트를 통해 발생된 현금성 거래(**가상계좌,게좌이체**)의 차이포트 거래번호(<mark style="color:red;">**`imp_uid`**</mark>)를 기준으로 현금영수증이 발급 됩니다. 현금영수증 발급 금액은 **현금성 거래의 금액으로 자동 적용**됩니다. 부분취소된 거래인 경우 **남은 잔액으로 발급**됩니다.
 
+**지원되는 PG사**
+
+<details>
+
+<summary>확인하기</summary>
+
+* **KG 이니시스**
+
+<!---->
+
+* **NHN KCP**
+
+<!---->
+
+* **Settle Bank**
+
+<!---->
+
+* **NICE Payments**
+
+<!---->
+
+* **PayJoa(다우)**
+
+</details>
+
 {% swagger method="get" path="/receipts/{imp_uid}" baseUrl="https://api.ianport.kr" summary="현금거래에 대한 현금영수증을 발급합니다." %}
 {% swagger-description %}
 현금영수증 발행을 처리하는 차이포트 API 입니다.
