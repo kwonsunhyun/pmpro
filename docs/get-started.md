@@ -15,7 +15,7 @@ description: 차이포트 온라인 결제를 소개 합니다.
 
 * Javascript 입력 Parameters 변경으로 손쉽게 결제수단 및 PG사 추가 및 변경이 가능합니다.
 
-![PG사 변경](<../.gitbook/assets/image (13) (1).png>)
+![PG사 변경](<../.gitbook/assets/image (13) (1) (1).png>)
 
 ### 최신 트렌드에 맞는 다양한 프로그램 언어에 대한 모든 결제 레퍼런스 및 연동 샘플 및 가이드를 제공해 드립니다.
 
@@ -27,7 +27,7 @@ description: 차이포트 온라인 결제를 소개 합니다.
 * Golang
 * ...
 
-![제공 가능 프로그래밍 언어](<../.gitbook/assets/image (3).png>)
+![제공 가능 프로그래밍 언어](<../.gitbook/assets/image (3) (1).png>)
 
 ### 모든 결제 데이터는 안심하게 이용할 수 있도록 모니터링을 통해 고객사의 소중한 정보를 실시간으로 지켜드려요
 

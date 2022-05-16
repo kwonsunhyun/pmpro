@@ -20,7 +20,7 @@ Access token 발급 요청을 **클라이언트 사이드에서 하면 요청 �
 
 관리자 콘솔에서 확인한 **`REST API 키`**와 **`REST API Secret`**로 REST API([POST https://api.iamport.kr/users/getToken](https://api.iamport.kr/#!/authenticate/getToken))를 호출하여 access token 발급을 요청하는 예제입니다.
 
-![관리자 콘솔 REST API키 & REST API Secret](<../../.gitbook/assets/image (18).png>)
+![관리자 콘솔 REST API키 & REST API Secret](<../.gitbook/assets/image (18) (1).png>)
 
 {% tabs %}
 {% tab title="curl" %}
@@ -119,7 +119,7 @@ Access token의 만료기한은 발행 시간부터 **30분**입니다. 토큰�
 > * 재발행 (만료 후 발급): 새로운 access token을 발급한다. (만료기한: 발행시간 후 30분)
 > * 재사용 (만료 전 발급): 기존 access token을 발급한다. (만료기한: 기존과 동일, 단 기존 만료시간 전 1분이내 요청 시 5분 연장 됨)
 
-![](../../.gitbook/assets/2.svg)
+![](../.gitbook/assets/2.svg)
 
 {% hint style="info" %}
 **만료기한 5분 연장**
