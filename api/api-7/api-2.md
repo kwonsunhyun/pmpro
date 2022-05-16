@@ -34,7 +34,7 @@ description: 현금영수증을 발급할 수 있습니다.
 
 </details>
 
-{% swagger method="get" path="/receipts/{imp_uid}" baseUrl="https://api.ianport.kr" summary="현금거래에 대한 현금영수증을 발급합니다." %}
+{% swagger method="post" path="/receipts/{imp_uid}" baseUrl="https://api.ianport.kr" summary="현금거래에 대한 현금영수증을 발급합니다." %}
 {% swagger-description %}
 현금영수증 발행을 처리하는 차이포트 API 입니다.
 {% endswagger-description %}

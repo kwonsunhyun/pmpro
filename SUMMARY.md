@@ -111,6 +111,7 @@
   * [⌨ 현금영수증 단건발급 API](api/api-7/api-2.md)
   * [⌨ 외부 발급분 취소 API](api/api-7/api-3.md)
   * [⌨ 외부 발급내역 단건 조회 API](api/api-7/api-4.md)
+  * [⌨ 현금영수증 발급(외부) API](api/api-7/api-5.md)
 * [🏛 가상계좌 관련 API](api/api-8/README.md)
   * [⌨ 가상계좌 발급 API](api/api-8/api.md)
   * [⌨ 가상계좌 발급취소 API](api/api-8/api-1.md)
