@@ -53,14 +53,14 @@ description: 차이포트 API 를 소개합니다.
 [api-6.md](api-6.md)
 {% endcontent-ref %}
 
-{% content-ref url="api-7.md" %}
-[api-7.md](api-7.md)
-{% endcontent-ref %}
-
 {% content-ref url="api-8/" %}
 [api-8](api-8/)
 {% endcontent-ref %}
 
-{% content-ref url="api-9.md" %}
-[api-9.md](api-9.md)
+{% content-ref url="api-9/" %}
+[api-9](api-9/)
+{% endcontent-ref %}
+
+{% content-ref url="api-10/" %}
+[api-10](api-10/)
 {% endcontent-ref %}

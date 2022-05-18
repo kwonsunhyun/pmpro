@@ -1,17 +1,17 @@
 ---
-description: 은행표준코드, 은행명을 조회할 수 있습니다
+description: 은행코드 및 계좌번호를 이용하여 예금주 성명을 조회합니다.
 ---
 
-# ⌨ 은행명 단건조회 API
+# ⌨ 예금주 조회 API
 
-### 은행코드로 은행명을 획득합니다.
+### &#x20;예금주 성명을 은행계좌번호를 이용하여 획득합니다.
 
-{% swagger method="get" path="/banks/{bank_standard_code}" baseUrl="https://api.iamport.kr" summary="은행코드로 은행명을 획득합니다." %}
+{% swagger method="get" path="/vbanks/holder" baseUrl="https://api.iamport.kr" summary="은행코드, 계좌번호를 이용해 해당 계좌의 예금주 명을 조회합니다." %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="bank_standard_code	" type="String" required="true" %}
+{% swagger-parameter in="query" name="bank_code" type="String" required="true" %}
 <mark style="color:red;">
 
 **은행코드**
@@ -19,9 +19,15 @@ description: 은행표준코드, 은행명을 조회할 수 있습니다
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-response status="200: OK" description="성공" %}
+{% swagger-parameter in="query" name="bank_num" type="String" required="true" %}
+<mark style="color:red;">**계좌번호**</mark>
+
+`숫자외 기호 포함 가능`
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
 {% tabs %}
-{% tab title="StandardCodeListResponse" %}
+{% tab title="VbankHolderResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -38,23 +44,25 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**`response`**<mark style="color:red;">**`(Array[StandardCodeAnnotation], optional)`**</mark><mark style="color:red;">** **</mark><mark style="color:red;">****</mark>&#x20;
+**response **<mark style="color:red;">**(VbankHolderAnnotation, optional)**</mark>
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
-{% tab title="StandardCodeAnnotation" %}
-**`code`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
+{% tab title="VbankHolderAnnotation" %}
+**`bank_holder`` `**<mark style="color:red;">**`*`**</mark>**` `**<mark style="color:green;">**`string`**</mark>
 
-**`기관코드(금융결제원표준코드)`**
-
-&#x20;****&#x20;
-
-**`name`` `**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
-
-**`기관명(금융결제원기재명)`**
+**`예금주명`**
 {% endtab %}
 {% endtabs %}
+{% endswagger-response %}
+
+{% swagger-response status="400: Bad Request" description="bank_code가 누락된 경우" %}
+```javascript
+{
+    // Response
+}
+```
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
@@ -65,7 +73,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 {% endswagger-response %}
 
-{% swagger-response status="404: Not Found" description="코드에 해당되는 은행정보를 찾을 수 없음" %}
+{% swagger-response status="404: Not Found" description="계좌정보 조회 실패" %}
 ```javascript
 {
     // Response
@@ -74,19 +82,18 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {% endswagger-response %}
 {% endswagger %}
 
-### Response Model Schema
+### Respose Model Schema
 
 <details>
 
 <summary>HTTP status 200</summary>
 
-```
+```json
 {
   "code": 0,
   "message": "string",
   "response": {
-    "code": "string",
-    "name": "string"
+    "bank_holder": "string"
   }
 }
 ```
