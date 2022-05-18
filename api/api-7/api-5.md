@@ -28,7 +28,7 @@ description: 차이포트와 별개로 거래된 현금결제에 대한 현금�
 
 <!---->
 
-* **PayJoa(다우)**
+* **페이조아(다우)**
 
 </details>
 
@@ -126,11 +126,86 @@ pg 파라메터를 지정하지 않으면, 기본 PG설정값을 이용해 발�
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
-```javascript
-{
-    // Response
-}
-```
+{% tabs %}
+{% tab title="ExternalReceiptResponse" %}
+**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**응답코드**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**응답메세지**
+
+code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**`response`**<mark style="color:red;">**`(ExternalReceiptAnnotation, optional)`**</mark>&#x20;
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="ExternalReceiptAnnotation" %}
+**`merchant_uid`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
+
+**`주문번호`**
+
+
+
+**`receipt_tid`` `**<mark style="color:green;">**`string`**</mark>
+
+**`현금영수증 PG사 발행고유번호`**
+
+&#x20;****&#x20;
+
+**`apply_num`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>** **&#x20;
+
+**`현금영수증 국세청 발행번호`**
+
+&#x20;****&#x20;
+
+**`type`` `**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
+
+**`현금영수증 발행대상 타입`**
+
+* 개인 : `person` ****&#x20;
+* 사업자 : `company`
+
+
+
+**`amount`**<mark style="color:red;">**`*`**</mark><mark style="color:orange;">**`integer`**</mark>
+
+**`현금영수증 발행금액`**
+
+&#x20;****&#x20;
+
+**`vat`**<mark style="color:red;">**`*`**</mark><mark style="color:orange;">**`integer`**</mark>
+
+**`부가세`**
+
+&#x20;****&#x20;
+
+**`receipt_url`` `**<mark style="color:green;">**`string`**</mark>
+
+**`발행된 현금영수증 URL` **&#x20;
+
+****
+
+**`applied_at`**<mark style="color:red;">**`*`**</mark><mark style="color:orange;">**`integer`**</mark>
+
+**현금영수증 발행시각** `UNIX TIMESTAMP`
+
+&#x20;
+
+**`cancelled_at`` `**<mark style="color:orange;">**`integer`**</mark>
+
+**`현금영수증 발행취소시각`** `UNIX TIMESTAMP`
+{% endtab %}
+{% endtabs %}
 {% endswagger-response %}
 
 {% swagger-response status="400: Bad Request" description="필수 파라메터가 누락된 경우, 이미 현금영수증 발행된 merchant_uid 에 대해 요청한 경우" %}

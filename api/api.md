@@ -61,6 +61,6 @@ description: 차이포트 API 를 소개합니다.
 [api-8](api-8/)
 {% endcontent-ref %}
 
-{% content-ref url="api-9/" %}
-[api-9](api-9/)
+{% content-ref url="api-9.md" %}
+[api-9.md](api-9.md)
 {% endcontent-ref %}

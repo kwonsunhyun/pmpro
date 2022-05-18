@@ -117,7 +117,7 @@
   * [⌨ 가상계좌 발급취소 API](api/api-8/api-1.md)
   * [⌨ 가상계좌 발급정보 수정 API](api/api-8/api-2.md)
   * [⌨ 예금주 조회 API](api/api-8/api-3.md)
-* [🍶 부가서비스 API](api/api-9/README.md)
+* [🍶 기타 API](api/api-9.md)
   * [⌨ 카드사코드 조회 API](api/api-9/api.md)
   * [⌨ 카드사명 조회 API](api/api-9/api-1.md)
   * [⌨ 은행코드 조회 API](api/api-9/api-2.md)
@@ -139,6 +139,6 @@
 ## 🔑 PG사별 결제창 연동 가이드
 
 * [⌨ NHH KCP](pg/nhh-kcp.md)
-* [⌨ NICE](pg/nice.md)
+* [⌨ NICE](pg/nice.md)
 * [⌨ TOSS](pg/toss.md)
 * [⌨ INICIS](pg/inicis.md)
