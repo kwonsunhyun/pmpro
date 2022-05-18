@@ -63,8 +63,9 @@
 * [🔏 Confirm Process](tip/confirm-process.md)
 * [🎼 아임포트 결제 FLOW](tip/flow.md)
 * [🎈 Agency & Tier 란?](tip/agency-and-tier.md)
-* [🏦 PG사별 은행코드표](tip/pg.md)
-* [🧾 PG사 코드표](tip/pg-1.md)
+* [📦 PG사별 빌링키 획득 규칙](tip/pg.md)
+* [🏦 PG사별 은행코드표](tip/pg-1.md)
+* [🧾 PG사 코드표](tip/pg-2.md)
 
 ## 관리자 콘솔 사용하기
 

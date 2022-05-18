@@ -206,7 +206,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`bank_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
 
-**`은행 표준코드`**[**`(링크보기)`**](../../tip/pg.md)**``**
+**`은행 표준코드`**[**`(링크보기)`**](../../tip/pg-1.md)**``**
 
 ****
 
@@ -482,7 +482,7 @@ JSON string으로 전달
 >
 > **은행구분코드 **<mark style="color:green;">****</mark>&#x20;
 >
-> [**은행코드표**](../../tip/pg.md) 참조
+> [**은행코드표**](../../tip/pg-1.md) 참조
 
 > **`pg`    **<mark style="color:red;">**\***</mark>**    **<mark style="color:green;">**string**</mark>
 >

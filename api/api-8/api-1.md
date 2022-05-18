@@ -154,7 +154,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`bank_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
 
-**`은행 표준코드`**[**`(링크보기)`**](../../tip/pg.md)**``**
+**`은행 표준코드`**[**`(링크보기)`**](../../tip/pg-1.md)**``**
 
 ****
 
