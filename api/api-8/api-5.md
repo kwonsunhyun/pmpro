@@ -6,11 +6,9 @@ description: 차이포트와 별개로 거래된 현금결제에 대한 현금�
 
 ### 차이포트와 별개로 거래된 일반 현금결제에 대해서 현금영수증을 발행합니다.
 
-**지원되는 PG사**
-
 <details>
 
-<summary>확인하기</summary>
+<summary><strong>지원되는 PG사</strong> 확인하기</summary>
 
 * **KG 이니시스**
 

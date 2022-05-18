@@ -6,13 +6,9 @@ description: 발급된 가상계좌 번호를 취소합니다.
 
 ### 발급된 가상계좌(입금이 되기 전)를 말소합니다
 
-해당 API 는 아래 PG사를 이용하는 경우에만 사용 가능합니다.
-
-**지원되는 PG사**
-
 <details>
 
-<summary>확인하기</summary>
+<summary><strong>지원되는 PG사</strong> 확인하기</summary>
 
 * **KG이니시스**
 * **NHN KCP**

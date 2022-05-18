@@ -6,11 +6,9 @@ description: 차이포트를 통해 발급한 현금영수증 발급거래를 �
 
 ### 차이포트를 통해 발급한 현금영수증 거래를 취소할 수 있습니다.
 
-**지원되는 PG사**
-
 <details>
 
-<summary>확인하기</summary>
+<summary><strong>지원되는 PG사 확인하기</strong></summary>
 
 * **KG 이니시스**
 * **NHN KCP**
