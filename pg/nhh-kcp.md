@@ -251,6 +251,18 @@ card : {
 
 {% embed url="https://codepen.io/chaiport/pen/RwxpQNq" %}
 {% endtab %}
+
+{% tab title="앱카드 결제만 노출" %}
+인증결제시 각 카드사 앱카드 결제 화면만 노출하고 싶은 경우 아래 파라미터를 설정하시면 됩니다.
+
+{% code title="request_pay()" %}
+```javascript
+...
+appCard : true .  //true 설정시 각 카드사 앱카드 결제만 활성화
+...
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 ### 4. 기타 파라미터
