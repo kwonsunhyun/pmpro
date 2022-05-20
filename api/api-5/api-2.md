@@ -213,11 +213,9 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 {% endswagger-response %}
 {% endswagger %}
 
-### Response Model Schema
-
 <details>
 
-<summary>HTTP status 200</summary>
+<summary>Response Model Schema</summary>
 
 ```json
 {

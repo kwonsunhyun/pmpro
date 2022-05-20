@@ -233,11 +233,9 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 >
 > KG이니시스/NHN KCP/나이스페이먼츠/페이조아는 **identifier 만으로 자동 처리**
 
-### Response Model Schema
-
 <details>
 
-<summary>HTTP status 200</summary>
+<summary>Response Model Schema</summary>
 
 ```json
 {

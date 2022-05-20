@@ -6,6 +6,20 @@ description: 발급된 가상계좌 정보를 수정합니다.
 
 ### API 요청으로 발급된 가상계좌 정보를 수정합니다.
 
+<details>
+
+<summary><strong>지원되는 PG사 확인하기</strong></summary>
+
+* KG이니시스
+* NHN KCP
+* LGU+(토스페이먼츠)
+* 나이스페이먼츠
+* KICC
+* 세틀뱅크
+* 스마트로
+
+</details>
+
 {% swagger method="put" path="/vbanks/{imp_uid}" baseUrl="https://api.iamport.kr" summary="아직 입금이 되지 않은 가상계좌의 입금기한 또는 입금금액을 수정할 수 있습니다." %}
 {% swagger-description %}
 imp_uid가 지정되어야 합니다.(아임포트 기획 의도상 동일한 merchant_uid의 입금대기 중인 가상계좌가 N개 존재할 수 있으므로 imp_uid로만 가상계좌 수정이 가능합니다)
@@ -422,11 +436,9 @@ JSON string으로 전달
 {% endswagger-response %}
 {% endswagger %}
 
-### Respose Model Schema
-
 <details>
 
-<summary>HTTP status 200</summary>
+<summary>Response Model Schema</summary>
 
 ```json
 {
