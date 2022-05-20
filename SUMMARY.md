@@ -111,6 +111,8 @@
     * [⌨ 주문내역 조회 API](api/api-6/undefined/api.md)
   * [🛩 KCP Quick Pay](api/api-6/kcp-quick-pay/README.md)
     * [⌨ 구매자 정보 단건 삭제 API](api/api-6/kcp-quick-pay/api.md)
+  * [🧰 페이코](api/api-6/undefined-1/README.md)
+    * [⌨ 주문상태 단건 수정 API](api/api-6/undefined-1/api.md)
 * [🏦 에스크로 관련 API](api/api-7/README.md)
   * [⌨ 배송정보 단건조회 API](api/api-7/api.md)
   * [⌨ 배송정보 단건등록 API](api/api-7/api-1.md)

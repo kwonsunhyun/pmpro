@@ -571,9 +571,11 @@ JSON string으로 전달
 >
 > 해당 값이 설정되는 경우 빌링키가 해당 값에 맵핑되며 <mark style="color:green;">****</mark> 추후 customer\_uid 값으로만 결제를 발생시킬 수 있습니다.
 
+### Response Model Schema
+
 <details>
 
-<summary>Response Model Schema</summary>
+<summary>HTTP status 200</summary>
 
 ```json
 {
