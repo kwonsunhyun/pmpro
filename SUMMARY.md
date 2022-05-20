@@ -66,6 +66,7 @@
 * [📦 PG사별 빌링키 획득 규칙](tip/pg.md)
 * [🏦 PG사별 은행코드표](tip/pg-1.md)
 * [🧾 PG사 코드표](tip/pg-2.md)
+* [🚚 택배사 코드표](tip/undefined-2.md)
 
 ## 관리자 콘솔 사용하기
 

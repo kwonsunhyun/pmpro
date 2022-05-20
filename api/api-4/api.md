@@ -512,9 +512,11 @@ JSON string으로 전달
 
 ![은행코드표](<../../.gitbook/assets/image (23).png>)
 
+### Response Model Schema
+
 <details>
 
-<summary>Response Model Schema</summary>
+<summary>HTTP status 200</summary>
 
 ```json
 {

@@ -519,9 +519,11 @@ JSON string으로 전달
 >
 > (**이니시스 전용이며, 이니시스의 경우 필수값 Query parameter임**)
 
+### Respose Model Schema
+
 <details>
 
-<summary>Response Model Schema</summary>
+<summary>HTTP status 200</summary>
 
 ```json
 {

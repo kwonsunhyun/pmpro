@@ -160,9 +160,11 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 >
 > **danal.{상점아이디}** 형태로 지정
 
+### Response Model Schema
+
 <details>
 
-<summary>Response Model Schema</summary>
+<summary>HTTP status 200</summary>
 
 ```json
 {

@@ -404,9 +404,11 @@ JSON string으로 전달
 {% endswagger-response %}
 {% endswagger %}
 
+### Response Model Schema
+
 <details>
 
-<summary>Response Model Schema</summary>
+<summary>HTTP status 200</summary>
 
 ```json
 {

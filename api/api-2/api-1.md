@@ -227,9 +227,11 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 * customer\_uid 값은 **고객 & 카드번호** 단위별로 고유하게 발급 관리되어야 합니다
 {% endhint %}
 
+### Response Model Schema
+
 <details>
 
-<summary>Response Model Schema</summary>
+<summary>HTTP status 200</summary>
 
 ```json
 {
