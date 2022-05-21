@@ -1,22 +1,90 @@
 ---
-description: 차이포트 고유번호를 이용하여 결제내역을 조회할 수 있습니다.
+description: API를 통해 베네피아 포인트(복지포인트)사용 결제요청
 ---
 
-# ⌨ 결제내역 단건조회 API
+# ⌨ 포인트 결제 요청
 
-### 차이포트 고유번호로 결제내역을 확인합니다.
+### 베네피아 포인트를 이용하여 결제를 요청합니다.
 
-{% swagger method="get" path="/payments/{imp_uid}" baseUrl="https://api.iamport.kr" summary="결제내역을 단건 조회 할수 있습니다." %}
+{% swagger method="post" path="/benepia/payment" baseUrl="https://api.iamport.kr" summary="베네피아 포인트 결제요청" %}
 {% swagger-description %}
+사용자로부터 전달받은 베네피아 계정 아이디, 비밀번호와 함께 결제정보를 요청하여 베네피아 포인트 사용처리합니다. 
 
+**KCP를 통해서만 진행**
+
+되므로 KCP사이트코드 발급이 필요합니다.
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
+{% swagger-parameter in="body" name="benepia_user" type="String" required="true" %}
 <mark style="color:red;">
 
-**거래고유번호**
+**베네피아 계정 아이디**
 
 </mark>
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="benepia_password" type="String" required="true" %}
+<mark style="color:red;">
+
+**베네피아 계정 비밀번호**
+
+</mark>
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="merchant_uid" type="String" required="true" %}
+<mark style="color:red;">
+
+**주문번호**
+
+</mark>
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="amount" type="double" required="true" %}
+<mark style="color:red;">
+
+**결제요청금액**
+
+</mark>
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="name" type="String(40)" required="true" %}
+<mark style="color:red;">
+
+**제품명**
+
+</mark>
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="buyer_name" type="String(16)" %}
+**구매자명**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="buyer_email" type="String(64)" %}
+**주문자 E-mail 주소**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="buyer_tel" type="String(16)" %}
+**주문자 전화번호**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="buyer_addr" type="String(128)" %}
+**주문자 주소**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="buyer_postcode" type="String(8)" %}
+**주문자 우편번호**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="pg" type="String" %}
+**PG구분코드**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="notice_url" type="String" %}
+**Notification URL(Webhook URL)**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="custom_data" type="Array" %}
+**에코항목**
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
@@ -126,7 +194,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 **`bank_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
 
-**`은행 표준코드`**[**`(링크보기)`**](../../tip/pg-1.md)**``**
+**`은행 표준코드`**[**`(링크보기)`**](../../../tip/pg-1.md)**``**
 
 ****
 
@@ -393,7 +461,7 @@ JSON string으로 전달
 ```
 {% endswagger-response %}
 
-{% swagger-response status="404: Not Found" description="유효하지 않은 imp_uid" %}
+{% swagger-response status="500: Internal Server Error" description="베네피아 포인트 결제 실패" %}
 ```javascript
 {
     // Response
@@ -406,7 +474,7 @@ JSON string으로 전달
 
 <summary>Response Model Schema</summary>
 
-```json
+```
 {
   "code": 0,
   "message": "string",
