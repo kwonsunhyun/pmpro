@@ -23,7 +23,7 @@ description: 아임포트를 사용하여 결제를 연동하기 위한 관리�
 
 아래와 같은 화면에서 [**회원가입**](https://www.iamport.kr/signup)을 클릭하여 진행해 주시면 됩니다
 
-![아임포트 관리자페이지 로그인 화면](<../.gitbook/assets/image (4) (1).png>) ![회원가입 화면](<../.gitbook/assets/image (15) (1).png>)
+![아임포트 관리자페이지 로그인 화면](<../.gitbook/assets/image (4) (1) (1).png>) ![회원가입 화면](<../.gitbook/assets/image (15) (1).png>)
 
 ## 2. PG정보 설정하기
 
@@ -31,7 +31,7 @@ description: 아임포트를 사용하여 결제를 연동하기 위한 관리�
 
 테스트모드(**SandBox**) 옵션을 <mark style="color:red;">**`ON`**</mark>으로 설정하면 **PG사 계약없이 연동 개발을** 진행할 수 있습니다.
 
-![관리자페이지 PG설정 화면](<../.gitbook/assets/image (5) (1).png>)
+![관리자페이지 PG설정 화면](<../.gitbook/assets/image (5) (1) (1).png>)
 
 {% hint style="info" %}
 각 PG사별 **테스트 설정 및 실 계정 설정**이 **상이**합니다. 자세한 PG사별 설정 방법은 [**링크**](2.-pg/pg/)를 통해 확인하세요

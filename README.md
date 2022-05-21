@@ -72,8 +72,8 @@ description: 차이포트 결제 연동 매뉴얼에 오신것을 환영합니�
 
 ### 관리자 콘솔 사용하기
 
-{% content-ref url="undefined-4/undefined.md" %}
-[undefined.md](undefined-4/undefined.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="undefined-4/pg.md" %}
