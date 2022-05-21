@@ -137,11 +137,12 @@
     * [⌨ 포인트 결제 요청](api/api-10/undefined/undefined.md)
   * [🏪 편의점 결제](api/api-10/undefined-1/README.md)
     * [⌨ 수납번호 발급 API](api/api-10/undefined-1/api.md)
+    * [⌨ 수납취소 API](api/api-10/undefined-1/api-1.md)
   * [🗃 기관코드 조회](api/api-10/undefined-2/README.md)
-    * [⌨ 카드사코드 전체조회 API](api/api-10/undefined-2/api.md)
-    * [⌨ 카드사명 단건조회 API](api/api-10/undefined-2/api-1.md)
-    * [⌨ 은행코드 전체조회 API](api/api-10/undefined-2/api-2.md)
-    * [⌨ 은행명 단건조회 API](api/api-10/undefined-2/api-3.md)
+    * [⌨ 카드사코드 전체조회 API](api/api-10/api.md)
+    * [⌨ 카드사명 단건조회 API](api/api-10/api-1.md)
+    * [⌨ 은행코드 전체조회 API](api/api-10/api-2.md)
+    * [⌨ 은행명 단건조회 API](api/api-10/api-3.md)
 
 ## SDK
 
