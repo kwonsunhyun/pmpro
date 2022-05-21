@@ -25,42 +25,16 @@ description: 차이포트 API 를 소개합니다.
 * **`"Tier" : "`**<mark style="color:red;">**`Tier code`**</mark>(하위 가맹점 Tier Code)"
 {% endhint %}
 
-{% content-ref url="rest-api-access-token.md" %}
-[rest-api-access-token.md](rest-api-access-token.md)
-{% endcontent-ref %}
+### API 명세 확인방법
 
-{% content-ref url="api-1/" %}
-[api-1](api-1/)
-{% endcontent-ref %}
+아임포트 API 응답부 명세를 자세히 확인 하기 위해서는 아래와 같이 **Response** 항목 **HTTP Status **<mark style="color:green;">**200**</mark> 항목 선택시 자세한 출력 명세를 확인할 수 있습니다.
 
-{% content-ref url="api-2/" %}
-[api-2](api-2/)
-{% endcontent-ref %}
+![응답항목 예시](<../.gitbook/assets/image (18).png>)
 
-{% content-ref url="api-3/" %}
-[api-3](api-3/)
-{% endcontent-ref %}
+{% hint style="info" %}
+**API Swagger 사이트**
 
-{% content-ref url="api-4/" %}
-[api-4](api-4/)
-{% endcontent-ref %}
+아임포트는 Swagger API 명세를 지원합니다.
 
-{% content-ref url="api-5/" %}
-[api-5](api-5/)
-{% endcontent-ref %}
-
-{% content-ref url="api-6.md" %}
-[api-6.md](api-6.md)
-{% endcontent-ref %}
-
-{% content-ref url="api-8/" %}
-[api-8](api-8/)
-{% endcontent-ref %}
-
-{% content-ref url="api-9/" %}
-[api-9](api-9/)
-{% endcontent-ref %}
-
-{% content-ref url="api-10/" %}
-[api-10](api-10/)
-{% endcontent-ref %}
+****[**https://api.iamport.kr**](https://https/api.iamport.kr)****
+{% endhint %}

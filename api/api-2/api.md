@@ -173,11 +173,9 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {% endswagger-response %}
 {% endswagger %}
 
-### Response Model Schema
-
 <details>
 
-<summary>HTTP status 200</summary>
+<summary>Response Model Schema</summary>
 
 ```json
 {

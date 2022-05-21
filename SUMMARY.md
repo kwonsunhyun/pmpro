@@ -132,10 +132,13 @@
   * [⌨ 가상계좌 발급정보 수정 API](api/api-9/api-2.md)
   * [⌨ 예금주 조회 API](api/api-9/api-3.md)
 * [🍶 기타 API](api/api-10/README.md)
-  * [⌨ 카드사코드 전체조회 API](api/api-10/api.md)
-  * [⌨ 카드사명 단건조회 API](api/api-10/api-1.md)
-  * [⌨ 은행코드 전체조회 API](api/api-10/api-2.md)
-  * [⌨ 은행명 단건조회 API](api/api-10/api-3.md)
+  * [🎽 베네피아 포인트](api/api-10/undefined/README.md)
+    * [⌨ 포인트 단건조회 API](api/api-10/undefined/api.md)
+  * [🗃 기관코드 조회](api/api-10/undefined-1/README.md)
+    * [⌨ 카드사코드 전체조회 API](api/api-10/undefined-1/api.md)
+    * [⌨ 카드사명 단건조회 API](api/api-10/undefined-1/api-1.md)
+    * [⌨ 은행코드 전체조회 API](api/api-10/undefined-1/api-2.md)
+    * [⌨ 은행명 단건조회 API](api/api-10/undefined-1/api-3.md)
 
 ## SDK
 

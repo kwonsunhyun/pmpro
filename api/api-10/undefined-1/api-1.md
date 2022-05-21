@@ -1,15 +1,23 @@
 ---
-description: 카드사정보 리스트를 조회합니다
+description: 카드사정보를 조회합니다.
 ---
 
-# ⌨ 카드사코드 전체조회 API
+# ⌨ 카드사명 단건조회 API
 
-### 카드사표준코드, 카드사명을 모두 조회할 수 있습니다(금융결제원표준코드 기준)
+### 특정 카드사표준코드를 기준으로 카드명을 조회합니다.
 
-{% swagger method="get" path="/cards" baseUrl="https://api.iamport.kr" summary="카드사코드 조회" %}
+{% swagger method="get" path="/cards/{card_standard_code}" baseUrl="https://api.iamport.kr" summary="카드사표준코드, 카드사명을 조회할 수 있습니다(금융결제원표준코드 기준)" %}
 {% swagger-description %}
-금융결제원표준코드 기준 카드코드와 카드사명을 모두 조회 가능합니다.
+
 {% endswagger-description %}
+
+{% swagger-parameter in="path" name="card_standard_code" type="String" required="true" %}
+<mark style="color:red;">
+
+**카드사코드**
+
+</mark>
+{% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
@@ -66,24 +74,19 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {% endswagger-response %}
 {% endswagger %}
 
-### Response Model Schema
-
 <details>
 
-<summary>HTTP status 200</summary>
+<summary>Response Model Schema</summary>
 
 ```
 {
   "code": 0,
   "message": "string",
-  "response": [
-    {
-      "code": "string",
-      "name": "string"
-    }
-  ]
+  "response": {
+    "code": "string",
+    "name": "string"
+  }
 }
 ```
 
 </details>
-

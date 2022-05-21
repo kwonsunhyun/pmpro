@@ -1,23 +1,15 @@
 ---
-description: 은행표준코드, 은행명을 조회할 수 있습니다
+description: 카드사정보 리스트를 조회합니다
 ---
 
-# ⌨ 은행명 단건조회 API
+# ⌨ 카드사코드 전체조회 API
 
-### 은행코드로 은행명을 획득합니다.
+### 카드사표준코드, 카드사명을 모두 조회할 수 있습니다(금융결제원표준코드 기준)
 
-{% swagger method="get" path="/banks/{bank_standard_code}" baseUrl="https://api.iamport.kr" summary="은행코드로 은행명을 획득합니다." %}
+{% swagger method="get" path="/cards" baseUrl="https://api.iamport.kr" summary="카드사코드 조회" %}
 {% swagger-description %}
-
+금융결제원표준코드 기준 카드코드와 카드사명을 모두 조회 가능합니다.
 {% endswagger-description %}
-
-{% swagger-parameter in="path" name="bank_standard_code	" type="String" required="true" %}
-<mark style="color:red;">
-
-**은행코드**
-
-</mark>
-{% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
@@ -65,7 +57,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 {% endswagger-response %}
 
-{% swagger-response status="404: Not Found" description="코드에 해당되는 은행정보를 찾을 수 없음" %}
+{% swagger-response status="404: Not Found" description="코드에 해당되는 카드사정보를 찾을 수 없음" %}
 ```javascript
 {
     // Response
@@ -74,20 +66,20 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {% endswagger-response %}
 {% endswagger %}
 
-### Response Model Schema
-
 <details>
 
-<summary>HTTP status 200</summary>
+<summary>Response Model Schema</summary>
 
 ```
 {
   "code": 0,
   "message": "string",
-  "response": {
-    "code": "string",
-    "name": "string"
-  }
+  "response": [
+    {
+      "code": "string",
+      "name": "string"
+    }
+  ]
 }
 ```
 
