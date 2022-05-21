@@ -152,11 +152,49 @@ Unix timestamp sec&#x20;
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
-```javascript
-{
-    // Response
-}
-```
+{% tabs %}
+{% tab title="PaymentwallDeliveryAnnotation" %}
+**`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
+
+**응답코드**
+
+0이면 정상적인 조회, 0 이 아닌 값이면 message를 확인해봐야 합니다
+
+
+
+**`message`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**응답메세지**
+
+code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같은 오류 메세지를 포함합니다
+
+
+
+**response** <mark style="color:red;">**(PaymentwallDeliveryDetailAnnotation, optional):**</mark>&#x20;
+
+에러 메시지를 포함하거나, 성공시 success: 1 메시지를 포함합니다.
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="PaymentwallDeliveryDetailAnnotation" %}
+**`error_code`**<mark style="color:orange;">**`integer`**</mark>
+
+이 값이 없으면 정상적인 경우, 없으면 notices를 확인해봐야 합니다
+
+
+
+**`error`` `**<mark style="color:green;">**`string`**</mark>
+
+**`에러 메시지`**
+
+&#x20;****&#x20;
+
+**`notices`` `**<mark style="color:yellow;background-color:yellow;">**`Array[string]`**</mark>
+
+**`자세한 에러 메시지`**
+{% endtab %}
+{% endtabs %}
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
