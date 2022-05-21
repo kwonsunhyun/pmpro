@@ -118,6 +118,7 @@
   * [📗 네이버페이 결제형](api/api-6/undefined-2/README.md)
     * [⌨ 에스크로 주문확정 API](api/api-6/undefined-2/api.md)
     * [⌨ 포인트 적립 API](api/api-6/undefined-2/api-1.md)
+    * [⌨ 현금영수증 발급 가용액 조회 API](api/api-6/undefined-2/api-2.md)
 * [🏦 에스크로 관련 API](api/api-7/README.md)
   * [⌨ 배송정보 단건조회 API](api/api-7/api.md)
   * [⌨ 배송정보 단건등록 API](api/api-7/api-1.md)
