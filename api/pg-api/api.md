@@ -10,7 +10,7 @@ description: 페이먼트월 PG 사 이용시 실물상품 배송등록을 수�
 
 {% swagger method="post" path="/paymentwall/delivery" baseUrl="https://api.iamport.kr" summary="실물상품 배송정보를 등록합니다." %}
 {% swagger-description %}
-
+해당 배송등록을 누락한 경우 페이먼트월 PG사로부터 정산대금을 받지 못합니다.
 {% endswagger-description %}
 
 {% swagger-parameter in="body" name="imp_uid" type="String" required="true" %}
