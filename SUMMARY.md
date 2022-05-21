@@ -101,6 +101,8 @@
 * [🪂 비 인증 결제관련 API](api/api-4/README.md)
   * [⌨ 비 인증 결제(빌링키) API](api/api-4/api.md)
   * [⌨ 비 인증 결제(일회성) API](api/api-4/api-1.md)
+* [🇺🇲 해외PG 관련 API](api/pg-api/README.md)
+  * [⌨ 페이먼트월 배송등록 API](api/pg-api/api.md)
 * [👮♂ 본인인증 관련 API](api/api-5/README.md)
   * [⌨ 본인인증 결과조회 API](api/api-5/api.md)
   * [⌨ 본인인증 정보삭제 API](api/api-5/api-1.md)
