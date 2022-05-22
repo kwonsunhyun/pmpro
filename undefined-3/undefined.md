@@ -1,5 +1,5 @@
 ---
-description: 차이포트를 이용하여 간편하게 휴대폰 본인인증을 연동하는 방법을 확인합니다.
+description: 아임포트를 이용하여 간편하게 휴대폰 본인인증을 연동하는 방법을 확인합니다.
 ---
 
 # 📱 휴대폰 본인인증 연동하기
@@ -10,4 +10,4 @@ description: 차이포트를 이용하여 간편하게 휴대폰 본인인증을
 
 ![휴대폰 본인인증 화면예](<../.gitbook/assets/image (11).png>)
 
-차이포트를 이용한 휴대폰 본인인증의 Flow는 JavaScript SDK 를 이용하여 휴대폰 본인인증을 완료하고 가맹점 서버에서 차이포트 REST API를 이용하여 <mark style="color:blue;">**인증완료정보를 획득**</mark>하는 방법으로 진행됩니다.
+아포트를 이용한 휴대폰 본인인증의 Flow는 JavaScript SDK 를 이용하여 휴대폰 본인인증을 완료하고 가맹점 서버에서 차이포트 REST API를 이용하여 <mark style="color:blue;">**인증완료정보를 획득**</mark>하는 방법으로 진행됩니다.

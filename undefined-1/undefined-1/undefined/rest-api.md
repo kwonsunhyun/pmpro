@@ -1,5 +1,5 @@
 ---
-description: 차이포트 REST API 를 이용하여 손쉽게 빌링키를 획득할수 있습니다.
+description: 아임포트 REST API 를 이용하여 손쉽게 빌링키를 획득할수 있습니다.
 ---
 
 # 🖱 REST API 이용하기

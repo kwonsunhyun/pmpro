@@ -1,9 +1,9 @@
 # Table of contents
 
-* [🧩 차이포트 결제 연동 Docs](README.md)
+* [🧩 아임포트 결제 연동 Docs](README.md)
   * [🚗 GET STARTED](docs/get-started.md)
 * [🛫 결제 연동 준비하기](undefined/README.md)
-  * [🖥 1. 아임포트 회원가입 하기](undefined/1..md)
+  * [🖥 1. 아임포트 회원가입 하기](undefined/1..md)
   * [🧷 2. PG정보 설정하기](undefined/2.-pg/README.md)
     * [🕹 PG사별 설정](undefined/2.-pg/pg/README.md)
       * [⌨ KG 이니시스 설정하기](undefined/2.-pg/pg/kg.md)
@@ -62,7 +62,7 @@
 * [✅ 오픈 전 체크사항](tip/undefined-1.md)
 * [🔏 Confirm Process](tip/confirm-process.md)
 * [🎼 아임포트 결제 FLOW](tip/flow.md)
-* [🎈 Agency & Tier 란?](tip/agency-and-tier.md)
+* [🎈 Agency & Tier 란?](tip/agency-and-tier.md)
 * [📦 PG사별 빌링키 획득 규칙](tip/pg.md)
 * [🏦 PG사별 은행코드표](tip/pg-1.md)
 * [🧾 PG사 코드표](tip/pg-2.md)
@@ -74,7 +74,7 @@
 
 ## API
 
-* [📋 차이포트 API 소개](api/api.md)
+* [📋 아임포트 API 소개](api/api.md)
 * [🖇 REST API Access Token](api/rest-api-access-token.md)
 * [💳 결제관련 API](api/api-1/README.md)
   * [⌨ 결제취소 API](api/api-1/api.md)
@@ -156,7 +156,7 @@
   * [📀 본인인증 결과 파라미터](sdk/javascript-sdk/undefined-3.md)
   * [✏ SDK Release Note](sdk/javascript-sdk/sdk-release-note.md)
 
-## FAQ
+## FAQ
 
 * [⁉ 자주 묻는 질문](faq/undefined.md)
 
@@ -164,5 +164,5 @@
 
 * [⌨ NHH KCP](pg/nhh-kcp.md)
 * [⌨ NICE](pg/nice.md)
-* [⌨ TOSS](pg/toss.md)
+* [⌨ TOSS](pg/toss.md)
 * [⌨ INICIS](pg/inicis.md)

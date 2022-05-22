@@ -4,7 +4,7 @@ description: Access Token 을 발급하는 방법을 설명합니다.
 
 # 🖇 REST API Access Token
 
-### 차이포트의 모든 REST API 이용을 위해서는 토큰 발급 및 설정이 필수입니다.
+### 아임포트의 모든 REST API 이용을 위해서는 토큰 발급 및 설정이 필수입니다.
 
 결제 정보와 같은 사적 리소스(private resource)에 대한 접근 권한을 얻으려면 가맹점은 access token을 발급 받아서 차이 포트 REST API 요청에 포함해야 합니다.
 

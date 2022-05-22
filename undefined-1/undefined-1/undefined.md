@@ -26,7 +26,7 @@ description: 카드정보를 이용하여 비 인증 결제를 요청하는 방�
 * `페이먼트월`
 {% endtab %}
 
-{% tab title="PG사 결제창" %}
+{% tab title="PG사 결제창" %}
 #### PG 결제창을 이용하여 빌링키를 획득할 수 있습니다.
 
 * `JTNet`

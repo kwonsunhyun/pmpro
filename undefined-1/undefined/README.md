@@ -4,7 +4,7 @@ description: PG결제창을 이용한 인증결제를 손쉽게 연동할 수 �
 
 # 🖥 인증결제 연동하기
 
-## 1. 차이포트 라이브러리 추가
+## 1. 아포트 라이브러리 추가
 
 결제창 연동을 진행할 주문 페이지에 아래 JS 라이브러리를 추가 합니다.
 
@@ -20,10 +20,6 @@ description: PG결제창을 이용한 인증결제를 손쉽게 연동할 수 �
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-{SDK-최신버전}.js"></script>
 ```
 {% endcode %}
-
-{% embed url="https://youtu.be/FLyOmbtnr48" %}
-차이포트 라이브러리 및 jQuery 라이브러리 추가하기
-{% endembed %}
 
 ## 2. 객체 초기화 하기
 
