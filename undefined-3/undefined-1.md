@@ -10,4 +10,4 @@ description: 통합인증 기능을 구현하는 방법을 설명합니다.
 
 > **이용가능 수단 : 네이버 / PASS / 페이코 / TOSS / 금융인증서 / 카카오**
 
-![통합인증 화면 예시](<../../.gitbook/assets/image (6).png>)
+![통합인증 화면 예시](<../.gitbook/assets/image (6).png>)
