@@ -42,12 +42,12 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 [undefined.md](undefined-3/undefined.md)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-3/undefined-1.md" %}
-[undefined-1.md](undefined-3/undefined-1.md)
+{% content-ref url="undefined-3/undefined-1/" %}
+[undefined-1](undefined-3/undefined-1/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-3/undefined-2.md" %}
-[undefined-2.md](undefined-3/undefined-2.md)
+{% content-ref url="undefined-3/undefined-2-1/" %}
+[undefined-2-1](undefined-3/undefined-2-1/)
 {% endcontent-ref %}
 
 ### TIP
