@@ -171,7 +171,7 @@
 * [⌨ NHH KCP](pg/nhh-kcp.md)
 * [⌨ NICE](pg/nice.md)
 * [⌨ 토스페이먼츠](pg/toss.md)
-* [⌨ KG이니시스](pg/inicis.md)
+* [⌨ KG 이니시스](pg/inicis.md)
 * [⌨ 페이먼트월](pg/undefined.md)
 * [⌨ 카카오페이](pg/undefined-1.md)
 * [⌨ 네이버페이](pg/undefined-2.md)

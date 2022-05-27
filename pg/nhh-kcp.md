@@ -54,13 +54,18 @@ IMP.request_pay({
 
 **결제수단 구분코드**
 
-* card(신용카드)
-* samsung(삼성페이)
-* trans(실시간 계좌이체)
+* card (신용카드)
+* samsung (삼성페이)
+* trans (실시간 계좌이체)
 * vbank(가상계좌)
-* phone(휴대폰소액결제)
-* payco(페이코 허브형)
-* naverpay(네이버페이)
+* phone (휴대폰소액결제)
+* payco (페이코 허브형)
+* naverpay (네이버페이)
+* cultureland (문화상품권)
+* smartculture (스마트문상)
+* happymoney (해피머니)
+* booknlife (도서문화상품권)
+* point (베네피아 포인트)
 
 
 

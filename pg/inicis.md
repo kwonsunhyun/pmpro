@@ -2,7 +2,7 @@
 description: KG이니시스 결제창 연동 가이드입니다.
 ---
 
-# ⌨ KG이니시스
+# ⌨ KG 이니시스
 
 ### 1. PG 설정하기
 
@@ -17,14 +17,14 @@ description: KG이니시스 결제창 연동 가이드입니다.
 {% code title="Javascript SDK" %}
 ```javascript
 IMP.request_pay({
-    pg : 'uplus',
+    pg : 'html5_inicis',
     pay_method : 'card',
     merchant_uid: "order_no_0001", //상점에서 생성한 고유 주문번호
     name : '주문명:결제테스트',
     amount : 1004,
     buyer_email : 'iamport@siot.do',
     buyer_name : '구매자이름',
-    buyer_tel : '010-1234-5678',
+    buyer_tel : '010-1234-5678',   //필수 파라미터 입니다.
     buyer_addr : '서울특별시 강남구 삼성동',
     buyer_postcode : '123-456',
     m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}'
@@ -42,7 +42,7 @@ IMP.request_pay({
 
 **PG사 구분코드**
 
-관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 `kcp`로 지정하셔야 합니다.
+관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 **`html5_inicis`** 로 지정하셔야 합니다.
 
 
 
@@ -50,10 +50,19 @@ IMP.request_pay({
 
 **결제수단 구분코드**
 
-* card(신용카드)
-* trans(실시간 계좌이체)
-* vbank(가상계좌)
-* phone(휴대폰소액결제)
+* `card` (신용카드)
+* `samsung` (삼성페이)
+* `kakaopay` (카카오페이)
+* `ssgpay` (SSG 페이)
+* `chai` (차이페이)
+* `trans` (실시간 계좌이체)
+* `vbank`(가상계좌)
+* `phone` (휴대폰소액결제)
+* `payco` (페이코 허브형)
+* `naverpay` (네이버페이)
+* `cultureland` (문화상품권)
+* `smartculture` (스마트문상)
+* `happymoney` (해피머니)
 
 
 
@@ -73,14 +82,14 @@ IMP.request_pay({
 
 
 
-**`escrow`` `**<mark style="color:orange;">**`boolean`**</mark>
+**`buyer_tel`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
 
-**에스크로 설정여부**&#x20;
+**`주문자연락처`**
 
+<mark style="color:red;">필수</mark> 파라미터 입니다.
 
-
-{% embed url="https://codepen.io/chaiport/pen/qBxbGXy" %}
-토스페이먼츠 **결**제창 예제
+{% embed url="https://codepen.io/chaiport/pen/rNJpGWO" %}
+KG이니시스 결제창 예제
 {% endembed %}
 {% endtab %}
 
@@ -107,7 +116,7 @@ display: {
 
 * **card\_quota :** 지정한 숫자에 해당하는 할부개월수만 표기
   * `[]`: 일시불만 결제 가능
-  * `2,3,4,5,6`: 일시불을 포함한 2, 3, 4, 5, 6개월까지 할부개월 선택 가능\
+  * `2,3,4,5,6`: 일시불을 포함한 2, 3, 4, 5, 6 할부개월 선택 가능\
 
 
 {% hint style="info" %}
