@@ -7,7 +7,7 @@
   * [🧷 2. PG정보 설정하기](undefined/2.-pg/README.md)
     * [🕹 PG사별 설정](undefined/2.-pg/pg/README.md)
       * [⌨ KG 이니시스 설정하기](undefined/2.-pg/pg/kg.md)
-      * [⌨ 토스페이먼트 설정하기](undefined/2.-pg/pg/undefined.md)
+      * [⌨ 토스페이먼츠 설정하기](undefined/2.-pg/pg/undefined.md)
       * [⌨ NICE 설정하기](undefined/2.-pg/pg/nice.md)
       * [⌨ 페이먼트월 설정하기](undefined/2.-pg/pg/undefined-1.md)
       * [⌨ NHN KCP 설정하기](undefined/2.-pg/pg/nhn-kcp.md)
@@ -170,5 +170,5 @@
 
 * [⌨ NHH KCP](pg/nhh-kcp.md)
 * [⌨ NICE](pg/nice.md)
-* [⌨ TOSS](pg/toss.md)
+* [⌨ 토스페이먼츠](pg/toss.md)
 * [⌨ INICIS](pg/inicis.md)

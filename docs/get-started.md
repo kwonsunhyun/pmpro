@@ -51,4 +51,4 @@ description: 차이포트 온라인 결제를 소개 합니다.
 
 ### 아임포트가 제공하는 세가지 가치를 가져가실 수 있습니다.
 
-![](<../.gitbook/assets/image (10) (1) (1).png>)
+![](<../.gitbook/assets/image (10) (1) (1) (1).png>)

@@ -34,7 +34,7 @@ description: 웹훅 연동을 통해 결제 결과를 안전하게 처리하실 
 
 {% tabs %}
 {% tab title="관리자콘솔 설정" %}
-![웹훅 URL 설정방법](<../.gitbook/assets/image (6) (1) (1).png>)
+![웹훅 URL 설정방법](<../.gitbook/assets/image (6) (1) (1) (1).png>)
 
 아임포트 webhook이 호출될 때 결제 정보를 통보받을 URL을 설정하려면 아임포트 관리자 콘솔 내 [시스템설정 페이지 > 웹훅(Notification)설정](https://admin.iamport.kr/settings#tab\_webhook) 탭을 선택합니다. 상단의 **웹훅(Notification)발송 공통 URL**란에 전 단계에서 복사한 값을 입력하고, 하단의 **웹훅설정 저장** 버튼을 눌러 설정을 저장합니다.
 
