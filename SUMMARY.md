@@ -150,6 +150,8 @@
     * [⌨ 카드사명 단건조회 API](api/api-10/api-1.md)
     * [⌨ 은행코드 전체조회 API](api/api-10/api-2.md)
     * [⌨ 은행명 단건조회 API](api/api-10/api-3.md)
+  * [🛖 PG 정보](api/api-10/pg/README.md)
+    * [⌨ PG MID 복수조회 API](api/api-10/pg/pg-mid-api.md)
 
 ## SDK
 
