@@ -2,7 +2,7 @@
 description: NHN KCP 설정방법을 안내합니다.
 ---
 
-# ⌨ NHN KCP 설정하기
+# ⌨ NHN KCP 설정
 
 ### 체크사항
 
@@ -20,7 +20,7 @@ description: NHN KCP 설정방법을 안내합니다.
 
 > 카드사 심사 완료 후에는 KCP에서 발급받은 실상점 정보로 설정 해야 합니다.
 
-### **일반결제 테스트 방법**
+### **일반결제(인증) 테스트 방법**
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr)→ 시스템설정 → PG설정(일반결제 및 정기결제) → PG사 NHN KCP 선택 → 테스트모드 \[**ON**] → \[<mark style="color:red;">**전체 저장**</mark>] 클릭
 
