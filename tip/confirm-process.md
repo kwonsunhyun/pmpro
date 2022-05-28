@@ -36,7 +36,7 @@ description: 결제요청의 주체를 가맹점 서버로 가져갈수 있는 �
 
 이밖에 다른 사유로 가맹점 측에서 결제 직전 자체업무 처리가 필요한 경우(결제 직전 가맹점 서버 헬스체크 등) 해당 서비스를 이용합니다.
 
-![](<../.gitbook/assets/image (5) (1).png>)
+![](<../.gitbook/assets/image (5) (1) (1).png>)
 
 {% hint style="info" %}
 **Confirm Process 신청 방법**
@@ -44,7 +44,7 @@ description: 결제요청의 주체를 가맹점 서버로 가져갈수 있는 �
 기술지원 메일([support@iamport.kr](mailto:support@iamport.kr))로 <mark style="color:red;">**가맹점식별코드**</mark>를 기재하여 메일 발송
 {% endhint %}
 
-![가맹점 식별코드 확인방법](<../.gitbook/assets/image (18) (1).png>)
+![가맹점 식별코드 확인방법](<../.gitbook/assets/image (18) (1) (1).png>)
 
 ### **Confirm Process 이용방법**
 

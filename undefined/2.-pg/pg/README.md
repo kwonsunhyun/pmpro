@@ -8,8 +8,8 @@ description: "각 PG사별 \bMID 설정 방법을 안내합니다."
 [nhn-kcp.md](nhn-kcp.md)
 {% endcontent-ref %}
 
-{% content-ref url="nice.md" %}
-[nice.md](nice.md)
+{% content-ref url="broken-reference" %}
+[Broken link](broken-reference)
 {% endcontent-ref %}
 
 {% content-ref url="kg.md" %}

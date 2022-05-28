@@ -12,6 +12,12 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 아임포트 관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "**KG이니시스(웹표준결제창)**"선택 후 테스트모드\[<mark style="color:red;">**ON**</mark>]상태로 저장하시면 이니시스 일반결제용 테스트상점정보로 자동 설정 됩니다.
 
+
+
+> 테스트 모드 설정시 아임포트 테스트 계정으로 결제가 발생됩니다.
+
+
+
 ![화면예시](<../../../.gitbook/assets/image (15).png>)
 
 {% hint style="info" %}

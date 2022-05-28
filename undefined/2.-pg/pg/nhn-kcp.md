@@ -12,6 +12,12 @@ description: NHN KCP 설정방법을 안내합니다.
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr)→ 시스템설정 → PG설정(일반결제 및 정기결제) → PG사 NHN KCP 선택 → 테스트모드 \[**ON**] → \[<mark style="color:red;">**전체 저장**</mark>] 클릭
 
+
+
+> 테스트 모드 설정시 아임포트 테스트 계정으로 결제가 발생됩니다.
+
+
+
 ![화면 설정 예시](<../../../.gitbook/assets/image (26).png>)
 {% endtab %}
 
