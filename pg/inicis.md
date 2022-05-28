@@ -94,7 +94,75 @@ KG이니시스 결제창 예제
 {% endtab %}
 
 {% tab title="비인증 결제창 요청" %}
-미지원
+* 인증결제창 호출 파라미터에서 **customer\_uid** 값을 추가하면 비 인증 결제창을 호출할 수 있습니다.&#x20;
+* 비 인증 결제창에서 빌링키를 발급받은 후 해당 빌링키로 결제를 요청합니다.
+* amount 파라미터에 금액을 설정하여도 실제 승인은 이루어지지 않습니다.
+
+{% code title="Javascript SDK" %}
+```javascript
+IMP.request_pay({
+    pg : 'html5_inicis',  // 실제 계약 후에는 실제 상점아이디로 변경
+    pay_method : 'card', // 'card'만 지원됩니다.
+    merchant_uid: "order_monthly_0001", // 상점에서 관리하는 주문 번호
+    name : '최초인증결제',
+    amount : 0, // 결제창에 표시될 금액. 실제 승인이 이뤄지지는 않습니다.
+    customer_uid : 'your-customer-unique-id', // 필수 입력.
+    buyer_email : 'iamport@siot.do',
+    buyer_name : '아임포트',
+    buyer_tel : '02-1234-1234',
+    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}' 
+}, function(rsp) {
+    if ( rsp.success ) {
+        alert('빌링키 발급 성공');
+    } else {
+        alert('빌링키 발급 실패');
+    }
+});
+```
+{% endcode %}
+
+
+
+### 주요 파라미터 설명
+
+**`pg`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**PG사 구분코드**
+
+관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 등록된 PG사가 여러개인 경우에는 **`html5_inicis`**로 설정합니다.&#x20;
+
+> KG이니시스에서 발급받은 상점아이디가 여러개(각각 일반 및 정기)인 경우에는 html5\_inicis.{상점아이디} 또는 inicis.{상점아이디}(for ActiveX)로 지정합니다.
+
+
+
+**`customer_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**카드 빌링키**
+
+비 인증 결제창에서 고객이 입력한 카드정보와 1:1로 매칭될 빌링키를 지정합니다.
+
+
+
+**`amount`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**Integer**</mark>
+
+**결제금액**
+
+결제창에 표시될 금액으로 <mark style="color:red;">실제 승인은 이루어지지 않습니다.</mark>(실 결제를 발생시키기 위해서는 **customer\_uid** 로 **REST API 를 이용하여 결제요청**을 해주셔야 합니다.)\
+
+
+### 빌링키(customer\_uid)로 결제 요청하기
+
+빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **아임포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 <mark style="color:red;">**비 인증 결제요청 REST API**</mark>를 호출하시면 결제를 발생시킬 수 있습니다.
+
+
+
+{% code title="sever-side" %}
+```
+curl -H "Content-Type: application/json" \   
+     -X POST -d '{"customer_uid":"your-customer-unique-id", "merchant_uid":"order_id_8237352", "amount":3000}' \
+     https://api.iamport.kr/subscribe/payments/again
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 

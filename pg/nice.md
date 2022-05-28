@@ -101,6 +101,10 @@ IMP.request_pay({
 따라서 비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며&#x20;
 
 해당 가이드는 [**링크**](../undefined-1/undefined-1/undefined/rest-api.md)에서 확인해주시면 됩니다.
+
+{% hint style="info" %}
+**나이스페이먼츠 빌링키 발급은 실 결제 발생이 없이 빌링키만 발급가능 합니다.**
+{% endhint %}
 {% endtab %}
 {% endtabs %}
 

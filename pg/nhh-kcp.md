@@ -122,8 +122,9 @@ IMP.request_pay({
 
 
 
-{% hint style="success" %}
-비인증 결제를 위해서는 **KCP와 협의가 완료된 사이트코드**를 관리자콘솔에 설정하셔야 비인증 결제창을 활성화 시킬수 있습니다.
+{% hint style="info" %}
+* 비인증 결제를 위해서는 **KCP와 협의가 완료된 사이트코드**를 관리자콘솔에 설정하셔야 비인증 결제창을 활성화 시킬수 있습니다.
+* KCP는 빌링키 발급시 <mark style="color:red;">**실 결제는 발생되지 않습니다**</mark>.(금액을 지정해도 결제가 발생되지 않음)
 {% endhint %}
 
 
@@ -152,9 +153,9 @@ IMP.request_pay({
 결제창에 표시될 금액으로 <mark style="color:red;">실제 승인은 이루어지지 않습니다.</mark>(실 결제를 발생시키기 위해서는 **customer\_uid** 로 **REST API 를 이용하여 결제요청**을 해주셔야 합니다.)\
 
 
-#### 빌링키(customer\_uid)로 결제 요청하기
+### 빌링키(customer\_uid)로 결제 요청하기
 
-빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **차이포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 <mark style="color:red;">**비 인증 결제요청 REST API**</mark>를 호출하시면 결제를 발생시킬 수 있습니다.
+빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **아임포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 <mark style="color:red;">**비 인증 결제요청 REST API**</mark>를 호출하시면 결제를 발생시킬 수 있습니다.
 
 
 
