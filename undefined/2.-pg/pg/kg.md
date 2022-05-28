@@ -10,7 +10,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% tab title="테스트 결제" %}
 ### 테스트 환경 구성방법
 
-아임포트관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "**KG이니시스(웹표준결제창)**"선택 후 테스트모드\[<mark style="color:red;">**ON**</mark>]상태로 저장하시면 이니시스 일반결제용 테스트상점정보로 자동 설정 됩니다.
+아임포트 관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "**KG이니시스(웹표준결제창)**"선택 후 테스트모드\[<mark style="color:red;">**ON**</mark>]상태로 저장하시면 이니시스 일반결제용 테스트상점정보로 자동 설정 됩니다.
 
 ![화면예시](<../../../.gitbook/assets/image (15).png>)
 
@@ -22,7 +22,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% tab title="실결제" %}
 ### **실** 환경 구성방법
 
-아임포트관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "**KG이니시스(웹표준결제창)**"선택 후 테스트모드\[<mark style="color:red;">**OFF**</mark>]상태로 변경후 이니시스로 부터 발급받은 MID정보를 기재합니다.
+아임포트 관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "**KG이니시스(웹표준결제창)**"선택 후 테스트모드\[<mark style="color:red;">**OFF**</mark>]상태로 변경후 이니시스로 부터 발급받은 MID정보를 기재합니다.
 
 ![화면예시](<../../../.gitbook/assets/image (11).png>)
 {% endtab %}
@@ -34,7 +34,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% tab title="결제창 방식" %}
 ### 테스트 환경 구성방법
 
-아임포트관리자콘솔( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "KG이니시스(웹표준결제창)"선택 후 테스트 모드 <mark style="color:red;">**OFF**</mark> 설정 후 빌링결제 테스트용 상점정보를 아래와 같이 설정합니다.
+아임포트 관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "KG이니시스(웹표준결제창)"선택 후 테스트 모드 <mark style="color:red;">**OFF**</mark> 설정 후 빌링결제 테스트용 상점정보를 아래와 같이 설정합니다.
 
 {% hint style="info" %}
 **- PG상점아이디(MID) : INIBillTst**\
@@ -54,7 +54,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% tab title="API 방식" %}
 ### 테스트 환경 구성방법
 
-아임포트관리자페이지 [https://admin.iamport.kr/](https://admin.iamport.kr/) > 시스템설정 > PG설정(<mark style="color:red;">**정기결제 및 키인결제**</mark>)에서 PG사 "KG이니시스" 선택 후 **** \[**카드사 심사 전 개발용 계정 설정**] **** 클릭하시면 테스트 상점정보로 자동 세팅 됩니다.&#x20;
+아임포트 관리자페이지 [https://admin.iamport.kr/](https://admin.iamport.kr/) > 시스템설정 > PG설정(<mark style="color:red;">**정기결제 및 키인결제**</mark>)에서 PG사 "KG이니시스" 선택 후 **** \[**카드사 심사 전 개발용 계정 설정**] **** 클릭하시면 테스트 상점정보로 자동 세팅 됩니다.&#x20;
 
 
 
