@@ -10,7 +10,7 @@ description: NHN KCP 설정방법을 안내합니다.
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr)→ 시스템설정 → PG설정(일반결제 및 정기결제) → PG사 NHN KCP 선택 → 테스트모드 \[**ON**] → \[<mark style="color:red;">**전체 저장**</mark>] 클릭
 
-![NHN KCP 설](https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fafa85fe6-e99f-4b44-9b0c-fd2c0bee0a17%2FUntitled.png\&blockId=b3792ff9-ce01-4991-8008-1b7abbafa47b)
+![](<../../../.gitbook/assets/image (26).png>)
 
 ### 실 결제 환경 구성방법
 
@@ -24,13 +24,23 @@ KCP 계약이후 발급받은 사이트코드와 사이트키를 테스트모드
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(일반결제 및 정기결제) → PG사 NHN KCP 빌링결제 선택 → 테스트모드 \[ON] → \[전체 저장] 클릭
 
-![결제창 방식 설정 예시](<../../../.gitbook/assets/image (11).png>)
+![결제창 방식 설정 예시](<../../../.gitbook/assets/image (11) (1).png>)
+
+{% hint style="info" %}
+**결제창 방식 실 결제 테스트 방법**
+
+테스트 모드를 <mark style="color:red;">OFF</mark> 처리 한 후 KCP 로 부터 발급받은 MID 정보를 기재합니다.
+{% endhint %}
 
 ### **REST API 방식**
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(<mark style="color:red;">정기결제 및 키인결제</mark>) → PG사 NHN한국사이버결제 선택 → \[카드사 심사 전 개발용 계정 설정] 클릭 → \[저장] 클릭
 
 ![API 방식 설정 예시](<../../../.gitbook/assets/image (24).png>)
+
+> **비 인증 결제 API 방식 실 결제 테스트 방법**
+>
+> KCP 로 부터 발급받은 MID 정보를 기재합니다.
 
 {% hint style="info" %}
 ### 체크사항
