@@ -4,7 +4,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 # ⌨ KG 이니시스 설정
 
-## **1.**인증결제
+## **1.** 인증결제
 
 ### **KG이니시스-일반 **<mark style="color:red;">**인증결제**</mark>**방식\_테스트모드 설정방법**
 
@@ -15,12 +15,6 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% hint style="info" %}
 **KG이니시스 PG상점아이디(MID) : INIpayTest**&#x20;
 {% endhint %}
-
-### **아임포트 웹훅(Notification URL) 설정방법**
-
-아임포트 Webhook을 사용함으로써 아임포트 서버에 저장된 데이터를 서버에 동기화하고 네트워크 불안정성을 보완할 수 있습니다. - 설정 방법 : 아임포트관리자페이지 > 시스템설정 > 웹훅(Notification) 설정 메뉴에서 "웹훅(Notification) 발송 공통 URL" 항목에 설정
-
-![웹훅 설정 화면 예시](<../../../.gitbook/assets/image (4).png>)
 
 ## 2. 비 인증 결제(결제창 방식)
 
