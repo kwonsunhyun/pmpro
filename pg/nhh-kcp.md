@@ -275,7 +275,7 @@ appCard : true .  //true 설정시 각 카드사 앱카드 결제만 활성화
 
 {% tabs %}
 {% tab title="상품권 결제수단" %}
-**상품권 결제수단**을 사용하기 위해서는 가맹점에서 관리하는 회원ID를 아래와 같은 방법으로 파라미터를 설정해야 합니다.
+**상품권 결제수단**을 사용하기 위해서는 가맹점에서 관리하는 회원ID를 아래와 같은 방법으로 파라미터 설정이 필요합니다.
 
 {% code title="javascript SDK " %}
 ```javascript
@@ -316,9 +316,9 @@ MP.request_pay({
 에스크로 결제를 위해서는 **`escrow`** 파라미터를 추가하고 **true** 값으로 설정되어야 합니다. 에스크로 결제요청 시 **장바구니 상품을 묶어서 결제하는 경우** 해당 품목에 대한 정보를 전달하기 위해 해당 상품관련 정보를 추가 파라미터(**`kcpProducts`**)로 전달해야 합니다.\
 **`kcpProducts`**는 다음 4개의 필수 속성으로 구성된 객체배열입니다.&#x20;
 
+
+
 **`amount`** 값은 결제 금액(`param.amount`) 값과 관계가 없으며 비교검증되지 않습니다.
-
-
 
 * orderNumber : 상품주문번호
 * name : 상품명
@@ -327,6 +327,7 @@ MP.request_pay({
 
 
 
+{% code title="JavaScript SDK" %}
 ```javascript
 IMP.request_pay({
     pg : 'kcp',
@@ -347,5 +348,6 @@ IMP.request_pay({
     //* ...중략 (README 파일에서 상세 샘플코드를 확인하세요)... *//
 })
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
