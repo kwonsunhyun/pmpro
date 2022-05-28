@@ -28,7 +28,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% endtab %}
 {% endtabs %}
 
-## 비 인증 결제(결제창 방식)
+## 비 인증 결제
 
 {% tabs %}
 {% tab title="결제창 방식" %}
