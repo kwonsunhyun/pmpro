@@ -18,7 +18,7 @@ description: 페이먼트월 결제 연동가이드를 확인 합니다.
 ```javascript
 IMP.request_pay({
     pg : 'paymentwall',
-    pay_method : 'card',
+    pay_method : 'card', // 페이먼트월은 국가IP에 따라 결제수단이 활성화 됩니다.(생략가능)
     merchant_uid: "order_no_0001", //상점에서 생성한 고유 주문번호
     name : '주문명:결제테스트',
     amount : 1004,
@@ -53,13 +53,11 @@ IMP.request_pay({
 
 
 
-**`pay_method`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**s**</mark><mark style="color:green;">**tring**</mark>
+**`pay_method`** <mark style="color:red;">****</mark>** **<mark style="color:green;">**s**</mark><mark style="color:green;">**tring**</mark>
 
-**결제수단 구분코드**
+**결제수단 구분코드 (생략가능)**
 
-* card(신용카드)
-
-결제수단 제어는 [페이먼트월 홈페이지](https://api.paymentwall.com/) 안에서 Project를 활성화시킨 뒤 제어하실 수 있습니다.&#x20;
+결제수단 제어는 [페이먼트월 홈페이지](https://api.paymentwall.com/) 안에서 Project를 활성화 하여 제어 할수 있습니다.&#x20;
 
 (별도로 제어하지 않으시면 국가IP에 맞는 결제수단이 기본으로 노출됩니다)
 
