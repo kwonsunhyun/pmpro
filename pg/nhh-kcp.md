@@ -1,5 +1,7 @@
 ---
 description: NHN KCP 결제창 연동 가이드입니다.
+cover: ../.gitbook/assets/스크린샷 2022-05-29 오후 7.53.40.png
+coverY: 0
 ---
 
 # ⌨ NHH KCP
