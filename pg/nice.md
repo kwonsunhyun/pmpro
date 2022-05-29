@@ -1,5 +1,7 @@
 ---
 description: 나이스페이먼츠 결제창 연동 가이드를 안내합니다.
+cover: ../.gitbook/assets/스크린샷 2022-05-29 오후 7.44.33.png
+coverY: 0
 ---
 
 # ⌨ NICE페이먼츠
