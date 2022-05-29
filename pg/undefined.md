@@ -8,28 +8,33 @@ description: 페이먼트월 결제 연동가이드를 확인 합니다.
 
 [**페이먼트월 일반결제 테스트 모드 설정**](../undefined/2.-pg/pg/undefined-1-1.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
-
-
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 NICE 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 실행되고 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 페이먼트월 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 실행되고 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}
 {% code title="Javascript SDK" %}
 ```javascript
 IMP.request_pay({
-    pg : 'uplus',
+    pg : 'paymentwall',
     pay_method : 'card',
     merchant_uid: "order_no_0001", //상점에서 생성한 고유 주문번호
     name : '주문명:결제테스트',
     amount : 1004,
-    buyer_email : 'iamport@siot.do',
-    buyer_name : '구매자이름',
+    buyer_email : 'iamport@siot.do',  //필수 파라미
+    buyer_name : 'Jack Son',   //반드시 Firstname Lastname 이 빈칸으로 구분되어야 
     buyer_tel : '010-1234-5678',
     buyer_addr : '서울특별시 강남구 삼성동',
     buyer_postcode : '123-456',
-    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}'
+    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}',
+    bypass: {
+      //터미날3 인경우 해당 파라미터 설정, 미 설정시 Defualt(일반) 결제창 활성화
+      widget_code: "t3_1",  
+      // 특정 결제수단만 활성화 하는 경우 사용 all 인 경우(default) 국가 지원 결제수단 모두 표
+      ps : "all"  
+    },
+    
 }, function(rsp) { // callback 로직
 	//* ...중략... *//
 });
@@ -44,7 +49,7 @@ IMP.request_pay({
 
 **PG사 구분코드**
 
-관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 **`uplus`** 로 지정하셔야 합니다.
+관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 **`paymentwall`** 로 지정하셔야 합니다.
 
 
 
@@ -53,9 +58,10 @@ IMP.request_pay({
 **결제수단 구분코드**
 
 * card(신용카드)
-* trans(실시간 계좌이체)
-* vbank(가상계좌)
-* phone(휴대폰소액결제)
+
+결제수단 제어는 [페이먼트월 홈페이지](https://api.paymentwall.com/) 안에서 Project를 활성화시킨 뒤 제어하실 수 있습니다.&#x20;
+
+(별도로 제어하지 않으시면 국가IP에 맞는 결제수단이 기본으로 노출됩니다)
 
 
 
@@ -75,8 +81,31 @@ IMP.request_pay({
 
 
 
-**`escrow`` `**<mark style="color:orange;">**`boolean`**</mark>
+**`buyer_name`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
 
-**에스크로 설정여부**&#x20;
+**`구매자 이름`**
+
+**First name** 과 **Last name** 이 <mark style="color:red;">**빈칸**</mark>으로 구분되어 반드시 유입되어야 합니다.
+
+
+
+**`buyer_email`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
+
+**`구매자 email 주소` **<mark style="color:green;">****</mark>&#x20;
+
+필수로 유입되어야 합니다.
+
+
+
+**`bypass`**
+
+**`페이먼트월 전용 파라미터` **&#x20;
+
+* **`widget_code` :**  터미날3 인 경우 <mark style="color:red;">**t3\_1**</mark>  파라미터 설정, 미 설정시 Defualt(일반) 결제창 활성화
+* **`ps` :**  특정 결제수단만 활성화 하는 경우 사용합니다. 해당 파라미터에 설정할 코드표는 [**링크**](https://docs.paymentwall.com/reference/payment-system-shortcodes)를 참조해 주세요.   ex) `kakaopaykr` = 카카오페이
+{% endtab %}
+
+{% tab title="비 인증 결제" %}
+미 지원&#x20;
 {% endtab %}
 {% endtabs %}
