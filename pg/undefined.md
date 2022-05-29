@@ -22,7 +22,8 @@ IMP.request_pay({
     merchant_uid: "order_no_0001", //상점에서 생성한 고유 주문번호
     name : '주문명:결제테스트',
     amount : 1004,
-    buyer_email : 'iamport@siot.do',  //필수 파라미
+    currency : 'KRW'  // 필수 파라미터
+    buyer_email : 'iamport@siot.do',  //필수 파라미터 
     buyer_name : 'Jack Son',   //반드시 Firstname Lastname 이 빈칸으로 구분되어야 
     buyer_tel : '010-1234-5678',
     buyer_addr : '서울특별시 강남구 삼성동',
@@ -92,6 +93,12 @@ IMP.request_pay({
 **`구매자 email 주소` **<mark style="color:green;">****</mark>&#x20;
 
 필수로 유입되어야 합니다.
+
+
+
+**`currency`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
+
+**`통화구분코드` **<mark style="color:green;">****</mark>&#x20;
 
 
 
