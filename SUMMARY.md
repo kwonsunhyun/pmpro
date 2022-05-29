@@ -12,6 +12,7 @@
       * [⌨ 토스페이먼츠 설정](undefined/2.-pg/pg/undefined-1.md)
       * [⌨ 페이먼트월 설정](undefined/2.-pg/pg/undefined-1-1.md)
       * [⌨ 토스간편결제 설정](undefined/2.-pg/pg/undefined-2.md)
+      * [⌨ 카카오페이 설정](undefined/2.-pg/pg/undefined-3.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
 ## 결제창 연동하기

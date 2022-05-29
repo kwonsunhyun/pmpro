@@ -1,5 +1,5 @@
 ---
-description: 페이먼트월 결제 연동가이드를 확인 합니다.
+description: 페이먼트월 결제창 연동가이드를 확인 합니다.
 ---
 
 # ⌨ 페이먼트월
@@ -104,6 +104,6 @@ IMP.request_pay({
 {% endtab %}
 
 {% tab title="비 인증 결제" %}
-미 지원&#x20;
+서비스 준비
 {% endtab %}
 {% endtabs %}
