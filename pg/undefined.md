@@ -1,5 +1,7 @@
 ---
 description: 페이먼트월 결제창 연동가이드를 확인 합니다.
+cover: ../.gitbook/assets/Paymentwall_logo_dark_latest.jpeg
+coverY: 0
 ---
 
 # ⌨ 페이먼트월
