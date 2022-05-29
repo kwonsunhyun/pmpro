@@ -1,14 +1,14 @@
 ---
 description: 페이먼트월 결제창 연동가이드를 확인 합니다.
-cover: ../.gitbook/assets/Paymentwall_logo_dark_latest.jpeg
-coverY: 0
 ---
 
 # ⌨ 페이먼트월
 
-### 1. PG 설정하기
+### 1. 페이먼트월 PG 설정하기
 
 [**페이먼트월 일반결제 테스트 모드 설정**](../undefined/2.-pg/pg/undefined-1-1.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+
+![](../.gitbook/assets/Paymentwall\_logo\_dark\_latest.jpeg)
 
 ### 2.결제창 요청하기
 

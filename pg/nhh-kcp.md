@@ -1,14 +1,14 @@
 ---
 description: NHN KCP 결제창 연동 가이드입니다.
-cover: ../.gitbook/assets/스크린샷 2022-05-29 오후 7.53.40.png
-coverY: 0
 ---
 
 # ⌨ NHH KCP
 
-### 1. PG 설정하기
+### 1. NHH KCP PG 설정하기
 
 [NHN KCP 일반결제 테스트 모드 설정](../undefined/2.-pg/pg/nhn-kcp.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+
+![](<../.gitbook/assets/스크린샷 2022-05-29 오후 7.53.40.png>)
 
 ### 2.결제창 요청하기
 

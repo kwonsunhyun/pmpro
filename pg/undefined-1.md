@@ -1,14 +1,14 @@
 ---
 description: 카카오페이 간편결제 결제창 연동가이드를 확인 합니다.
-cover: ../.gitbook/assets/art_15859885113717_96607e.png
-coverY: -1.2781954887218046
 ---
 
 # ⌨ 카카오페이
 
-### 1. PG 설정하기
+### 1. 카카오페이 PG 설정하기
 
 ****[**카카오페이 간편결제 테스트 모드 설정**](https://app.gitbook.com/s/wWX2hlvRZLZrXeH1aacF/\~/changes/ll1OhvTjJ1CZlY07vTrB/undefined/2.-pg/pg/undefined-3) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+
+![](<../.gitbook/assets/스크린샷 2022-05-29 오후 8.08.40.png>)
 
 ### 2.결제창 요청하기
 
