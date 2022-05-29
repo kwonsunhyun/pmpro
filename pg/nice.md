@@ -6,11 +6,11 @@ description: 나이스페이먼츠 결제창 연동 가이드를 안내합니다
 
 ### 1. PG 설정하기
 
-[**나이스페이먼츠 일반결제 테스트 모드 설정**](../undefined/2.-pg/pg/nice.md) 페이지의 내용을 참고하여 PG 설정을 합니다.
+[**나이스페이먼츠 일반결제 테스트 모드 설정**](../undefined/2.-pg/pg/undefined.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 NICE 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 실행되고 모바일의 경우**m\_redirect\_url**로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 NICE페이먼츠 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 실행되고 모바일의 경우**m\_redirect\_url**로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}
