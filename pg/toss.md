@@ -6,7 +6,7 @@ description: 토스페이먼츠 결제창 연동가이드 입니다.
 
 ### 1. PG 설정하기
 
-****[**토스페이먼츠 일반결제 테스트 모드 설정** ](../undefined/2.-pg/pg/undefined-1.md)페이지의 내용을 참고하여 PG 설정을 합니다.
+****[**토스페이먼츠 일반결제 테스트 모드 설정** ](../undefined/2.-pg/pg/undefined.md)페이지의 내용을 참고하여 PG 설정을 합니다.
 
 ### 2.결제창 요청하기
 
@@ -85,7 +85,7 @@ IMP.request_pay({
 {% endtab %}
 
 {% tab title="비인증 결제창 요청" %}
-미지원
+미 지원
 {% endtab %}
 {% endtabs %}
 

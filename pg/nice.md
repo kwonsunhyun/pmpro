@@ -2,11 +2,11 @@
 description: 나이스페이먼츠 결제창 연동 가이드를 안내합니다.
 ---
 
-# ⌨ NICE
+# ⌨ NICE페이먼츠
 
 ### 1. PG 설정하기
 
-[**나이스페이먼츠 일반결제 테스트 모드 설정**](../undefined/2.-pg/pg/undefined.md) 페이지의 내용을 참고하여 PG 설정을 합니다.
+[**나이스페이먼츠 일반결제 테스트 모드 설정**](../undefined/2.-pg/pg/nice.md) 페이지의 내용을 참고하여 PG 설정을 합니다.
 
 ### 2.결제창 요청하기
 
@@ -114,7 +114,6 @@ IMP.request_pay({
 {% tab title="할부개월수 설정" %}
 {% code title="javascript" %}
 ```javascript
-
 display: {
     card_quota: [6]  // 할부개월 6개월까지만 활성화
 }

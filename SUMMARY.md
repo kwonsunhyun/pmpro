@@ -8,9 +8,9 @@
     * [🕹 PG사별 설정](undefined/2.-pg/pg/README.md)
       * [⌨ NHN KCP 설정](undefined/2.-pg/pg/nhn-kcp.md)
       * [⌨ KG 이니시스 설정](undefined/2.-pg/pg/kg.md)
-      * [⌨ 나이스페이먼츠 설정](undefined/2.-pg/pg/undefined.md)
-      * [⌨ 토스페이먼츠 설정](undefined/2.-pg/pg/undefined-1.md)
-      * [⌨ 페이먼트월 설정](undefined/2.-pg/pg/undefined-1-1.md)
+      * [⌨ NICE페이먼츠 설정](undefined/2.-pg/pg/nice.md)
+      * [⌨ 토스페이먼츠 설정](undefined/2.-pg/pg/undefined.md)
+      * [⌨ 페이먼트월 설정](undefined/2.-pg/pg/undefined-1.md)
       * [⌨ 토스간편결제 설정](undefined/2.-pg/pg/undefined-2.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
@@ -169,7 +169,7 @@
 
 * [⌨ NHH KCP](pg/nhh-kcp.md)
 * [⌨ KG 이니시스](pg/inicis.md)
-* [⌨ NICE](pg/nice.md)
+* [⌨ NICE페이먼츠](pg/nice.md)
 * [⌨ 토스페이먼츠](pg/toss.md)
 * [⌨ 페이먼트월](pg/undefined.md)
 * [⌨ 카카오페이](pg/undefined-1.md)
