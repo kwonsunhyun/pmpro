@@ -54,12 +54,16 @@ IMP.request_pay({
 * card (신용카드)
 * trans (실시간 계좌이체)
 * vbank(가상계좌)
+* cultureland (문화상품권)
+* smartculture (스마트문상)
+* happymoney (해피머니)
+* booknlife (도서문화상품권)
 
 
 
 **`merchant_uid`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**s**</mark><mark style="color:green;">**tring**</mark>
 
-**주문번호**
+**`주문번호`**
 
 매번 고유하게 채번되어야 합니다.
 
