@@ -54,7 +54,7 @@ description: 결제요청 파라미터를 확인 할 수 있습니다.
 
 <summary>상세코드 확인하기</summary>
 
-* `card` \*\*\*\* (신용카드)
+* `card` (신용카드)
 * `trans`(실시간계좌이체)
 * `vbank`(가상계좌)
 * `phone`(휴대폰소액결제)

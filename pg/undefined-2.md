@@ -365,7 +365,7 @@ customer_uid={가맹점의 결제 고객을 특정하는 Unique Key}&schedules[0
 
 **예시(json)**
 
-```
+```javascript
 {
   "imp_uid" : "imp_123412341234", //환불처리할 아임포트 거래번호
   "amount" : 3000, //환불할 금액

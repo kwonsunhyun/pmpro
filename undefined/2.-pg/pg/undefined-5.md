@@ -18,7 +18,7 @@ description: 다날 PG사 설정 방법을 안내합니다.
 {% endtab %}
 
 {% tab title="실결제" %}
-### **실** 환경 구성방법
+### **실** 환경 구성방법
 
 카드사 심사 완료 후 다날에서 발급받은 실상점 정보로 설정 해야 합니다.
 
@@ -49,12 +49,12 @@ description: 다날 PG사 설정 방법을 안내합니다.
 ![](<../../../.gitbook/assets/image (14).png>)
 {% endtab %}
 
-{% tab title="API 방식" %}
+{% tab title="API 방식" %}
 **다날은 API 를 통한 비인증 결제를 지원하지 않습니다.**
 {% endtab %}
 {% endtabs %}
 
-## 휴대폰 소액결제
+## 휴대폰 소액결제
 
 {% tabs %}
 {% tab title="테스트 환경" %}

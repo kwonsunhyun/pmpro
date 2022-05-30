@@ -2,9 +2,11 @@
 description: 결제창 연동시 호출 및 응답 파라미터를 확인 할 수 있습니다.
 ---
 
-# 📚 Javascript SDK
+# 📚 Javascript SDK
 
-아임포트 JavaScript SDK를 사용하면 웹사이트 또는 앱에서 결제창 또는 본인인증창과 연동할 수 있습니다. 버전 내역 및 각 버전의 주요 변경 사항은 [**릴리스 노트**](sdk-release-note.md)를 참조하세요.
+아임포트 JavaScript SDK를 사용하면 웹사이트 또는 앱에서 결제창 또는 본인인증창과 연동할 수 있습니다.
+
+버전 내역 및 각 버전의 주요 변경 사항은 [**릴리스 노트**](sdk-release-note.md)를 참조하세요.
 
 ### SDK Library 로드하기 <a href="#sdk-library" id="sdk-library"></a>
 
@@ -24,3 +26,11 @@ description: 결제창 연동시 호출 및 응답 파라미터를 확인 할 �
 {% endhint %}
 
 > #### **CDN** 사용에 대한 불편함이 있으신 경우 아래 URL 로 설정해 주셔도 무방합니다. [https://service.iamport.kr/js/iamport.payment-](https://service.iamport.kr/js/iamport.payment-1.2.0.js){SDK-최신버전}[.js](https://service.iamport.kr/js/iamport.payment-1.2.0.js)
+
+{% content-ref url="undefined.md" %}
+[undefined.md](undefined.md)
+{% endcontent-ref %}
+
+{% content-ref url="undefined-1.md" %}
+[undefined-1.md](undefined-1.md)
+{% endcontent-ref %}

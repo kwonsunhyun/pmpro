@@ -8,9 +8,7 @@
 
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 NHN KCP 결제창을 호출할 수 있습니다.
-
-**결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신되 모바일의 경우 **m\_redirect\_url**로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 NHN KCP 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신되 모바일의 경우 **m\_redirect\_url**로 리디렉션됩니다.
 
 
 
@@ -104,9 +102,8 @@ IMP.request_pay({
 {% hint style="danger" %}
 #### **amount 금액**
 
-빌링키 발급시 amount 파라미터에 금액이 설정되는 경우 **실 결제와 동시에 빌링키가 발급**됩니다.
-
-실결제를 원하지 않은 경우 amount 금액을 <mark style="color:red;">**0원**</mark>으로 설정합니다.
+* 빌링키 발급시 amount 파라미터에 금액이 설정되는 경우 **실 결제와 동시에 빌링키가 발급**됩니다.
+* 실결제를 원하지 않은 경우 amount 금액을 <mark style="color:red;">**0원**</mark>으로 설정합니다.
 
 (amount를 0으로 지정한 경우 다날에서 최초 10원 테스트 결제를 하고 30분 쯤 후 자동 취소됩니다.)
 {% endhint %}
@@ -143,7 +140,7 @@ IMP.request_pay({
 
 **PG사 구분코드**
 
-관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 ``**`danal_tpay`** 으로 지정합니다.\
+관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 **`danal_tpay`** 으로 지정합니다.\
 
 
 **`customer_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
