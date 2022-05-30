@@ -162,8 +162,8 @@ IMP.request_pay({
 {% code title="JavaScript SDK" %}
 ```javascript
 IMP.request_pay({
-   pg : 'naverpay',
-    customer_uid : 'gildong_0001_1234', //고객 식별키, 필수 입력.
+    pg : 'naverpay',
+    customer_uid : 'gildong_0001_1234', //빌링, 필수 입력.
     merchant_uid: "order_monthly_0001", //상점에서 생성한 고유 주문번호
     name : 'Slim 요금제(1개월 단위)',
     amount : 1004, //실 결제는 발생되지 않습니다.
@@ -190,6 +190,15 @@ IMP.request_pay({
 **PG사 구분코드**
 
 관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 **`naverpay`** 로 지정해야 합니다.
+
+
+
+**`customer_uid`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
+
+**`빌링키`**
+
+* 정기/반복 결제 등록을 위해서 지정해야 합니다. 미 지정 시, 일반결제로 진행됩니다.
+* 등록 후 해당 키를 사용해 반복결제 승인을 요청할 수 있습니다.
 
 
 
