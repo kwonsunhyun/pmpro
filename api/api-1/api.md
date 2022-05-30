@@ -13,7 +13,7 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
 **(가상계좌 환불관련 특약계약 필요)**
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="imp_uid" type="String" required="true" %}
+{% swagger-parameter in="body" name="imp_uid" type="String(32)" required="true" %}
 <mark style="color:red;">
 
 **차이포트 거래고유번호**
@@ -21,7 +21,7 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="merchant_uid" type="String" %}
+{% swagger-parameter in="body" name="merchant_uid" type="String(40)" %}
 **주문번호 (imp_uid 누락시 필수)**
 {% endswagger-parameter %}
 
@@ -61,11 +61,11 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
 현재시점의 취소 가능한 잔액.
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="reason" type="String" %}
+{% swagger-parameter in="body" name="reason" type="String(256)" %}
 **취소사유**
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="refund_holder" type="String" %}
+{% swagger-parameter in="body" name="refund_holder" type="String(16)" %}
 **환불계좌 예금주**
 
  (
@@ -75,7 +75,7 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
  취소시 필수)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="refund_bank" type="String" %}
+{% swagger-parameter in="body" name="refund_bank" type="String(4)" %}
 환불계좌 은행코드 (하단 은행코드표 참조, 
 
 **가상계좌 취소시**
@@ -83,7 +83,7 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
  필수)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="refund_account" type="String" %}
+{% swagger-parameter in="body" name="refund_account" type="String(16)" %}
 환불계좌 계좌번호 (
 
 **가상계좌**
@@ -91,7 +91,7 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
  취소시 필수)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="refund_tel" type="String" %}
+{% swagger-parameter in="body" name="refund_tel" type="String(16)" %}
 환불계좌 예금주 연락처(
 
 **가상계좌**
@@ -109,7 +109,7 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
 
 {% swagger-response status="200: OK" description="취소 성공" %}
 {% tabs %}
-{% tab title="PaymentListResponse" %}
+{% tab title="PaymentResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -131,80 +131,52 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 {% endtabs %}
 
 {% tabs %}
-{% tab title="PagedPaymentAnnotation" %}
-**`total`` `**<mark style="color:red;">**`*`**</mark><mark style="color:purple;">**`integer`**</mark>
-
-**`총 건수`**
-
-
-
-**`previous`**<mark style="color:red;">**`*`**</mark><mark style="color:purple;">**`integer`**</mark>
-
-**`이전 page숫자`**
-
-이전 페이지가 없으면 0
-
-
-
-**`next`**<mark style="color:red;">**`*`**</mark><mark style="color:purple;">**`integer`**</mark>
-
-**`다음 page숫자`**
-
-다음 페이지가 없으면 0
-
-
-
-**list **<mark style="color:red;">**(Array\[PaymentAnnotation], optional)**</mark>
-
-결제 상세정보 배열(최대 20개)
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
 {% tab title="PaymentAnnotation" %}
-**`imp_uid`** <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>
+**`imp_uid`** <mark style="color:red;">\*</mark> <mark style="color:green;">**string(32)**</mark>
 
 **아임포트 결제 고유 UID**
 
 ****
 
-**`merchant_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`merchant_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string(40)**</mark>
 
 **주문번호**
 
 ****
 
-**`pay_method`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`pay_method`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string(20)**</mark>
 
 **결제수단 구분코드**
 
 ****
 
-**`channel`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`channel`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string(10)**</mark>
 
 **결제환경 구분코드**
 
+&#x20;\['pc', 'mobile', 'api']
 
 
-**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**`pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string(16)**</mark>
 
 **PG사 구분코드**
 
 ***
 
-**`emb_pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`emb_pg_provider`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string(16)**</mark>
 
 **허브형결제 PG사 구분코드**
 
 
 
-**`pg_tid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+**`pg_tid`  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string(80)**</mark>
 
 **pg사 거래번호**
 
 ****
 
-**`pg_id`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`pg_id`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string(80)**</mark>
 
 **PG사 MID**
 
@@ -216,31 +188,31 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**`apply_num`**  ** **<mark style="color:green;">**string**</mark>
+**`apply_num`**  ** **<mark style="color:green;">**string(20)**</mark>
 
 **신용카드 승인번호**
 
 ****
 
-**`bank_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
+**`bank_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string(4)**</mark>
 
 **은행 표준코드(링크보기)**
 
 ****
 
-**`bank_name`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
+**`bank_name`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string(20)**</mark>
 
 **은행 명칭**
 
 ***
 
-**`card_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string**</mark>
+**`card_code`**  <mark style="color:red;">****</mark>** **<mark style="color:green;">**string(3)**</mark>
 
 **카드사 코드번호(금융결제원 표준코드번호 :** [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) )
 
 
 
-**`card_name`**  <mark style="color:green;">**string**</mark>
+**`card_name`**  <mark style="color:green;">**string(20)**</mark>
 
 **카드사명**
 
@@ -252,31 +224,31 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**`card_number`** <mark style="color:green;">**string**</mark>
+**`card_number`** <mark style="color:green;">**string(20)**</mark>
 
 **마스킹 카드번호**
 
 ***
 
-**`card_type`**  <mark style="color:green;">**string**</mark>
+**`card_type`**  <mark style="color:green;">**string(2)**</mark>
 
 **카드 구분코드**
 
 
 
-**`vbank_code`** ** **<mark style="color:green;">**string**</mark>
+**`vbank_code`** ** **<mark style="color:green;">**string(4)**</mark>
 
 **가상계좌 은행 표준코드(하단이미지 참고)**
 
 ***
 
-**`vbank_name`** ** **<mark style="color:green;">**string**</mark>** **&#x20;
+**`vbank_name`** ** **<mark style="color:green;">**string(20)**</mark>
 
 **입금받을 가상계좌 은행명**
 
 ****
 
-**`vbank_holder`**  <mark style="color:green;">**string**</mark>
+**`vbank_holder`**  <mark style="color:green;">**string(16)**</mark>
 
 **입금받을 가상계좌 예금주**
 
@@ -294,7 +266,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**`name`    **<mark style="color:green;">**string**</mark>
+**`name`    **<mark style="color:green;">**string(40)**</mark>
 
 **제품명**
 
@@ -312,36 +284,36 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**`currency`    **<mark style="color:green;">**string**</mark>
+**`currency`    **<mark style="color:green;">**string(3)**</mark>
 
 **통화구분코드**
 
 ***
 
-**`buyer_name`    **<mark style="color:green;">**string**</mark>
+**`buyer_name`    **<mark style="color:green;">**string(16)**</mark>
 
 **주문자명**
 
 ****
 
-**`buyer_email`    **<mark style="color:green;">**string**</mark>
+**`buyer_email`    **<mark style="color:green;">**string(64)**</mark>
 
 **주문자 Email주소**\
 ****
 
-**`buyer_tel`    **<mark style="color:green;">**string**</mark>
+**`buyer_tel`    **<mark style="color:green;">**string(16)**</mark>
 
 **주문자 전화번호**
 
 ****
 
-**`buyer_addr`    **<mark style="color:green;">**string**</mark>
+**`buyer_addr`    **<mark style="color:green;">**string(128)**</mark>
 
 **주문자 주소**
 
 ****
 
-**`buyer_postcode`    **<mark style="color:green;">**string**</mark>
+**`buyer_postcode`    **<mark style="color:green;">**string(8)**</mark>
 
 **주문자 우편번호**
 
@@ -353,13 +325,13 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**`user_agent`    **<mark style="color:green;">**string**</mark>
+**`user_agent`    **<mark style="color:green;">**string(256)**</mark>
 
 **결제를 시작한 단말기의 UserAgent**
 
 ****
 
-**`status`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`status`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string(20)**</mark>
 
 **결제상태 구분코드**
 
@@ -388,19 +360,19 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**`fail_reason`** <mark style="color:green;">**string**</mark>
+**`fail_reason`** <mark style="color:green;">**string(256)**</mark>
 
 **결제실패 사유**
 
 ****
 
-**`cancel_reason`**  <mark style="color:green;">**string**</mark>
+**`cancel_reason`**  <mark style="color:green;">**string(256)**</mark>
 
 **결제취소 사유**
 
 ****
 
-**`receipt_url`**  <mark style="color:green;">**string**</mark>
+**`receipt_url`**  <mark style="color:green;">**string(300)**</mark>
 
 **신용카드 매출전표 확인 URL**
 
@@ -412,15 +384,17 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 ****
 
-**`customer_uid`    **<mark style="color:green;">**string**</mark>
+**`customer_uid`    **<mark style="color:green;">**string(80)**</mark>
 
 **해당 결제처리에 사용된 customer\_uid**
 
 ****
 
-**`customer_uid_usage`    **<mark style="color:green;">**string**</mark>
+**`customer_uid_usage`    **<mark style="color:green;">**string**</mark><mark style="color:green;">**(20)**</mark>
 
 **customer\_uid 사용 구분코드**
+
+\['issue', 'payment', 'payment.scheduled']
 
 ****
 
@@ -452,13 +426,13 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**`reason`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
+**`reason`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string(256)**</mark>
 
 **결제취소 사유**
 
 ****
 
-**`receipt_url`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+**`receipt_url`** <mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string(300)**</mark>
 
 **취소에 대한 매출전표 확인 URL. PG사에 따라 제공되지 않는 경우도 있음**
 {% endtab %}
@@ -476,7 +450,7 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 >
 > **취소 요청시 두 파라미터중 하나는 필수로 유입되어야 합니다.**
 
-> **`checksum`    **<mark style="color:green;">**string**</mark>
+> **`checksum`    **<mark style="color:purple;">**integer**</mark>
 >
 > **승인 잔액**
 >
