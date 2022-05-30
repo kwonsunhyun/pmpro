@@ -28,7 +28,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 {% endtab %}
 {% endtabs %}
 
-## 비 인증 결
+## 비 인증 결제&#x20;
 
 {% tabs %}
 {% tab title="결제창 방식" %}
@@ -38,6 +38,6 @@ description: JTNET PG사 설정 방법을 확인합니다.
 {% tab title="API 방식" %}
 
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(정기결제 및 키인결제) → PG사 JTNet(tPay) 선택 → 테스트모드 \[OFF] → 키인결제용 상점정보 입력 후 \[전체 저장] 클릭ㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍㅍ
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(정기결제 및 키인결제) → PG사 JTNet(tPay) 선택 → 테스트모드 \[OFF] → 키인결제용 상점정보 입력 후 \[전체 저장] 클릭
 {% endtab %}
 {% endtabs %}
