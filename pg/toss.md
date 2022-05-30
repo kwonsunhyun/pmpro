@@ -115,10 +115,6 @@ display: {
 {% hint style="info" %}
 할부결제는 **5만원 이상 결제 요청시**에만 이용 가능합니다.
 {% endhint %}
-
-
-
-{% embed url="https://codepen.io/chaiport/pen/gOvoxpw" %}
 {% endtab %}
 
 {% tab title="카드사 모듈 바로 호출" %}
@@ -139,12 +135,6 @@ card: {
 
 * **code** : 카드사 금융결제원 표준 코드. [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630)  참조 (**string**)
 * **quota** : 할부 개월 수. 일시불일 시 0 으로 지정. (**integer**)
-
-
-
-{% embed url="https://codepen.io/chaiport/pen/Yzewbeg" %}
-<mark style="color:red;">**현대카드**</mark> 결제모듈 바로 호출 예제
-{% endembed %}
 {% endtab %}
 
 {% tab title="특정 카드사 노출" %}
