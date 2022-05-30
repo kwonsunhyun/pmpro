@@ -93,21 +93,34 @@ IMP.request_pay({
 {% endtab %}
 
 {% tab title="비인증 결제창 요청" %}
-인증결제창 호출 파라미터에서 **customer\_uid** 값을 추가하면 비 인증 결제창을 호출할 수 있습니다. 비인증 결제창에서 빌링키를 발급받은 후 해당 빌링키로 결제를 요청합니다.
+인증결제창 호출 파라미터에서 **customer\_uid** 값을 추가하면 비 인증 결제창을 호출할 수 있습니다.   &#x20;
+
+
+
+{% hint style="danger" %}
+#### **amount 금액**
+
+빌링키 발급시 amount 파라미터에 금액이 설정되는 경우 **실 결제와 동시에 빌링키가 발급**됩니다.
+
+실결제를 원하지 않은 경우 amount 금액을 <mark style="color:red;">**0원**</mark>으로 설정합니다.
+
+(amount를 0으로 지정한 경우 다날에서 최초 10원 테스트 결제를 하고 30분 쯤 후 자동 취소됩니다.)
+{% endhint %}
+
+
 
 {% code title="Javascript SDK" %}
 ```javascript
 IMP.request_pay({
-    pg : 'kcp_billing',
-    pay_method : 'card', // 'card'만 지원됩니다.
-    merchant_uid: "order_monthly_0001", // 상점에서 관리하는 주문 번호
-    name : '최초인증결제',
-    amount : 0, // 결제창에 표시될 금액. 실제 승인이 이뤄지지는 않습니다.
-    customer_uid : 'your-customer-unique-id', // 필수 입력.
-    buyer_email : 'iamport@siot.do',
-    buyer_name : '아임포트',
-    buyer_tel : '02-1234-1234',
-    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}' 
+   pg : 'danal_tpay',
+   pay_method : 'card', // 'card'만 지원됩니다.
+   merchant_uid: "order_monthly_0001", // 상점에서 관리하는 주문 번호
+   name : '최초인증결제',
+   amount : 0, // 빌링키 발급만 진행하며 결제승인을 하지 않습니다.
+   customer_uid : 'your-customer-unique-id', // 필수 입력.
+   buyer_email : 'iamport@siot.do',
+   buyer_name : '아임포트',
+   buyer_tel : '02-1234-1234'    buyer_addr : '서울특별시 강남구 삼성동',
 }, function(rsp) {
     if ( rsp.success ) {
         alert('빌링키 발급 성공');
@@ -120,20 +133,13 @@ IMP.request_pay({
 
 
 
-{% hint style="info" %}
-* 비인증 결제를 위해서는 **KCP와 협의가 완료된 사이트코드**를 관리자콘솔에 설정하셔야 비인증 결제창을 활성화 시킬수 있습니다.
-* KCP는 빌링키 발급시 <mark style="color:red;">**실 결제는 발생되지 않습니다**</mark>.(금액을 지정해도 결제가 발생되지 않음)
-{% endhint %}
-
-
-
 ### 주요 파라미터 설명
 
 **`pg`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 
 **PG사 구분코드**
 
-관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 `kcp_billing`으로 지정합니다.\
+관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 ``**`danal_tpay`** 으로 지정합니다.\
 
 
 **`customer_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
@@ -148,7 +154,7 @@ IMP.request_pay({
 
 **결제금액**
 
-결제창에 표시될 금액으로 <mark style="color:red;">실제 승인은 이루어지지 않습니다.</mark>(실 결제를 발생시키기 위해서는 **customer\_uid** 로 **REST API 를 이용하여 결제요청**을 해주셔야 합니다.)\
+0원으로 설정시 빌링키만 발급되며 0원 이상 설정시 실결제와 빌링키 발급이 동시에 이루어 집니다.\
 
 
 ### 빌링키(customer\_uid)로 결제 요청하기
