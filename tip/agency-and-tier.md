@@ -36,13 +36,13 @@ description: 대표가맹점과 하위가맹점 설정에 대한 안내 입니�
 
 ![하위 가맹점 PG설정 예시 화면](<../.gitbook/assets/image (24) (1) (1).png>)
 
-![하위 가맹점 코드 생성 화면](<../.gitbook/assets/image (14) (1) (1).png>)
+![하위 가맹점 코드 생성 화면](<../.gitbook/assets/image (14) (1) (1) (1).png>)
 
 **2. 결제 조회/취소**
 
 * 관리하시는 모든 하위 가맹점의 결제승인 내역을 조회/취소 하실 수 있습니다.
 
-![하위 가맹점 결제내역 조회 예시](<../.gitbook/assets/image (10) (1).png>)
+![하위 가맹점 결제내역 조회 예시](<../.gitbook/assets/image (10) (1) (1).png>)
 
 {% hint style="info" %}
 **하위 가맹점 결제창 활성화 주의사항**
