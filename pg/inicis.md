@@ -12,7 +12,7 @@ description: KG이니시스 결제창 연동 가이드입니다.
 
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 KG이니시스 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 실행되고 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 KG이니시스 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신 되며 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}

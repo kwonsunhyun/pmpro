@@ -12,10 +12,10 @@ description: 카카오페이 간편결제 결제창 연동가이드를 확인 �
 
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 카카오페이 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 실행되고 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 카카오페이 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신 되며 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
 
 {% tabs %}
-{% tab title="인증결제창 요청" %}
+{% tab title="일반결제창 요청" %}
 {% code title="Javascript SDK" %}
 ```javascript
 IMP.request_pay({
@@ -79,8 +79,8 @@ IMP.request_pay({
 {% endembed %}
 {% endtab %}
 
-{% tab title="비인증 결제창 요청" %}
-인증결제창 호출 파라미터에서 **customer\_uid** 값을 추가하면 비 인증 결제창을 호출할 수 있습니다.&#x20;
+{% tab title="정기결제창 요청" %}
+인증결제창 호출 파라미터에서 **customer\_uid** 값을 추가하면 정기결제창을 호출할 수 있습니다.&#x20;
 
 {% hint style="warning" %}
 **amount 금액**

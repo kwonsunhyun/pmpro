@@ -174,7 +174,7 @@
 * [⌨ 토스페이먼츠](pg/toss.md)
 * [⌨ 페이먼트월](pg/undefined.md)
 * [⌨ 카카오페이](pg/undefined-1.md)
-* [⌨ 네이버페이](pg/undefined-2.md)
+* [⌨ 네이버페이(결제형)](pg/undefined-2.md)
 * [⌨ 다날](pg/undefined-3.md)
 * [⌨ JTNET](pg/jtnet.md)
 * [⌨ 세틀뱅크](pg/undefined-4.md)
