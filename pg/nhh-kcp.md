@@ -68,6 +68,8 @@ IMP.request_pay({
 * happymoney (해피머니)
 * booknlife (도서문화상품권)
 * point (베네피아 포인트)
+* kakaopay(카카오페이)
+* naverpay(네이버페이)
 
 
 

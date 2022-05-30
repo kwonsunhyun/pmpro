@@ -216,7 +216,7 @@ IMP.request_pay({
 
 <mark style="color:green;">**string**</mark> 이 아닌점에 유의하세요
 
-**정기/반복 결제 등록과정에서는 결제승인이 이뤄지지 않습니다.**
+**정기/반복 결제 등록과정에서는 **<mark style="color:red;">**결제승인이 이뤄지지 않습니다**</mark>**.**
 
 
 
@@ -261,7 +261,7 @@ IMP.request_pay({
 
 ### **결제 요청방법**
 
-REST API **** [**/subscribe/payments/again**](../api/api-4/api.md) 를 **** 호출해 결제 승인 요청을 합니다.
+REST API **** [**/subscribe/payments/again**](../api/api-4/api.md) 를 **** 호출하여 결제를 요청할 수 있습니다.
 
 * `customer_uid` : 정기/반복결제 등록 시 사용된 해당 고객의 `customer_uid`
 * `merchant_uid` : 가맹점 주문번호
@@ -294,7 +294,7 @@ customer_uid={가맹점의 결제 고객을 특정하는 Unique Key}&merchant_ui
 
 ### 결제 예약방법
 
-REST API[ **/subscribe/payments/schedule**](../api/api-3/api.md)를 호출해 결제 예약 요청을 합니다.
+REST API[ **/subscribe/payments/schedule**](../api/api-3/api.md)를 호출하여 결제예약을 할 수 있습니다.&#x20;
 
 * `customer_uid` : 정기/반복결제 등록 시 사용된 해당 고객의 `customer_uid`
 *   `schedules` : 결제 예약 정보 객체 배열(1개 이상 설정 가능)
