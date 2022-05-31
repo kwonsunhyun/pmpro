@@ -48,7 +48,7 @@ KCP 계약이후 발급받은 실 사이트코드 정보를 입력합니다.&#x2
 
 배치 결제 그룹아이디 입력은 [**링크**](https://www.iamport.kr/download/kcp-billing.pdf)를 클릭하여 자세한 내용을 확인할 수 있습니다.
 
-![실계정 정보 설정 예시](<../../../.gitbook/assets/image (12) (1).png>)
+![실계정 정보 설정 예시](<../../../.gitbook/assets/image (12) (1) (1).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}
@@ -58,7 +58,7 @@ KCP 계약이후 발급받은 실 사이트코드 정보를 입력합니다.&#x2
 
 
 
-![API 방식 설정 예시](<../../../.gitbook/assets/image (24).png>)
+![API 방식 설정 예시](<../../../.gitbook/assets/image (24) (1).png>)
 
 ### 실  환경 구성방법
 

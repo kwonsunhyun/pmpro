@@ -1,3 +1,7 @@
+---
+description: 다날 결제연동 방법을 안내합니다.
+---
+
 # ⌨ 다날
 
 ### 1. 다날 PG 설정하기
@@ -8,7 +12,7 @@
 
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 NHN KCP 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신되 모바일의 경우 **m\_redirect\_url**로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 다날 Tpay 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신되 모바일의 경우 **m\_redirect\_url**로 리디렉션됩니다.
 
 
 
@@ -53,7 +57,6 @@ IMP.request_pay({
 * trans (실시간 계좌이체)
 * vbank(가상계좌)
 * cultureland (문화상품권)
-* smartculture (스마트문상)
 * happymoney (해피머니)
 * booknlife (도서문화상품권)
 
@@ -121,7 +124,8 @@ IMP.request_pay({
    customer_uid : 'your-customer-unique-id', // 필수 입력.
    buyer_email : 'iamport@siot.do',
    buyer_name : '아임포트',
-   buyer_tel : '02-1234-1234'    buyer_addr : '서울특별시 강남구 삼성동',
+   buyer_tel : '02-1234-1234',    
+   buyer_addr : '서울특별시 강남구 삼성동'
 }, function(rsp) {
     if ( rsp.success ) {
         alert('빌링키 발급 성공');
