@@ -97,15 +97,63 @@ IMP.request_pay({
 {% endembed %}
 {% endtab %}
 
-{% tab title="비인증 결제창 요청" %}
-나이스페이먼츠는 비인증 결제는 차이포트 [**비인증결제 API**](../api/api-4/) 로만 지원 됩니다.
+{% tab title="비인증 API 요청" %}
+### **API 방식으로 빌링키 발급,결제요청,예약결제를 구현할수 있습니다.**
 
-따라서 비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며&#x20;
+### 일회성 결제 요청하기
 
-해당 가이드는 [**링크**](../undefined-1/undefined-1/undefined/rest-api.md)에서 확인해주시면 됩니다.
+REST[ **API POST /subscribe/payments/onetime**](../api/api-4/api-1.md)을 호출하여 일회성 결제를 요청합니다. 요청 시 전달된 카드는 아임포트에 등록되지 않습니다.
+
+```
+curl -H "Content-Type: application/json" \   
+     -X POST -d '{"merchant_uid":"order_id_8237352", "card_number":"1234-1234-1234-1234", "expiry":"2019-01", "birth":"123456", "amount":3000}' \
+     https://api.iamport.kr/subscribe/payments/onetime
+```
+
+###
+
+### 빌링키 발급 요청하기
+
+REST [**API POST /subscribe/customers/{customer\_uid}**](../api/api-2/api-1.md)를 호출하여 빌링키 발급을 요청합니다.
+
+```
+curl -H "Content-Type: application/json" \   
+     -X POST -d '{"card_number":"1234-1234-1234-1234", "expiry":"2025-12", "birth":"820213", "pwd_2digit":"00"}' \
+     https://api.iamport.kr/subscribe/customers/your-customer-unique-id
+```
+
+
+
+### 빌링키 발급 및 최초 결제 요청하기
+
+REST [**API POST /subscribe/payments/onetime**](../api/api-4/api-1.md)을 호출하여 빌링키 발급과 최초 결제를 요청합니다.
+
+* **`customer_uid`** : 빌링키 등록을 위해서 지정해야 합니다.
+
+```
+curl -H "Content-Type: application/json" \   
+     -X POST -d '{"customer_uid":"your-customer-unique-id", "merchant_uid":"order_id_8237352", "card_number":"1234-1234-1234-1234", "expiry":"2019-01", "birth":"123456", "amount":3000}' \
+     https://api.iamport.kr/subscribe/payments/onetime 
+```
+
+
+
+### 빌링키로 결제 요청하기
+
+빌링키 발급과 최초 결제가 성공하면 빌링키는 전달된 `customer_uid` 와 1:1 매칭되어 아임포트에 저장됩니다. 보안상의 이유로 서버는 빌링키에 직접 접근할 수 없기 때문에 `customer_uid`를 이용해서 재결제([**POST /subscribe/payments/again**](../api/api-4/api.md)) REST API를 다음과 같이 호출합니다.
+
+```
+curl -H "Content-Type: application/json" \   
+     -X POST -d '{"customer_uid":"your-customer-unique-id", "merchant_uid":"order_id_8237352", "amount":3000}' \
+     https://api.iamport.kr/subscribe/payments/again
+```
+
+****
 
 {% hint style="info" %}
-**나이스페이먼츠 빌링키 발급은 실 결제 발생이 없이 빌링키만 발급가능 합니다.**
+**나이스페이먼츠는 비인증 결제는 API 방식으로만 지원됩니다.**
+
+비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며 해당 가이드는 [**링크**](../undefined-1/undefined-1/undefined/rest-api.md)에서 확인해주시면 됩니다.
 {% endhint %}
 {% endtab %}
 {% endtabs %}
