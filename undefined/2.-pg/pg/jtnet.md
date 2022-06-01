@@ -66,7 +66,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 ****
 
-![](<../../../.gitbook/assets/image (22).png>)
+![](<../../../.gitbook/assets/image (22) (1).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}
@@ -112,7 +112,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (12).png>)
+![](<../../../.gitbook/assets/image (12) (1).png>)
 
 ### 실  환경 구성방법(정기결제)
 
