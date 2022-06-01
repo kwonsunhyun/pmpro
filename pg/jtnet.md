@@ -6,7 +6,7 @@ description: JTNET 결제 연동 방법을 안내합니다.
 
 ### 1. JTNET PG 설정하기
 
-****[**JTNET 일반결제 테스트 모드 설정**](../undefined/2.-pg/pg/jtnet.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**JTNET 설정**](../undefined/2.-pg/pg/jtnet.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../.gitbook/assets/스크린샷 2022-05-31 오후 12.07.01.png>)
 
