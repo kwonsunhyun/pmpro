@@ -24,10 +24,10 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (20).png>)
+![](<../../../.gitbook/assets/image (20) (1).png>)
 {% endtab %}
 
-{% tab title="실결제" %}
+{% tab title="실 결제" %}
 ### **실** 환경 구성방법
 
 카드사 심사 완료 후 JTNet에서 발급받은 실상점 정보를 **테스트모드 **<mark style="color:red;">**OFF**</mark> 처리 이후 설정합니다.
