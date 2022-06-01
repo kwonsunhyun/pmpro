@@ -18,7 +18,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 
 
-![화면예시](<../../../.gitbook/assets/image (15) (1).png>)
+![화면예시](<../../../.gitbook/assets/image (15) (1) (1).png>)
 
 {% hint style="info" %}
 **KG이니시스 PG상점아이디(MID) : INIpayTest**&#x20;

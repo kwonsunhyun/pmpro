@@ -46,3 +46,9 @@ description: 가맹점에서 빈번하게 물어보시는 질문을 확인 합�
 * 단점 : 가맹점 식별코드 / API key, secret 정보가 달라지다보니 소스코드 분기가 필요&#x20;
 
 </details>
+
+{% hint style="info" %}
+**더 많은 질문 리스트는 아래 링크를 참고해 주세요**
+
+[https://faq.iamport.kr/](https://faq.iamport.kr/)
+{% endhint %}
