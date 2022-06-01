@@ -17,6 +17,7 @@
       * [⌨ 다날 설정](undefined/2.-pg/pg/undefined-5.md)
       * [⌨ JTNET 설정](undefined/2.-pg/pg/jtnet.md)
       * [⌨ 세틀뱅크 설정](undefined/2.-pg/pg/undefined-6.md)
+      * [⌨ 페이코 설정](undefined/2.-pg/pg/undefined-7.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
 ## 결제창 연동하기
