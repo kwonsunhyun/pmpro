@@ -66,7 +66,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 ****
 
-![](<../../../.gitbook/assets/image (22) (1).png>)
+![](<../../../.gitbook/assets/image (22) (2).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}
@@ -94,7 +94,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (7).png>)
+![](<../../../.gitbook/assets/image (7) (1).png>)
 
 ### 테스트 환경 구성방법(**정기결제**)
 

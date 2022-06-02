@@ -40,11 +40,23 @@ description: 차이 간편결제 설정 방법을 안내합니다.
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[ON]**</mark> → public\_api\_key 및 private\_api\_key에 발급받은 키 정보 입력 > \[전체 저장] 클릭
 
->
+
+
+> **차이간편결제 테스트를 진행하기 위해서는 차이 가입 이후 발급된 정보로만 테스트가 가능합니다.**
+
+****
+
+![테스트 설정 예시](<../../../.gitbook/assets/image (22).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
+### **실** 환경 구성방법
 
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[OFF]**</mark> → public\_api\_key 및 private\_api\_key에 발급받은 키 정보 입력 > \[전체 저장] 클릭
+
+
+
+![실 계정 설정 예시](<../../../.gitbook/assets/image (7).png>)
 {% endtab %}
 {% endtabs %}
 
