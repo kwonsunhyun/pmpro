@@ -32,5 +32,19 @@ description: 차이 간편결제 설정 방법을 안내합니다.
 * 경남은행  :  629220095451 &#x20;
 {% endhint %}
 
-## 인증결제
+## 일반 결제
+
+{% tabs %}
+{% tab title="테스트 결제" %}
+### 테스트 환경 구성방법
+
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[ON]**</mark> → public\_api\_key 및 private\_api\_key에 발급받은 키 정보 입력 > \[전체 저장] 클릭
+
+>
+{% endtab %}
+
+{% tab title="실 결제" %}
+
+{% endtab %}
+{% endtabs %}
 

@@ -44,7 +44,7 @@ description: 결제요청의 주체를 가맹점 서버로 가져갈수 있는 �
 기술지원 메일([support@iamport.kr](mailto:support@iamport.kr))로 <mark style="color:red;">**가맹점식별코드**</mark>를 기재하여 메일 발송
 {% endhint %}
 
-![가맹점 식별코드 확인방법](<../.gitbook/assets/image (18) (1) (1) (1) (1).png>)
+![가맹점 식별코드 확인방법](<../.gitbook/assets/image (18) (1) (1) (1).png>)
 
 ### **Confirm Process 이용방법**
 
