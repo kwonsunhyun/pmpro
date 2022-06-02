@@ -86,8 +86,6 @@ IMP.request_pay({
 
 **`구매자 이름`**
 
-**First name** 과 **Last name** 이 <mark style="color:red;">**빈칸**</mark>으로 구분되어 반드시 유입되어야 합니다.
-
 
 
 **`buyer_email`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
