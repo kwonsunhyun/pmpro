@@ -112,7 +112,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (12) (1).png>)
+![](<../../../.gitbook/assets/image (12) (2).png>)
 
 ### 실  환경 구성방법(정기결제)
 

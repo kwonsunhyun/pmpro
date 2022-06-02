@@ -24,7 +24,7 @@ description: 세틀뱅크 설정방법을 안내합니다.
 
 
 
-![실 계정 설정 예시](<../../../.gitbook/assets/image (8).png>)
+![실 계정 설정 예시](<../../../.gitbook/assets/image (8) (1).png>)
 {% endtab %}
 {% endtabs %}
 

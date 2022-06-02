@@ -52,7 +52,7 @@ description: 차이 간편결제 설정 방법을 안내합니다.
 {% tab title="실 결제" %}
 ### **실** 환경 구성방법
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[OFF]**</mark> → public\_api\_key 및 private\_api\_key에 발급받은 키 정보 입력 > \[전체 저장] 클릭
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[OFF]**</mark> → public\_api\_key 및 private\_api\_key 에 발급받은 키 정보 입력 > \[전체 저장] 클릭
 
 
 
@@ -60,3 +60,34 @@ description: 차이 간편결제 설정 방법을 안내합니다.
 {% endtab %}
 {% endtabs %}
 
+## 정기 결제&#x20;
+
+{% tabs %}
+{% tab title="결제창 방식" %}
+### 테스트 환경 구성방법
+
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[ON]**</mark> → public\_api\_key 및 private\_api\_key 에 발급받은 키 정보 입력 > \[전체 저장] 클릭
+
+
+
+![테스트 설정 예시](<../../../.gitbook/assets/image (12).png>)
+
+### **실** 환경 구성방법
+
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[OFF]**</mark> → public\_api\_key 및 private\_api\_key 에 발급받은 키 정보 입력 > \[전체 저장] 클릭
+
+
+
+![실 계정 설정 예시](<../../../.gitbook/assets/image (8).png>)
+{% endtab %}
+
+{% tab title="API 방식" %}
+**차이 간편결제는 API 방식을 통한 정기결제는 지원하지 않습니다.**
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+#### **확인사항**
+
+차이 테스트 모드의 경우 실제 출금 되지만 매일 23:00\~23:50분 사이 자동 취소됩니다.
+{% endhint %}

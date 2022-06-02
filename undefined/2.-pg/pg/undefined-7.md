@@ -34,7 +34,7 @@ description: 페이코 설정 방법을 안내합니다.
 {% endtab %}
 {% endtabs %}
 
-## 비 인증 결제&#x20;
+## 정기 결제&#x20;
 
 {% tabs %}
 {% tab title="결제창 방식" %}
@@ -52,7 +52,7 @@ description: 페이코 설정 방법을 안내합니다.
 
 
 
-![실환경 설정 예시](<../../../.gitbook/assets/image (12).png>)
+![실환경 설정 예시](<../../../.gitbook/assets/image (12) (1).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}
