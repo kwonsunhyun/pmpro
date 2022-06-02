@@ -85,7 +85,7 @@ IMP.request_pay({
 {% endembed %}
 {% endtab %}
 
-{% tab title="비인증 결제창 요청" %}
+{% tab title="정기 결제창 요청" %}
 인증결제창 호출 파라미터에서 **customer\_uid** 값을 추가하면 비 인증 결제창을 호출할 수 있습니다.&#x20;
 
 {% hint style="info" %}
@@ -158,7 +158,7 @@ curl -H "Content-Type: application/json" \
 {% endcode %}
 {% endtab %}
 
-{% tab title="비 인증 API 결제" %}
+{% tab title="정기결제 API 방식" %}
 **페이코는 API 비 인증 결제를 지원하지 않습니다.**&#x20;
 {% endtab %}
 {% endtabs %}
