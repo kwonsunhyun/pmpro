@@ -12,7 +12,7 @@ description: 토스페이먼츠 설정방법을 안내합니다.
 
 [아임포트관리자콘솔](https://https/admin.iamport.kr) 로그인(또는 회원가입) 후 > 시스템 설정 > PG설정(**일반결제 및 정기결제**) > PG사 "토스페이먼츠" 선택하시고 <mark style="color:red;">테스트모드 \[ON]</mark> 상태에서 \[전체저장] 버튼을 클릭 해 주세요 ****&#x20;
 
-![테스트 모드 설정 예시](<../../../.gitbook/assets/image (11) (2).png>)
+![테스트 모드 설정 예시](<../../../.gitbook/assets/image (11) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
