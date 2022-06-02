@@ -6,13 +6,13 @@ description: 나이스페이먼츠 결제창 연동 가이드를 안내합니다
 
 ### 1. NICE페이먼츠 PG 설정하기
 
-[**나이스페이먼츠 설정**](../../undefined/2.-pg/pg/undefined.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+[**나이스페이먼츠 설정**](../undefined/2.-pg/pg/undefined.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
-![](<../../.gitbook/assets/스크린샷 2022-05-29 오후 7.44.33.png>)
+![](<../.gitbook/assets/스크린샷 2022-05-29 오후 7.44.33.png>)
 
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 NICE페이먼츠 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신되고 모바일의 경우**m\_redirect\_url**로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 NICE페이먼츠 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신되고 모바일의 경우**m\_redirect\_url**로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}
@@ -102,7 +102,7 @@ IMP.request_pay({
 
 ### 일회성 결제 요청하기
 
-REST[ **API POST /subscribe/payments/onetime**](../../api/api-4/api-1.md)을 호출하여 일회성 결제를 요청합니다. 요청 시 전달된 카드는 아임포트에 등록되지 않습니다.
+REST[ **API POST /subscribe/payments/onetime**](../api/api-4/api-1.md)을 호출하여 일회성 결제를 요청합니다. 요청 시 전달된 카드는 아임포트에 등록되지 않습니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -114,7 +114,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키 발급 요청하기
 
-REST [**API POST /subscribe/customers/{customer\_uid}**](../../api/api-2/api-1.md)를 호출하여 빌링키 발급을 요청합니다.
+REST [**API POST /subscribe/customers/{customer\_uid}**](../api/api-2/api-1.md)를 호출하여 빌링키 발급을 요청합니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -126,7 +126,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키 발급 및 최초 결제 요청하기
 
-REST [**API POST /subscribe/payments/onetime**](../../api/api-4/api-1.md)을 호출하여 빌링키 발급과 최초 결제를 요청합니다.
+REST [**API POST /subscribe/payments/onetime**](../api/api-4/api-1.md)을 호출하여 빌링키 발급과 최초 결제를 요청합니다.
 
 * **`customer_uid`** : 빌링키 등록을 위해서 지정해야 합니다.
 
@@ -140,7 +140,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키로 결제 요청하기
 
-빌링키 발급과 최초 결제가 성공하면 빌링키는 전달된 `customer_uid` 와 1:1 매칭되어 아임포트에 저장됩니다. 보안상의 이유로 서버는 빌링키에 직접 접근할 수 없기 때문에 `customer_uid`를 이용해서 재결제([**POST /subscribe/payments/again**](../../api/api-4/api.md)) REST API를 다음과 같이 호출합니다.
+빌링키 발급과 최초 결제가 성공하면 빌링키는 전달된 `customer_uid` 와 1:1 매칭되어 아임포트에 저장됩니다. 보안상의 이유로 서버는 빌링키에 직접 접근할 수 없기 때문에 `customer_uid`를 이용해서 재결제([**POST /subscribe/payments/again**](../api/api-4/api.md)) REST API를 다음과 같이 호출합니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -153,7 +153,7 @@ curl -H "Content-Type: application/json" \
 {% hint style="info" %}
 **나이스페이먼츠는 비인증 결제는 API 방식으로만 지원됩니다.**
 
-비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며 해당 가이드는 [**링크**](../../undefined-1/undefined-1/undefined/rest-api.md)에서 확인해주시면 됩니다.
+비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며 해당 가이드는 [**링크**](../undefined-1/undefined-1/undefined/rest-api.md)에서 확인해주시면 됩니다.
 {% endhint %}
 {% endtab %}
 {% endtabs %}

@@ -6,13 +6,13 @@ description: KG이니시스 결제창 연동 가이드입니다.
 
 ### 1. KG이니시스 PG 설정하기
 
-[**KG이니시스 설정**](../../undefined/2.-pg/pg/kg.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+[**KG이니시스 설정**](../undefined/2.-pg/pg/kg.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
-![](../../.gitbook/assets/7043\_14679\_1310.jpeg)
+![](../.gitbook/assets/7043\_14679\_1310.jpeg)
 
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 KG이니시스 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신 되며 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 KG이니시스 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신 되며 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}
@@ -158,7 +158,7 @@ IMP.request_pay({
 
 ### 빌링키(customer\_uid)로 결제 요청하기
 
-빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **아임포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 [<mark style="color:blue;">**비 인증 결제요청 REST API**</mark>](../../api/api-4/api.md)를 호출하시면 결제를 발생시킬 수 있습니다.
+빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **아임포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 [<mark style="color:blue;">**비 인증 결제요청 REST API**</mark>](../api/api-4/api.md)를 호출하시면 결제를 발생시킬 수 있습니다.
 
 
 
@@ -178,7 +178,7 @@ curl -H "Content-Type: application/json" \
 
 ### 일회성 결제 요청하기
 
-REST[ **API POST /subscribe/payments/onetime**](../../api/api-4/api-1.md)을 호출하여 일회성 결제를 요청합니다. 요청 시 전달된 카드는 아임포트에 등록되지 않습니다.
+REST[ **API POST /subscribe/payments/onetime**](../api/api-4/api-1.md)을 호출하여 일회성 결제를 요청합니다. 요청 시 전달된 카드는 아임포트에 등록되지 않습니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -190,7 +190,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키 발급 요청하기
 
-REST [**API POST /subscribe/customers/{customer\_uid}**](../../api/api-2/api-1.md)를 호출하여 빌링키 발급을 요청합니다.
+REST [**API POST /subscribe/customers/{customer\_uid}**](../api/api-2/api-1.md)를 호출하여 빌링키 발급을 요청합니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -202,7 +202,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키 발급 및 최초 결제 요청하기
 
-REST [**API POST /subscribe/payments/onetime**](../../api/api-4/api-1.md)을 호출하여 빌링키 발급과 최초 결제를 요청합니다.
+REST [**API POST /subscribe/payments/onetime**](../api/api-4/api-1.md)을 호출하여 빌링키 발급과 최초 결제를 요청합니다.
 
 * **`customer_uid`** : 빌링키 등록을 위해서 지정해야 합니다.
 * **`amount`** : 0원 이상 설정시 빌링키 발급과 동시에 실결제가 발생됩니다.
@@ -217,7 +217,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키로 결제 요청하기
 
-빌링키 발급과 최초 결제가 성공하면 빌링키는 전달된 `customer_uid` 와 1:1 매칭되어 아임포트에 저장됩니다. 보안상의 이유로 서버는 빌링키에 직접 접근할 수 없기 때문에 `customer_uid`를 이용해서 재결제([**POST /subscribe/payments/again**](../../api/api-4/api.md)) REST API를 다음과 같이 호출합니다.
+빌링키 발급과 최초 결제가 성공하면 빌링키는 전달된 `customer_uid` 와 1:1 매칭되어 아임포트에 저장됩니다. 보안상의 이유로 서버는 빌링키에 직접 접근할 수 없기 때문에 `customer_uid`를 이용해서 재결제([**POST /subscribe/payments/again**](../api/api-4/api.md)) REST API를 다음과 같이 호출합니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -229,8 +229,8 @@ curl -H "Content-Type: application/json" \
 
 **자세한 가이드는 아래 링크를 참조하세요**
 
-{% content-ref url="../../undefined-1/undefined-1/" %}
-[undefined-1](../../undefined-1/undefined-1/)
+{% content-ref url="../undefined-1/undefined-1/" %}
+[undefined-1](../undefined-1/undefined-1/)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
