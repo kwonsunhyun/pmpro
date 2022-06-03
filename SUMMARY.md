@@ -87,7 +87,7 @@
 
 ## 관리자 콘솔 사용하기
 
-* [🎡 관리자 콘솔 가이드](undefined-4/undefined/README.md)
+* [🎡 관리자 콘솔 가이드](undefined-4/undefined.md)
   * [전자결제 신청](undefined-4/undefined/undefined.md)
   * [내 색별코드, API Keys](undefined-4/undefined/api-keys.md)
 * [💻 복수 PG설정 및 사용하기](undefined-4/pg.md)

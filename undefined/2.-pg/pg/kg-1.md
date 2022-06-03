@@ -20,7 +20,7 @@ description: KG모빌리언스 설정방법을 안내합니다.
 {% tab title="실 결제" %}
 ### **실** 환경 구성방법
 
-심사 완료 후 KG모빌리언스에서 발급받은 실상점 정보를 <mark style="color:red;">**테스트모드 OFF**</mark> 이후 설정합니다.
+PG사 심사 완료 후 KG모빌리언스에서 발급받은 실상점 정보를 <mark style="color:red;">**테스트모드 OFF**</mark> 이후 설정합니다.
 
 
 
