@@ -47,7 +47,7 @@ description: 아임포트를 사용하여 결제를 연동하기 위한 관리�
 유의하시기 바랍니다.
 {% endhint %}
 
-![연동정보 확인](../.gitbook/assets/image.png)
+![연동정보 확인](<../.gitbook/assets/image (1).png>)
 
 {% tabs %}
 {% tab title="가맹점 식별코드" %}
