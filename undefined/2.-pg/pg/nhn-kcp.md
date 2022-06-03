@@ -26,7 +26,7 @@ description: NHN KCP 설정방법을 안내합니다.
 
 KCP 계약이후 발급받은 사이트코드와 사이트키를 테스트모드 OFF버튼으로 입력창을 활성화 한후 올바르게 기입후 저장합니다.
 
-![화면 설정 예시](<../../../.gitbook/assets/image (9) (1) (1).png>)
+![화면 설정 예시](<../../../.gitbook/assets/image (9) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 
