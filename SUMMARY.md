@@ -59,18 +59,18 @@
   * [🥏 2. 본인인증창 호출하기](undefined-3/undefined/2..md)
   * [🚚 3. 인증 완료정보 전달하기](undefined-3/undefined/3..md)
   * [🤹 4. 인증정보 조회 및 활용하기](undefined-3/undefined/4..md)
-* [💻 결제 URL 생성하기](undefined-3/url.md)
 * [🚚 통합인증 연동하기](undefined-3/undefined-1.md)
   * [📒 통합인증 준비하기](undefined-3/undefined-1/undefined.md)
   * [🥏 통합인증 요청하기](undefined-3/undefined-1/undefined-1.md)
   * [🚚 인증 완료정보 전달하기](undefined-3/undefined-1/undefined-2.md)
   * [🤹 인증정보 조회 및 활용하기](undefined-3/undefined-1/undefined-3.md)
-* [🛩 버짓핸들러 연동하기](undefined-3/undefined-3.md)
-* [💳 신용카드 본인인증 연동하기](undefined-3/undefined-2.md)
+* [💳 신용카드 본인인증 연동하기](undefined-3/undefined-2/README.md)
   * [📒 1. 본인인증 준비하기](undefined-3/undefined-2/1..md)
   * [🥏 2. 본인인증 요청하기](undefined-3/undefined-2/2..md)
   * [🚚 3. 인증 완료정보 전달하기](undefined-3/undefined-2/3..md)
   * [🤹 4. 인증정보 조회 및 활용하기](undefined-3/undefined-2/4..md)
+* [💻 결제 URL 생성하기](undefined-3/url.md)
+* [🛩 버짓핸들러 연동하기](undefined-3/undefined-3.md)
 
 ## TIP
 
