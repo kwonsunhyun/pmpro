@@ -8,6 +8,8 @@ description: 블루월넛 설정방법을 확인합니다.
 
 {% tabs %}
 {% tab title="테스트 결제" %}
+### 테스트 환경 구성방법
+
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 블루월넛 선택 → <mark style="color:red;">**테스트모드 \[ON]**</mark> → \[전체 저장] 클릭\
 
 

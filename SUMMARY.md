@@ -24,6 +24,7 @@
       * [⌨ 페이팔 설정](undefined/2.-pg/pg/undefined-10.md)
       * [⌨ 엑심베이 설정](undefined/2.-pg/pg/undefined-11.md)
       * [⌨ 블루월넛 설정](undefined/2.-pg/pg/undefined-12.md)
+      * [⌨ 알리페이 설정](undefined/2.-pg/pg/undefined-13.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
 ## 결제창 연동하기
@@ -178,7 +179,7 @@
 
 * [⁉ 자주 묻는 질문](faq/undefined.md)
 
-## 🔑 PG사별 결제창 연동 가이드
+## 🔑 PG사별 결제 연동 가이드
 
 * [🏢 Payment Gateway](pg/payment-gateway/README.md)
   * [⌨ NHH KCP](pg/nhh-kcp.md)
