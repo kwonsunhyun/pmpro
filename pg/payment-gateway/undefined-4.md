@@ -80,6 +80,14 @@ IMP.request_pay({
 **결제통화코드 **<mark style="color:green;">****</mark>&#x20;
 
 지원 가능한 모든 통화는 [페이팔 공식 문서](https://developer.paypal.com/docs/api/reference/currency-codes/#paypal-account-payments)를 참고해주세요
+
+
+
+**`m_redirect_url`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
+
+**결제결과 수신 URL **<mark style="color:green;">****</mark>&#x20;
+
+PC환경 모바일 환경 모두 해당 값을 필수로 설정해야 결과를 받아볼수 있습니다.
 {% endtab %}
 {% endtabs %}
 
