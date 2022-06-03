@@ -190,6 +190,7 @@
   * [⌨ 토스페이먼츠](pg/toss.md)
   * [⌨ NICE페이먼츠](pg/nice.md)
   * [⌨ KICC](pg/payment-gateway/kicc.md)
+  * [⌨ KG모빌리언스](pg/payment-gateway/kg.md)
   * [⌨ 페이먼트월](pg/undefined.md)
   * [⌨ 다날](pg/undefined-3.md)
   * [⌨ 세틀뱅크](pg/undefined-4.md)
