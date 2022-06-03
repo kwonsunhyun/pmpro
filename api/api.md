@@ -29,7 +29,7 @@ description: 아임포트 API 를 소개합니다.
 
 아임포트 API 응답부 명세를 자세히 확인 하기 위해서는 아래와 같이 **Response** 항목 **HTTP Status **<mark style="color:green;">**200**</mark> 항목 선택시 자세한 출력 명세를 확인할 수 있습니다.
 
-![응답항목 예시](<../.gitbook/assets/image (18) (1) (1) (1).png>)
+![응답항목 예시](<../.gitbook/assets/image (18) (1) (1) (1) (1).png>)
 
 {% hint style="info" %}
 **API Swagger 사이트**

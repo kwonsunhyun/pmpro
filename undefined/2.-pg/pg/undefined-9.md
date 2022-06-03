@@ -24,7 +24,7 @@ description: 스마트로 설정 방법을 안내합니다.
 
 
 
-![실환경 설정 예시](<../../../.gitbook/assets/image (25).png>)
+![실환경 설정 예시](<../../../.gitbook/assets/image (25) (1).png>)
 {% endtab %}
 {% endtabs %}
 
