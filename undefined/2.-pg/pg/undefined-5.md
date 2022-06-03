@@ -14,7 +14,7 @@ description: 다날 PG사 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (19) (1).png>)
+![](<../../../.gitbook/assets/image (19) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}

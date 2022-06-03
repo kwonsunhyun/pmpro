@@ -14,7 +14,7 @@ description: 스마트로 설정 방법을 안내합니다.
 
 
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (16) (1).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (16) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}

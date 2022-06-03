@@ -34,7 +34,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (16) (1) (1).png>)
+![](<../../../.gitbook/assets/image (16) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 

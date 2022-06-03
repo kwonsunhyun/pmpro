@@ -30,7 +30,7 @@ description: 페이코 설정 방법을 안내합니다.
 
 
 
-![실환경 설정 예시](<../../../.gitbook/assets/image (18) (1).png>)
+![실환경 설정 예시](<../../../.gitbook/assets/image (18) (2).png>)
 {% endtab %}
 {% endtabs %}
 

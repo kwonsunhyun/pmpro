@@ -23,7 +23,7 @@ description: 블루월넛 설정방법을 확인합니다.
 
 
 
-![실계정 설정 예시](<../../../.gitbook/assets/image (18).png>)
+![실계정 설정 예시](<../../../.gitbook/assets/image (18) (1).png>)
 {% endtab %}
 {% endtabs %}
 

@@ -39,7 +39,7 @@ description: 페이팔 설정 방법을 안내합니다.
 
 1. &#x20;[https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/) 로그인 > **SANDBOX** > **Accounts** > DEFAULT Business 계정의 \[**View/edit account**] 클릭
 
-![Accounts 예](<../../../.gitbook/assets/image (19).png>)
+![Accounts 예](<../../../.gitbook/assets/image (19) (1).png>)
 
 &#x20;**2. Account details 팝업창**
 
@@ -83,7 +83,7 @@ Profile 탭의 **Email ID** 및 **Password** 값을 페이팔 결제시 구매�
 
 \- 참고 : 휴대폰본인인증 절차 필요
 
-![](<../../../.gitbook/assets/image (16).png>)
+![](<../../../.gitbook/assets/image (16) (1).png>)
 
 **3) API 서명보기  "표시" 클릭**
 

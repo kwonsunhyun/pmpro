@@ -18,6 +18,7 @@
       * [⌨ 다날 설정](undefined/2.-pg/pg/undefined-5.md)
       * [⌨ JTNET 설정](undefined/2.-pg/pg/jtnet.md)
       * [⌨ 세틀뱅크 설정](undefined/2.-pg/pg/undefined-6.md)
+      * [⌨ KG모빌리언스 설정](undefined/2.-pg/pg/kg-1.md)
       * [⌨ 페이코 설정](undefined/2.-pg/pg/undefined-7.md)
       * [⌨ 차이 설정](undefined/2.-pg/pg/undefined-8.md)
       * [⌨ 스마트로 설정](undefined/2.-pg/pg/undefined-9.md)
@@ -64,7 +65,7 @@
   * [🥏 통합인증 요청하기](undefined-3/undefined-1/undefined-1.md)
   * [🚚 인증 완료정보 전달하기](undefined-3/undefined-1/undefined-2.md)
   * [🤹 인증정보 조회 및 활용하기](undefined-3/undefined-1/undefined-3.md)
-* [💳 신용카드 본인인증 연동하기](undefined-3/undefined-2/README.md)
+* [💳 신용카드 본인인증 연동하기](undefined-3/undefined-2.md)
   * [📒 1. 본인인증 준비하기](undefined-3/undefined-2/1..md)
   * [🥏 2. 본인인증 요청하기](undefined-3/undefined-2/2..md)
   * [🚚 3. 인증 완료정보 전달하기](undefined-3/undefined-2/3..md)
@@ -86,7 +87,9 @@
 
 ## 관리자 콘솔 사용하기
 
-* [🎡 관리자 콘솔 가이드](undefined-4/undefined.md)
+* [🎡 관리자 콘솔 가이드](undefined-4/undefined/README.md)
+  * [전자결제 신청](undefined-4/undefined/undefined.md)
+  * [내 색별코드, API Keys](undefined-4/undefined/api-keys.md)
 * [💻 복수 PG설정 및 사용하기](undefined-4/pg.md)
 
 ## API
