@@ -10,7 +10,7 @@ description: 복수 PG를 사용하는 경우 설정방법을 확인할 수 있�
 
 [**아임포트 관리자 콘솔 > 시스템 설정 > PG 설정 탭 > 기본 PG사 탭**](https://admin.iamport.kr/settings#tab\_pg)에서 `기본 PG사`를 **주로 사용할 PG사**로 설정합니다. 해당 PG사는 [`IMP.request_pay`](../sdk/javascript-sdk/) 함수로 결제창을 호출할 때 `param.pg` 속성의 기본값으로 사용됩니다. 기본값은 별도로 설정한 `pg` 속성 값이 없거나 유효하지 않을 경우 사용됩니다.
 
-![인증결제(일반결제) 설정하기](<../.gitbook/assets/image (5) (1) (1) (1).png>)
+![인증결제(일반결제) 설정하기](<../.gitbook/assets/image (5) (1) (1) (1) (1).png>)
 
 ### 2. 정기 결제용(비 인증/**PG사 결제창 이용**) PG사 추가하기
 

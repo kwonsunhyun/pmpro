@@ -44,7 +44,7 @@ description: 페이코 설정 방법을 안내합니다.
 
 
 
-![테스트 환경 설정 예시](<../../../.gitbook/assets/image (17).png>)
+![테스트 환경 설정 예시](<../../../.gitbook/assets/image (17) (1).png>)
 
 ### **실** 환경 구성방법
 

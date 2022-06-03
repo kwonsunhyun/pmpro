@@ -14,7 +14,7 @@ description: 세틀뱅크 설정방법을 안내합니다.
 
 
 
-![테스트 환경 설정예시](<../../../.gitbook/assets/image (20).png>)
+![테스트 환경 설정예시](<../../../.gitbook/assets/image (20) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
