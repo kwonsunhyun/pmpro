@@ -10,8 +10,6 @@ description: KICC 결제창 연동 방법을 안내합니다.
 
 ![](<../../.gitbook/assets/스크린샷 2022-06-03 오후 4.54.05.png>)
 
-
-
 ### 2.결제창 요청하기
 
 [JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 KICC 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신되고 모바일의 경우**m\_redirect\_url** 로 리디렉션됩니다.
@@ -21,18 +19,17 @@ description: KICC 결제창 연동 방법을 안내합니다.
 {% code title="Javascript SDK" %}
 ```javascript
 IMP.request_pay({
-    pg : 'nice',
+    pg : 'kicc',
     pay_method : 'card',
     merchant_uid: "order_no_0001", //상점에서 생성한 고유 주문번호
     name : '주문명:결제테스트',
     amount : 1004,
     buyer_email : 'iamport@siot.do',
     buyer_name : '구매자이름',
-    buyer_tel : '010-1234-5678',
+    buyer_tel : '010-1234-5678',  //필수 
     buyer_addr : '서울특별시 강남구 삼성동',
     buyer_postcode : '123-456',
-    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}',
-    niceMobileV2 : true  // 신규 모바일 버전 적용 시 설정 
+    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}'
 }, function(rsp) { // callback 로직
 	//* ...중략... *//
 });
@@ -47,7 +44,7 @@ IMP.request_pay({
 
 **PG사 구분코드**
 
-관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 **`nice`** 로 지정하셔야 합니다.
+관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 **`kicc`** 로 지정하셔야 합니다.
 
 
 
@@ -56,13 +53,9 @@ IMP.request_pay({
 **결제수단 구분코드**
 
 * card(신용카드)
-* samsung(삼성페이)
 * trans(실시간 계좌이체)
 * vbank(가상계좌)
 * phone(휴대폰소액결제)
-* payco(페이코 허브형)
-* naverpay(네이버페이)
-* kakaopay(카카오페이)
 
 
 
@@ -74,17 +67,17 @@ IMP.request_pay({
 
 
 
+**`buyer_tel`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`string`**</mark>
+
+**`주문자 연락처` **<mark style="color:green;">****</mark>&#x20;
+
+<mark style="color:green;">****</mark>
+
 **`amount`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **결제금액**
 
-**string** 이 아닌점에 유의하세요
-
-
-
-**`niceMobileV2``  `**<mark style="color:orange;">**`boolean`**</mark>
-
-나이스 모바일 신규버전 적용 여부(기본 값: false)
+<mark style="color:green;">**string**</mark> 이 아닌점에 유의하세요
 
 
 
@@ -92,14 +85,18 @@ IMP.request_pay({
 
 **에스크로 설정여부**&#x20;
 
+계좌이체,가상계좌만 지원됩니다.
 
 
-{% embed url="https://codepen.io/chaiport/pen/qBxbGXy" %}
-나이스페이먼츠 결제창 예제
-{% endembed %}
+
+{% embed url="https://codepen.io/chaiport/pen/YzevrGz" %}
 {% endtab %}
 
-{% tab title="비인증 API 요청" %}
+{% tab title="결제창 방식 비 인증 결제" %}
+
+{% endtab %}
+
+{% tab title="비 인증 API 요청" %}
 **아임포트를 통한 KICC API 방식 비 인증 결제는 지원되지 않습니다.**
 {% endtab %}
 {% endtabs %}
@@ -107,11 +104,73 @@ IMP.request_pay({
 ### 3. 부가기능
 
 {% tabs %}
-{% tab title="할부개월수 설정" %}
+{% tab title="에스크로 설정" %}
+KICC는 **현금성 결제수단** (실시간계좌이체, 가상계좌)에 한하여 에스크로 결제수단을 지원합니다.
+
+
+
+> 에스크로 설정을 위해서는 아래 파라미터를 기본적으로 설정한 후 추가적인 파라미터를
+>
+> 입력해야 합니다.
+>
+> * **escrow : true**
+
+****
+
+### 추가 파라미터 안내
+
+에스크로 결제 시 다음 파라미터를 반드시 설정해야 합니다.
+
+* `buyer_name` : 구매자 이름
+* `buyer_email` : 구매자 이메일
+* `buyer_tel` : 구매자 전화번호
+
+
+
+*   `kiccProducts` : 상품별 부분배송을 위한 상품 관련 정보 (4개의 필수 속성으로 구성된 객체배열). 해당 `amount` 값은 결제 금액(`param.amount`) 값과 관계가 없으며 비교검증되지 않습니다.
+
+    * `orderNumber` : 상품주문번호
+    * `name` : 상품명
+    * `quantity` : 수량
+    * `amount` : 상품 가격
+
+
+
+{% code title="JavaScript SDK" %}
+```javascript
+IMP.request_pay({
+   ...
+   escrow : true, //에스크로 결제인 경우 필요
+   kiccProducts : [
+    	       {
+			"orderNumber" : "xxxx",
+			"name" : "상품A",
+			"quantity" : 3,
+			"amount" : 1000
+		},
+		{
+			"orderNumber" : "yyyy",
+			"name" : "상품B",
+			"quantity" : 2,
+			"amount" : 3000
+		}
+	       ]
+    ...
+}, function(rsp) { // callback 로직
+	//* ...중략 ... *//
+});
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="카드사 모듈 바로 호출" %}
 {% code title="javascript" %}
 ```javascript
-display: {
-    card_quota: [6]  // 할부개월 6개월까지만 활성화
+card: {
+     direct: {
+        code: "367",
+        quota: 3
+    }
 }
 ```
 {% endcode %}
@@ -120,13 +179,39 @@ display: {
 
 **파라미터 설명**
 
-* **card\_quota :**
-  * `[]`: 일시불만 결제 가능
-  * `2,3,4,5,6`: 일시불을 포함한 2, 3, 4, 5, 6개월까지 할부개월 선택 가능\
+* **code** : 카드사 금융결제원 표준 코드. [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630)  참조 (**string**)
+* **quota** : 할부 개월 수. 일시불일 시 0 으로 지정. (**integer**)
 
+{% hint style="danger" %}
+**주의사항**
 
-{% hint style="info" %}
-할부결제는 **5만원 이상 결제 요청시**에만 이용 가능합니다.
+* 일부 PG사의 경우, 모든 상점아이디에 대하여 카드사 결제창 direct 노출 기능을 지원하지 않습니다. 반드시 아임포트를 통해 현재 사용중인 상점아이디가 카드사 결제창 direct 호출이 가능하도록 설정이 되어있는지 PG사에 확인이 필요합니다.
 {% endhint %}
+{% endtab %}
+
+{% tab title="특정 카드사 노출" %}
+{% code title="javascript" %}
+```javascript
+card : {
+    detail : [
+        {card_code:"*", enabled:false},     //모든 카드사 비활성화
+        {card_code:'366', enabled:true}     //특정 카드만 활성화
+    ]
+}
+```
+{% endcode %}
+
+
+
+**파라미터 설명**
+
+* **card\_code :** 금결원 카드사코드 [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) 참조 (<mark style="color:green;">**string)**</mark>
+* **enabled :** 해당카드 활성화 여부 (<mark style="color:orange;">**boolean)**</mark>
+
+<mark style="color:orange;">****</mark>
+
+{% embed url="https://codepen.io/chaiport/pen/MWQKdVo" %}
+<mark style="color:red;">**신한카드**</mark>**만 결제창 노출 처리 예제**
+{% endembed %}
 {% endtab %}
 {% endtabs %}
