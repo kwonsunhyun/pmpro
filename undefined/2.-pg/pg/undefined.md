@@ -59,7 +59,7 @@ description: 나이스페이먼츠 인증결제 및 비 인증 결제 설정 방
 
 
 
-![설정 화면 예시](<../../../.gitbook/assets/image (19) (1).png>)
+![설정 화면 예시](<../../../.gitbook/assets/image (19) (1) (1).png>)
 
 ### 실  환경 구성방법
 
@@ -67,6 +67,6 @@ description: 나이스페이먼츠 인증결제 및 비 인증 결제 설정 방
 
 
 
-![설정 화면 예시](<../../../.gitbook/assets/image (21) (1) (1).png>)
+![설정 화면 예시](<../../../.gitbook/assets/image (21) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}

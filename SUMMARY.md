@@ -20,6 +20,7 @@
       * [⌨ 페이코 설정](undefined/2.-pg/pg/undefined-7.md)
       * [⌨ 차이 설정](undefined/2.-pg/pg/undefined-8.md)
       * [⌨ 스마트로 설정](undefined/2.-pg/pg/undefined-9.md)
+      * [⌨ 페이팔 설정](undefined/2.-pg/pg/undefined-10.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
 ## 결제창 연동하기
