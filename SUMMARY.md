@@ -23,7 +23,7 @@
       * [⌨ 스마트로 설정](undefined/2.-pg/pg/undefined-9.md)
       * [⌨ 페이팔 설정](undefined/2.-pg/pg/undefined-10.md)
       * [⌨ 엑심베이 설정](undefined/2.-pg/pg/undefined-11.md)
-      * [⌨ 블루월넛](undefined/2.-pg/pg/undefined-12.md)
+      * [⌨ 블루월넛 설정](undefined/2.-pg/pg/undefined-12.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
 ## 결제창 연동하기
@@ -193,6 +193,7 @@
   * [⌨ 스마트로](pg/payment-gateway/undefined-3.md)
   * [⌨ 페이팔](pg/payment-gateway/undefined-4.md)
   * [⌨ 엑심베이](pg/payment-gateway/undefined-5.md)
+  * [⌨ 블루월넛](pg/payment-gateway/undefined-6.md)
 * [⛺ 간편 결제사](pg/undefined/README.md)
   * [⌨ 네이버페이(결제형)](pg/undefined-2.md)
   * [⌨ 카카오페이](pg/undefined-1.md)

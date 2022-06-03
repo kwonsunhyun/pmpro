@@ -12,7 +12,7 @@ description: 엑심베이 결제 연동 방법을 안내합니다.
 
 ### 2.결제창 요청하기
 
-[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 스마트로 결제창을 호출할 수 있습니다. **결제결과**는 **PC / 모바일** 모두 **callback** 으로 전달됩니다.&#x20;
+[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 엑심베이 결제창을 호출할 수 있습니다. **결제결과**는 **PC / 모바일** 모두 **callback** 으로 전달됩니다.&#x20;
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}
