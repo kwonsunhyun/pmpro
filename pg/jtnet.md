@@ -23,7 +23,7 @@ IMP.request_pay({
     pay_method : 'card',
     merchant_uid: "order_no_0001", //상점에서 생성한 고유 주문번호
     name : '주문명:결제테스트',
-    amount : 14000,
+    amount : 1004,
     buyer_email : 'iamport@siot.do',
     buyer_name : '구매자이름',
     buyer_tel : '010-1234-5678',
