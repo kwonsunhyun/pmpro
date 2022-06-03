@@ -11,22 +11,11 @@ description: 아임포트와 별개로 거래된 일반 현금결제에 대해�
 <summary><strong>지원되는 PG사</strong> 확인하기</summary>
 
 * **KG 이니시스**
-
-<!---->
-
 * **NHN KCP**
-
-<!---->
-
 * **Settle Bank**
-
-<!---->
-
 * **NICE Payments**
-
-<!---->
-
 * **PayJoa(다우)**
+* **KICC**
 
 </details>
 

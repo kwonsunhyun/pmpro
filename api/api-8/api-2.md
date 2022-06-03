@@ -13,22 +13,11 @@ description: 현금영수증을 발급할 수 있습니다.
 <summary><strong>지원되는 PG사</strong> 확인하기</summary>
 
 * **KG 이니시스**
-
-<!---->
-
 * **NHN KCP**
-
-<!---->
-
 * **Settle Bank**
-
-<!---->
-
 * **NICE Payments**
-
-<!---->
-
 * **PayJoa(다우)**
+* **KICC**
 
 </details>
 

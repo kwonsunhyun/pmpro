@@ -15,6 +15,7 @@ description: 차이포트를 통해 발급한 현금영수증 발급거래를 �
 * **Settle Bank**
 * **NICE Payments**
 * **PayJoa(다우)**
+* **KICC**
 
 </details>
 
