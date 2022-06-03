@@ -58,7 +58,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (24).png>)
+![](<../../../.gitbook/assets/image (24) (1).png>)
 
 ### **실** 환경 구성방법
 
