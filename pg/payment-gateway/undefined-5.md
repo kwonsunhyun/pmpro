@@ -6,13 +6,13 @@ description: 엑심베이 결제 연동 방법을 안내합니다.
 
 ### 1. 엑심베이 PG 설정하기
 
-****[**엑심베이 설정**](../../undefined/2.-pg/pg/undefined-12.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**엑심베이 설정**](../../undefined/2.-pg/pg/undefined-11.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../../.gitbook/assets/스크린샷 2022-06-03 오후 3.34.40.png>)
 
-### 2.결제창 요청하기
+### 2.결제 요청하기
 
-[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 엑심베이 결제창을 호출할 수 있습니다. **결제결과**는 **PC / 모바일** 모두 **callback** 으로 전달됩니다.&#x20;
+[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 엑심베이 결제창을 호출할 수 있습니다. **결제결과**는 **PC / 모바일** 모두 <mark style="color:red;">**callback**</mark> 으로 전달됩니다.&#x20;
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}

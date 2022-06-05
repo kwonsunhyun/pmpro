@@ -1,93 +1,35 @@
 ---
-description: 차이 간편결제 설정 방법을 안내합니다.
+description: 스마트로 설정 방법을 안내합니다.
 ---
 
-# ⌨ 차이 설정
+# ⌨ 스마트로 설정
 
-#### 차이 결제 테스트를 위해서는 아래 애플리케이션을 다운로드 받으셔야 합니다.
-
-> * Android : [https://appdistribution.firebase.dev/i/8fef29de1f667252](https://appdistribution.firebase.dev/i/8fef29de1f667252)◦
->
-> &#x20;      \- **staging 앱**을 설치
->
-> * iOS : [https://testflight.apple.com/join/ZgQIFce5](https://testflight.apple.com/join/ZgQIFce5)
->
-> &#x20;     \- 아이폰 설정 > 차이 > 디버그(dev) 모드 활성화 ON
->
-> &#x20;     \- 앱의 오른쪽 엣지에서 왼쪽으로 swipe 후 **staging 설정**
-
-{% hint style="info" %}
-**테스트 계좌 안내**&#x20;
-
-<mark style="color:red;">**정상 응답 계좌**</mark>
-
-* 국민은행  :  201602181111
-* 우리은행  :  201602182222
-* 경남은행  :  201602183333
-
-<mark style="color:red;">**잔액 부족 계좌**</mark>
-
-* 국민은행  :  772210258507 &#x20;
-* 신한은행  :  110438106449 &#x20;
-* 경남은행  :  629220095451 &#x20;
-{% endhint %}
-
-## 일반 결제
+## 인증결제
 
 {% tabs %}
 {% tab title="테스트 결제" %}
 ### 테스트 환경 구성방법
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[ON]**</mark> → public\_api\_key 및 private\_api\_key에 발급받은 키 정보 입력 > \[전체 저장] 클릭
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 스마트로 선택 → <mark style="color:red;">**테스트모드 \[ON]**</mark> → \[전체 저장] 클릭
 
 
 
-> **차이간편결제 테스트를 진행하기 위해서는 차이 가입 이후 발급된 정보로만 테스트가 가능합니다.**
-
-****
-
-![테스트 설정 예시](<../../../.gitbook/assets/image (22) (1).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (16) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
 ### **실** 환경 구성방법
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[OFF]**</mark> → public\_api\_key 및 private\_api\_key 에 발급받은 키 정보 입력 > \[전체 저장] 클릭
+카드사 심사 완료 후 스마트로에서 발급받은 실상점 정보를 설정 합니다.
 
 
 
-![실 계정 설정 예시](<../../../.gitbook/assets/image (7).png>)
+![실환경 설정 예시](<../../../.gitbook/assets/image (25) (1).png>)
 {% endtab %}
 {% endtabs %}
 
-## 정기 결제&#x20;
+{% hint style="warning" %}
+**비 인증 결제**
 
-{% tabs %}
-{% tab title="결제창 방식" %}
-### 테스트 환경 구성방법
-
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[ON]**</mark> → public\_api\_key 및 private\_api\_key 에 발급받은 키 정보 입력 > \[전체 저장] 클릭
-
-
-
-![테스트 설정 예시](<../../../.gitbook/assets/image (12).png>)
-
-### **실** 환경 구성방법
-
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제] 차이 선택 → <mark style="color:red;">**테스트모드 \[OFF]**</mark> → public\_api\_key 및 private\_api\_key 에 발급받은 키 정보 입력 > \[전체 저장] 클릭
-
-
-
-![실 계정 설정 예시](<../../../.gitbook/assets/image (8) (1).png>)
-{% endtab %}
-
-{% tab title="API 방식" %}
-**차이 간편결제는 API 방식을 통한 정기결제는 지원하지 않습니다.**
-{% endtab %}
-{% endtabs %}
-
-{% hint style="info" %}
-#### **확인사항**
-
-차이 테스트 모드의 경우 실제 출금 되지만 매일 23:00\~23:50분 사이 자동 취소됩니다.
+아임포트는 스마트로 비 인증 결제를 지원하지 않습니다.
 {% endhint %}

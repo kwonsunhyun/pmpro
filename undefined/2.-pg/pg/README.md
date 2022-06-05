@@ -24,6 +24,6 @@ description: "각 PG사별 \bMID 설정 방법을 안내합니다."
 [undefined-1-1.md](undefined-1-1.md)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-3.md" %}
-[undefined-3.md](undefined-3.md)
+{% content-ref url="undefined-2 (1).md" %}
+[undefined-2 (1).md](<undefined-2 (1).md>)
 {% endcontent-ref %}

@@ -6,13 +6,13 @@ description: 페이팔 결제연동 방법을 안내합니다.
 
 ### 1. 페이팔 PG 설정하기
 
-****[**페이팔 설정**](../../undefined/2.-pg/pg/undefined-11.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**페이팔 설정**](../../undefined/2.-pg/pg/undefined-10.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../../.gitbook/assets/스크린샷 2022-06-03 오후 1.01.05.png>)
 
 
 
-### 2.결제창 요청하기
+### 2.결제 요청하기
 
 [JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 스마트로 결제창을 호출할 수 있습니다. **결제결과**는 **PC / 모바일** 모두  <mark style="color:red;">**m\_redirect\_url**</mark> 리디렉션됩니다.
 

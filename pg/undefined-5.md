@@ -6,13 +6,13 @@ description: 페이코 결제 연동방법을 안내합니다.
 
 ### 1. 페이코 PG 설정하기
 
-[**페이코 설정**](../undefined/2.-pg/pg/undefined-8.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+[**페이코 설정**](../undefined/2.-pg/pg/undefined-7.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../.gitbook/assets/스크린샷 2022-06-01 오후 6.25.22.png>)
 
-### 2.결제창 요청하기
+### 2.결제 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 페이코 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback**으로 수신되 모바일의 경우 **m\_redirect\_url**로 리디렉션됩니다.
+[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 페이코 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 <mark style="color:red;">**callback**</mark>** ** 으로 수신되 모바일의 경우 <mark style="color:red;">**m\_redirect\_url**</mark> 로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}

@@ -6,13 +6,13 @@ description: 블루월넛 결제 연동방법을 안내합니다.
 
 ### 1. 블루월넛 PG 설정하기
 
-****[**블루월넛 설정**](../../undefined/2.-pg/pg/undefined-13.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**블루월넛 설정**](../../undefined/2.-pg/pg/undefined-12.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../../.gitbook/assets/스크린샷 2022-06-03 오후 6.13.31.png>)
 
-### 2.결제창 요청하기
+### 2.결제 요청하기
 
-[Ja](../../sdk/javascript-sdk/)[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 블루월넛 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 **callback** 으로 수신되 모바일의 경우 **m\_redirect\_url** 로 리디렉션됩니다.
+[Ja](../../sdk/javascript-sdk/)[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 블루월넛 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 <mark style="color:red;">**callback**</mark>** ** 으로 수신되 모바일의 경우 <mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="인증결제창 요청" %}
