@@ -38,7 +38,7 @@ description: 다날 PG사 설정 방법을 안내합니다.
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(<mark style="color:red;">일반결제 및 정기결제</mark>) → PG사 **다날-신용카드/계좌이체/가상계좌 선택** → 테스트모드 \[ON] → \[전체 저장] 클릭
 
-![](<../../../.gitbook/assets/image (11) (1) (1).png>)
+![](<../../../.gitbook/assets/image (11) (1) (1) (1).png>)
 
 ### 실  환경 구성방법
 
@@ -68,7 +68,7 @@ description: 다날 PG사 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (10) (1).png>)
+![](<../../../.gitbook/assets/image (10) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 환경" %}

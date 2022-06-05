@@ -14,7 +14,7 @@ description: KICC 설정 방법을 안내합니다.
 
 
 
-![테스트 모드 설정 예시](<../../../.gitbook/assets/image (17).png>)
+![테스트 모드 설정 예시](<../../../.gitbook/assets/image (17) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -24,7 +24,7 @@ description: KICC 설정 방법을 안내합니다.
 
 
 
-![실 환경 설정 예시](<../../../.gitbook/assets/image (5) (1).png>)
+![실 환경 설정 예시](<../../../.gitbook/assets/image (5) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -38,7 +38,7 @@ description: KICC 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (28).png>)
+![](<../../../.gitbook/assets/image (28) (1).png>)
 
 ### **실** 환경 구성방법
 

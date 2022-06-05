@@ -22,7 +22,7 @@ description: 네이버페이(결제형) PG설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (18) (1) (1).png>)
+![](<../../../.gitbook/assets/image (18) (1) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -50,7 +50,7 @@ description: 네이버페이(결제형) PG설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (18) (1) (1).png>)
+![](<../../../.gitbook/assets/image (18) (1) (1) (1).png>)
 
 ### 실  환경 구성방법
 
