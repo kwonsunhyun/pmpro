@@ -6,13 +6,13 @@ description: 다우 연동 방법을 안내합니다.
 
 ### 1. 다 PG 설정하기
 
-****[**다우 설정**](../../../undefined/2.-pg/pg/undefined-2.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**다우 설정**](../../undefined/2.-pg/pg/undefined-2.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
-![](<../../../.gitbook/assets/스크린샷 2022-06-05 오전 11.53.10.png>)
+![](<../../.gitbook/assets/스크린샷 2022-06-05 오전 11.53.10.png>)
 
 ### 2.결제 요청하기
 
-[JavaScript SDK](../../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 다우 페이조아 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 <mark style="color:red;">**callback**</mark>** ** 으로 수신되고 모바일의 경우<mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
+[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 다우 페이조아 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 <mark style="color:red;">**callback**</mark>** ** 으로 수신되고 모바일의 경우<mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
 
 {% hint style="warning" %}
 **페이조아 결제창 연동을 위해서는 **<mark style="color:red;">**JS SDK Version 1.2.0**</mark>** 이상을 사용하셔야 합니다.**
@@ -137,7 +137,7 @@ IMP.request_pay({
 
 ### 일회성 결제 요청하기
 
-REST[ **API POST /subscribe/payments/onetime**](../../../api/api-4/api-1.md)을 호출하여 일회성 결제를 요청합니다. 요청 시 전달된 카드는 아임포트에 등록되지 않습니다.
+REST[ **API POST /subscribe/payments/onetime**](../../api/api-4/api-1.md)을 호출하여 일회성 결제를 요청합니다. 요청 시 전달된 카드는 아임포트에 등록되지 않습니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -149,7 +149,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키 발급 요청하기
 
-REST [**API POST /subscribe/customers/{customer\_uid}**](../../../api/api-2/api-1.md)를 호출하여 빌링키 발급을 요청합니다.
+REST [**API POST /subscribe/customers/{customer\_uid}**](../../api/api-2/api-1.md)를 호출하여 빌링키 발급을 요청합니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -161,7 +161,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키 발급 및 최초 결제 요청하기
 
-REST [**API POST /subscribe/payments/onetime**](../../../api/api-4/api-1.md)을 호출하여 빌링키 발급과 최초 결제를 요청합니다.
+REST [**API POST /subscribe/payments/onetime**](../../api/api-4/api-1.md)을 호출하여 빌링키 발급과 최초 결제를 요청합니다.
 
 * **`customer_uid`** : 빌링키 등록을 위해서 지정해야 합니다.
 
@@ -175,7 +175,7 @@ curl -H "Content-Type: application/json" \
 
 ### 빌링키로 결제 요청하기
 
-빌링키 발급과 최초 결제가 성공하면 빌링키는 전달된 `customer_uid` 와 1:1 매칭되어 아임포트에 저장됩니다. 보안상의 이유로 서버는 빌링키에 직접 접근할 수 없기 때문에 `customer_uid`를 이용해서 재결제([**POST /subscribe/payments/again**](../../../api/api-4/api.md)) REST API를 다음과 같이 호출합니다.
+빌링키 발급과 최초 결제가 성공하면 빌링키는 전달된 `customer_uid` 와 1:1 매칭되어 아임포트에 저장됩니다. 보안상의 이유로 서버는 빌링키에 직접 접근할 수 없기 때문에 `customer_uid`를 이용해서 재결제([**POST /subscribe/payments/again**](../../api/api-4/api.md)) REST API를 다음과 같이 호출합니다.
 
 ```
 curl -H "Content-Type: application/json" \   
@@ -187,8 +187,8 @@ curl -H "Content-Type: application/json" \
 
 **자세한 가이드는 아래 링크를 참조하세요**
 
-{% content-ref url="../../../undefined-1/undefined-1/" %}
-[undefined-1](../../../undefined-1/undefined-1/)
+{% content-ref url="../../undefined-1/undefined-1/" %}
+[undefined-1](../../undefined-1/undefined-1/)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}
@@ -220,7 +220,7 @@ display: {
 {% endtab %}
 
 {% tab title="에스크로 결제" %}
-에스크로 결제를 위해서는 **`escrow`** 파라미터를 추가하고 <mark style="color:red;">**true**</mark> 값으로 설정되어야 합니다.  에스크로 결제가 완료되면 가맹점은 배송정보 등록을 진행해야 하며 해당 작업이 누락되는경우 **정산이 진행되지 않습니다**. [**배송정보 등록**](../../../api/api-7/api-1.md) 및 [**배송수정 API**](../../../api/api-7/api-2.md) 를 이용하여 배송정보를 관리할 수 있습니다.
+에스크로 결제를 위해서는 **`escrow`** 파라미터를 추가하고 <mark style="color:red;">**true**</mark> 값으로 설정되어야 합니다.  에스크로 결제가 완료되면 가맹점은 배송정보 등록을 진행해야 하며 해당 작업이 누락되는경우 **정산이 진행되지 않습니다**. [**배송정보 등록**](../../api/api-7/api-1.md) 및 [**배송수정 API**](../../api/api-7/api-2.md) 를 이용하여 배송정보를 관리할 수 있습니다.
 
 {% code title="API Body 예시" %}
 ```javascript

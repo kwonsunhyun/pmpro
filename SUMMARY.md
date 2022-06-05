@@ -191,7 +191,7 @@
   * [⌨ 토스페이먼츠](pg/toss.md)
   * [⌨ NICE페이먼츠](pg/nice.md)
   * [⌨ KICC](pg/payment-gateway/kicc.md)
-  * [⌨ 다우(페이조아)](pg/payment-gateway/undefined/README.md)
+  * [⌨ 다우(페이조아)](pg/payment-gateway/undefined.md)
     * [📍 페이조아 유의사항](pg/payment-gateway/undefined/undefined.md)
   * [⌨ KG모빌리언스](pg/payment-gateway/kg.md)
   * [⌨ 페이먼트월](pg/payment-gateway/undefined-1.md)

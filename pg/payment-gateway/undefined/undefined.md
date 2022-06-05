@@ -6,43 +6,39 @@ description: 결제 연동시 유의사항을 안내합니다.
 
 ## 페이조아 결제 특이사항
 
-### PC 결제는 팝업, 모바일 결제는 리디렉션 모드로 제공
+<details>
 
-페이조아 결제창은 PC 환경에서는 팝업 형태로 제공되고, 모바일 웹/앱 환경에서는 리디렉션(화면 전체가 페이조아 결제창으로 이동) 방식으로 제공됩니다.
+<summary>PC 결제는 success, 모바일 결제는 imp_success 전달</summary>
 
-![PC 환경 참고 이미지](<../../../.gitbook/assets/image (16).png>)
+PC와 모바일에서 결제창이 각기 다른 방식으로 호출되기 때문에, 결제 후속 프로세스에도 차이가 있습니다. PC 결제의 경우 페이조아 결제창이 iframe 방식으로 호출되기 때문에 결제 프로세스 완료 후 콜백 함수(IMP.request\_pay 함수 호출시 전달한 두번째 파라미터)가 호출되지만, 모바일 결제의 경우 페이조아 결제창이 페이조아 URL로 리디렉션되기 때문에 결제 프로세스 완료 후 지정 된 URL(`m_redirect_url`)로 302 리디렉션 됩니다. 이때 결제 실패/성공 여부를 의미하는 파라미터가 전달되는데, PC 결제시에는 `success`, 모바일 결제시에는 `imp_success`로 서로 다른 이름의 파라미터가 전달되어 주의가 요구됩니다. 정리해보면 아래와 같습니다.
 
-![모바일 환경 참고 이미지](<../../../.gitbook/assets/image (11).png>)
+*   \[PC결제] iframe → 콜백 함수 호출 → 콜백 함수로 전달되는 response 객체에 `success`키 값으로 전달
 
-### PC 결제는 success, 모바일 결제는 imp\_success 전달
 
-위에 안내드린 바와 같이 PC와 모바일에서 결제창이 각기 다른 방식으로 호출되기 때문에, 결제 후속 프로세스에도 차이가 있습니다. PC 결제의 경우 페이조아 결제창이 iframe 방식으로 호출되기 때문에 결제 프로세스 완료 후 콜백 함수(IMP.request\_pay 함수 호출시 전달한 두번째 파라미터)가 호출되지만, 모바일 결제의 경우 페이조아 결제창이 페이조아 URL로 리디렉션되기 때문에 결제 프로세스 완료 후 지정 된 URL(`m_redirect_url`)로 302 리디렉션 됩니다. 이때 결제 실패/성공 여부를 의미하는 파라미터가 전달되는데, PC 결제시에는 `success`, 모바일 결제시에는 `imp_success`로 서로 다른 이름의 파라미터가 전달되어 주의가 요구됩니다. 정리해보면 아래와 같습니다.
 
-* \[PC결제] iframe → 콜백 함수 호출 → 콜백 함수로 전달되는 response 객체에 `success`키 값으로 전달
-  *   예시 코드
+    ```jsx
+    IMP.request_pay({
+      // 중략
+    }, function (response) {
+    	const { **success** } = response; // 결제 성공 또는 실패 여부
+    	if (success) {
+    		// 결제 성공시 프로세스
+    	} else {
+    		// 결제 실패시 프로세스
+    	}
+    });
+    ```
+*   \[모바일 결제] 리디렉션 → m\_redirect\_url로 302 리디렉션 → `imp_success` 쿼리 파라미터 전달
 
-      ```jsx
-      IMP.request_pay({
-        // 중략
-      }, function (response) {
-      	const { **success** } = response; // 결제 성공 또는 실패 여부
-      	if (success) {
-      		// 결제 성공시 프로세스
-      	} else {
-      		// 결제 실패시 프로세스
-      	}
-      });
-      ```
-* \[모바일 결제] 리디렉션 → m\_redirect\_url로 302 리디렉션 → `imp_success` 쿼리 파라미터 전달
-  *   예시 코드
 
-      ```jsx
-      /**
-       * m_redirect_url을 https://myservice.com/payments/complete로 설정한 후
-       * 결제 프로세스 종료 됐을때 302 리디렉션 되는 URL 예시
-       */
-      https://myservice.com/payments/complete?**imp_success=true**&imp_uid=imp1234567890&merchant_uid=mid_123467890
-      ```
+
+    ```jsx
+    /**
+     * m_redirect_url을 https://myservice.com/payments/complete로 설정한 후
+     * 결제 프로세스 종료 됐을때 302 리디렉션 되는 URL 예시
+     */
+    https://myservice.com/payments/complete?**imp_success=true**&imp_uid=imp1234567890&merchant_uid=mid_123467890
+    ```
 
 #### &#x20;**imp\_success와 success는 deprecated**
 
@@ -52,76 +48,116 @@ description: 결제 연동시 유의사항을 안내합니다.
 
 따라서 아임포트 → 가맹점 클라이언트로 응답되는 결과 데이터 중 신뢰할 수 있는 값은 오로지 아임포트 주문 번호(`imp_uid`)와 가맹점 주문 번호(`merchant_uid`)이며, 이 값을 가맹점 서버로 전달해 아임포트 결제내역 조회 API([GET /payments/{imp\_uid}](https://api.iamport.kr/#!/payments/getPaymentByImpUid))를 호출한 결과(`status`)를 보고 결제 실패(`failed`)/성공(`paid`) 여부를 판단하시길 바랍니다.
 
-### 사파리 브라우저 - 하나카드 / NH앱캐시 결제시 세션 관련 이슈 존재
+</details>
 
-사파리 브라우저에서 하나카드 / NH앱캐시(계좌이체) 결제시 아래와 같이 `세션 유효기간이 초과되어 카드사와 연결이 종료되었습니다`와 같은 메시지가 렌더링되며 더이상 결제가 불가능한 이슈가 있습니다.
+<details>
 
-![참고이미지](<../../../.gitbook/assets/image (18).png>)
+<summary>사파리 브라우저 - 하나카드 / NH앱캐시 결제시 세션 관련 이슈 존재</summary>
+
+사파리 브라우저에서 하나카드 / NH앱캐시(계좌이체) 결제시 아래와 같이 `세션 유효기간이 초과되어 카드사와 연결이 종료되었습니다`와 같은 메시지가 렌더링 되며 더이상 결제가 불가능한 이슈가 있습니다.
+
+<img src="../../../.gitbook/assets/image (18).png" alt="참고이미지" data-size="original">
 
 이러한 현상을 겪으시는 경우, 사파리 환경설정에서 아래와 같이 `크로스 사이트 추적 방지` 해제 및 `모든 쿠키 차단`이 모두 해제되어있는지 확인해보시고, 모두 해제 후 다시 시도해보시길 바랍니다.
 
-![참고이미지](<../../../.gitbook/assets/image (27).png>)
+<img src="../../../.gitbook/assets/image (27).png" alt="참고이미지" data-size="original">
 
-### **사파리/파이어폭스 브라우저 - BC카드 결제시 이슈 존재**
+</details>
+
+<details>
+
+<summary>사파리/파이어폭스 브라우저 - BC카드 결제시 이슈 존재</summary>
 
 신용카드 결제창에서 BC카드 선택 후 다음 버튼 클릭시 "지불에 실패하였습니다"라는 얼럿트 창이 뜨면서 더이상 진행되지 않는 이슈가 있습니다. 다른 브라우저(크롬, 오페라, 엣지 등)나 다른 카드사에서는 이상 없이 BC카드 결제를 위한 페이북 QR코드가 렌더링되지만, 사파리와 파이어폭스에서는 아래와 같이 "지불에 실패하였습니다"라는 메시지를 담고 있는 얼럿트창이 뜨면서 더이상 결제가 진행되지 않습니다.
 
-![참고이미지](<../../../.gitbook/assets/image (5).png>)
+<img src="../../../.gitbook/assets/image (5).png" alt="참고이미지" data-size="original">
 
 이러한 현상을 겪으시는 경우, 사파리 환경설정에서 아래와 같이 `*.payjoa.co.kr` 도메인에 대해 팝업 `허용` 설정 되어있으신지 확인해보시고, 허용 후 다시 시도해보시길 바랍니다.
 
-![참고이미지](<../../../.gitbook/assets/image (29).png>)
+<img src="../../../.gitbook/assets/image (29).png" alt="참고이미지" data-size="original">
 
-### 실시간 계좌이체 결제 플로우 상이
+###
 
-이니시스의 경우 실시간 계좌이체 시 뱅크페이 앱을 통해 비밀번호 인증만으로 결제가 가능합니다. 하지만 페이조아의 경우 내부적으로 토스페이먼츠 - 계좌이체를 사용하고 있어 토스 간편결제, NH앱캐시 그리고 계좌 정보 직접 입력을 통해서만 계좌이체가 가능합니다. 여기서 계좌 정보 직접 입력시, 보안카드 / OTP 인증 → 공인인증서 인증까지 해야합니다.
+</details>
+
+<details>
+
+<summary>실시간 계좌이체 결제 플로우 상이</summary>
+
+&#x20;페이조아의 경우 내부적으로 토스페이먼츠 - 계좌이체를 사용하고 있어 토스 간편결제, NH앱캐시 그리고 계좌 정보 직접 입력을 통해서만 계좌이체가 가능합니다. 여기서 계좌 정보 직접 입력시, 보안카드 / OTP 인증 → 공인인증서 인증까지 해야합니다.
 
 단, 모바일 결제의 경우엔 토스 간편결제와 NH앱캐시를 통해서만 결제가 가능합니다.
 
-![PC 결제](<../../../.gitbook/assets/image (10).png>)
+<img src="../../../.gitbook/assets/image (10).png" alt="PC 결제" data-size="original">
 
-![모바일 결제](<../../../.gitbook/assets/image (17).png>)
+<img src="../../../.gitbook/assets/image (17).png" alt="모바일 결제" data-size="original">
 
-### 가상계좌 입금 완료시, 송금자 이름만 알 수 있음
+###
 
-페이조아는 (발급된) 가상계좌에 입금 완료시, 송금자의 정보(은행명, 계좌번호, 송금인) 중 송금자 이름만 알려줍니다. 따라서 아임포트 결제내역 조회([GET /payments/{imp\_uid}](http://api.iamport.test:8001/#!/payments/getPaymentByImpUid))시 송금자의 은행코드(`bank_code`)과 은행명(`bank_name`)은 모두 NULL로 내려가며, 송금자 이름을 확인하기 위해서는 아래 예시와 같이 별도의 쿼리 파라미터(`extension`)를 `true`로 설정해주셔야 합니다.
+</details>
 
-*   예시 코드
+<details>
 
-    ```jsx
-    GET http://api.iamport.kr/payments/{아임포트 번호}?**extension=true**
+<summary>가상계좌 입금 완료시, 송금자 이름만 알 수 있음</summary>
 
-    {
-    	// ... 중략
-    	bank_code: null, // 송금자 은행 코드 알 수 없음
-    	bank_name: null, // 송금자 은행 이름 알 수 없음
-    	extension: {
-    		// ... 중략
-    		**"REMITTER": "홍길동" // 송금자 이름**
-    	}
-    }
-    ```
+페이조아는 (발급된) 가상계좌에 입금 완료시, 송금자의 정보(은행명, 계좌번호, 송금인) 중 송금자 이름만 알려줍니다. 따라서 아임포트 결제내역 조회([**GET /payments/{imp\_uid}**](../../../api/api-1/api-1.md))시 송금자의 은행코드(`bank_code`)과 은행명(`bank_name`)은 모두 NULL로 내려가며, 송금자 이름을 확인하기 위해서는 아래 예시와 같이 별도의 쿼리 파라미터(`extension`)를 `true`로 설정해주셔야 합니다.
 
-### 가상계좌 결제 취소시, PG사와 특약 필요
+```jsx
+GET http://api.iamport.kr/payments/{아임포트 번호}?**extension=true**
+
+{
+	// ... 중략
+	bank_code: null, // 송금자 은행 코드 알 수 없음
+	bank_name: null, // 송금자 은행 이름 알 수 없음
+	extension: {
+		// ... 중략
+		**"REMITTER": "홍길동" // 송금자 이름**
+	}
+}
+```
+
+</details>
+
+<details>
+
+<summary>가상계좌 결제 취소시, PG사와 특약 필요</summary>
 
 가상계좌 입금 완료 건에 대한 결제 취소(환불)은 가상계좌 발급시 부과되는 수수료 이슈로 인해 페이조아와 특약을 맺어야지만 가능합니다. 이 특약 없이는 기본적으로 가상계좌 결제 건의 환불은 불가능합니다.
 
-### 가상계좌 결제 취소시, 실제 환불 금액 입금까지 7 영업일 이상 소요
+</details>
+
+<details>
+
+<summary>가상계좌 결제 취소시, 실제 환불 금액 입금까지 7 영업일 이상 소요</summary>
 
 페이조아 가상계좌 결제 취소(환불)는 가맹점 → 아임포트 → 페이조아로 환불 요청 접수시, 페이조아 담당자가 수기로 확인 후 환불 처리를 해주는 프로세스로 진행되기 때문에 환불 금액이 실제로 입금 될때까지 7 영업일 이상 소요됩니다.
 
-### 과세/면세/복합과세용 CPID는 모두 `건별구분`으로 1개만 발급하여 사용
+</details>
 
-과거에는 과세/면세/복합과세용 CPID를 각각 1개씩 총 3개를 발급 받아야 했습니다. 하지만 4월 9일 이후부터는 과세든 면세든 복합과세든 CPID는 1개만 발급 받으시면 됩니다. 대신 페이조아 측으로 해당 CPID 설정을 `건별구분`으로 발급 해달라고 요청해주셔야 합니다. 그래야 하나의 CPID로 과세/면세/복합과세 거래건을 모두 처리할 수 있습니다.
+<details>
 
-### 면세금액은 카드 결제만 설정 가능
+<summary>과세/면세/복합과세용 CPID는 모두 건별 구분으로 1개만 발급하여 사용</summary>
+
+페이조아 측으로 해당 CPID 설정을 `건별구분`으로 발급 해달라고 요청해주셔야 합니다. 그래야 하나의 CPID로 과세/면세/복합과세 거래건을 모두 처리할 수 있습니다.
+
+</details>
+
+<details>
+
+<summary>면세금액은 카드 결제만 설정 가능</summary>
 
 결제창(IMP.request\_pay 함수) 호출시 총 결제 금액(`amount`)중 면세 금액(`tax_free`)을 설정할 수 있습니다. 단, 페이조아 시스템 상 면세 금액은 카드 결제(pay\_method: `card`) 시에만 가능하고 계좌이체 / 가상계좌 결제 시에는 설정할 수 없어 전액 과세 처리 됩니다.
 
-## 페이조아 자체 버그
+</details>
+
+<details>
+
+<summary>페이조아 자체 버그</summary>
 
 #### 에스크로 결제시 구매자 전화번호가 결제창에 자동 완성되지 않음
 
-![참고이미지](<../../../.gitbook/assets/image (28).png>)
+<img src="../../../.gitbook/assets/image (28).png" alt="참고이미지" data-size="original">
 
 * IMP.request\_pay 호출시 전달한 구매자의 전화번호(`buyer_tel`)가 다른 결제창과는 달리 에스크로 결제창에서는 자동 완성되지 않습니다. 이는 페이조아가 해당 기능을 제공하지 않는 것으로 이용에 참고 부탁드립니다.
+
+</details>
