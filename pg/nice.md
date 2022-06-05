@@ -6,7 +6,7 @@ description: 나이스페이먼츠 결제창 연동 가이드를 안내합니다
 
 ### 1. NICE페이먼츠 PG 설정하기
 
-[**나이스페이먼츠 설정**](../undefined/2.-pg/payment-gateway/nice.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+[**나이스페이먼츠 설정**](../undefined/2.-pg/pg/undefined.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../.gitbook/assets/스크린샷 2022-05-29 오후 7.44.33.png>)
 

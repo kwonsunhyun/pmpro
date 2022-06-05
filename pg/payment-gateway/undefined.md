@@ -6,7 +6,7 @@ description: 다우 연동 방법을 안내합니다.
 
 ### 1. 다 PG 설정하기
 
-****[**다우 설정**](../../undefined/2.-pg/payment-gateway/undefined-2.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**다우 설정**](../../undefined/2.-pg/pg/undefined-2.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../../.gitbook/assets/스크린샷 2022-06-05 오전 11.53.10.png>)
 

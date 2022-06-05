@@ -1,69 +1,48 @@
 ---
-description: 페이코 설정 방법을 안내합니다.
+description: 카카오페이 간편결제 설정 방법을 확인합니다.
 ---
 
-# ⌨ 페이코 설정
+# ⌨ 카카오페이 설정
 
-#### 페이코 결제 테스트를 위해서는 아래 애플리케이션을 다운로드 받으셔야 합니다.
-
-> * URL : [https://devcenter.payco.com](https://devcenter.payco.com/)
-> * 로그인(ID/PW) : payco / payco1234
-> * 경로 : 메인화면 > 화면 좌측 \[다운로드] 클릭 > \[PAYCO APP (개발용)] 클릭 > 해당 OS 다운로드
-
-## 인증결제
+## 일반**결제**
 
 {% tabs %}
 {% tab title="테스트 결제" %}
 ### 테스트 환경 구성방법
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제]페이코 선택 → <mark style="color:red;">**테스트모드\[ON]**</mark> 클릭 → \[전체 저장] 클릭
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>) → PG사 \[간편결제]카카오페이 선택 → 테스트모드 \[ON] → 가맹점코드(CID)에 **TC0ONETIME** 입력 > \[전체 저장] 클릭
 
 
 
-![테스트 환경 설정 예시](<../../../.gitbook/assets/image (22) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (12) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
 ### **실** 환경 구성방법
 
-카드사 심사 완료 후 페이코에서 발급받은 실상점 정보를 설정합니다.
+**테스트모드 OFF** 처리 이후 카드사 심사 완료 후 카카오페이에서 발급받은 실상점 정보를 설정합니다.
 
 
 
-![실환경 설정 예시](<../../../.gitbook/assets/image (18) (2).png>)
+![](<../../../.gitbook/assets/image (6) (1).png>)
 {% endtab %}
 {% endtabs %}
 
-## 정기 결제&#x20;
+## 정기결제
+
+### 카카오페이의 정기결제는 결제창 방식만 지원합니다.
 
 {% tabs %}
 {% tab title="결제창 방식" %}
 ### 테스트 환경 구성방법
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 \[간편결제]페이코 선택 → 테스트모드 \[ON] → '<mark style="color:red;">**PAYCO정기결제(자동결제) 테스트용도인가요?**</mark>' 체크박스 선택 > \[전체 저장] 클릭
+[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>) → PG사 \[간편결제]카카오페이 선택 → 테스트모드 \[ON] → 가맹점코드(CID)에 '**TCSUBSCRIP**' 입력 > \[전체 저장] 클릭
 
+![](<../../../.gitbook/assets/image (7) (1) (1).png>)
 
+### 실  환경 구성방법
 
-![테스트 환경 설정 예시](<../../../.gitbook/assets/image (17) (1) (1).png>)
-
-### **실** 환경 구성방법
-
-카드사 심사 완료 후 페이코에서 발급받은 실상점 정보를 <mark style="color:red;">**테스트모드 OFF**</mark> 처리후 설정합니다.
-
-
-
-![실환경 설정 예시](<../../../.gitbook/assets/image (12) (1).png>)
-{% endtab %}
-
-{% tab title="API 방식" %}
-#### **페이코 정기결제는 **<mark style="color:red;">**결제창 방식**</mark>**만 지원합니다.**
+**테스트모드 OFF** 처리 이후 카드사 심사 완료 후 카카오페이에서 발급받은 실상점 정보를 설정합니다.
 {% endtab %}
 {% endtabs %}
 
-{% hint style="success" %}
-### **확인사항**
-
-* 페이코 테스트 모드의 경우 실 결제가 이루어지지 않습니다.
-* 테스트 환경에서는 결제한도 등의 테스트는 불가합니다.
-* 페이코 테스트는 상용앱을 지운 후 테스트 앱으로 진행해야 합니다.
-{% endhint %}

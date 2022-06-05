@@ -6,7 +6,7 @@ description: 페이코 결제 연동방법을 안내합니다.
 
 ### 1. 페이코 PG 설정하기
 
-[**페이코 설정**](../undefined/2.-pg/pg/undefined-3.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+[**페이코 설정**](../undefined/2.-pg/pg/undefined-7.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../.gitbook/assets/스크린샷 2022-06-01 오후 6.25.22.png>)
 

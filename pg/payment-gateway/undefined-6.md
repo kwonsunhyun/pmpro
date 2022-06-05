@@ -6,7 +6,7 @@ description: 엑심베이 결제 연동 방법을 안내합니다.
 
 ### 1. 엑심베이 PG 설정하기
 
-****[**엑심베이 설정**](../../undefined/2.-pg/payment-gateway/undefined-7.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**엑심베이 설정**](../../undefined/2.-pg/pg/undefined-11.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../../.gitbook/assets/스크린샷 2022-06-03 오후 3.34.40.png>)
 

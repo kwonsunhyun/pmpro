@@ -6,7 +6,7 @@ description: 스마트로 결제창 연동 방법을 안내합니다.
 
 ### 1. 스마트로 PG 설정하기
 
-****[**스마트로 설정**](../../undefined/2.-pg/payment-gateway/undefined-5.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**스마트로 설정**](../../undefined/2.-pg/pg/undefined-9.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../../.gitbook/assets/스크린샷 2022-06-03 오전 10.04.02.png>)
 

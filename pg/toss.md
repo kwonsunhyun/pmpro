@@ -6,7 +6,7 @@ description: 토스페이먼츠 결제창 연동 방법을 확인합니다.
 
 ### 1. 토스페이먼츠 PG 설정하기
 
-****[**토스페이먼츠 설정** ](../undefined/2.-pg/payment-gateway/undefined.md)페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**토스페이먼츠 설정** ](../undefined/2.-pg/pg/undefined-1.md)페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../.gitbook/assets/스크린샷 2022-05-29 오후 7.38.40.png>)
 
