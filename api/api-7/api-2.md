@@ -11,13 +11,7 @@ description: 등록된 배송정보를 수정할 수 있습니다.
 <summary><strong>지원되는 PG사 확인하기</strong></summary>
 
 * KG이니시스
-
-<!---->
-
 * NHN KCP
-
-<!---->
-
 * 페이조아(다우)
 
 </details>
@@ -29,6 +23,8 @@ description: 등록된 배송정보를 수정할 수 있습니다.
 **2-depth**의 **Json**으로 **Request Body**가 구성되어야 합니다
 
 logis는 하위 필드가 모두 필수입니다. sender, receiver의 각 세부 항목은 PG사마다 필수 여부가 모두 다릅니다.
+
+수정시 수정할 항목과 기존 항목이 모두 기입되어야 합니다.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
@@ -130,31 +126,31 @@ logis는 하위 필드가 모두 필수입니다. sender, receiver의 각 세부
 
 <summary>EscrowLogisSenderAnnotation</summary>
 
-**`name (string, optional)`**
+**`name (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`보내는분 성함(필수 : KG이니시스)`**&#x20;
 
 
 
-**`tel (string, optional)`**
+**`tel (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`보내는분 전화번호(필수 : KG이니시스)`**
 
 
 
-**`addr (string, optional)`**
+**`addr (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`보내는분 주소(필수 : KG이니시스)`**
 
 
 
-**`postcode (string, optional)`**
+**`postcode (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`보내는분 우편번호(필수 : KG이니시스)`**
 
 
 
-**`relationship (string, optional)`**
+**`relationship (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`보내는분과의 관계(필수 : 페이조아, 예: 본인)`**
 
@@ -168,25 +164,25 @@ logis는 하위 필드가 모두 필수입니다. sender, receiver의 각 세부
 
 <summary>EscrowLogisReceiverAnnotation</summary>
 
-**`name (string, optional)`**
+**`name (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`받는 분 성함(필수 : KG이니시스)`**
 
 
 
-**`tel (string, optional)`**&#x20;
+**`tel (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**&#x20;
 
 **`받는 분 전화번호(필수 : KG이니시스)`**
 
 
 
-**`addr (string, optional)`**
+**`addr (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`받는 분 주소(필수 : KG이니시스)`**
 
 
 
-**`postcode (string, optional)`**
+**`postcode (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`받는 분 우편번호(필수 : KG이니시스)`**
 
@@ -200,19 +196,19 @@ logis는 하위 필드가 모두 필수입니다. sender, receiver의 각 세부
 
 <summary>EscrowLogisInfoAnnotation</summary>
 
-**`company (string)`**
+**`company (`**<mark style="color:green;">**`string`**</mark>**`)`**
 
 **`택배사코드` **<mark style="color:blue;">****</mark>&#x20;
 
 
 
-**`invoice (string)`**
+**`invoice (`**<mark style="color:green;">**`string`**</mark>**`)`**
 
 **`송장번호`**
 
 
 
-**`sent_at (integer)`**
+**`sent_at (`**<mark style="color:purple;">**`integer`**</mark>**`)`**
 
 **`발송일시 UNIX TIMESTAMP`**
 
@@ -224,13 +220,30 @@ logis는 하위 필드가 모두 필수입니다. sender, receiver의 각 세부
 
 
 
-**`address (string, optional)`**
+**`address (`**<mark style="color:green;">**`string`**</mark>**`, optional)`**
 
 **`발송주소(필수: 페이조아)`**
 
 </details>
 
-### 응답
+{% code title="요청 Body Sample" %}
+```json
+{
+    "logis": {
+        "invoice": "1728384716123",
+        "company": "우체국",
+        "receiving_at": "20220215",
+        "address": "성수이로20길16"
+    },
+    "receiver": {
+        "name": "홍길동"
+    },
+    "sender": {
+        "relationship": "가족"
+    }
+}
+```
+{% endcode %}
 
 <details>
 

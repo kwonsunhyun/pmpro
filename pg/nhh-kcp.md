@@ -169,7 +169,9 @@ curl -H "Content-Type: application/json" \
 {% endtab %}
 
 {% tab title="비인증 API 요청" %}
-### **API 방식으로 빌링키 발급,결제요청,예약결제를 구현할수 있습니다.**
+#### **API 방식으로 빌링키 발급,결제요청,예약결제를 구현할수 있습니다.**
+
+****
 
 ### 일회성 결제 요청하기
 
@@ -221,7 +223,7 @@ curl -H "Content-Type: application/json" \
 
 ****
 
-**API 방식으로 빌링키 발급,결제요청,예약결제를 구현할수 있습니다. 자세한 가이드는 아래 링크를 참조하세요**
+**자세한 가이드는 아래 링크를 참조하세요**
 
 {% content-ref url="../undefined-1/undefined-1/" %}
 [undefined-1](../undefined-1/undefined-1/)
