@@ -6,6 +6,8 @@ description: 모든 결제내역을 취소할 수 있는 API 를 안내합니다
 
 ### **결제수단 및 PG사와 상관없이 취소 및 부분취소가 가능합니다.**
 
+> **Swagger Link :** [**https://api.iamport.kr/#!/payments/cancelPayment**](https://api.iamport.kr/#!/payments/cancelPayment)****
+
 {% swagger method="post" path="/payments/cancel" baseUrl="https://api.iamport.kr" summary="승인된 결제를 취소합니다." %}
 {% swagger-description %}
 신용카드/실시간계좌이체/휴대폰 소액결제의 경우 즉시 취소처리가 이뤄지게 되며 가상계좌의 경우는 환불받으실 계좌정보를 같이 전달해주시면 환불정보가 PG사에 등록되어 익영업일에 처리됩니다.
