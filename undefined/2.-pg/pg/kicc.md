@@ -24,7 +24,7 @@ description: KICC 설정 방법을 안내합니다.
 
 
 
-![실 환경 설정 예시](<../../../.gitbook/assets/image (5).png>)
+![실 환경 설정 예시](<../../../.gitbook/assets/image (5) (1).png>)
 {% endtab %}
 {% endtabs %}
 

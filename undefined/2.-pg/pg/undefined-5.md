@@ -68,7 +68,7 @@ description: 다날 PG사 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (10).png>)
+![](<../../../.gitbook/assets/image (10) (1).png>)
 {% endtab %}
 
 {% tab title="실 환경" %}
