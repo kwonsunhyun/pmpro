@@ -49,7 +49,7 @@ description: 페이팔 설정 방법을 안내합니다.
 * Password = API 암호&#x20;
 * Signature = 서명&#x20;
 
-![API Credentials](<../../../.gitbook/assets/image (22).png>)
+![API Credentials](<../../../.gitbook/assets/image (22) (1).png>)
 
 <mark style="color:purple;">**구매자 Sandbox 계정 설정**</mark>&#x20;
 
