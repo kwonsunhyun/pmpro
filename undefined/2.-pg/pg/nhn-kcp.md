@@ -18,7 +18,7 @@ description: NHN KCP 설정방법을 안내합니다.
 
 
 
-![화면 설정 예시](<../../../.gitbook/assets/image (26).png>)
+![화면 설정 예시](<../../../.gitbook/assets/image (26) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}

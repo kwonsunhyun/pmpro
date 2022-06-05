@@ -1,49 +1,67 @@
-# ⌨ 토스간편결제 설정하기
+---
+description: 다우 설정 방법을 안내합니다.
+---
 
-### <mark style="color:blue;">**STEP 01.**</mark>** 서비스 신청**&#x20;
+# ⌨ 다우 설정
 
-**아임포트 로그인 >** [**https://www.iamport.kr/**](https://www.iamport.kr/) **메인 "지금 시작하기" 클릭  > PG사 선택 "토스간편결제" 선택 후 정보기재 > 신청서 제출하기**
+## 인증**결제**
 
-### <mark style="color:blue;">**STEP 0**</mark><mark style="color:blue;">**2**</mark><mark style="color:blue;">**.**</mark>** PG설정방법**
+{% tabs %}
+{% tab title="테스트 결제" %}
+### 테스트 환경 구성방법
 
-아임포트 관리자콘솔([https://admin.iamport.kr/](https://admin.iamport.kr/)) 로그인 > 시스템설정 > PG설정(일반결제 및 정기결제) 에서 PG사 "\[간편결제]토스" 선택 후 테스트 모드 \[ON]상태에서 하단 \[전체저장] 클릭
 
-* 테스트 상점아이디 : tosstest
-* 테스트 apiKey : sk\_test\_w5lNQylNqa5lNQe013Nq
+
+### \[아임포트 관리자 콘솔 설정 사항]
+
+1. [아임포트 관리자 콘솔](https://admin.iamport.kr/) 로그인
+2. 상단 **시스템설정** 메뉴 선택&#x20;
+3. **PG설정**(**일반결제 및 정기결제**)메뉴  선택&#x20;
+4. 왼쪽 **PG사 추가** 선택&#x20;
+5. **페이조아(다우데이터) 선택**&#x20;
+6. 테스트모드 \[<mark style="color:red;">**ON**</mark>] 선택&#x20;
+7. **전체저장**
+
+
+
+![테스트 설정 예시](<../../../.gitbook/assets/image (2).png>)
+
+
 
 {% hint style="info" %}
-**참고** __&#x20;
+### **확인사항**
 
-이미 기본PG설정하여 이용중이신 경우, '**+PG사 추가**' 클릭하시어 추가PG로 설정 바랍니다.
-
-\
-실운영모드는 테스트모드 \[<mark style="color:red;">**OFF**</mark>] 후 토스간편결제에서 발급된 실상점연동정보로 세팅 후 저장하시어 최종적으로 결제 테스트 진행 후 서비스 이용 바랍니다.
+* 다우 데이타는 PG가입신청 이후 가맹점별 테스트용 상점정보(KEY)가 발급됩니다.
+* 상점아이디 발급 시 판매상품 유형(실물 / 디지털)을 확인하시고 발급요청 해야 합니다.
+* 결제연동키는 결제 취소시 필요한 키 값을 의미합니다.
 {% endhint %}
 
-![설정 화면 예시 - 테스트모드](https://mail.google.com/mail/u/0?ui=2\&ik=eabc50b472\&attid=0.1\&permmsgid=msg-f:1731136926968037438\&th=18063bdcf57dc03e\&view=fimg\&fur=ip\&sz=s0-l75-ft\&attbid=ANGjdJ-kFDi3k4WhSlWg5TFIhz\_3vubRPibq7xYNaMqpBVBpedhbSQarjdiWPePxqEbiqbG4jWk9QD-aMXj0HGYXzM-nJNRaj7-JkMzbS1bjrV3ahjRKGS\_jcdTlTaY\&disp=emb\&realattid=ii\_ky84j8az0)
+###
 
-### 연동참고 사항
+### \[페이조 관리자 콘솔 설정 사항]
 
-#### Toss 간편결제 동작 인터페이스
+각 결제수단별 정상적인 결제 결과를 수신하기 위한 아래 설정이 반드시 필요합니다.
 
-* PC결제 : 팝업창을 통한 결제 진행
-* 모바일결제 : 페이지 리디렉션을 통한 결제 진행
+1. [페이조아 관리자페이지](https://agent.kiwoompay.co.kr/) 로그인
+2. 상단 **고객지원** > **연동정보설정** 메뉴 클릭
 
-#### Toss 간편결제 내장 결제수단
+![페이 조아 메뉴 위치](<../../../.gitbook/assets/image (29).png>)
 
-* 신용카드 : Toss 앱 내 등록된 '카드'로 결제 => 아임포트에서는 pay\_method : card 로 인식
-* 계좌이체 : Toss 앱 내 연결된 '계좌'로 결제 => 아임포트에서는 pay\_method : trans 로 인식&#x20;
 
-#### 결제 후 저장되는 '승인'에 대한 extension 정보 ( 정산금액 관련 )
 
-* paidPoint : 승인금액 중 토스머니 차감액
-* discountedAmount : 승인금액 중 할인적용 금액
-* paidAmount : 승인금액 중 주결제수단(신용카드/계좌이체) 승인금액&#x20;
+&#x20;3\. 연동 정보 설정 화면에서 하단 **CPID**를 선택 후 **조회하기** 버튼 선택
 
-#### 환불 후 저장되는 매 '환불' 건에 대한 extension 정보 ( 정산금액 관련 )
+![연동정보 설정](<../../../.gitbook/assets/image (26).png>)
 
-* refundedPoint : 해당환불금액 중 토스머니 환불액
-* refundedDiscountAmount : 해당환불금액 중 취소된 할인금액
-* refundedPaidAmount : 해당환불금액 중 주결제수단(신용카드/계좌이체) 환불금액
+4\. 계약된 결제수단 별로 하단의 **결과통지 URL 설정**
 
-\
+> [https://service.iamport.kr/daou\_payments/result](https://service.iamport.kr/daou\_payments/result)
+
+![결과통지 URL 설정](<../../../.gitbook/assets/image (20).png>)
+{% endtab %}
+
+{% tab title="실 결제" %}
+**테스트 설정과 동일하며 실 결제를 위해서는 **<mark style="color:red;">**테스트모드 \[OFF]**</mark>** 설정만 진행합니다.**
+{% endtab %}
+{% endtabs %}
+
