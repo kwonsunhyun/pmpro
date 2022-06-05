@@ -49,6 +49,10 @@ description: 결제요청 파라미터를 확인 할 수 있습니다.
 > **`pay_method`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
 >
 > **결제수단 구분코드**
+>
+> PG사별 지원되는 결제수단이 모두 상이합니다.
+>
+> [**각 PG사별 결제 연동 가이드**](broken-reference)를 참고하세요
 
 <details>
 
@@ -58,22 +62,22 @@ description: 결제요청 파라미터를 확인 할 수 있습니다.
 * `trans`(실시간계좌이체)
 * `vbank`(가상계좌)
 * `phone`(휴대폰소액결제)
-* `samsung`(삼성페이 / <mark style="color:red;">이니시스, KCP 전용</mark>)
-* `kpay`(KPay앱 직접호출 / <mark style="color:red;">이니시스 전용</mark>)
-* `kakaopay`(카카오페이 직접호출 / <mark style="color:red;">이니시스, KCP, 나이스페이먼츠 전용</mark>)
-* `payco`(페이코 직접호출 / <mark style="color:red;">이니시스, KCP 전용</mark>)
-* `lpay`(LPAY 직접호출 / <mark style="color:red;">이니시스 전용</mark>)
-* `ssgpay`(SSG페이 직접호출 / <mark style="color:red;">이니시스 전용</mark>)
-* `tosspay`(토스간편결제 직접호출 / <mark style="color:red;">이니시스 전용</mark>)
-* `cultureland`(문화상품권 / <mark style="color:red;">이니시스, 토스페이먼츠(구 LG U+), KCP 전용</mark>)
-* `smartculture`(스마트문상 / <mark style="color:red;">이니시스, 토스페이먼츠(구 LG U+), KCP 전용</mark>)
-* `happymoney`(해피머니 / <mark style="color:red;">이니시스, KCP 전용</mark>)
-* `booknlife`(도서문화상품권 / <mark style="color:red;">토스페이먼츠(구 LG U+), KCP 전용</mark>)
-* `point`(베네피아 포인트 등 포인트 결제 / <mark style="color:red;">KCP 전용</mark>)
-* `wechat`(위쳇페이 / <mark style="color:red;">엑심베이 전용</mark>)
-* `alipay`(알리페이 / <mark style="color:red;">엑심베이 전용</mark>)
-* `unionpay`(유니온페이 / <mark style="color:red;">엑심베이 전용</mark>)
-* `tenpay`(텐페이 / <mark style="color:red;">엑심베이 전용</mark>)
+* `samsung`(삼성페이)
+* `kpay`(KPay앱 )
+* `kakaopay`(카카오페이)
+* `payco`(페이코)
+* `lpay`(LPAY)
+* `ssgpay`(SSG페이)
+* `tosspay`(토스간편결제)
+* `cultureland`(문화상품권 )
+* `smartculture`(스마트문상)
+* `happymoney`(해피머니)
+* `booknlife`(도서문화상품권)
+* `point`(베네피아 포인트 등 포인트 결제 )
+* `wechat`(위쳇페이)
+* `alipay`(알리페이)
+* `unionpay`(유니온페이)
+* `tenpay`(텐페이)
 
 </details>
 
