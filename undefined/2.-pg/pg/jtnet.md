@@ -24,7 +24,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (20) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (20) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -34,7 +34,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (16) (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (16) (2).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -66,7 +66,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 ****
 
-![](<../../../.gitbook/assets/image (22) (2).png>)
+![](<../../../.gitbook/assets/image (22) (2) (1).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}

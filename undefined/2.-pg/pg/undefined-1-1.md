@@ -18,7 +18,7 @@ description: 페이먼트월 설정 방법을 확인합니다.
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>) → PG사 '페이먼트월' 선택 → 테스트모드 \[ON] → \[전체 저장] 클릭
 
-![테스트 모드 설정 예시](<../../../.gitbook/assets/image (13) (1) (1).png>)
+![테스트 모드 설정 예시](<../../../.gitbook/assets/image (13) (2).png>)
 
 > * 페이먼트월 테스트 결제는 **실 카드 번호**로 테스트가 진행되어야 하며 <mark style="color:red;">**실제 결제가 발생**</mark>되기 때문에 반드시 테스트 이후에는 <mark style="color:red;">**취소처리를 진행**</mark>해 주셔야 합니다.
 > * 국가별 결제수단의 정책에 따라 <mark style="color:red;">**취소(환불)이 불가**</mark>한 국가/결제수단이 있을 수 있습니다.
@@ -29,7 +29,7 @@ description: 페이먼트월 설정 방법을 확인합니다.
 
 **테스트모드 OFF** 처리 이후 페이먼트월 검수가 완료되면 실 계정이 발급되며 해당 계정 정보를 입력합니다.
 
-![실 정보 입력 설정예제](<../../../.gitbook/assets/image (21) (1) (1) (1).png>)
+![실 정보 입력 설정예제](<../../../.gitbook/assets/image (21) (1) (1).png>)
 
 > 페이먼트월 가입시에는 반드시 <mark style="color:red;">****</mark> [<mark style="color:red;">**아임포트 전용 가입링크**</mark>](https://api.paymentwall.com/pwaccount?source=import)를 통해 가입진행이 되어야 합니다.
 >

@@ -46,7 +46,7 @@ description: 차이 간편결제 설정 방법을 안내합니다.
 
 ****
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (22) (1) (1).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (22) (2).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
