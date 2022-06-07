@@ -7,67 +7,67 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 {% hint style="info" %}
 결제 연동 준비하기
 
-결제창 연동전 [**준비하기**](undefined/) 가이드를 확인하시고 연동작업을 진행해주세
+결제창 연동전 [**준비하기**](ready/) 가이드를 확인하시고 연동작업을 진행해주세
 {% endhint %}
 
 ### 결제창 연동하기
 
 해당 가이드를 통해 결제창 연동을 손쉽게 연동할 수 있습니다.
 
-{% content-ref url="auth/guide/" %}
-[guide](auth/guide/)
+{% content-ref url="undefined-1/undefined/" %}
+[undefined](undefined-1/undefined/)
 {% endcontent-ref %}
 
-{% content-ref url="auth/guide-1/" %}
-[guide-1](auth/guide-1/)
+{% content-ref url="undefined-1/undefined-1/" %}
+[undefined-1](undefined-1/undefined-1/)
 {% endcontent-ref %}
 
-{% content-ref url="auth/guide-2/" %}
-[guide-2](auth/guide-2/)
+{% content-ref url="undefined-1/undefined-2.md" %}
+[undefined-2.md](undefined-1/undefined-2.md)
 {% endcontent-ref %}
 
 ### 결제결과 누락없이 수신받기
 
 해당 가이드를 통해 안정적으로 결제 결과를 안정적으로 수신받을 수 있습니다.
 
-{% content-ref url="undefined-1/webhook.md" %}
-[webhook.md](undefined-1/webhook.md)
+{% content-ref url="result/webhook.md" %}
+[webhook.md](result/webhook.md)
 {% endcontent-ref %}
 
 ### 기타 서비스 연동하기
 
 해당 가이드를 통해 부가적인 서비스연동을 손쉽게 처리할 수 있습니다.
 
-{% content-ref url="undefined-2/undefined/" %}
-[undefined](undefined-2/undefined/)
+{% content-ref url="etc/phone/" %}
+[phone](etc/phone/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-2/undefined-1/" %}
-[undefined-1](undefined-2/undefined-1/)
+{% content-ref url="etc/all/" %}
+[all](etc/all/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-2/undefined-2/" %}
-[undefined-2](undefined-2/undefined-2/)
+{% content-ref url="etc/credit-auth/" %}
+[credit-auth](etc/credit-auth/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-2/url.md" %}
-[url.md](undefined-2/url.md)
+{% content-ref url="etc/url.md" %}
+[url.md](etc/url.md)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-2/undefined-3.md" %}
-[undefined-3.md](undefined-2/undefined-3.md)
+{% content-ref url="etc/budget.md" %}
+[budget.md](etc/budget.md)
 {% endcontent-ref %}
 
 ### TIP
 
 결제창 연동시 꼭 확인해보세요
 
-{% content-ref url="tip/undefined.md" %}
-[undefined.md](tip/undefined.md)
+{% content-ref url="tip/tax.md" %}
+[tax.md](tip/tax.md)
 {% endcontent-ref %}
 
-{% content-ref url="tip/undefined-1.md" %}
-[undefined-1.md](tip/undefined-1.md)
+{% content-ref url="tip/chk.md" %}
+[chk.md](tip/chk.md)
 {% endcontent-ref %}
 
 {% content-ref url="tip/confirm-process.md" %}
@@ -94,8 +94,8 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 
 관리자 콘솔 사용 방법을 안내합니다.
 
-{% content-ref url="undefined-3/pg.md" %}
-[pg.md](undefined-3/pg.md)
+{% content-ref url="console/pg.md" %}
+[pg.md](console/pg.md)
 {% endcontent-ref %}
 
 ### API
@@ -128,6 +128,6 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 [payment-gateway](pg/payment-gateway/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined/2.-pg/pg/" %}
-[pg](undefined/2.-pg/pg/)
+{% content-ref url="ready/2.-pg/pg/" %}
+[pg](ready/2.-pg/pg/)
 {% endcontent-ref %}

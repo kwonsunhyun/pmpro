@@ -6,7 +6,7 @@ description: JTNET 결제 연동 방법을 안내합니다.
 
 ### 1. JTNET PG 설정하기
 
-****[**JTNET 설정**](../undefined/2.-pg/pg/jtnet.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**JTNET 설정**](../ready/2.-pg/payment-gateway/jtnet.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../.gitbook/assets/스크린샷 2022-05-31 오후 12.07.01.png>)
 
@@ -213,8 +213,8 @@ curl -H "Content-Type: application/json" \
 
 **자세한 가이드는 아래 링크를 참조하세요**
 
-{% content-ref url="../auth/guide-1/" %}
-[guide-1](../auth/guide-1/)
+{% content-ref url="../undefined-1/undefined-1/" %}
+[undefined-1](../undefined-1/undefined-1/)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}

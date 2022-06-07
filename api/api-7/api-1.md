@@ -26,7 +26,7 @@ description: 배송정보를 등록할 수 있습니다.
 {% swagger-description %}
 **2-depth**의 Json 으로 Request Body가 구성되어야 합니다
 
-[**택배사 코드표**](../../tip/undefined-2.md)****
+[**택배사 코드표**](../../tip/code.md)****
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}

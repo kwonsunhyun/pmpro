@@ -6,13 +6,13 @@ description: 네이버페이 간편결제 연동가이드를 확인합니다.
 
 ### 1. 네이버페이(결제형) PG 설정하기
 
-****[**네이버페이(결제형) 설정**](../undefined/2.-pg/pg/undefined-4.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**네이버페이(결제형) 설정**](../../ready/2.-pg/pg/undefined-2.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
-![](<../.gitbook/assets/스크린샷 2022-05-30 오후 2.00.33.png>)
+![](<../../.gitbook/assets/스크린샷 2022-05-30 오후 2.00.33.png>)
 
 ### 2.결제 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 네이버페이 결제형 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 <mark style="color:red;">**callback**</mark> 으로 수신 되며 모바일의 경우<mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
+[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 네이버페이 결제형 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 <mark style="color:red;">**callback**</mark> 으로 수신 되며 모바일의 경우<mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="일반결제창 요청" %}
@@ -261,7 +261,7 @@ IMP.request_pay({
 
 ### **결제 요청방법**
 
-REST API **** [**/subscribe/payments/again**](../api/api-4/api.md) 를 **** 호출하여 결제를 요청할 수 있습니다.
+REST API **** [**/subscribe/payments/again**](../../api/api-4/api.md) 를 **** 호출하여 결제를 요청할 수 있습니다.
 
 * `customer_uid` : 정기/반복결제 등록 시 사용된 해당 고객의 `customer_uid`
 * `merchant_uid` : 가맹점 주문번호
@@ -294,7 +294,7 @@ customer_uid={가맹점의 결제 고객을 특정하는 Unique Key}&merchant_ui
 
 ### 결제 예약방법
 
-REST API[ **/subscribe/payments/schedule**](../api/api-3/api.md)를 호출하여 결제예약을 할 수 있습니다.&#x20;
+REST API[ **/subscribe/payments/schedule**](../../api/api-3/api.md)를 호출하여 결제예약을 할 수 있습니다.&#x20;
 
 * `customer_uid` : 정기/반복결제 등록 시 사용된 해당 고객의 `customer_uid`
 *   `schedules` : 결제 예약 정보 객체 배열(1개 이상 설정 가능)
@@ -356,7 +356,7 @@ customer_uid={가맹점의 결제 고객을 특정하는 Unique Key}&schedules[0
 
 <summary>거래 취소 시 유의사항</summary>
 
-아임포트 환불 API인 `POST` [**`/payments/cancel`**](../api/api-1/api.md) 호출시 아래 파라미터를 반드시 설정해 주셔야 합니다. (**해당 파라미터 누락시 네이버페이 실 검수를 통과할 수 없습니다.**)
+아임포트 환불 API인 `POST` [**`/payments/cancel`**](../../api/api-1/api.md) 호출시 아래 파라미터를 반드시 설정해 주셔야 합니다. (**해당 파라미터 누락시 네이버페이 실 검수를 통과할 수 없습니다.**)
 
 * **`extra.requester`** : API를 호출하는 출처
   * **`customer`** : 구매자에 의한 요청

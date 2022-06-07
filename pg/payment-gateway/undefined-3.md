@@ -6,7 +6,7 @@ description: 세틀뱅크 결제 연동 방법을 안내합니다.
 
 ### 1. 세틀뱅크 PG 설정하기
 
-****[**세틀뱅크 설정**](../../undefined/2.-pg/pg/undefined-6.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**세틀뱅크 설정**](../../ready/2.-pg/payment-gateway/undefined-4.md) **** 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../../.gitbook/assets/스크린샷 2022-06-01 오후 4.32.44.png>)
 
@@ -150,8 +150,8 @@ curl -H "Content-Type: application/json" \
 
 **자세한 비 인증 결제 가이드는 아래 링크를 참조하세요**
 
-{% content-ref url="../../auth/guide-1/" %}
-[guide-1](../../auth/guide-1/)
+{% content-ref url="../../undefined-1/undefined-1/" %}
+[undefined-1](../../undefined-1/undefined-1/)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}

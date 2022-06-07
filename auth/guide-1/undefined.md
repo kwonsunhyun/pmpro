@@ -46,7 +46,7 @@ description: customer_uid 로 정기(예약)결제 구현방법을 안내합니�
 {% hint style="info" %}
 **아임포트 Webhook**
 
-아임포트 Webhook의 개념과 URL 설정 방법은 [**아임포트 Webhook**](../../undefined-1/webhook.md) 문서를 참고하세요.
+아임포트 Webhook의 개념과 URL 설정 방법은 [**아임포트 Webhook**](../../result/webhook.md) 문서를 참고하세요.
 {% endhint %}
 
 {% tabs %}

@@ -8,11 +8,11 @@ description: 카카오페이 간편결제 결제창 연동가이드를 확인 �
 
 ****[**카카오페이 설정**](https://app.gitbook.com/s/wWX2hlvRZLZrXeH1aacF/\~/changes/ll1OhvTjJ1CZlY07vTrB/undefined/2.-pg/pg/undefined-3) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
-![](<../.gitbook/assets/스크린샷 2022-05-29 오후 8.08.40.png>)
+![](<../../.gitbook/assets/스크린샷 2022-05-29 오후 8.08.40.png>)
 
 ### 2.결제 요청하기
 
-[JavaScript SDK](../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 카카오페이 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 <mark style="color:red;">**callback**</mark> 으로 수신 되며 모바일의 경우<mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
+[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 카카오페이 결제창을 호출할 수 있습니다. **결제결과**는 PC의 경우 IMP.request\_pay(param, callback) 호출 후 <mark style="color:red;">**callback**</mark> 으로 수신 되며 모바일의 경우<mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="일반결제창 요청" %}
@@ -142,7 +142,7 @@ IMP.request_pay({
 
 ### 빌링키(customer\_uid)로 결제 요청하기
 
-빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **아임포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 [<mark style="color:blue;">**비 인증 결제요청 REST API**</mark>](../api/api-4/api.md)를 호출하시면 결제를 발생시킬 수 있습니다.
+빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **아임포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 [<mark style="color:blue;">**비 인증 결제요청 REST API**</mark>](../../api/api-4/api.md)를 호출하시면 결제를 발생시킬 수 있습니다.
 
 
 

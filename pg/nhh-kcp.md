@@ -6,7 +6,7 @@ description: NHN KCP 결제창 연동 가이드입니다.
 
 ### 1. NHH KCP PG 설정하기
 
-****[**NHN KCP 설정**](../undefined/2.-pg/pg/nhn-kcp.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+****[**NHN KCP 설정**](../ready/2.-pg/payment-gateway/nhn-kcp.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../.gitbook/assets/스크린샷 2022-05-29 오후 7.53.40.png>)
 
@@ -225,8 +225,8 @@ curl -H "Content-Type: application/json" \
 
 **자세한 가이드는 아래 링크를 참조하세요**
 
-{% content-ref url="../auth/guide-1/" %}
-[guide-1](../auth/guide-1/)
+{% content-ref url="../undefined-1/undefined-1/" %}
+[undefined-1](../undefined-1/undefined-1/)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}

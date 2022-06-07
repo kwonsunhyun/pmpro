@@ -6,7 +6,7 @@ description: 나이스페이먼츠 결제창 연동 가이드를 안내합니다
 
 ### 1. NICE페이먼츠 PG 설정하기
 
-[**나이스페이먼츠 설정**](../undefined/2.-pg/pg/undefined.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+[**나이스페이먼츠 설정**](../ready/2.-pg/payment-gateway/nice.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](<../.gitbook/assets/스크린샷 2022-05-29 오후 7.44.33.png>)
 
@@ -153,7 +153,7 @@ curl -H "Content-Type: application/json" \
 {% hint style="info" %}
 **나이스페이먼츠는 비인증 결제는 API 방식으로만 지원됩니다.**
 
-비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며 해당 가이드는 [**링크**](../auth/guide-1/undefined/rest-api.md)에서 확인해주시면 됩니다.
+비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며 해당 가이드는 [**링크**](../auth/guide-1/bill/rest-api.md)에서 확인해주시면 됩니다.
 {% endhint %}
 {% endtab %}
 {% endtabs %}

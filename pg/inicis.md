@@ -6,7 +6,7 @@ description: KG이니시스 결제창 연동 가이드입니다.
 
 ### 1. KG이니시스 PG 설정하기
 
-[**KG이니시스 설정**](../undefined/2.-pg/pg/kg.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
+[**KG이니시스 설정**](../ready/2.-pg/payment-gateway/kg.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
 ![](../.gitbook/assets/7043\_14679\_1310.jpeg)
 
@@ -229,8 +229,8 @@ curl -H "Content-Type: application/json" \
 
 **자세한 가이드는 아래 링크를 참조하세요**
 
-{% content-ref url="../auth/guide-1/" %}
-[guide-1](../auth/guide-1/)
+{% content-ref url="../undefined-1/undefined-1/" %}
+[undefined-1](../undefined-1/undefined-1/)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}

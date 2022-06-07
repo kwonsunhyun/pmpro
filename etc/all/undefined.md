@@ -27,7 +27,7 @@ description: 통합인증 연동을 시작하기 위한 준비작업을 소개�
 **jQuery 1.0 이상이 설치**되어 있어야 합니다.
 {% endhint %}
 
-### 본인인증 페이지에 [<mark style="color:blue;">`가맹점 식별코드`</mark>](../../undefined/3..md)를 이용하여 `IMP` 객체를 초기화합니다.
+### 본인인증 페이지에 [<mark style="color:blue;">`가맹점 식별코드`</mark>](../../ready/3..md)를 이용하여 `IMP` 객체를 초기화합니다.
 
 {% tabs %}
 {% tab title="JavaScript" %}
