@@ -4,8 +4,6 @@ description: 새로운창으로 리디렉션되어 결제가 진행되는 환경
 
 # 🖼 redirect 결제창 결과처리
 
-
-
 > 아래 예제 코드는 결제창 형태가 **새로운페이지로 리디렉션되어** 결제가 진행되는 대부분의 **모바일 환경**에서의 결제요청애 대한 응답을 처리하는 부분입니다.
 
 {% tabs %}
@@ -54,18 +52,14 @@ URL 뒤에 데이터를 전달하는 가장 단순한 방법으로 주로 GET방
 {% endswagger-parameter %}
 
 {% swagger-parameter in="query" required="true" name="imp_success" %}
-<mark style="color:red;">
 
-결제성공여부
-
-</mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="error_code" %}
+{% swagger-parameter in="query" name="error_code" required="false" %}
 실패코드(결제 실패인 경우 수신)
 {% endswagger-parameter %}
 
-{% swagger-parameter in="query" name="error_msg" %}
+{% swagger-parameter in="query" name="error_msg" required="false" %}
 실패메세지(결제 실패인 경우 수신)
 {% endswagger-parameter %}
 {% endswagger %}
@@ -91,12 +85,12 @@ curl https://myservice.com/payments/complete?imp_uid=결제건을_특정하는_�
 {% endhint %}
 
 {% hint style="danger" %}
-최종 결제결과 로직처리는 반드시 [<mark style="color:red;">**웹훅**</mark>](../../../undefined-2/webhook.md)을 이용하여 안정적으로 처리해 주셔야 합니다.
+최종 결제결과 로직처리는 반드시 [<mark style="color:red;">**웹훅**</mark>](../../../undefined-1/webhook.md)을 이용하여 안정적으로 처리해 주셔야 합니다.
 
 웹훅연동을 생략하시는 경우 결제결과를 정상적으로 수신받지 못하는 상황이 발생합니다.
 {% endhint %}
 
-> #### <mark style="color:blue;">결제 완료</mark>의 의미
+> <mark style="color:blue;">**결제 완료**</mark>**의 의미**
 >
 > `결제완료`는 아래의 모든 경우를 포함합니다.
 >
@@ -105,7 +99,7 @@ curl https://myservice.com/payments/complete?imp_uid=결제건을_특정하는_�
 > 3. PG 모듈 설정이 올바르지 않아, **결제 창이 열리지 않음**
 > 4. 사용자가 임의로 X 버튼이나 취소 버튼을 눌러 **결제를 종료**함
 > 5. 카드 정보 불일치, 한도 초과, 잔액 부족 등의 사유로 **결제가 중단**됨
-> 6. 가상계좌 **발급 완료(**결제 상태: `ready`, imp\_success: `true`)
+> 6. 가상계좌 \*\*발급 완료(\*\*결제 상태: `ready`, imp\_success: `true`)
 
 {% hint style="warning" %}
 **imp\_success 파라미터**

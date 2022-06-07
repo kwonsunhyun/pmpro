@@ -153,7 +153,7 @@ curl -H "Content-Type: application/json" \
 {% hint style="info" %}
 **나이스페이먼츠는 비인증 결제는 API 방식으로만 지원됩니다.**
 
-비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며 해당 가이드는 [**링크**](../undefined-1/undefined-1/undefined/rest-api.md)에서 확인해주시면 됩니다.
+비인증 결제를 연동하기 위해서는 카드정보를 획득할수 있는 UI를 구성해 주셔야 하며 해당 가이드는 [**링크**](../auth/guide-1/undefined/rest-api.md)에서 확인해주시면 됩니다.
 {% endhint %}
 {% endtab %}
 {% endtabs %}

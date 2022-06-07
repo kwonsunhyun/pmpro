@@ -14,48 +14,48 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 
 해당 가이드를 통해 결제창 연동을 손쉽게 연동할 수 있습니다.
 
-{% content-ref url="undefined-1/undefined/" %}
-[undefined](undefined-1/undefined/)
+{% content-ref url="auth/guide/" %}
+[guide](auth/guide/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-1/undefined-1/" %}
-[undefined-1](undefined-1/undefined-1/)
+{% content-ref url="auth/guide-1/" %}
+[guide-1](auth/guide-1/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-1/undefined-2.md" %}
-[undefined-2.md](undefined-1/undefined-2.md)
+{% content-ref url="auth/guide-2/" %}
+[guide-2](auth/guide-2/)
 {% endcontent-ref %}
 
 ### 결제결과 누락없이 수신받기
 
 해당 가이드를 통해 안정적으로 결제 결과를 안정적으로 수신받을 수 있습니다.
 
-{% content-ref url="undefined-2/webhook.md" %}
-[webhook.md](undefined-2/webhook.md)
+{% content-ref url="undefined-1/webhook.md" %}
+[webhook.md](undefined-1/webhook.md)
 {% endcontent-ref %}
 
 ### 기타 서비스 연동하기
 
 해당 가이드를 통해 부가적인 서비스연동을 손쉽게 처리할 수 있습니다.
 
-{% content-ref url="undefined-3/undefined.md" %}
-[undefined.md](undefined-3/undefined.md)
+{% content-ref url="undefined-2/undefined/" %}
+[undefined](undefined-2/undefined/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-3/undefined-1.md" %}
-[undefined-1.md](undefined-3/undefined-1.md)
+{% content-ref url="undefined-2/undefined-1/" %}
+[undefined-1](undefined-2/undefined-1/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-3/undefined-2.md" %}
-[undefined-2.md](undefined-3/undefined-2.md)
+{% content-ref url="undefined-2/undefined-2/" %}
+[undefined-2](undefined-2/undefined-2/)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-3/url.md" %}
-[url.md](undefined-3/url.md)
+{% content-ref url="undefined-2/url.md" %}
+[url.md](undefined-2/url.md)
 {% endcontent-ref %}
 
-{% content-ref url="undefined-3/undefined-3.md" %}
-[undefined-3.md](undefined-3/undefined-3.md)
+{% content-ref url="undefined-2/undefined-3.md" %}
+[undefined-3.md](undefined-2/undefined-3.md)
 {% endcontent-ref %}
 
 ### TIP
@@ -94,8 +94,8 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 
 관리자 콘솔 사용 방법을 안내합니다.
 
-{% content-ref url="undefined-4/pg.md" %}
-[pg.md](undefined-4/pg.md)
+{% content-ref url="undefined-3/pg.md" %}
+[pg.md](undefined-3/pg.md)
 {% endcontent-ref %}
 
 ### API

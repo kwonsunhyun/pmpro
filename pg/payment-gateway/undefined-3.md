@@ -150,8 +150,8 @@ curl -H "Content-Type: application/json" \
 
 **자세한 비 인증 결제 가이드는 아래 링크를 참조하세요**
 
-{% content-ref url="../../undefined-1/undefined-1/" %}
-[undefined-1](../../undefined-1/undefined-1/)
+{% content-ref url="../../auth/guide-1/" %}
+[guide-1](../../auth/guide-1/)
 {% endcontent-ref %}
 {% endtab %}
 {% endtabs %}

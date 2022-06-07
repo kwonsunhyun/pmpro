@@ -296,7 +296,7 @@ IMP.request_pay({
 > **callback** 함수로 내려가는 응답 파라미터 확인은 [<mark style="color:red;">**여기서**</mark>](../../sdk/javascript-sdk/undefined-1.md) 가능합니다.
 
 {% hint style="danger" %}
-최종 결제결과 로직처리는 반드시 [<mark style="color:red;">**웹훅**</mark>](../../undefined-2/webhook.md)을 이용하여 안정적으로 처리해 주셔야 합니다.
+최종 결제결과 로직처리는 반드시 [<mark style="color:red;">**웹훅**</mark>](../../undefined-1/webhook.md)을 이용하여 안정적으로 처리해 주셔야 합니다.
 
 웹훅연동을 생략하시는 경우 결제결과를 정상적으로 수신받지 못하는 상황이 발생합니다.
 {% endhint %}
@@ -371,7 +371,7 @@ curl https://myservice.com/payments/complete?imp_uid=결제건을_특정하는_�
 > 6. 가상계좌 \*\*발급 완료(\*\*결제 상태: `ready`, imp\_success: `true`)
 
 {% hint style="danger" %}
-최종 결제결과 로직처리는 반드시 [<mark style="color:red;">**웹훅**</mark>](../../undefined-2/webhook.md)을 이용하여 안정적으로 처리해 주셔야 합니다.
+최종 결제결과 로직처리는 반드시 [<mark style="color:red;">**웹훅**</mark>](../../undefined-1/webhook.md)을 이용하여 안정적으로 처리해 주셔야 합니다.
 
 웹훅연동을 생략하시는 경우 결제결과를 정상적으로 수신받지 못하는 상황이 발생합니다.
 {% endhint %}
@@ -520,7 +520,7 @@ app.use(bodyParser.json());
 처음 요청한 금액은 **`merchant_uid`** 로 데이터베이스에서 조회하고 실제 결제금액은 **`imp_uid`로 아임포트 서버에서 조회하여 두 값을 비교합니다. 검증이 성공하면 결제 정보를 데이터베이스에 저장한 뒤 결제 상태(`status`**)에 따라 알맞은 응답을 반환하고 실패 시 에러 메세지를 출력합니다.
 
 {% hint style="danger" %}
-결제결과 DB 처리는 [**웹훅(Webhook)**](../../undefined-2/webhook.md)을 연동하여 수신되는 데이터를 기준으로 처리하셔야 결제결과 누락없이 안정적인 결과처리를 완료하실 수 있습니다.
+결제결과 DB 처리는 [**웹훅(Webhook)**](../../undefined-1/webhook.md)을 연동하여 수신되는 데이터를 기준으로 처리하셔야 결제결과 누락없이 안정적인 결과처리를 완료하실 수 있습니다.
 {% endhint %}
 
 ## 6. 결제완료 처리하기

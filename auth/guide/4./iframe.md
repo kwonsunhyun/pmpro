@@ -86,7 +86,7 @@ IMP.request_pay({
 > callback 함수로 내려가는 응답 파라미터 확인은 [<mark style="color:red;">**여기서**</mark>](../../../sdk/javascript-sdk/undefined-1.md) 가능합니다.
 
 {% hint style="danger" %}
-최종 결제결과 로직처리는 반드시 [<mark style="color:red;">**웹훅**</mark>](../../../undefined-2/webhook.md)을 이용하여 안정적으로 처리해 주셔야 합니다.
+최종 결제결과 로직처리는 반드시 [<mark style="color:red;">**웹훅**</mark>](../../../undefined-1/webhook.md)을 이용하여 안정적으로 처리해 주셔야 합니다.
 
 웹훅연동을 생략하시는 경우 결제결과를 정상적으로 수신받지 못하는 상황이 발생합니다.
 {% endhint %}

@@ -30,50 +30,50 @@
       * [⌨ 알리페이 설정](undefined/2.-pg/pg/undefined-13.md)
   * [✔ 3. 연동정보 확인하기](undefined/3..md)
 
-## 결제창 연동하기
+## 결제창 연동하기 <a href="#auth" id="auth"></a>
 
-* [🖥 인증결제 연동하기](undefined-1/undefined/README.md)
-  * [📒 인증결제 정의](undefined-1/undefined/undefined.md)
-  * [🌠 1. 차이포트 라이브러리 추가](undefined-1/undefined/1..md)
-  * [💡 2. 객체 초기화 하기](undefined-1/undefined/2..md)
-  * [🪧 3. 결제 요청하기](undefined-1/undefined/3..md)
-  * [🎁 4. 결제결과 처리하기](undefined-1/undefined/4./README.md)
-    * [🪟 iframe 결제창 결과처리](undefined-1/undefined/4./iframe.md)
-    * [🖼 redirect 결제창 결과처리](undefined-1/undefined/4./redirect.md)
-  * [🔦 5. 결제정보 검증하기](undefined-1/undefined/5..md)
-  * [🛬 6. 결제완료 처리하기](undefined-1/undefined/6..md)
-* [⏰ 비 인증결제 연동하기](undefined-1/undefined-1/README.md)
-  * [🏍 빌링키 결제 요청하기](undefined-1/undefined-1/undefined.md)
-    * [🖱 REST API 이용하기](undefined-1/undefined-1/undefined/rest-api.md)
-    * [🛡 PG결제창 이용하기](undefined-1/undefined-1/undefined/pg.md)
-  * [💳 카드정보를 이용한 키인결제](undefined-1/undefined-1/page-1.md)
-  * [🪧 빌링키를 이용한 정기결제](undefined-1/undefined-1/undefined-1.md)
-* [💸 결제취소(환불) 연동하기](undefined-1/undefined-2.md)
-  * [💷 가상계좌 환불하기](undefined-1/undefined-2/undefined.md)
+* [🖥 인증결제 연동하기](auth/guide/README.md)
+  * [📒 인증결제 정의](auth/guide/undefined.md)
+  * [🌠 1. 차이포트 라이브러리 추가](auth/guide/1..md)
+  * [💡 2. 객체 초기화 하기](auth/guide/2..md)
+  * [🪧 3. 결제 요청하기](auth/guide/3..md)
+  * [🎁 4. 결제결과 처리하기](auth/guide/4./README.md)
+    * [🪟 iframe 결제창 결과처리](auth/guide/4./iframe.md)
+    * [🖼 redirect 결제창 결과처리](auth/guide/4./redirect.md)
+  * [🔦 5. 결제정보 검증하기](auth/guide/5..md)
+  * [🛬 6. 결제완료 처리하기](auth/guide/6..md)
+* [⏰ 비 인증결제 연동하기](auth/guide-1/README.md)
+  * [🏍 빌링키 결제 요청하기](auth/guide-1/undefined/README.md)
+    * [🖱 REST API 이용하기](auth/guide-1/undefined/rest-api.md)
+    * [🛡 PG결제창 이용하기](auth/guide-1/undefined/pg.md)
+  * [💳 카드정보를 이용한 키인결제](auth/guide-1/page-1.md)
+  * [🪧 빌링키를 이용한 정기결제](auth/guide-1/undefined-1.md)
+* [💸 결제취소(환불) 연동하기](auth/guide-2/README.md)
+  * [💷 가상계좌 환불하기](auth/guide-2/undefined.md)
 
 ## 결제결과  연동하기
 
-* [⚒ 웹훅(Webhook) 연동하기](undefined-2/webhook.md)
+* [⚒ 웹훅(Webhook) 연동하기](undefined-1/webhook.md)
 
 ## 기타 서비스 연동하기
 
-* [📱 휴대폰 본인인증 연동하기](undefined-3/undefined.md)
-  * [📔 1. 본인인증 준비하기](undefined-3/undefined/1..md)
-  * [🥏 2. 본인인증창 호출하기](undefined-3/undefined/2..md)
-  * [🚚 3. 인증 완료정보 전달하기](undefined-3/undefined/3..md)
-  * [🤹 4. 인증정보 조회 및 활용하기](undefined-3/undefined/4..md)
-* [🚚 통합인증 연동하기](undefined-3/undefined-1.md)
-  * [📒 통합인증 준비하기](undefined-3/undefined-1/undefined.md)
-  * [🥏 통합인증 요청하기](undefined-3/undefined-1/undefined-1.md)
-  * [🚚 인증 완료정보 전달하기](undefined-3/undefined-1/undefined-2.md)
-  * [🤹 인증정보 조회 및 활용하기](undefined-3/undefined-1/undefined-3.md)
-* [💳 신용카드 본인인증 연동](undefined-3/undefined-2.md)
-  * [📒 1. 본인인증 준비하기](undefined-3/undefined-2/1..md)
-  * [🥏 2. 본인인증 요청하기](undefined-3/undefined-2/2..md)
-  * [🚚 3. 인증 완료정보 전달하기](undefined-3/undefined-2/3..md)
-  * [🤹 4. 인증정보 조회 및 활용하기](undefined-3/undefined-2/4..md)
-* [💻 결제 URL 생성하기](undefined-3/url.md)
-* [🛩 버짓핸들러 연동하기](undefined-3/undefined-3.md)
+* [📱 휴대폰 본인인증 연동하기](undefined-2/undefined/README.md)
+  * [📔 1. 본인인증 준비하기](undefined-2/undefined/1..md)
+  * [🥏 2. 본인인증창 호출하기](undefined-2/undefined/2..md)
+  * [🚚 3. 인증 완료정보 전달하기](undefined-2/undefined/3..md)
+  * [🤹 4. 인증정보 조회 및 활용하기](undefined-2/undefined/4..md)
+* [🚚 통합인증 연동하기](undefined-2/undefined-1/README.md)
+  * [📒 통합인증 준비하기](undefined-2/undefined-1/undefined.md)
+  * [🥏 통합인증 요청하기](undefined-2/undefined-1/undefined-1.md)
+  * [🚚 인증 완료정보 전달하기](undefined-2/undefined-1/undefined-2.md)
+  * [🤹 인증정보 조회 및 활용하기](undefined-2/undefined-1/undefined-3.md)
+* [💳 신용카드 본인인증 연동](undefined-2/undefined-2/README.md)
+  * [📒 1. 본인인증 준비하기](undefined-2/undefined-2/1..md)
+  * [🥏 2. 본인인증 요청하기](undefined-2/undefined-2/2..md)
+  * [🚚 3. 인증 완료정보 전달하기](undefined-2/undefined-2/3..md)
+  * [🤹 4. 인증정보 조회 및 활용하기](undefined-2/undefined-2/4..md)
+* [💻 결제 URL 생성하기](undefined-2/url.md)
+* [🛩 버짓핸들러 연동하기](undefined-2/undefined-3.md)
 
 ## TIP
 
@@ -89,10 +89,10 @@
 
 ## 관리자 콘솔 사용하기
 
-* [🎡 관리자 콘솔 가이드](undefined-4/undefined.md)
-  * [전자결제 신청](undefined-4/undefined/undefined.md)
-  * [내 색별코드, API Keys](undefined-4/undefined/api-keys.md)
-* [💻 복수 PG설정 및 사용하기](undefined-4/pg.md)
+* [🎡 관리자 콘솔 가이드](undefined-3/undefined/README.md)
+  * [전자결제 신청](undefined-3/undefined/undefined.md)
+  * [내 색별코드, API Keys](undefined-3/undefined/api-keys.md)
+* [💻 복수 PG설정 및 사용하기](undefined-3/pg.md)
 
 ## API
 
