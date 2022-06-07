@@ -50,6 +50,14 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 [undefined-2.md](undefined-3/undefined-2.md)
 {% endcontent-ref %}
 
+{% content-ref url="undefined-3/url.md" %}
+[url.md](undefined-3/url.md)
+{% endcontent-ref %}
+
+{% content-ref url="undefined-3/undefined-3.md" %}
+[undefined-3.md](undefined-3/undefined-3.md)
+{% endcontent-ref %}
+
 ### TIP
 
 결제창 연동시 꼭 확인해보세요
@@ -70,27 +78,37 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 [flow.md](tip/flow.md)
 {% endcontent-ref %}
 
+{% content-ref url="tip/agency-and-tier.md" %}
+[agency-and-tier.md](tip/agency-and-tier.md)
+{% endcontent-ref %}
+
+{% content-ref url="tip/pg.md" %}
+[pg.md](tip/pg.md)
+{% endcontent-ref %}
+
+{% content-ref url="tip/pg-1.md" %}
+[pg-1.md](tip/pg-1.md)
+{% endcontent-ref %}
+
 ### 관리자 콘솔 사용하기
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
+관리자 콘솔 사용 방법을 안내합니다.
 
 {% content-ref url="undefined-4/pg.md" %}
 [pg.md](undefined-4/pg.md)
 {% endcontent-ref %}
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
-{% endcontent-ref %}
-
 ### API
+
+아임포트가 제공하는 API 명세를 확인할 수 있습니다.
 
 {% content-ref url="api/rest-api-access-token.md" %}
 [rest-api-access-token.md](api/rest-api-access-token.md)
 {% endcontent-ref %}
 
 ### SDK
+
+결제 연동 JS SDK 명세를 확인할 수 있습니다.
 
 {% content-ref url="sdk/javascript-sdk/" %}
 [javascript-sdk](sdk/javascript-sdk/)
@@ -100,4 +118,16 @@ description: 아임포트 결제 연동 매뉴얼에 오신것을 환영합니�
 
 {% content-ref url="faq/undefined.md" %}
 [undefined.md](faq/undefined.md)
+{% endcontent-ref %}
+
+### **PG사별 결제 연동 가이드**&#x20;
+
+각 PG사별 결제 연동 가이드를 안내합니다.
+
+{% content-ref url="pg/payment-gateway/" %}
+[payment-gateway](pg/payment-gateway/)
+{% endcontent-ref %}
+
+{% content-ref url="undefined/2.-pg/pg/" %}
+[pg](undefined/2.-pg/pg/)
 {% endcontent-ref %}
