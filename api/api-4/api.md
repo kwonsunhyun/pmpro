@@ -510,8 +510,6 @@ JSON string으로 전달
 >
 > 페이먼트월 PG사인 경우 필수파라미터 입니다.
 
-![은행코드표](<../../.gitbook/assets/image (23).png>)
-
 <details>
 
 <summary>Response Model Schema</summary>
