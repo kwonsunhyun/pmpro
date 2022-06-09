@@ -14,7 +14,7 @@ description: 결제 URL 생성 API 명세를 기술합니다.
 
 > **HTTP Method : POST**
 >
-> **Content-Type : application/json;charset=UTF-8**
+> **Content-Type : Application.json;charset=UTF-8**
 
 {% tabs %}
 {% tab title="개발" %}
