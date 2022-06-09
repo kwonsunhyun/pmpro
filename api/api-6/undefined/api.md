@@ -37,15 +37,3 @@ YYYYMMDD 형식의 조회 날짜를 지정하시면 됩니다.
 ```
 {% endswagger-response %}
 {% endswagger %}
-
-{% hint style="success" %}
-**Swagger Test Link**
-
-****[**https://api.iamport.kr/#!/kakao/getOrders**](https://api.iamport.kr/#!/kakao/getOrders)****
-{% endhint %}
-
-{% hint style="danger" %}
-### **주의사항**
-
-해당 API 는 카카오페이 정책이슈로 인해 **2022년 하반기에 종료**될 예정입니다.
-{% endhint %}

@@ -244,9 +244,3 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 ```
 
 </details>
-
-{% hint style="success" %}
-**Swagger Test Link**
-
-****[**https://api.iamport.kr/#!/certifications/confirmOTP**](https://api.iamport.kr/#!/certifications/confirmOTP)****
-{% endhint %}

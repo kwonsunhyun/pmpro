@@ -145,7 +145,7 @@
   * [⌨ 배송정보 단건등록 API](api/api-7/api-1.md)
   * [⌨ 배송정보 단건수정 API](api/api-7/api-2.md)
 * [💵 현금영수증 API](api/api-8/README.md)
-  * [⌨ 차이포트 발급분 취소 API](api/api-8/api.md)
+  * [⌨ 아임포트 발급분 취소 API](api/api-8/api.md)
   * [⌨ 발급내역 단건 조회 API](api/api-8/api-1.md)
   * [⌨ 현금영수증 단건발급 API](api/api-8/api-2.md)
   * [⌨ 외부 발급분 취소 API](api/api-8/api-3.md)

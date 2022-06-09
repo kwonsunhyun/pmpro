@@ -642,9 +642,3 @@ JSON string으로 전달
 ```
 
 </details>
-
-{% hint style="success" %}
-**Swagger Test Link**
-
-****[**https://api.iamport.kr/#!/subscribe/onetime**](https://api.iamport.kr/#!/subscribe/onetime)****
-{% endhint %}
