@@ -1,40 +1,79 @@
 ---
-description: 본인인증을 완료하는 API 입니다.
+description: API를 이용하여 본인인증 프로세스를 시작합니다.
 ---
 
-# ⌨ 본인인증 완료 API
+# ⌨ 본인인증 요청 API
 
-### 차이포트거래번호와 SMS 인증번호를 이용하여 본인인증을 완료합니다.
+### 사용자 개인정보를 입력하여 SMS OTP번호 발송 API 입니다.
 
-{% swagger method="post" path="/certifications/otp/confirm/{imp_uid}" baseUrl="https://api.iamport.kr" summary="본인인증을 완료합니다." %}
+{% swagger method="post" path="/certifications/otp/request" baseUrl="https://api.iamport.kr" summary="본인인증을 위한 SMS OTP 번호를 발송합니다." %}
 {% swagger-description %}
- 본인인증이 완료되면 대상자의 이름, 전화번호, 통신사, 성별, 외국인여부, 생년월일, CI, DI 값을 응답받을 수 있습니다.
+사용자 개인정보를 API로 전달하여 통신사로부터 확인되는 경우 OTP(6자리 인증번호)를 사용자에게 SMS로 전달합니다. 통신사 승인을 받은 일부 가맹점에 한해 사용하실 수 있으며 현재 **다날**을 통해서만 서비스되고 있습니다.
 
-\
+본인인증 대상자의 성명, 생년월일 + 주민등록 뒷부분 첫 자리, 휴대폰번호, 통신사 정보를 가맹점에서 직접 입력받아 API를 요청하면 됩니다. 전달된 개인정보가 올바른 경우 해당 휴대폰으로 인증번호 SMS가 전송됩니다.
 
-
-
+HTTP Status 200응답 시 imp\_uid 가 응답데이터로 전달되며 SMS전송된 인증번호를 /certifications/otp/confirm/{imp\_uid} API 로 요청주시면 최종 본인인증 프로세스가 완료됩니다.
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}
+{% swagger-parameter in="body" required="true" name="name" type="String" %}
 <mark style="color:red;">
 
-**차이포트 거래고유번호**
+**본인인증 대상자 성명**
 
 </mark>
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="otp" type="String" required="true" %}
-<mark style="color:red;">
+{% swagger-parameter in="body" name="phone" type="String" required="true" %}
+<mark style="color:red;">**휴대폰번호**</mark>
 
-**SMS로 전송된 본인인증 번호**
+특수기호가 삽입되어도 무방합니다.
+{% endswagger-parameter %}
 
-</mark>
+{% swagger-parameter in="body" name="birth" type="String" required="true" %}
+<mark style="color:red;">**생년월일**</mark>&#x20;
+
+**`YYYYMMDD 6자리`**
+
+특수기호가 삽입되어도 무방합니다.
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="gender_digit" type="String" required="true" %}
+<mark style="color:red;">**성별구분코드**</mark>** **&#x20;
+
+주민번호 뒷부분 첫자리
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="carrier" type="String" required="true" %}
+<mark style="color:red;">**통신사구분코드**</mark>
+
+**`SKT`**
+
+**`KT`**
+
+**`LGT`**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="is_mvno" type="Boolean" %}
+**알뜰폰 사용 여부**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="company" type="String" %}
+**가맹점 서비스명칭**
+
+ 
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="merchant_uid" type="String" %}
+**주문번호**
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="pg" type="String" %}
+**PG사 구분코드**
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="성공" %}
 {% tabs %}
-{% tab title="CertificationResponse" %}
+{% tab title="CertificationOTPResponse" %}
 **`code`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**integer**</mark>
 
 **응답코드**
@@ -51,136 +90,20 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 
 
 
-**response** <mark style="color:red;">**(CertificationAnnotation, optional)**</mark>
+**response **<mark style="color:red;">**(CertificationOTPAnnotation, optional)**</mark>
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
-{% tab title="CertificationAnnotation" %}
-**`imp_uid`**  <mark style="color:red;">\*</mark> <mark style="color:green;">**string**</mark>
+{% tab title="CertificationOTPAnnotation" %}
+**`imp_uid *`` `**<mark style="color:green;">**`String`**</mark>
 
-**`인증고유번호`**
-
-****
-
-**`merchant_uid`    **<mark style="color:green;">**string**</mark>
-
-**`주문번호`**
-
-****
-
-**`pg_tid`  **<mark style="color:blue;">****</mark>**  **<mark style="color:green;">**string**</mark>
-
-**`PG사 인증결과 고유번호` **&#x20;
-
-****
-
-**`pg_provider`** <mark style="color:red;">**\***</mark>**  **<mark style="color:green;">**string**</mark>
-
-**`본인인증 제공 PG사 명칭`**
-
-
-
-**`name`      **<mark style="color:green;">**string**</mark>** **&#x20;
-
-**`실명` **&#x20;
-
-&#x20;
-
-**`gender`**  <mark style="color:green;">**string**</mark>
-
-**`성별` **<mark style="color:green;">****</mark>&#x20;
-
-* male:남성
-* female:여성
-
-
-
-**`birthday`   **<mark style="color:green;">**string**</mark>
-
-**`생년월일` **<mark style="color:green;">****</mark>&#x20;
-
-ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리 문자열
-
-
-
-**`foreigner`  **<mark style="color:green;">****</mark>**  **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">****</mark>**  **<mark style="color:orange;">**boolean**</mark>
-
-**`외국인여부`**
-
-<mark style="color:red;">다날 본인인증서비스 계약시</mark> 외국인 구분기능 추가 요청을 해주셔야 사용이 가능합니다
-
-* true <mark style="color:orange;">****</mark> : 외국인
-* false : 내국인
-
-<mark style="color:green;">****</mark>
-
-&#x20;**`phone`    **<mark style="color:green;">**string**</mark>
-
-**`휴대폰번호` **<mark style="color:green;">****</mark>&#x20;
-
-특수기호없이 숫자로만 구성된 휴대폰번호가 전달. 통신사 사전승인이 이뤄지지 않으면 phone 속성은 존재하지 않습니다. 통신사 사전승인이 필요하므로 **cs@iamport.kr **<mark style="color:green;">****</mark> 로 다날 CPID 와 함께 사용승인 요청이 필요합니다.&#x20;
-
-
-
-**`carrier`**  <mark style="color:green;">**string**</mark>
-
-**`휴대폰번호의 통신사` **<mark style="color:green;">****</mark>&#x20;
-
-통신사 사전승인이 필요하므로 **cs@iamport.kr **<mark style="color:green;">****</mark> 로 다날 CPID 와 함께 사용승인 요청이 필요합니다.&#x20;
-
-* SKT
-* KT
-* LGT
-* SKT\_MVNO
-* KT\_MVNO
-* LGT\_MVNO
-
-
-
-**`certified`   **<mark style="color:green;">****</mark>**   **<mark style="color:red;">**\***</mark>**  **<mark style="color:green;">****</mark>**  **<mark style="color:orange;">**boolean**</mark>
-
-**`인증성공여부`**
-
-&#x20;****&#x20;
-
-**`certified_at`**  <mark style="color:red;">****</mark>**  **<mark style="color:green;">**string**</mark>
-
-**`인증처리시각` ** (UNIX timestamp) <mark style="color:green;">****</mark>&#x20;
-
-<mark style="color:green;">****</mark>
-
-**`unique_key`  **<mark style="color:green;">**string**</mark>
-
-**개인 고유구분 식별키 **<mark style="color:green;">****</mark>** (`CI`)**
-
-****
-
-**`unique_in_site` **<mark style="color:green;">****</mark>**     **<mark style="color:green;">**string**</mark>
-
-**가맹점 내 개인 고유구분 식별키 (`DI`)**
-
-****
-
-**`origin`    **<mark style="color:green;">**string**</mark>
-
-**본인인증 프로세스가 진행된 웹 페이지의 `URL` **&#x20;
-
-****
-
-**`foreigner_v2`      **<mark style="color:orange;">**boolean**</mark>
-
-**`외국인 여부(nullable)`**
-
-* true **** : 외국인
-* false : 내국인
-
-다날 본인인증서비스 계약시 외국인 구분기능 추가 요청필요
+**`차이포트 거래고유번호` **<mark style="color:green;">****</mark>&#x20;
 {% endtab %}
 {% endtabs %}
 {% endswagger-response %}
 
-{% swagger-response status="400: Bad Request" description="인증번호를 누락하였거나 이미 인증처리가 완료된 건에 대해 재요청하는 경우" %}
+{% swagger-response status="400: Bad Request" description="대상자 개인정보 중 일부가 누락되었거나 올바르지 않은 경우" %}
 ```javascript
 {
     // Response
@@ -189,14 +112,6 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 {% endswagger-response %}
 
 {% swagger-response status="401: Unauthorized" description="인증 Token이 전달되지 않았거나 유효하지 않은 경우" %}
-```javascript
-{
-    // Response
-}
-```
-{% endswagger-response %}
-
-{% swagger-response status="404: Not Found" description="imp_uid 에 해당되는 요청건이 없는 경우" %}
 ```javascript
 {
     // Response
@@ -213,6 +128,38 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 {% endswagger-response %}
 {% endswagger %}
 
+### **주요 요청 파라미터 상세 설명**
+
+> **`gender_digit`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`String`**</mark>
+>
+> **`셩별구분코드`**
+>
+> 주민등록번호 13자리 중 7번째 자리
+>
+> 2000년 이전 출생자는 1 또는 2, 2000년 이후 출생자는 3 또는 4
+
+> **`carrier`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`String`**</mark>
+>
+> **`통신사 구분코드` **<mark style="color:green;">****</mark>&#x20;
+>
+> 알뜰폰 사용자의 경우 <mark style="color:red;">**`carrier`**</mark>파라메터 SKT, KT, LGT 중 하나를 지정한 후&#x20;
+>
+> **`is_mvno : true` **<mark style="color:green;">****</mark> 로 설정
+
+> **`company`**<mark style="color:red;">**`*`**</mark><mark style="color:green;">**`String`**</mark>
+>
+> **`가맹점 서비스명칭` **<mark style="color:green;">****</mark>&#x20;
+>
+> KISA에서 대상자에게 발송하는 SMS에 안내될 서비스 명칭
+
+> **`pg`` `**<mark style="color:green;">**`String`**</mark>
+>
+> **`PG사 구분코드` **<mark style="color:green;">****</mark>&#x20;
+>
+> &#x20;다날 상점아이디를 2개 이상 동시에 사용하시려는 경우 설정하시면 됩니다.&#x20;
+>
+> **danal.{상점아이디}** 형태로 지정
+
 <details>
 
 <summary>Response Model Schema</summary>
@@ -222,25 +169,15 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
   "code": 0,
   "message": "string",
   "response": {
-    "imp_uid": "string",
-    "merchant_uid": "string",
-    "pg_tid": "string",
-    "pg_provider": "string",
-    "name": "string",
-    "gender": "string",
-    "birth": 0,
-    "birthday": "string",
-    "foreigner": true,
-    "phone": "string",
-    "carrier": "SKT",
-    "certified": true,
-    "certified_at": 0,
-    "unique_key": "string",
-    "unique_in_site": "string",
-    "origin": "string",
-    "foreigner_v2": true
+    "imp_uid": "string"
   }
 }
 ```
 
 </details>
+
+{% hint style="success" %}
+**Swagger Test Link**
+
+****[**https://api.iamport.kr/#!/certifications/requestOTP**](https://api.iamport.kr/#!/certifications/requestOTP)****
+{% endhint %}

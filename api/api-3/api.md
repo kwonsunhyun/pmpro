@@ -351,3 +351,9 @@ schedules의 상세정보
 ```
 
 </details>
+
+{% hint style="success" %}
+**Swagger Test Link**
+
+****[**https://api.iamport.kr/#!/subscribe/schedule**](https://api.iamport.kr/#!/subscribe/schedule)****
+{% endhint %}
