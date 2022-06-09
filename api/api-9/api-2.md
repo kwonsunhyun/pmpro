@@ -507,9 +507,3 @@ JSON string으로 전달
 ```
 
 </details>
-
-{% hint style="success" %}
-**Swagger Test Link**
-
-****[**https://api.iamport.kr/#!/vbanks/modifyVbank**](https://api.iamport.kr/#!/vbanks/modifyVbank)****
-{% endhint %}

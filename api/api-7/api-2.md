@@ -263,9 +263,3 @@ logis는 하위 필드가 모두 필수입니다. sender, receiver의 각 세부
 ```
 
 </details>
-
-{% hint style="success" %}
-**Swagger Test Link**
-
-****[**https://api.iamport.kr/#!/escrow.logis/escrow\_logis\_edit**](https://api.iamport.kr/#!/escrow.logis/escrow\_logis\_edit)****
-{% endhint %}
