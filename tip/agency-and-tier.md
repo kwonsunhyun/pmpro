@@ -18,7 +18,7 @@ description: 대표가맹점과 하위가맹점 설정에 대한 안내 입니�
 
 ### 자세한 사용방법 안내
 
-아포트 Agent 기능을 통하여 기존보다 더욱 편리하고 효율적으로 가맹점들을 관리할 수 있습니다.
+아임포트 Agent 기능을 통하여 기존보다 더욱 편리하고 효율적으로 가맹점들을 관리할 수 있습니다.
 
 * **Agent 관리자 페이지 체험하기 :** [**admin.iamport.kr**](http://admin.iamport.kr/)
 * **테스트용 ID :** [**demo.agency@siot.do**](mailto:demo.agency@siot.do)
