@@ -12,7 +12,7 @@ description: 토스 간편결제 연동 방법을 안내합니다.
 
 ### 2.결제 요청하기
 
-[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 토스간편결제 결제창을 호출할 수 있습니다. **결제결과**는 PC의 / 모바일 모두 <mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
+[JavaScript SDK](../../sdk/javascript-sdk/) IMP.**request\_pay**(param, callback)을 호출하여 토스간편결제 결제창을 호출할 수 있습니다. **결제결과**는 PC 환경은 <mark style="color:red;">**callback**</mark>, 모바일 환경은  <mark style="color:red;">**m\_redirect\_url**</mark>** ** 로 리디렉션됩니다.
 
 {% tabs %}
 {% tab title="일반결제창 요청" %}
