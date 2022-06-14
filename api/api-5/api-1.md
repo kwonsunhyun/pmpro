@@ -4,9 +4,9 @@ description: 본인인증 결과정보를 차이포트에서 완전히 삭제 �
 
 # ⌨ 본인인증 정보삭제 API
 
-### 본인인증결과 정보를 아임포트 서버내에서 완전히 삭제 합니다.
+### 본인인증결과 정보를 차이포트 서버내에서 완전히 삭제 합니다.
 
-{% swagger method="delete" path="/certifications/{imp_uid}" baseUrl="https://api.iamport.kr" summary="본인인증 결과정보를 아임포트에서 완전히 삭제하고 싶을 때 요청합니다." %}
+{% swagger method="delete" path="/certifications/{imp_uid}" baseUrl="https://api.iamport.kr" summary="본인인증 결과정보를 차이포트에서 완전히 삭제하고 싶을 때 요청합니다." %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -223,9 +223,3 @@ ISO8601 형식의 문자열. <mark style="color:red;">YYYY-MM-DD</mark> 10자리
 ```
 
 </details>
-
-{% hint style="success" %}
-**Swagger Test Link**
-
-****[**https://api.iamport.kr/#!/certifications/deleteCertification**](https://api.iamport.kr/#!/certifications/deleteCertification)****
-{% endhint %}

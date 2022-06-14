@@ -4,7 +4,7 @@ description: 아임포트와 별개로 거래된 일반 현금결제에 대해�
 
 # ⌨ 외부 발급분 취소 API
 
-### 차이포트 별개거래로 발생된 현금영수증 거래를 취소합니다.
+### 아포트 별개거래로 발생된 현금영수증 거래를 취소합니다.
 
 <details>
 
@@ -19,9 +19,9 @@ description: 아임포트와 별개로 거래된 일반 현금결제에 대해�
 
 </details>
 
-{% swagger method="delete" path="/receipts/external/{merchant_uid}" baseUrl="https://api.iamport.kr" summary="차이포트에서 발급하지 않은 PG발급 거래를 취소합니다." %}
+{% swagger method="delete" path="/receipts/external/{merchant_uid}" baseUrl="https://api.iamport.kr" summary="아임포트에서 발급하지 않은 PG발급 거래를 취소합니다." %}
 {% swagger-description %}
-차이포트와 별개로 거래된 일반 현금결제에 대해 차이포트 내에 설정된 PG사로 차이포트 API를 이용해 현금영수증을 발행취소하는 API입니다. 
+아임포트와 별개로 거래된 일반 현금결제에 대해 차이포트 내에 설정된 PG사로 아임포트 API를 이용해 현금영수증을 발행취소하는 API입니다. 
 
 **merchant_uid**
 
@@ -173,3 +173,9 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 
 </details>
+
+{% hint style="success" %}
+**Swagger Test Link**
+
+****[**https://api.iamport.kr/#!/receipts/revokeExternalReceipt**](https://api.iamport.kr/#!/receipts/revokeExternalReceipt)****
+{% endhint %}
