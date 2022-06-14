@@ -88,7 +88,7 @@ app.use(bodyParser.json());
 조회한 인증 정보에서 다음의 고객 정보를 추출하는 서비스 코드 예제입니다.
 
 * `name`: 이름
-* `gender`: 성별
+* `gender`: 성별(지원예정)
 * `birth`: 생년월일
 * `unique_key`: CI 값과 동일. 온라인 주민번호와 같은 개인고유식별키
 
