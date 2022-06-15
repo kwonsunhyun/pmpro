@@ -123,7 +123,11 @@ IMP.request_pay({
    buyer_email : 'iamport@siot.do',
    buyer_name : '아임포트',
    buyer_tel : '02-1234-1234',    
-   buyer_addr : '서울특별시 강남구 삼성동'
+   buyer_addr : '서울특별시 강남구 삼성동',
+   period : {
+      from : "20200101", //YYYYMMDD
+      to : "20201231"  //YYYYMMDD
+   }
 }, function(rsp) {
     if ( rsp.success ) {
         alert('빌링키 발급 성공');
@@ -157,7 +161,17 @@ IMP.request_pay({
 
 **결제금액**
 
-0원으로 설정시 빌링키만 발급되며 **0원 이상 설정시 실결제와 빌링키 발급이 동시**에 이루어 집니다.\
+0원으로 설정시 빌링키만 발급되며 **0원 이상 설정시 실결제와 빌링키 발급이 동시**에 이루어 집니다.
+
+
+
+**`period`` `**<mark style="color:orange;">**`array`**</mark>
+
+정기결제시 고객이 구매하는 제품에 대한 제공기간을 명시합니다. 해당 일자가 다날 결제창에 표기 됩니다.
+
+**`from`` `**<mark style="color:orange;">**`: YYYYMMDD`**</mark>
+
+**`to`` `**<mark style="color:orange;">**`: YYYYMMDD`**</mark>\
 
 
 ### 빌링키(customer\_uid)로 결제 요청하기
