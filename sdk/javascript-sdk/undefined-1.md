@@ -122,7 +122,7 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 * `eximbay`(엑심베이)
 * `tosspay`(토스간편결제)
 * `smartro`(스마트로)
-* `settle`(세틀뱅크
+* `settle`(세틀뱅크)
 
 </details>
 

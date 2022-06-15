@@ -322,7 +322,7 @@ card : {
 * **card\_code :** 금결원 카드사코드 [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) 참조 (<mark style="color:green;">**string)**</mark>
 * **enabled :** 해당카드 활성화 여부 (<mark style="color:orange;">**boolean)**</mark>
 
-<mark style="color:orange;">****</mark>
+
 
 <mark style="color:red;">**신한카드**</mark>**만 결제창 노출 처리 예제**
 

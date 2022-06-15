@@ -160,7 +160,7 @@ class RequestPay extends React.Component {
 * 결제 완료 이후 **결제 위변조** 대사 작업시 주문번호를 이용하여 검증이 필요하므로 주문번호는 가맹점 서버에서 고유하게(**unique**)채번하여 **DB 상에 저장**해주세요
 {% endhint %}
 
-#### 현재까지 진행한 소스코드에 <mark style="color:red;">결제 취소버튼</mark>을 추가한 샘플코드 입니다.
+#### 현재까지 진행한 소스코드에 <mark style="color:red;">결제 버튼</mark>을 추가한 샘플코드 입니다.
 
 {% code title="sample.html" %}
 ```html
