@@ -207,7 +207,7 @@ pg사 구분코드
 {% tab title="결제(브릿지) 페이지" %}
 **결제 URL API 요청이 성공한경우 응답 URL 렌더링 화면 예시입니다.**
 
-![결제 URL 페이지 화면](<../.gitbook/assets/image (6) (1) (1) (1) (1) (1).png>)
+![결제 URL 페이지 화면](<../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1).png>)
 {% endtab %}
 
 {% tab title=" 만료(브릿지) 화면" %}

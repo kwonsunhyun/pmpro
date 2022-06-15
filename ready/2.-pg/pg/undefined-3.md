@@ -20,7 +20,7 @@ description: 페이코 설정 방법을 안내합니다.
 
 
 
-![테스트 환경 설정 예시](<../../../.gitbook/assets/image (22) (1) (1).png>)
+![테스트 환경 설정 예시](<../../../.gitbook/assets/image (22) (1) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -52,7 +52,7 @@ description: 페이코 설정 방법을 안내합니다.
 
 
 
-![실환경 설정 예시](<../../../.gitbook/assets/image (12) (1).png>)
+![실환경 설정 예시](<../../../.gitbook/assets/image (12) (1) (1).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}

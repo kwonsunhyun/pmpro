@@ -30,7 +30,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 아임포트 관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "**KG이니시스(웹표준결제창)**"선택 후 테스트모드\[<mark style="color:red;">**OFF**</mark>]상태로 변경후 이니시스로 부터 발급받은 MID정보를 기재합니다.
 
-![화면예시](<../../../.gitbook/assets/image (11) (1) (1) (1) (1).png>)
+![화면예시](<../../../.gitbook/assets/image (11) (1) (1) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -54,7 +54,7 @@ KG이니시스 **API방식 빌링키 발급** 은 PG사를 통해 입점가능�
 
 ****
 
-![화면예시](<../../../.gitbook/assets/image (17) (1) (1).png>)
+![화면예시](<../../../.gitbook/assets/image (17) (1) (1) (1).png>)
 
 ### 실  환경 구성방법
 

@@ -23,7 +23,7 @@ description: 페이팔 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (11) (1).png>)
+![](<../../../.gitbook/assets/image (11) (1) (1).png>)
 
 {% hint style="danger" %}
 **Email 계정주소 설정시 주의사항**&#x20;
@@ -39,7 +39,7 @@ description: 페이팔 설정 방법을 안내합니다.
 
 1. &#x20;[https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/) 로그인 > **SANDBOX** > **Accounts** > DEFAULT Business 계정의 \[**View/edit account**] 클릭
 
-![Accounts 예](<../../../.gitbook/assets/image (19) (1).png>)
+![Accounts 예](<../../../.gitbook/assets/image (19) (1) (1).png>)
 
 &#x20;**2. Account details 팝업창**
 
@@ -49,19 +49,19 @@ description: 페이팔 설정 방법을 안내합니다.
 * Password = API 암호&#x20;
 * Signature = 서명&#x20;
 
-![API Credentials](<../../../.gitbook/assets/image (22) (1).png>)
+![API Credentials](<../../../.gitbook/assets/image (22) (1) (1).png>)
 
 <mark style="color:purple;">**구매자 Sandbox 계정 설정**</mark>&#x20;
 
 1. [https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/) 로그인 > **SANDBOX** > **Accounts** > DEFAULT Personal 계정의 \[**View/edit account**] 클릭
 
-![Accounts 예](<../../../.gitbook/assets/image (24).png>)
+![Accounts 예](<../../../.gitbook/assets/image (24) (1).png>)
 
 **2. Account details 팝업창**&#x20;
 
 Profile 탭의 **Email ID** 및 **Password** 값을 페이팔 결제시 구매자 로그인 계정정보로 사용합니다.
 
-![](<../../../.gitbook/assets/image (21) (1).png>)
+![](<../../../.gitbook/assets/image (21) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -71,7 +71,7 @@ Profile 탭의 **Email ID** 및 **Password** 값을 페이팔 결제시 구매�
 
 
 
-![](<../../../.gitbook/assets/image (21).png>)
+![](<../../../.gitbook/assets/image (21) (1).png>)
 
 > **각 항목별 실 운영 정보 값은 페이팔 관리자 페이지에서 아래 절차를 통해 확인합니다.**
 

@@ -16,13 +16,13 @@ description: 복수 PG를 사용하는 경우 설정방법을 확인할 수 있�
 
 PG사로부터 정기결제용(비 인증) 상점ID(MID)를 추가로 발급 받은 이후 해당 MID정보를 [**아임포트 관리자 콘솔 > 시스템 설정 >PG설정(일반결제 및 정기결제)**](https://admin.iamport.kr/settings#tab\_pg) **** 메뉴에 추가 합니다.
 
-![새로운 PG사 추가 화면](<../.gitbook/assets/image (10) (1) (1) (1) (1).png>)
+![새로운 PG사 추가 화면](<../.gitbook/assets/image (10) (1) (1) (1) (1) (1).png>)
 
 ### 3. **간편결제(카카오페이) 추가하기**
 
 동일한 방법으로 카카오페이를 추가 합니다.
 
-![간편결제 카카오페이 등록 예시](<../.gitbook/assets/image (14) (1) (1) (1) (1).png>)
+![간편결제 카카오페이 등록 예시](<../.gitbook/assets/image (14) (1) (1) (1) (1) (1).png>)
 
 ## 특정 PG사의 결제창 열기 <a href="#pg" id="pg"></a>
 

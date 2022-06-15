@@ -14,7 +14,7 @@ description: KICC 설정 방법을 안내합니다.
 
 
 
-![테스트 모드 설정 예시](<../../../.gitbook/assets/image (17) (1).png>)
+![테스트 모드 설정 예시](<../../../.gitbook/assets/image (17) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -38,13 +38,13 @@ description: KICC 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (28) (1).png>)
+![](<../../../.gitbook/assets/image (28) (1) (1).png>)
 
 ### **실** 환경 구성방법
 
 카드사 심사 완료 후 KICC 에서 발급받은 실상점 정보를 <mark style="color:red;">**테스트모드 OFF**</mark> 이후 설정합니다.
 
-![실 환경 설정 예시](<../../../.gitbook/assets/image (20) (1).png>)
+![실 환경 설정 예시](<../../../.gitbook/assets/image (20) (1) (1).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}

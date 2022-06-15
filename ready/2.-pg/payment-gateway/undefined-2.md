@@ -45,7 +45,7 @@ description: 다우 설정 방법을 안내합니다.
 1. [페이조아 관리자페이지](https://agent.kiwoompay.co.kr/) 로그인
 2. 상단 **고객지원** > **연동정보설정** 메뉴 클릭
 
-![페이 조아 메뉴 위치](<../../../.gitbook/assets/image (29) (1).png>)
+![페이 조아 메뉴 위치](<../../../.gitbook/assets/image (29) (1) (1).png>)
 
 
 
@@ -57,7 +57,7 @@ description: 다우 설정 방법을 안내합니다.
 
 > [https://service.iamport.kr/daou\_payments/result](https://service.iamport.kr/daou\_payments/result)
 
-![결과통지 URL 설정](<../../../.gitbook/assets/image (20).png>)
+![결과통지 URL 설정](<../../../.gitbook/assets/image (20) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -80,7 +80,7 @@ description: 다우 설정 방법을 안내합니다.
 
 ****
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (10) (1).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (10) (1) (1).png>)
 
 ###
 

@@ -24,7 +24,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (20) (1) (1).png>)
+![](<../../../.gitbook/assets/image (20) (1) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -58,7 +58,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (24) (1).png>)
+![](<../../../.gitbook/assets/image (24) (1) (1).png>)
 
 ### **실** 환경 구성방법
 
@@ -86,7 +86,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (27) (1).png>)
+![](<../../../.gitbook/assets/image (27) (1) (1).png>)
 
 ### 실  환경 구성방법(키인결제)
 
@@ -120,7 +120,7 @@ description: JTNET PG사 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (6).png>)
+![](<../../../.gitbook/assets/image (6) (1).png>)
 {% endtab %}
 {% endtabs %}
 

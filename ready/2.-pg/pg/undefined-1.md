@@ -29,7 +29,7 @@ description: 토스 간편결제 설정 방법을 안내합니다.
 
 
 
-![실 환경 정보 설정 예시](<../../../.gitbook/assets/image (22).png>)
+![실 환경 정보 설정 예시](<../../../.gitbook/assets/image (22) (1).png>)
 {% endtab %}
 {% endtabs %}
 

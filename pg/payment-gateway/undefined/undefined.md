@@ -60,7 +60,7 @@ PC와 모바일에서 결제창이 각기 다른 방식으로 호출되기 때�
 
 이러한 현상을 겪으시는 경우, 사파리 환경설정에서 아래와 같이 `크로스 사이트 추적 방지` 해제 및 `모든 쿠키 차단`이 모두 해제되어있는지 확인해보시고, 모두 해제 후 다시 시도해보시길 바랍니다.
 
-<img src="../../../.gitbook/assets/image (27).png" alt="참고이미지" data-size="original">
+<img src="../../../.gitbook/assets/image (27) (1).png" alt="참고이미지" data-size="original">
 
 </details>
 
@@ -74,7 +74,7 @@ PC와 모바일에서 결제창이 각기 다른 방식으로 호출되기 때�
 
 이러한 현상을 겪으시는 경우, 사파리 환경설정에서 아래와 같이 `*.payjoa.co.kr` 도메인에 대해 팝업 `허용` 설정 되어있으신지 확인해보시고, 허용 후 다시 시도해보시길 바랍니다.
 
-<img src="../../../.gitbook/assets/image (29).png" alt="참고이미지" data-size="original">
+<img src="../../../.gitbook/assets/image (29) (1).png" alt="참고이미지" data-size="original">
 
 ###
 
@@ -88,9 +88,9 @@ PC와 모바일에서 결제창이 각기 다른 방식으로 호출되기 때�
 
 단, 모바일 결제의 경우엔 토스 간편결제와 NH앱캐시를 통해서만 결제가 가능합니다.
 
-<img src="../../../.gitbook/assets/image (10).png" alt="PC 결제" data-size="original">
+<img src="../../../.gitbook/assets/image (10) (1).png" alt="PC 결제" data-size="original">
 
-<img src="../../../.gitbook/assets/image (17).png" alt="모바일 결제" data-size="original">
+<img src="../../../.gitbook/assets/image (17) (1).png" alt="모바일 결제" data-size="original">
 
 ###
 
@@ -156,7 +156,7 @@ GET http://api.iamport.kr/payments/{아임포트 번호}?**extension=true**
 
 #### 에스크로 결제시 구매자 전화번호가 결제창에 자동 완성되지 않음
 
-<img src="../../../.gitbook/assets/image (28).png" alt="참고이미지" data-size="original">
+<img src="../../../.gitbook/assets/image (28) (1).png" alt="참고이미지" data-size="original">
 
 * IMP.request\_pay 호출시 전달한 구매자의 전화번호(`buyer_tel`)가 다른 결제창과는 달리 에스크로 결제창에서는 자동 완성되지 않습니다. 이는 페이조아가 해당 기능을 제공하지 않는 것으로 이용에 참고 부탁드립니다.
 
