@@ -21,9 +21,9 @@ description: 아임포트를 통해 발급한 현금영수증 발급거래를 �
 
 {% swagger method="delete" path="/receipts/{imp_uid}" baseUrl="https://api.iamport.kr" summary="발급된 현금영수증을 취소하는 API입니다" %}
 {% swagger-description %}
-차이포트를 통해 발급된 현금영수증 거래만 취소 가능합니다.
+아임포트를 통해 발급된 현금영수증 거래만 취소 가능합니다.
 
-(차이포트와 별개로 거래된 현금영수증 취소는 <mark style="color:blue;">**링크**</mark>를 눌러주세요)
+(아임포트와 별개로 거래된 현금영수증 취소는 <mark style="color:blue;">**링크**</mark>를 눌러주세요)
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="imp_uid" type="String" required="true" %}

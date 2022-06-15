@@ -1,12 +1,12 @@
 ---
-description: 차이포트 API를 통해 현금영수증만 발행된 건의 상세정보를 조회하는 API입니다
+description: 아임포트 API를 통해 현금영수증만 발행된 건의 상세정보를 조회하는 API입니다
 ---
 
 # ⌨ 외부 발급내역 단건 조회 API
 
 ### 현금영수증 발급내역을 조회합니다.
 
-{% swagger method="get" path="/receipts/external/{merchant_uid}" baseUrl="https://api.iamport.kr" summary="차이포트를 통해 현금영수증 거래만 발급한 정보를 획득합니다." %}
+{% swagger method="get" path="/receipts/external/{merchant_uid}" baseUrl="https://api.iamport.kr" summary="아임포트를 통해 현금영수증 거래만 발급한 정보를 획득합니다." %}
 {% swagger-description %}
 
 {% endswagger-description %}

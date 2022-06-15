@@ -4,7 +4,7 @@ description: 처아포트를 통해 발행된 현금영수증 상세정보를 �
 
 # ⌨ 발급내역 단건 조회 API
 
-### 차이포트를 통해 발급된 현금영수증을 단건 조회 합니다.
+### 아임포트를 통해 발급된 현금영수증을 단건 조회 합니다.
 
 {% swagger method="get" path="/receipts/{imp_uid}" baseUrl="https://api.iamport.kr" summary="현금영수증 단건조회 API" %}
 {% swagger-description %}
