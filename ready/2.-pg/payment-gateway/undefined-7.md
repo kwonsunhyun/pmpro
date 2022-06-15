@@ -20,7 +20,7 @@ description: 엑심베이 설정 방법을 안내합니다.
 
 
 
-![테스트 환경 설정 예시](<../../../.gitbook/assets/image (9).png>)
+![테스트 환경 설정 예시](<../../../.gitbook/assets/image (9) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}

@@ -1,10 +1,10 @@
 ---
-description: 차이포트를 통해 발급한 현금영수증 발급거래를 취소합니다.
+description: 아임포트를 통해 발급한 현금영수증 발급거래를 취소합니다.
 ---
 
-# ⌨ 차이포트 발급분 취소 API
+# ⌨ 아임포트 발급분 취소 API
 
-### 차이포트를 통해 발급한 현금영수증 거래를 취소할 수 있습니다.
+### 아임포트를 통해 발급한 현금영수증 거래를 취소할 수 있습니다.
 
 <details>
 
@@ -165,3 +165,9 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 
 </details>
+
+{% hint style="success" %}
+**Swagger Test Link**
+
+****[**https://api.iamport.kr/#!/receipts/revokeReceipt**](https://api.iamport.kr/#!/receipts/revokeReceipt)****
+{% endhint %}

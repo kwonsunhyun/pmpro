@@ -6,6 +6,10 @@ description: 새로운창으로 리디렉션되어 결제가 진행되는 환경
 
 > 아래 예제 코드는 결제창 형태가 **새로운페이지로 리디렉션되어** 결제가 진행되는 대부분의 **모바일 환경**에서의 결제요청애 대한 응답을 처리하는 부분입니다.
 
+{% content-ref url="../../../tip/redirect.md" %}
+[redirect.md](../../../tip/redirect.md)
+{% endcontent-ref %}
+
 {% tabs %}
 {% tab title="JavaScript" %}
 {% code title="client-side" %}

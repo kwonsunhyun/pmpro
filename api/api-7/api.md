@@ -130,3 +130,9 @@ _****_
 ```
 
 </details>
+
+{% hint style="success" %}
+**Swagger Test Link**
+
+****[**https://api.iamport.kr/#!/escrow.logis/escrow\_logis\_get**](https://api.iamport.kr/#!/escrow.logis/escrow\_logis\_get)****
+{% endhint %}

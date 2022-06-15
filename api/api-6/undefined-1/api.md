@@ -87,3 +87,9 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 
 </details>
+
+{% hint style="success" %}
+**Swagger Test Link**
+
+****[**https://api.iamport.kr/#!/payco/changeOrderStatus**](https://api.iamport.kr/#!/payco/changeOrderStatus)****
+{% endhint %}
