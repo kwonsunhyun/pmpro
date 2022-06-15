@@ -5,7 +5,7 @@
 * [🛫 결제 연동 준비하기](ready/README.md)
   * [🖥 1. 아임포트 회원가입 하기](ready/1..md)
   * [🧷 2. PG정보 설정하기](ready/2.-pg/README.md)
-    * [🏢 Payment Gateway](ready/2.-pg/payment-gateway/README.md)
+    * [🏢 Payment Gateway](ready/2.-pg/payment-gateway/README.md)
       * [⌨ NHN KCP 설정](ready/2.-pg/payment-gateway/nhn-kcp.md)
       * [⌨ KG 이니시스 설정](ready/2.-pg/payment-gateway/kg.md)
       * [⌨ NICE페이먼츠 설정](ready/2.-pg/payment-gateway/nice.md)
