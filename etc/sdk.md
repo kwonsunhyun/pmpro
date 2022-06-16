@@ -4,6 +4,8 @@ description: 아임포트에서 제공하는 네이티브 모바일 SDK(플러�
 
 # 📟 네이티브 모바일 SDK
 
+### 개발 예정 플랫폼별로 Github 링크를 참조하여 개발을 진행하시면 됩니다.
+
 #### iOS/Android <a href="#iosandroid" id="iosandroid"></a>
 
 * [iOS](https://github.com/iamport/iamport-ios)
