@@ -34,7 +34,7 @@
 
 * [🖥 인증결제 연동하기](undefined-1/undefined/README.md)
   * [📒 인증결제 정의](auth/guide/def.md)
-  * [🌠 1. 차이포트 라이브러리 추가](undefined-1/undefined/1..md)
+  * [🌠 1. 아임포트 라이브러리 추가](undefined-1/undefined/1..md)
   * [💡 2. 객체 초기화 하기](undefined-1/undefined/2..md)
   * [🪧 3. 결제 요청하기](undefined-1/undefined/3..md)
   * [🎁 4. 결제결과 처리하기](undefined-1/undefined/4./README.md)
