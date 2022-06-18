@@ -88,6 +88,7 @@
 * [🧾 PG사 코드표](tip/pg-2.md)
 * [🚚 택배사 코드표](tip/code.md)
 * [🪧 리디렉션이란?](tip/redirect.md)
+* [📰 PG사 오류코드](tip/pg-3.md)
 
 ## 관리자 콘솔 사용하기 <a href="#console" id="console"></a>
 
