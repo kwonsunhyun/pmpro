@@ -65,6 +65,18 @@
 카드소유자 우편번호
 {% endswagger-parameter %}
 
+{% swagger-parameter in="body" name="customer_id" type="String" %}
+구매자 ID(
+
+<mark style="color:red;">
+
+**토스페이먼츠 전용**
+
+</mark>
+
+)
+{% endswagger-parameter %}
+
 {% swagger-response status="200: OK" description="빌링키 발급성공" %}
 {% tabs %}
 {% tab title="CustomerResponse" %}
@@ -218,6 +230,12 @@ code값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 > **생년월일**
 >
 > 일부 PG사에 한하여 생략 가능(PG사 협의 필요)
+
+> **`customer_id`` `**<mark style="color:green;">**`string`**</mark>
+>
+> **`구매자 ID` **<mark style="color:green;">****</mark>&#x20;
+>
+> 빌링키를 발급한 고객의 고유 ID <mark style="color:green;">****</mark>** **<mark style="color:red;">**토스페이먼츠 전용**</mark>** **<mark style="color:green;">****</mark>&#x20;
 
 {% hint style="info" %}
 **해당 빌링키 발급 API 는 PG사와 협의가 완료된 경우 이용 가능한 서비스입니다.**
