@@ -27,5 +27,5 @@ description: 토스페이먼츠 설정방법을 안내합니다.
 {% hint style="info" %}
 **비 인증 결제**
 
-토스페이먼츠 비인증 결제를 이용하기 위해서는 [**아임포트 관리자페이지 가입**](https://https/admin.iamport.kr)이후 **계정ID**(Email 주소)를 cs@iamport.kr 로 신청해주시면 당사에서 설정이후 안내 해 드립니다.
+2022년 상반기에 지원 예정입니다.
 {% endhint %}

@@ -87,7 +87,85 @@ IMP.request_pay({
 {% endtab %}
 
 {% tab title="비인증 결제창 요청" %}
-미 지원
+인증결제창 호출 파라미터에서 **customer\_uid** 값을 추가하면 비 인증 결제창을 호출할 수 있습니다. 비 인증 결제창에서 빌링키를 발급받은 후 해당 빌링키로 결제를 요청합니다.
+
+{% code title="Javascript SDK" %}
+```javascript
+IMP.request_pay({
+    pg : 'tosspayments',
+    pay_method : 'card', // 'card'만 지원됩니다.
+    merchant_uid: "order_monthly_0001", // 상점에서 관리하는 주문 번호
+    name : '최초인증결제',
+    amount : 0, // 실제 승인은 발생되지 않고 오직 빌링키만 발급됩니다.
+    customer_uid : 'your-customer-unique-id', // 필수 입력.
+    buyer_email : 'iamport@siot.do',
+    buyer_name : '아임포트',
+    buyer_tel : '02-1234-1234',
+    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}' 
+}, function(rsp) {
+    if ( rsp.success ) {
+        alert('빌링키 발급 성공');
+    } else {
+        alert('빌링키 발급 실패');
+    }
+});
+```
+{% endcode %}
+
+
+
+{% hint style="info" %}
+* 비인증 결제를 위해서는 **토스페이먼츠로 부터 발급받은 MID정보**를 아임포트 관리자콘솔에 설정하셔야 비 인증 결제창을 활성화 시킬수 있습니다.
+* 빌링키 발급시 <mark style="color:red;">**실 결제는 발생되지 않습니다**</mark>.(금액을 지정해도 결제가 발생되지 않음)
+{% endhint %}
+
+
+
+### 주요 파라미터 설명
+
+**`pg`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**PG사 구분코드**
+
+관리자페이지에 등록된 PG사가 하나일 경우에는 해당 파라미터 미 설정시 `기본 PG사`가 자동으로 적용되며 여러개인 경우에는 ``**`tosspayments`** 으로 지정합니다.\
+
+
+**`customer_uid`  **<mark style="color:red;">**\***</mark>** **<mark style="color:green;">**string**</mark>
+
+**카드 빌링키**
+
+비 인증 결제창에서 고객이 입력한 카드정보와 1:1로 매칭될 빌링키를 지정합니다.
+
+
+
+**`amount`  **<mark style="color:red;">**\***</mark>** **<mark style="color:purple;">**Integer**</mark>
+
+**결제금액**
+
+결제창에 표시될 금액으로 <mark style="color:red;">실제 승인은 이루어지지 않습니다.</mark>(실 결제를 발생시키기 위해서는 **customer\_uid** 로 **REST API 를 이용하여 결제요청**을 해주셔야 합니다.)\
+
+
+**`customer_id`` `**<mark style="color:green;">**`string`**</mark>
+
+**`구매자 식별자`**
+
+빌링키를 발급한 고객의 고유 ID 를 지정합니다.(회원ID) 해당 값 설정시 빌링키와 고객을 맵핑할 수 있습니다. 누락시 아임포트에서 임의의 값을 설정합니다.
+
+&#x20;****&#x20;
+
+### 빌링키(customer\_uid)로 결제 요청하기
+
+빌링키 발급이 성공하면 실 빌링키는 customer\_uid 와 1:1 매칭되어 **아임포트 서버에 저장**됩니다. customer\_uid를 가맹점 내부서버에 저장하시고 [<mark style="color:blue;">**비 인증 결제요청 REST API**</mark>](../api/api-4/api.md)를 호출하시면 결제를 발생시킬 수 있습니다.
+
+
+
+{% code title="sever-side" %}
+```
+curl -H "Content-Type: application/json" \   
+     -X POST -d '{"customer_uid":"your-customer-unique-id", "merchant_uid":"order_id_8237352", "amount":3000}' \
+     https://api.iamport.kr/subscribe/payments/again
+```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
