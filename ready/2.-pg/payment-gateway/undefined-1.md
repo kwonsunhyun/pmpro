@@ -29,7 +29,7 @@ description: 페이먼트월 설정 방법을 확인합니다.
 
 **테스트모드 OFF** 처리 이후 페이먼트월 검수가 완료되면 실 계정이 발급되며 해당 계정 정보를 입력합니다.
 
-![실 정보 입력 설정예제](<../../../.gitbook/assets/image (21) (1) (1) (1).png>)
+![실 정보 입력 설정예제](<../../../.gitbook/assets/image (21) (1) (1) (1) (1).png>)
 
 > 페이먼트월 가입시에는 반드시 <mark style="color:red;">****</mark> [<mark style="color:red;">**아임포트 전용 가입링크**</mark>](https://api.paymentwall.com/pwaccount?source=import)를 통해 가입진행이 되어야 합니다.
 >

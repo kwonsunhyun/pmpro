@@ -28,7 +28,7 @@ description: 엑심베이 설정 방법을 안내합니다.
 
 카드사 심사 완료 후 엑심베이에서 발급받은 실 상점 정보를 <mark style="color:red;">**테스트 모드 OFF**</mark> 설정후 해당 값을 입력합니다.
 
-![](<../../../.gitbook/assets/image (13) (1) (1).png>)
+![](<../../../.gitbook/assets/image (13) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 

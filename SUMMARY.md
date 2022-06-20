@@ -97,6 +97,7 @@
   * [내 색별코드, API Keys](console/undefined/api-keys.md)
   * [관리자 및 하위 상점 계정 관리](console/undefined/undefined-1.md)
   * [결제 연동 하기](console/undefined/undefined-2.md)
+  * [결제 내역](console/undefined/undefined-3.md)
 * [💻 복수 PG설정 및 사용하기](console/pg.md)
 
 ## API

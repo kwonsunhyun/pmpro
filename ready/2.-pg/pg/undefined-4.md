@@ -70,7 +70,7 @@ description: 차이 간편결제 설정 방법을 안내합니다.
 
 
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (12) (1).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (12) (1) (1).png>)
 
 ### **실** 환경 구성방법
 

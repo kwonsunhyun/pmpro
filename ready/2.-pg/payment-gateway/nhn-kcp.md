@@ -18,7 +18,7 @@ description: NHN KCP 설정방법을 안내합니다.
 
 
 
-![화면 설정 예시](<../../../.gitbook/assets/image (26) (1).png>)
+![화면 설정 예시](<../../../.gitbook/assets/image (26) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -40,7 +40,7 @@ KCP 계약이후 발급받은 사이트코드와 사이트키를 테스트모드
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(일반결제 및 정기결제) → PG사 NHN KCP 빌링결제 선택 → 테스트모드 \[ON] → \[전체 저장] 클릭
 
-![결제창 방식 설정 예시](<../../../.gitbook/assets/image (11) (1) (1) (1) (1) (1) (1).png>)
+![결제창 방식 설정 예시](<../../../.gitbook/assets/image (11) (1) (1) (1) (1) (1) (1) (1).png>)
 
 ### 실  환경 구성방법
 
@@ -48,7 +48,7 @@ KCP 계약이후 발급받은 실 사이트코드 정보를 입력합니다.&#x2
 
 배치 결제 그룹아이디 입력은 [**링크**](https://www.iamport.kr/download/kcp-billing.pdf)를 클릭하여 자세한 내용을 확인할 수 있습니다.
 
-![실계정 정보 설정 예시](<../../../.gitbook/assets/image (12) (1) (1) (1) (1).png>)
+![실계정 정보 설정 예시](<../../../.gitbook/assets/image (12) (1) (1) (1) (1) (1).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}

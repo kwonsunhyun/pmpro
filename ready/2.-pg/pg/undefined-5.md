@@ -23,6 +23,6 @@ description: 알리페이 설정 방법을 안내합니다.
 
 
 
-![실 계정 설정 예시](<../../../.gitbook/assets/image (13) (1).png>)
+![실 계정 설정 예시](<../../../.gitbook/assets/image (13) (1) (1).png>)
 {% endtab %}
 {% endtabs %}

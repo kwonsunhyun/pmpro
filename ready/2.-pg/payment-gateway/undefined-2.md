@@ -51,13 +51,13 @@ description: 다우 설정 방법을 안내합니다.
 
 &#x20;3\. 연동 정보 설정 화면에서 하단 **CPID**를 선택 후 **조회하기** 버튼 선택
 
-![연동정보 설정](<../../../.gitbook/assets/image (26).png>)
+![연동정보 설정](<../../../.gitbook/assets/image (26) (1).png>)
 
 4\. 계약된 결제수단 별로 하단의 **결과통지 URL 설정**
 
 > [https://service.iamport.kr/daou\_payments/result](https://service.iamport.kr/daou\_payments/result)
 
-![결과통지 URL 설정](<../../../.gitbook/assets/image (20) (1).png>)
+![결과통지 URL 설정](<../../../.gitbook/assets/image (20) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}

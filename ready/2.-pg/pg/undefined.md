@@ -14,7 +14,7 @@ description: 카카오페이 간편결제 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (12) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (12) (1) (1) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -24,7 +24,7 @@ description: 카카오페이 간편결제 설정 방법을 확인합니다.
 
 
 
-![](<../../../.gitbook/assets/image (6) (1) (1).png>)
+![](<../../../.gitbook/assets/image (6) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 
