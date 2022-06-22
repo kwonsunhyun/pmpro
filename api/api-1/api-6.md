@@ -75,3 +75,26 @@ code 값이 0이 아닐 때, '존재하지 않는 결제정보입니다'와 같�
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+<details>
+
+<summary>Response Model Schema</summary>
+
+```json
+{
+  "code": 0,
+  "message": "string",
+  "response": {
+    "merchant_uid": "string",
+    "amount": 0
+  }
+}
+```
+
+</details>
+
+{% hint style="success" %}
+**Swagger Test Link**
+
+****[**https://api.iamport.kr/#!/payments.validation/preparePayment**](https://api.iamport.kr/#!/payments.validation/preparePayment)****
+{% endhint %}
