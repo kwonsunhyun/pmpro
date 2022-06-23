@@ -320,6 +320,16 @@ schedules의 상세정보
 
 <details>
 
+<summary>Request Sample Json</summary>
+
+```
+{"customer_uid":"TEST0001","schedules":[{"merchant_uid":"order_id001","schedule_at":1658480415,"amount":1004,"name":"carrot","custom_data":""}"}]}
+```
+
+</details>
+
+<details>
+
 <summary>Response Model Schema</summary>
 
 ```json
