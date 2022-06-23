@@ -322,8 +322,18 @@ schedules의 상세정보
 
 <summary>Request Sample Json</summary>
 
-```
-{"customer_uid":"TEST0001","schedules":[{"merchant_uid":"order_id001","schedule_at":1658480415,"amount":1004,"name":"carrot","custom_data":""}]}
+```json
+{
+  "customer_uid": "TEST0001",
+  "schedules": [
+    {
+      "merchant_uid": "order_id001",
+      "schedule_at": 1658480415,
+      "amount": 1004,
+      "name": "carrot",
+    }
+  ]
+}
 ```
 
 </details>
