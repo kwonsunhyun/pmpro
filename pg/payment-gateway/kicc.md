@@ -2,9 +2,9 @@
 description: KICC 결제창 연동 방법을 안내합니다.
 ---
 
-# ⌨ KICC
+# ⌨ KICC
 
-### 1. KICC PG 설정하기
+### 1. KICC PG 설정하기
 
 ****[**KICC 설정**](../../ready/2.-pg/payment-gateway/kicc.md) 페이지의 내용을 참고하여 PG 설정을 진행합니다.
 
