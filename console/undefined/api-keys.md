@@ -14,14 +14,16 @@
 
 아임포트에서 제공하는 모듈을 사용할 때 가맹점을 구분하기 위해, 관리자 페이지 가입과 동시에 자동 발급되는 고유한 문자입니다.
 
-[가맹점 식별코드란 무엇인가요?](https://guide.iamport.kr/c4756279-541b-4316-addf-276a2cf7d737)
+[가맹점 식별코드란 무엇인가요?](https://chai-iamport.gitbook.io/iamport/ready/3.)
 
 ## Rest API Key , API Secret Key
 
-[REST API 키 와 secret은 어떻게 사용하나요?](https://guide.iamport.kr/f8495edd-b497-489f-b2f9-92dc641045ec)
+[REST API 키 와 secret은 어떻게 사용하나요?](https://chai-iamport.gitbook.io/iamport/ready/3.)
 
 `재발급` 버튼을 통해 api secret key 를 다시 발급받으실 수 있습니다. 해당 기능을 사용하시면 기존 secret 이 무효처리 되므로 확인 후 실행해 주세요.
 
 ## 티어코드
 
-하위가맹점 설정시 티어코드를 임의로 발급해 주신뒤 `imp.init` 대신 `IMP.agency('가맹점 식별코드', '티어코드')` 에서 호출해줍니다.
+하위가맹점 설정시 티어코드를 임의로 발급해 주신뒤 `imp.init` 대신 `IMP.agency('가맹점 식별코드', '티어코드')` 에서 호출해줍니다.\
+\
+[티어코드란 무엇인가요?](https://chai-iamport.gitbook.io/iamport/tip/agency-and-tier)
