@@ -155,9 +155,7 @@ app.use(bodyParser.json());
 {% hint style="danger" %}
 **서버가 결제 정보를 수신 하는 순서는 보장되지 않습니다**
 
-기본적으로 아임포트 서버에서 webhook이 호출되면 가맹점 응답을 기다리지 않고 클라이언트에 302 redirect 응답을 보내기 때문에 결과 도달에 대한 순서를 보장하지 않습니다. 다만 가맹점 요청이 있을 경우 webhook 호출이후에 클라이언트에 302 redirect 또는 callback 응답을 보내어 순서를 보장 해드리고 있습니다. 여기서 주의할 점은 웹훅 요청에 대한 가맹점 응답과 무관하게 아임포트는 웹훅발송 이후 바로 클라이언트로 응답(**Callback or Redirect**)을 내리는 부분 참고 하셔야 합니다.
-
-웹훅 우선순위 요청은 [support@iamport.kr](mailto:support@iamport.kr) 로 가맹점 식별코드를 기재하여 요청해 주시면 됩니다.
+기본적으로 아임포트 서버에서 webhook이 호출되면 가맹점 응답을 기다리지 않고 클라이언트에 302 redirect 응답을 보내기 때문에 결과 도달에 대한 순서를 보장하지 않습니다. 다만 가맹점 요청이 있을 경우 webhook 호출이후에 클라이언트에 302 redirect 또는 callback 응답을 보내어 순서를 보장 해드리고 있습니다. 웹훅 우선순위 요청은 [support@iamport.kr](mailto:support@iamport.kr) 로 가맹점 식별코드를 기재하여 요청해 주시면 됩니다.
 {% endhint %}
 
 {% hint style="info" %}
