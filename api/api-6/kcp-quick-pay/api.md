@@ -6,6 +6,14 @@ description: 구매자의 KCP 퀵페이 정보 삭제
 
 ### 구매자의 KCP 퀵페이 정보를 삭제합니다.
 
+{% hint style="danger" %}
+### Accept 설정 필수
+
+http header 에 아래와 같이 Accept 를 설정하셔야 합니다.
+
+&#x20;**Accept : application/json**
+{% endhint %}
+
 {% swagger method="delete" path="/kcpquick/members/{member_id}" baseUrl="https://api.iamport.kr" summary="구매자의 KCP 퀵페이 정보 삭제" %}
 {% swagger-description %}
 
