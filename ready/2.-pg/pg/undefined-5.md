@@ -13,7 +13,7 @@ description: 알리페이 설정 방법을 안내합니다.
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(**일반결제 및 정기결제**) → PG사 알리페이(Alipay) 선택 → <mark style="color:red;">**테스트모드 \[ON]**</mark> → \[전체 저장] 클릭\
 
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (15).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (15) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}

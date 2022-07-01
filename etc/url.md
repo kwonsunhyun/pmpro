@@ -213,7 +213,7 @@ pg사 구분코드
 {% tab title=" 만료(브릿지) 화면" %}
 **결제 URL 페이지 만료시각(expire\_at)이 지난 경우 표시되는 화면입니다.**
 
-![결제 URL만료 화면](<../.gitbook/assets/image (4) (1) (1) (1).png>)
+![결제 URL만료 화면](<../.gitbook/assets/image (4) (1) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 

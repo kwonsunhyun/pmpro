@@ -23,7 +23,7 @@ description: 페이팔 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (11) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (11) (1) (1) (1) (1).png>)
 
 {% hint style="danger" %}
 **Email 계정주소 설정시 주의사항**&#x20;
@@ -83,7 +83,7 @@ Profile 탭의 **Email ID** 및 **Password** 값을 페이팔 결제시 구매�
 
 \- 참고 : 휴대폰본인인증 절차 필요
 
-![](<../../../.gitbook/assets/image (16) (1) (1).png>)
+![](<../../../.gitbook/assets/image (16) (1) (1) (1).png>)
 
 **3) API 서명보기  "표시" 클릭**
 
