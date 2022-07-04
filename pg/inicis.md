@@ -53,9 +53,9 @@ IMP.request_pay({
 **결제수단 구분코드**
 
 * `card` (신용카드)
-* `samsung` (삼성페이)
-* `kakaopay` (카카오페이)
-* `ssgpay` (SSG 페이)
+* `samsung` (삼성페이 허브형)
+* `kakaopay` (카카오페이 허브형)
+* `ssgpay` (SSG페이 허브형)
 * `chai` (차이페이)
 * `trans` (실시간 계좌이체)
 * `vbank`(가상계좌)

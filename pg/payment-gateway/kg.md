@@ -53,6 +53,9 @@ IMP.request_pay({
 **결제수단 구분코드**
 
 * phone(휴대폰소액결제)
+* card(신용카드)
+* trans(계좌이체)
+*
 
 
 
