@@ -61,6 +61,7 @@ IMP.request_pay({
 * `vbank`(가상계좌)
 * `phone` (휴대폰소액결제)
 * `payco` (페이코 허브형)
+* tosspay (토스간편결제 허브형)&#x20;
 * `naverpay` (네이버페이)
 * `cultureland` (문화상품권)
 * `smartculture` (스마트문상)
