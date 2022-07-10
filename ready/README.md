@@ -14,16 +14,16 @@ description: 아임포트를 사용하여 결제를 연동하기 위한 관리�
 
 <details>
 
-<summary><a href="https://https/admin.iamport.kr"><strong>아임포트 회원가입 바로하러 가기</strong></a></summary>
+<summary><strong>아임포트 회원가입 바로하러 가기</strong></summary>
 
 * 아임포트 회원가입은 "**이메일 주소"** 만 준비하시면 됩니다.
 * 비밀번호는 쉽게 유추할수 없도록 “**복잡하게 설정**” 잊지마세요
 
 </details>
 
-아래와 같은 화면에서 [**회원가입**](https://www.iamport.kr/signup)을 클릭하여 진행해 주시면 됩니다
+아래와 같은 화면에서 **가입하기**를 클릭하여 진행해 주시면 됩니다
 
-![아임포트 관리자페이지 로그인 화면](<../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png>) ![회원가입 화면](<../.gitbook/assets/image (15) (1) (1) (1) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (19).png>) ![](<../.gitbook/assets/image (22).png>)
 
 ## 2. PG정보 설정하기
 

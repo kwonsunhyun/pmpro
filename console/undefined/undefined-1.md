@@ -26,7 +26,7 @@ _파란색 부분은 사용가능한 버튼 표기입니다_
 * 관리자 계정은 해당 화면에서 가맹점에 소속된 계정들을 신규 생성, 발급, 역할 및 정보 수정, 삭제 하실 수 있습니다.&#x20;
 * 나머지 계정은 해당 화면을 통해 가맹점에 소속된 계정들을 조회하실 수 있습니다.&#x20;
 
-![](<../../.gitbook/assets/image (19).png>)![](<../../.gitbook/assets/image (14) (1) (1).png>)
+![](<../../.gitbook/assets/image (19) (1).png>)![](<../../.gitbook/assets/image (14) (1) (1).png>)
 
 
 
@@ -47,7 +47,7 @@ _파란색 부분은 사용가능한 버튼 표기입니다_
 
 #### 하위상점 추가 및 수
 
-![](<../../.gitbook/assets/image (17).png>)![](<../../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (17) (1).png>)![](<../../.gitbook/assets/image (9).png>)
 
 
 
@@ -61,7 +61,7 @@ _파란색 부분은 사용가능한 버튼 표기입니다_
 
 #### 하위계정 추가
 
-![](<../../.gitbook/assets/image (22).png>)![](<../../.gitbook/assets/image (12) (1) (1).png>)
+![](<../../.gitbook/assets/image (22) (1).png>)![](<../../.gitbook/assets/image (12) (1) (1).png>)
 
 * 계정 아이디, 역할 (Manager, Read Only), 메모를 입력하신 뒤 하위계정을 생성 하실 수 있습니다.
 
