@@ -138,13 +138,13 @@ PG사 또는 결제수단에 따라서 반환되는 속성들이 상이합니다
 
 <summary>상세코드 확인하기</summary>
 
-* Naver Pay
-* Kako Pay
-* Payco
-* Samsung Pay
-* SSG Pay
-* L.pay
-* Kpay
+* naverpay
+* kakopay
+* payco
+* samsungpay
+* ssgpay
+* lpay
+* kpay
 
 </details>
 
