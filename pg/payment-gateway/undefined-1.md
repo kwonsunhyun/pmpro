@@ -35,7 +35,8 @@ IMP.request_pay({
       //터미날3 인경우 해당 파라미터 설정, 미 설정시 Defualt(일반) 결제창 활성화
       widget_code: "t3_1",  
       // 특정 결제수단만 활성화 하는 경우 사용 all 인 경우(default) 국가 지원 결제수단 모두 표
-      ps : "all"  
+      ps : "all",
+      country_code:"DE"  // 코드가 지정되면 지정된 국가에서 지원하는 결제수단이 활성화됩니다.
     },
     
 }, function(rsp) { // callback 로직
@@ -108,6 +109,7 @@ IMP.request_pay({
 
 * **`widget_code` :**  터미날3 인 경우 <mark style="color:red;">**t3\_1**</mark>  파라미터 설정, 미 설정시 Defualt(일반) 결제창 활성화
 * **`ps` :**  특정 결제수단만 활성화 하는 경우 사용합니다. 해당 파라미터에 설정할 코드표는 [**링크**](https://docs.paymentwall.com/reference/payment-system-shortcodes)를 참조해 주세요.   ex) `kakaopaykr` = 카카오페이
+* country\_code : 지정된 코드 값에 해당하는 국가 지원 결제수단이 위젯상에 노출됩니다.([**코드확인**](https://en.wikipedia.org/wiki/ISO\_3166-1\_alpha-2))
 {% endtab %}
 
 {% tab title="비 인증 결제" %}
