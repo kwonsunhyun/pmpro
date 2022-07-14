@@ -18,14 +18,14 @@ description: 아임포트 관리자콘솔 사용법을 확인하실 수 있습�
 
 ### [내 식별코드 , API Keys](api-keys.md) <a href="#https-app.gitbook.com-o-nad6nqi7lne1tgdy19od-s-wwx2hlvrzlzrxeh1aacf-changes-lfaibcsawqojm8cjjpb8-und" id="https-app.gitbook.com-o-nad6nqi7lne1tgdy19od-s-wwx2hlvrzlzrxeh1aacf-changes-lfaibcsawqojm8cjjpb8-und"></a>
 
-### [관리자 및 하위상점 관리](undefined-1.md)
+### [관리자 및 하위상점 관리](account.md)
 
 
 
 ## 결제 연동&#x20;
 
-### [결제 연동하기](undefined-2.md)
+### [결제 연동하기](connect.md)
 
 ## 결제 내역
 
-### [결제 내역](undefined-3.md)
+### [결제 내역](list.md)

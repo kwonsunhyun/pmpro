@@ -92,12 +92,12 @@
 
 ## 관리자 콘솔 사용하기 <a href="#console" id="console"></a>
 
-* [🎡 관리자 콘솔 가이드](console/undefined/README.md)
-  * [전자결제 신청](console/undefined/undefined.md)
-  * [내 식별코드, API Keys](console/undefined/api-keys.md)
-  * [관리자 및 하위 상점 계정 관리](console/undefined/undefined-1.md)
-  * [결제 연동 하기](console/undefined/undefined-2.md)
-  * [결제 내역](console/undefined/undefined-3.md)
+* [🎡 관리자 콘솔 가이드](console/guide/README.md)
+  * [전자결제 신청](console/guide/reg.md)
+  * [내 식별코드, API Keys](console/guide/api-keys.md)
+  * [관리자 및 하위 상점 계정 관리](console/guide/account.md)
+  * [결제 연동 하기](console/guide/connect.md)
+  * [결제 내역](console/guide/list.md)
 * [💻 복수 PG설정 및 사용하기](console/pg.md)
 
 ## API
