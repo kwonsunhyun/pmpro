@@ -238,7 +238,7 @@ card : {
 
 **파라미터 설명**
 
-* **card\_code :** 금결원 카드사코드 [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) 참조 (<mark style="color:green;">**string)**</mark>
+* **card\_code :** 금결원 카드사코드 [<mark style="color:red;">**링크**</mark>](https://faq.iamport.kr/6503bcb4-4a61-4cf3-afd8-5d913b1385a6) 참조 (<mark style="color:green;">**string)**</mark>
 * **enabled :** 해당카드 활성화 여부 (<mark style="color:orange;">**boolean)**</mark>
 {% endtab %}
 {% endtabs %}

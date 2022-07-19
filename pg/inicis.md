@@ -283,7 +283,7 @@ card: {
 
 **파라미터 설명**
 
-* **code** : 카드사 금융결제원 표준 코드. [<mark style="color:red;">**링크**</mark>](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630)  참조 (**string**)
+* **code** : 카드사 금융결제원 표준 코드. [<mark style="color:red;">**링크**</mark>](https://faq.iamport.kr/6503bcb4-4a61-4cf3-afd8-5d913b1385a6)  참조 (**string**)
 * **quota** : 할부 개월 수. 일시불일 시 0 으로 지정. (**integer**)
 
 
