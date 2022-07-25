@@ -28,7 +28,7 @@
 
 ## 실 연동 관리
 
-![](<../../.gitbook/assets/image (16).png>)
+![](<../../.gitbook/assets/image (16) (1).png>)
 
 
 
