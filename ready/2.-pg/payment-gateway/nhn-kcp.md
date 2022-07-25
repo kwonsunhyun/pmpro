@@ -10,7 +10,7 @@ description: NHN KCP 설정방법을 안내합니다.
 {% tab title="테스트결제" %}
 ### **테스트 환경 구성방법**
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr)→ **결제 연동** → **테스트 연동 관리** → PG사 **NHN KCP** 선택 → <mark style="color:red;">**NHN KCP**</mark> 선
+[아임포트 관리자 콘솔](https://admin.iamport.kr)→ **결제 연동** → **테스트 연동 관리** → PG사 **NHN KCP** 선택 → <mark style="color:red;">**NHN KCP**</mark> 선택
 
 
 
@@ -24,9 +24,9 @@ description: NHN KCP 설정방법을 안내합니다.
 {% tab title="실 결제" %}
 ### 실 결제 환경 구성방법
 
-KCP 계약이후 발급받은 사이트코드와 사이트키를 테스트모드 OFF버튼으로 입력창을 활성화 한후 올바르게 기입후 저장합니다.
+KCP 계약 이후 발급받은 **사이트코드**와 **사이트키**를 추가 버튼을 이용하여 올바르게 기입 후 저장합니다.
 
-![화면 설정 예시](<../../../.gitbook/assets/image (9) (1) (1) (1) (1).png>)
+![설정 예시화면](<../../../.gitbook/assets/image (3).png>) ![정보 입력 화면    ](<../../../.gitbook/assets/image (21).png>)
 {% endtab %}
 {% endtabs %}
 

@@ -26,7 +26,7 @@ description: 다날 PG사 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (3) (1).png>)
+![](<../../../.gitbook/assets/image (3) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 
