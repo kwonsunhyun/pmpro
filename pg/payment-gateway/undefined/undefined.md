@@ -60,7 +60,7 @@ PC와 모바일에서 결제창이 각기 다른 방식으로 호출되기 때�
 
 이러한 현상을 겪으시는 경우, 사파리 환경설정에서 아래와 같이 `크로스 사이트 추적 방지` 해제 및 `모든 쿠키 차단`이 모두 해제되어있는지 확인해보시고, 모두 해제 후 다시 시도해보시길 바랍니다.
 
-<img src="../../../.gitbook/assets/image (27) (1) (1).png" alt="참고이미지" data-size="original">
+<img src="../../../.gitbook/assets/image (27) (1) (1) (1).png" alt="참고이미지" data-size="original">
 
 </details>
 

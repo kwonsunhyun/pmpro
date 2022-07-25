@@ -6,7 +6,7 @@ description: 웹훅 연동을 통해 결제 결과를 안전하게 처리하실 
 
 #### 아임포트 **웹훅**(webhook)을 사용하여 아임포트 서버에 저장된 결제 정보를 가맹점 서버에 동기화하고 네트워크 불안정성을 보완하는 방법을 설명합니다.
 
-![](<../.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (12) (1).png>)
 
 {% hint style="info" %}
 **웹훅(Webhook)이란?**
@@ -36,7 +36,7 @@ description: 웹훅 연동을 통해 결제 결과를 안전하게 처리하실 
 
 {% tabs %}
 {% tab title="관리자콘솔 설정" %}
-![](<../.gitbook/assets/image (13).png>)
+![](<../.gitbook/assets/image (13) (1).png>)
 
 아임포트 webhook이 호출될 때 결제 정보를 통보받을 URL을 설정하려면 아임포트 관리자 콘솔 내 [**결제연동->실연동관** ](https://admin.iamport.kr/integration?tab=production)탭을 선택합니다. Endpoint URL 항목에 웹훅으로 전송될 데이타를 수신할 URL주소를 기재합니다.
 

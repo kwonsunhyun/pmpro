@@ -61,7 +61,7 @@ _파란색 부분은 사용가능한 버튼 표기입니다_
 
 #### 하위계정 추가
 
-![](<../../.gitbook/assets/image (22) (1).png>)![](<../../.gitbook/assets/image (12) (1) (1).png>)
+![](<../../.gitbook/assets/image (22) (1).png>)![](<../../.gitbook/assets/image (12) (1) (1) (1).png>)
 
 * 계정 아이디, 역할 (Manager, Read Only), 메모를 입력하신 뒤 하위계정을 생성 하실 수 있습니다.
 
