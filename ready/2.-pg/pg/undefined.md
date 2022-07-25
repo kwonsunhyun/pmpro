@@ -38,7 +38,7 @@ description: 카카오페이 간편결제 설정 방법을 확인합니다.
 
 [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 시스템설정 → PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>) → PG사 \[간편결제]카카오페이 선택 → 테스트모드 \[ON] → 가맹점코드(CID)에 '**TCSUBSCRIP**' 입력 > \[전체 저장] 클릭
 
-![](<../../../.gitbook/assets/image (7) (1) (1).png>)
+![](<../../../.gitbook/assets/image (7) (1) (1) (1).png>)
 
 ### 실  환경 구성방법
 

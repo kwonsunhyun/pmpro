@@ -23,7 +23,7 @@ description: 아임포트를 사용하여 결제를 연동하기 위한 관리�
 
 아래와 같은 화면에서 **가입하기**를 클릭하여 진행해 주시면 됩니다
 
-![](<../.gitbook/assets/image (19).png>) ![](<../.gitbook/assets/image (22).png>)
+![](<../.gitbook/assets/image (19).png>) ![](<../.gitbook/assets/image (22) (1).png>)
 
 ## 2. PG정보 설정하기
 

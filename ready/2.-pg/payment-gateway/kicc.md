@@ -38,7 +38,7 @@ description: KICC 설정 방법을 안내합니다.
 
 
 
-![](<../../../.gitbook/assets/image (28) (1) (1).png>)
+![](<../../../.gitbook/assets/image (28) (1) (1) (1).png>)
 
 ### **실** 환경 구성방법
 

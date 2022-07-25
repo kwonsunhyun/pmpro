@@ -40,7 +40,7 @@ PG사 심사 완료 후 KG모빌리언스에서 발급받은 실상점 정보를
 
 
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (18) (1) (1).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (18) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 
