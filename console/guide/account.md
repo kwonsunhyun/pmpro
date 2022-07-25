@@ -47,7 +47,7 @@ _파란색 부분은 사용가능한 버튼 표기입니다_
 
 #### 하위상점 추가 및 수
 
-![](<../../.gitbook/assets/image (17) (1).png>)![](<../../.gitbook/assets/image (9).png>)
+![](<../../.gitbook/assets/image (17) (1) (1).png>)![](<../../.gitbook/assets/image (9).png>)
 
 
 

@@ -90,7 +90,7 @@ PC와 모바일에서 결제창이 각기 다른 방식으로 호출되기 때�
 
 <img src="../../../.gitbook/assets/image (10) (1).png" alt="PC 결제" data-size="original">
 
-<img src="../../../.gitbook/assets/image (17) (1) (1).png" alt="모바일 결제" data-size="original">
+<img src="../../../.gitbook/assets/image (17) (1) (1) (1).png" alt="모바일 결제" data-size="original">
 
 ###
 
