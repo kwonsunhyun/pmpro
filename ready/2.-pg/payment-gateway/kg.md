@@ -10,7 +10,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% tab title="테스트 결제" %}
 ### 테스트 환경 구성방법
 
-아임포트 관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "**KG이니시스(웹표준결제창)**"선택 후 테스트모드\[<mark style="color:red;">**ON**</mark>]상태로 저장하시면 이니시스 일반결제용 테스트상점정보로 자동 설정 됩니다.
+[**아임포트 관리자페이지**](https://admin.iamport.kr) > **결제연동** > **테스트 연동 관리** -> **KG이니시스** -> **KG이니시스** -> **추가**
 
 
 
@@ -18,7 +18,9 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 
 
-![화면예시](<../../../.gitbook/assets/image (15) (1) (1) (1) (1).png>)
+![설정 예시](<../../../.gitbook/assets/image (7).png>)
+
+
 
 {% hint style="info" %}
 **KG이니시스 PG상점아이디(MID) : INIpayTest**&#x20;
@@ -28,9 +30,15 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% tab title="실결제" %}
 ### **실** 환경 구성방법
 
-아임포트 관리자페이지( [https://admin.iamport.kr/](https://admin.iamport.kr/) ) > 시스템설정 > PG설정(<mark style="color:red;">**일반결제 및 정기결제**</mark>)에서 PG사 "**KG이니시스(웹표준결제창)**"선택 후 테스트모드\[<mark style="color:red;">**OFF**</mark>]상태로 변경후 이니시스로 부터 발급받은 MID정보를 기재합니다.
+1. [**아임포트 관리자페이지**](https://https/admin.iamport.kr)-> **결제연동** -> **실 연동관리 선**
+2. **실연동** ->**KG이니시스** -> **KG이니시스**  -> **추가** 선택&#x20;
+3. 계약 이후 발급받은 **상점 MID 정보를 기재** 합니다.
 
-![화면예시](<../../../.gitbook/assets/image (11) (1) (1) (1) (1) (1) (1) (1).png>)
+![결제연동 -> 실 연동관리 선택](<../../../.gitbook/assets/image (24).png>)
+
+![KG이니시스 -> KG이니시스  -> 추가](<../../../.gitbook/assets/image (15).png>)
+
+![상점 MID 정보를 기재](<../../../.gitbook/assets/image (14).png>)
 {% endtab %}
 {% endtabs %}
 

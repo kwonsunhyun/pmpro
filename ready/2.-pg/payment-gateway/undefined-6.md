@@ -55,7 +55,7 @@ description: 페이팔 설정 방법을 안내합니다.
 
 1. [https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/) 로그인 > **SANDBOX** > **Accounts** > DEFAULT Personal 계정의 \[**View/edit account**] 클릭
 
-![Accounts 예](<../../../.gitbook/assets/image (24) (1).png>)
+![Accounts 예](<../../../.gitbook/assets/image (24) (1) (1).png>)
 
 **2. Account details 팝업창**&#x20;
 
