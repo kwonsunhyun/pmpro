@@ -74,7 +74,7 @@ PC와 모바일에서 결제창이 각기 다른 방식으로 호출되기 때�
 
 이러한 현상을 겪으시는 경우, 사파리 환경설정에서 아래와 같이 `*.payjoa.co.kr` 도메인에 대해 팝업 `허용` 설정 되어있으신지 확인해보시고, 허용 후 다시 시도해보시길 바랍니다.
 
-<img src="../../../.gitbook/assets/image (29) (1).png" alt="참고이미지" data-size="original">
+<img src="../../../.gitbook/assets/image (29) (1) (1).png" alt="참고이미지" data-size="original">
 
 ###
 

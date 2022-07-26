@@ -39,7 +39,7 @@ description: 페이팔 설정 방법을 안내합니다.
 
 1. &#x20;[https://developer.paypal.com/developer/accounts/](https://developer.paypal.com/developer/accounts/) 로그인 > **SANDBOX** > **Accounts** > DEFAULT Business 계정의 \[**View/edit account**] 클릭
 
-![Accounts 예](<../../../.gitbook/assets/image (19) (1) (1) (1).png>)
+![Accounts 예](<../../../.gitbook/assets/image (19) (1) (1) (1) (1).png>)
 
 &#x20;**2. Account details 팝업창**
 

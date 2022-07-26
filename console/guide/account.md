@@ -19,14 +19,14 @@ description: >-
 
 _파란색 부분은 사용가능한 버튼 표기입니다_
 
-![관리자 계정 시점](<../../.gitbook/assets/image (32).png>)
+![관리자 계정 시점](<../../.gitbook/assets/image (32) (1).png>)
 
-![그 외 계정 시점](<../../.gitbook/assets/image (20) (1).png>)
+![그 외 계정 시점](<../../.gitbook/assets/image (20) (1) (1).png>)
 
 * 관리자 계정은 해당 화면에서 가맹점에 소속된 계정들을 신규 생성, 발급, 역할 및 정보 수정, 삭제 하실 수 있습니다.&#x20;
 * 나머지 계정은 해당 화면을 통해 가맹점에 소속된 계정들을 조회하실 수 있습니다.&#x20;
 
-![](<../../.gitbook/assets/image (19) (1).png>)![](<../../.gitbook/assets/image (14) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (19) (1) (1).png>)![](<../../.gitbook/assets/image (14) (1) (1) (1).png>)
 
 
 
@@ -71,7 +71,7 @@ _파란색 부분은 사용가능한 버튼 표기입니다_
 
 
 
-![하위 상점 매니저 계정 시점](<../../.gitbook/assets/image (30).png>)
+![하위 상점 매니저 계정 시점](<../../.gitbook/assets/image (30) (1).png>)
 
 ![매니저 계정 외 하위 상점 계정 시점](<../../.gitbook/assets/image (6) (1).png>)
 
