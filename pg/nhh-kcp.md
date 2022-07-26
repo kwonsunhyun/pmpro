@@ -29,6 +29,7 @@ IMP.request_pay({
     buyer_tel : '010-1234-5678',
     buyer_addr : '서울특별시 강남구 삼성동',
     buyer_postcode : '123-456',
+    language : 'ko', // en 설정시 영문으로 출력되면 해당 파라미터 생략시 한국어 default
     m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}' 
 }, function(rsp) { // callback 로직
 	//* ...중략... *//
