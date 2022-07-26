@@ -83,7 +83,7 @@ Profile 탭의 **Email ID** 및 **Password** 값을 페이팔 결제시 구매�
 
 \- 참고 : 휴대폰본인인증 절차 필요
 
-![](<../../../.gitbook/assets/image (16) (1) (1) (1) (1).png>)
+![](<../../../.gitbook/assets/image (16) (1) (1) (1) (1) (1).png>)
 
 **3) API 서명보기  "표시" 클릭**
 

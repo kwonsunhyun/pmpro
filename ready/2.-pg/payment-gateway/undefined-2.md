@@ -57,7 +57,7 @@ description: 다우 설정 방법을 안내합니다.
 
 > [https://service.iamport.kr/daou\_payments/result](https://service.iamport.kr/daou\_payments/result)
 
-![결과통지 URL 설정](<../../../.gitbook/assets/image (20) (1) (1) (1).png>)
+![결과통지 URL 설정](<../../../.gitbook/assets/image (20) (1) (1) (1) (1).png>)
 {% endtab %}
 
 {% tab title="실 결제" %}

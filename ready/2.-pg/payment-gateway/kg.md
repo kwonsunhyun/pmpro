@@ -37,9 +37,9 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 ![결제연동 -> 실 연동관리 선택](<../../../.gitbook/assets/image (24).png>)
 
-![KG이니시스 -> KG이니시스  -> 추가](<../../../.gitbook/assets/image (15).png>)
+![KG이니시스 -> KG이니시스  -> 추가](<../../../.gitbook/assets/image (15) (1).png>)
 
-![상점 MID 정보를 기재](<../../../.gitbook/assets/image (14).png>)
+![상점 MID 정보를 기재](<../../../.gitbook/assets/image (14) (1).png>)
 {% endtab %}
 {% endtabs %}
 
@@ -59,7 +59,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 ****
 
-![결제연동 > 테스트 연동 관리 -> KG이니시스 -> KG이니시스 -> 추가](<../../../.gitbook/assets/image (20).png>)
+![결제연동 > 테스트 연동 관리 -> KG이니시스 -> KG이니시스 -> 추가](<../../../.gitbook/assets/image (20) (1).png>)
 
 ![정기결제 테스트 INIBillTst 설정하기 -> 저장 ](<../../../.gitbook/assets/image (19).png>)
 
@@ -79,15 +79,25 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 {% tab title="API 방식" %}
 ### 테스트 환경 구성방법
 
-아임포트 관리자페이지 [https://admin.iamport.kr/](https://admin.iamport.kr/) > 시스템설정 > PG설정(<mark style="color:red;">**정기결제 및 키인결제**</mark>)에서 PG사 "KG이니시스" 선택 후 **** \[**카드사 심사 전 개발용 계정 설정**] **** 클릭하시면 테스트 상점정보로 자동 세팅 됩니다.&#x20;
+[**아임포트 관리자페이지**](https://admin.iamport.kr) -> **결제연동** -> **테스트 연동관리** -> **KG이니시스** 선택 -> <mark style="color:red;">**KG이니시스 API**</mark> -> **추가**&#x20;
 
+![결제연동 -> 테스트 연동관리 -> KG이니시스 선택 -> KG이니시스 API 선택 -> 추가](<../../../.gitbook/assets/image (16).png>)
 
+###
 
-![화면예시](<../../../.gitbook/assets/image (25) (2).png>)
+### 실 환경 구성방법
 
-### 실  환경 구성방법
+1. [**아임포트 관리자페이지**](https://https/admin.iamport.kr)-> **결제연동** -> **실 연동관리 선택**&#x20;
+2. **KG이니시스** 선택 -> <mark style="color:red;">**KG이니시스 API**</mark> -> **추가**&#x20;
+3. **계약 이후 전달받은 상점 MID 정보를 기재**&#x20;
 
-* PG상점아이디 : 이니시스에서 이메일로 안내됩니다.
-* PG상점 Secret : 계약 당시 별도로 요청하셨다면 1111이 아니라 다른 값으로 발행
+![아임포트 관리자페이지-> 결제연동 -> 실 연동관리 선택 ](<../../../.gitbook/assets/image (15).png>)
+
+![KG이니시스 선택 -> KG이니시스 API -> 추가 ](<../../../.gitbook/assets/image (14).png>)
+
+![계약 이후 전달받은 상점 MID 정보 기재](<../../../.gitbook/assets/image (8).png>)
 {% endtab %}
 {% endtabs %}
+
+
+

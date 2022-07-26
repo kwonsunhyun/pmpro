@@ -96,7 +96,7 @@ description: customer_uid 로 정기(예약)결제 구현방법을 안내합니�
 
 아임포트 서버에 결제 예약 요청을 하고 예약한 시간에 결제가 시도되면 지정된 웹훅 URL을 통해서 서버에 알리는 과정을 반복적으로 수행하여 반복 결제를 구현할 수 있습니다. &#x20;
 
-![](<../../.gitbook/assets/image (15) (1) (1) (1).png>)
+![](<../../.gitbook/assets/image (15) (1) (1) (1) (1).png>)
 
 {% tabs %}
 {% tab title="Node.js" %}

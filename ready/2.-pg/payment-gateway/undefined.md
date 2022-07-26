@@ -20,7 +20,7 @@ description: 토스페이먼츠 설정방법을 안내합니다.
 
 토스페이먼츠와 계약 후 발급된 연동상점정보(MID/ MertKey)를 **테스트모드 **<mark style="color:red;">**OFF**</mark> 처리 후 설정합니다.&#x20;
 
-![실 정보 설정 예시](<../../../.gitbook/assets/image (15) (1) (1) (1) (1).png>)
+![실 정보 설정 예시](<../../../.gitbook/assets/image (15) (1) (1) (1) (1) (1).png>)
 {% endtab %}
 {% endtabs %}
 
