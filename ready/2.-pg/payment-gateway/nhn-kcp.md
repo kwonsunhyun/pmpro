@@ -26,7 +26,7 @@ description: NHN KCP 설정방법을 안내합니다.
 
 KCP 계약 이후 발급받은 **사이트코드**와 **사이트키**를 추가 버튼을 이용하여 올바르게 기입 후 저장합니다.
 
-![설정 예시화면](<../../../.gitbook/assets/image (3).png>) ![정보 입력 화면    ](<../../../.gitbook/assets/image (21).png>)
+![설정 예시화면](<../../../.gitbook/assets/image (3) (1).png>) ![정보 입력 화면    ](<../../../.gitbook/assets/image (21).png>)
 {% endtab %}
 {% endtabs %}
 

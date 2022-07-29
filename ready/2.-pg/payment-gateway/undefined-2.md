@@ -24,7 +24,7 @@ description: 다우 설정 방법을 안내합니다.
 
 
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (2).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (2) (1).png>)
 
 
 
