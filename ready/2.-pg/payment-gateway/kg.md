@@ -71,7 +71,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 ![아임포트 관리자페이지-> 결제연동 -> 실 연동관리 선택 ](<../../../.gitbook/assets/image (29).png>)
 
-![KG이니시스 -> KG이니시스 선택-> 추가](<../../../.gitbook/assets/image (30).png>)
+![KG이니시스 -> KG이니시스 선택-> 추가](<../../../.gitbook/assets/image (30) (2).png>)
 
 ![계약 이후 전달받은 MID 정보를 기재](<../../../.gitbook/assets/image (32).png>)
 {% endtab %}
@@ -91,11 +91,11 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 2. **KG이니시스** 선택 -> <mark style="color:red;">**KG이니시스 API**</mark> -> **추가**&#x20;
 3. **계약 이후 전달받은 상점 MID 정보를 기재**&#x20;
 
-![아임포트 관리자페이지-> 결제연동 -> 실 연동관리 선택 ](<../../../.gitbook/assets/image (15).png>)
+![아임포트 관리자페이지-> 결제연동 -> 실 연동관리 선택 ](<../../../.gitbook/assets/image (15) (2).png>)
 
 ![KG이니시스 선택 -> KG이니시스 API -> 추가 ](<../../../.gitbook/assets/image (14).png>)
 
-![계약 이후 전달받은 상점 MID 정보 기재](<../../../.gitbook/assets/image (8).png>)
+![계약 이후 전달받은 상점 MID 정보 기재](<../../../.gitbook/assets/image (8) (3).png>)
 {% endtab %}
 {% endtabs %}
 

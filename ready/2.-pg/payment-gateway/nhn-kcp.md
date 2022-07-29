@@ -10,7 +10,8 @@ description: NHN KCP 설정방법을 안내합니다.
 {% tab title="테스트결제" %}
 ### **테스트 환경 구성방법**
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr)→ **결제 연동** → **테스트 연동 관리** → PG사 **NHN KCP** 선택 → <mark style="color:red;">**NHN KCP**</mark> 선택
+1. [아임포트 관리자 콘솔](https://admin.iamport.kr)→ **결제 연동** → **테스트 연동 관리** → PG사 **NHN KCP** 선택 → <mark style="color:red;">**NHN KCP**</mark> ->추가&#x20;
+2. **일반결제 테스트 T0000 설정하기** 선택 -> **저장**
 
 
 
@@ -19,6 +20,10 @@ description: NHN KCP 설정방법을 안내합니다.
 
 
 ![설정화면 예시](<../../../.gitbook/assets/image (17).png>)
+
+![일반결제 테스트 T0000 설정하기 선택 -> 저장](<../../../.gitbook/assets/image (30).png>)
+
+
 {% endtab %}
 
 {% tab title="실 결제" %}
@@ -30,10 +35,6 @@ KCP 계약 이후 발급받은 **사이트코드**와 **사이트키**를 추가
 {% endtab %}
 {% endtabs %}
 
-
-
-
-
 ## 비 인증 결제
 
 결제는 일반결제보다 입점이 까다롭기 때문에, KCP를 통하여 입점가능 여부를 먼저 확인해야 합니다.
@@ -42,9 +43,12 @@ KCP 계약 이후 발급받은 **사이트코드**와 **사이트키**를 추가
 {% tab title="결제창 방식" %}
 ### 테스트 환경 구성방법
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 결제 연동 → 테스트 연동 → NHN KCP 선택 → **NHN KCP (정기)** 선택 -> 추가&#x20;
+1. [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 결제 연동 → 테스트 연동 → NHN KCP 선택 → **NHN KCP (정기)** 선택 -> 추가&#x20;
+2. 자동으로 설정된 MID값을 화면에서 확인 후 **저장** 버튼을 선택합니다.
 
 ![설정 화면 예시](<../../../.gitbook/assets/image (33).png>)
+
+![자동으로 설정된 MID값을 화면에서 확인 후 저장 버튼을 선택](<../../../.gitbook/assets/image (1).png>)
 
 ### 실  환경 구성방법
 
@@ -66,11 +70,12 @@ KCP 계약 이후 발급받은 실 사이트코드 정보를 아래와 같은 �
 {% tab title="API 방식" %}
 ### 테스트 환경 구성방법
 
-[아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 결제 연동 → 테스트 연동 관리 → **NHN KCP** 선택 → **NHN KCP API** 선택->추가
+1. [아임포트 관리자 콘솔](https://admin.iamport.kr/)→ 결제 연동 → 테스트 연동 관리 → **NHN KCP** 선택 → **NHN KCP API** 선택->추가
+2. 자동으로 설정된 MID정보 확인 후 **저장** 버튼을 선택합니다.
 
 ![NHN KCP 선택 → NHN KCP API 선택](<../../../.gitbook/assets/image (22).png>)
 
-
+![자동으로 설정된 MID정보 확인 후 저장 버튼을 선택합니다.](../../../.gitbook/assets/image.png)
 
 ### 실  환경 구성방법
 
