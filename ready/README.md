@@ -31,7 +31,7 @@ description: 아임포트를 사용하여 결제를 연동하기 위한 관리�
 
 **테스트 연동 관리** 메뉴에서는 아임포트가 지원하는 각 PG사별 테스트 설정을 진행 할 수 있습니다.
 
-![결제연동 -> 테스트 연동 관리](../.gitbook/assets/image.png)
+![결제연동 -> 테스트 연동 관리](<../.gitbook/assets/image (40).png>)
 
 {% hint style="info" %}
 각 PG사별 **테스트 설정 및 실 계정 설정**이 **상이**합니다. 자세한 PG사별 설정 방법은 [**링크**](./#2.-pg)를 통해 확인하세요
@@ -41,13 +41,18 @@ description: 아임포트를 사용하여 결제를 연동하기 위한 관리�
 
 결제창 연동 및 API 호출 시 필요한 연동정보를 확인할 수 있습니다.
 
+1. [**아임포트 관리자콘솔**](https://admin.iamport.kr) 로그인 -> **상점 계정관리** -> **내 식별코드 API Keys** 선택&#x20;
+2. **가맹점 식별코드/REST API Key/ REST API Secret** 확인
+
 {% hint style="danger" %}
 해당 정보는 **결제내역을 컨트롤** 할수 있는 **민감 정보**이기 때문에 외부로 유출되지 않도록
 
 유의하시기 바랍니다.
 {% endhint %}
 
-![연동정보 확인](<../.gitbook/assets/image (1) (2).png>)
+![아임포트 관리자콘솔 로그인 -> 상점 계정관리 -> 내 식별코드 API Keys 선택](<../.gitbook/assets/image (39).png>)
+
+![가맹점 식별코드/REST API Key/ REST API Secret 확인](<../.gitbook/assets/image (23).png>)
 
 {% tabs %}
 {% tab title="가맹점 식별코드" %}
