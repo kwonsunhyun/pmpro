@@ -87,7 +87,7 @@ description: 나이스페이먼츠 인증결제 및 비 인증 결제 설정 방
 
 ![나이스페이먼츠 선택 -> 나이스페이먼츠 API -> 추가 선택 ](<../../../.gitbook/assets/image (34).png>)
 
-![드사 심사 완료 후 나이스페이먼츠에서 발급받은 실상점 정보 입력](<../../../.gitbook/assets/image (36).png>)
+![카드사 심사 완료 후 나이스페이먼츠에서 발급받은 실상점 정보 입력](<../../../.gitbook/assets/image (36).png>)
 {% endtab %}
 {% endtabs %}
 
