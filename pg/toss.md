@@ -101,7 +101,8 @@ IMP.request_pay({
     buyer_email : 'iamport@siot.do',
     buyer_name : '아임포트',
     buyer_tel : '02-1234-1234',
-    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}' 
+    m_redirect_url : '{모바일에서 결제 완료 후 리디렉션 될 URL}',
+    customer_id :'matthew' //가맹점이 회원에게 부여한 고유 ID 
 }, function(rsp) {
     if ( rsp.success ) {
         alert('빌링키 발급 성공');
