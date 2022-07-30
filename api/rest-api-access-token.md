@@ -25,8 +25,8 @@ Access token 발급 요청을 **클라이언트 사이드에서 하면 요청 �
 {% tabs %}
 {% tab title="curl" %}
 {% code title="server-side" %}
-```url
-curl -H "Content-Type: application/json" POST -d '{"imp_key": "REST API키", "imp_secret":"REST API Secret"}' https://api.iamport.kr/users/getToken
+```python
+  curl -H "Content-Type: application/json" POST -d '{"imp_key": "REST API키", "imp_secret":"REST API Secret"}' https://api.iamport.kr/users/getToken
 ```
 {% endcode %}
 {% endtab %}
@@ -50,6 +50,33 @@ curl -H "Content-Type: application/json" POST -d '{"imp_key": "REST API키", "im
   });
 ```
 {% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+import requests
+import json
+
+def getTokenApi(path):
+    API_HOST = "https://api.iamport.kr"
+    url = API_HOST + path
+
+    headers = {'Content-Type': 'application/json', 'charset': 'UTF-8', 'Accept': '*/*'}
+    body = {
+        "imp_key": "", # REST API Key
+        "imp_secret": "" # REST API Secret
+    }
+    try:
+        response = requests.post(url, headers=headers, data=json.dumps(body, ensure_ascii=False, indent="\t"))
+        return response
+    except Exception as ex:
+
+res=getTokenApi("/users/getToken")  # API call
+json_object=json.loads(res.text)    # json 객체로 변환
+TokenVal = json_object['response']['access_token'] # 토큰값 파싱
+
+print(TokenVal)
+```
 {% endtab %}
 {% endtabs %}
 
