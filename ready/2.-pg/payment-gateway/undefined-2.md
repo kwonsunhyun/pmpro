@@ -24,7 +24,7 @@ description: 다우 설정 방법을 안내합니다.
 
 
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (2) (1).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (2) (1) (1).png>)
 
 
 
@@ -97,7 +97,7 @@ description: 다우 설정 방법을 안내합니다.
 
 ****
 
-![테스트 설정 예시](<../../../.gitbook/assets/image (5) (1).png>)
+![테스트 설정 예시](<../../../.gitbook/assets/image (5) (1) (3).png>)
 
 {% hint style="info" %}
 ### **키인 결제 필수 파라미터 변경 테스트 방법**

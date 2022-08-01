@@ -8,7 +8,7 @@ description: 결제요청의 주체를 가맹점 서버로 가져갈수 있는 �
 
 ![](<../.gitbook/assets/image (16) (1) (1) (2).png>)
 
-![Confirm Process](<../.gitbook/assets/image (3) (1) (1) (1).png>)
+![Confirm Process](<../.gitbook/assets/image (3) (1) (1) (1) (2).png>)
 
 {% hint style="info" %}
 **해당 서비스가 반드시 필요한 가맹점은 아래와 같은 경우입니다.**&#x20;

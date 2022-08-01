@@ -80,7 +80,7 @@ KCP에서 **정기결제용으로 발급받은 사이트코드** 로 KCP상점�
 
 ![NHN KCP 선택 → NHN KCP API 선택](<../../../.gitbook/assets/image (22).png>)
 
-![자동으로 설정된 MID정보 확인 후 저장 버튼을 선택합니다.](<../../../.gitbook/assets/image (1) (1).png>)
+![자동으로 설정된 MID정보 확인 후 저장 버튼을 선택합니다.](<../../../.gitbook/assets/image (1) (1) (3).png>)
 
 ### 실  환경 구성방법
 
