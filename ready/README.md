@@ -50,7 +50,7 @@ description: 아임포트를 사용하여 결제를 연동하기 위한 관리�
 유의하시기 바랍니다.
 {% endhint %}
 
-![아임포트 관리자콘솔 로그인 -> 상점 계정관리 -> 내 식별코드 API Keys 선택](<../.gitbook/assets/image (39).png>)
+![아임포트 관리자콘솔 로그인 -> 상점 계정관리 -> 내 식별코드 API Keys 선택](<../.gitbook/assets/image (39) (1).png>)
 
 ![가맹점 식별코드/REST API Key/ REST API Secret 확인](<../.gitbook/assets/image (23).png>)
 

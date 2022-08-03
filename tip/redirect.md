@@ -6,7 +6,7 @@ description: 리디렉션의 정의를 자세히 확인할수 있습니다.
 
 ### 현재 페이지를 다른 페이지로 이동함을 의미합니다.&#x20;
 
-![](<../.gitbook/assets/image (9) (1).png>)
+![](<../.gitbook/assets/image (9) (1) (2).png>)
 
 ### 리디렉션은 왜 필요할까요?
 

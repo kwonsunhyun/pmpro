@@ -13,9 +13,9 @@ description: 토스페이먼츠 설정방법을 안내합니다.
 1. [아임포트관리자콘솔](https://https/admin.iamport.kr) **-> 결제연동 -> 테스트 연동관리 -> 토스페이먼츠 -> **<mark style="color:red;">**(구)토스페이먼츠**</mark>** ->추가**
 2. **자동으로 설정된 테스트 MID 확인후 저장 선**
 
-![결제연동 -> 테스트 연동관리 -> 토스페이먼츠 -> (구)토스페이먼츠 ->추가](<../../../.gitbook/assets/image (2).png>)
+![결제연동 -> 테스트 연동관리 -> 토스페이먼츠 -> (구)토스페이먼츠 ->추가](<../../../.gitbook/assets/image (2) (2).png>)
 
-![자동으로 설정된 테스트 MID 확인후 저장](<../../../.gitbook/assets/image (4).png>)
+![자동으로 설정된 테스트 MID 확인후 저장](<../../../.gitbook/assets/image (4) (2).png>)
 
 {% hint style="info" %}
 **토스페이먼츠 인증 결제 안내**
@@ -37,11 +37,11 @@ description: 토스페이먼츠 설정방법을 안내합니다.
 아임포트를 통한 토스페이먼츠 인증결제를 위해서는 토스페이먼츠 인증결제 MID 발급 요청시 반드시 <mark style="color:red;">**구 인증 모듈 방식**</mark>이라고 언급해주셔야 올바른 값을 부여받을 수 있습니다.
 {% endhint %}
 
-![결제연동 -> 실 연동관리 선택](<../../../.gitbook/assets/image (8).png>)
+![결제연동 -> 실 연동관리 선택](<../../../.gitbook/assets/image (42).png>)
 
 ![토스페이먼츠 -> 토스페이먼츠 선택 -> 추가](<../../../.gitbook/assets/image (5).png>)
 
-![토스페이먼츠와 계약 후 발급된 연동상점정보 기재](<../../../.gitbook/assets/image (3).png>)
+![토스페이먼츠와 계약 후 발급된 연동상점정보 기재](<../../../.gitbook/assets/image (3) (2).png>)
 {% endtab %}
 {% endtabs %}
 

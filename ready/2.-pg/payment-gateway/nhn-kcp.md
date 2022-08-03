@@ -69,7 +69,7 @@ KCP에서 **정기결제용으로 발급받은 사이트코드** 로 KCP상점�
 
 ![NHN KCP -> NHN KCP(정기) -> 추가 선택](<../../../.gitbook/assets/image (13).png>)
 
-![사이트코드, 사이트키, 배치결제 그룹 아이디 입력 -> 저장](<../../../.gitbook/assets/image (12) (2).png>)
+![사이트코드, 사이트키, 배치결제 그룹 아이디 입력 -> 저장](<../../../.gitbook/assets/image (12).png>)
 {% endtab %}
 
 {% tab title="API 방식" %}
@@ -99,7 +99,7 @@ KCP에서 **정기결제용으로 발급받은 사이트코드** 로 KCP상점�
 
 ![결제 연동 -> 실 연동 관리](<../../../.gitbook/assets/image (27).png>)
 
-![NHN KCP -> NHN KCP API -> 추가](<../../../.gitbook/assets/image (7) (1) (2).png>)
+![NHN KCP -> NHN KCP API -> 추가](<../../../.gitbook/assets/image (7) (1).png>)
 
 ![사이트코드= PG상점 ID/ 사이트키 = PG상점 시크릿 항목에 각각 기재후 배치결제 그룹아이디를 입력](<../../../.gitbook/assets/image (18).png>)
 {% endtab %}

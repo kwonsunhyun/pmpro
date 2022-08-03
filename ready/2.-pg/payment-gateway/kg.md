@@ -19,7 +19,7 @@ description: 이니시스 인증 및 비인증 결제 설정 방법을 안내합
 
 
 
-![결제연동 > 테스트 연동 관리 -> KG이니시스 -> KG이니시스 -> 추가](<../../../.gitbook/assets/image (7) (1).png>)
+![결제연동 > 테스트 연동 관리 -> KG이니시스 -> KG이니시스 -> 추가](<../../../.gitbook/assets/image (7).png>)
 
 ![일반결제 테스트 INIpayTest 설정하기-> 저장](<../../../.gitbook/assets/image (31).png>)
 
