@@ -98,7 +98,7 @@ IMP.request_pay({
 {% code title="Javascript SDK" %}
 ```javascript
 IMP.request_pay({
-    pg : 'kcp_billing',
+    pg : 'kicc',
     pay_method : 'card', // 'card'만 지원됩니다.
     merchant_uid: "order_monthly_0001", // 상점에서 관리하는 주문 번호
     name : '최초인증결제',
