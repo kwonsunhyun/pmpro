@@ -37,7 +37,7 @@ description: 토스페이먼츠 설정방법을 안내합니다.
 아임포트를 통한 토스페이먼츠 인증결제를 위해서는 토스페이먼츠 인증결제 MID 발급 요청시 반드시 <mark style="color:red;">**구 인증 모듈 방식**</mark>이라고 언급해주셔야 올바른 값을 부여받을 수 있습니다.
 {% endhint %}
 
-![결제연동 -> 실 연동관리 선택](../../../.gitbook/assets/image.png)
+![결제연동 -> 실 연동관리 선택](<../../../.gitbook/assets/image (8).png>)
 
 ![토스페이먼츠 -> 토스페이먼츠 선택 -> 추가](<../../../.gitbook/assets/image (5).png>)
 
